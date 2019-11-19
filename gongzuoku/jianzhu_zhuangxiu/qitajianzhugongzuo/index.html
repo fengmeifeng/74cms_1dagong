@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="壹打工网是专业提供各大企业招聘招工信息的大型普工类网站。我们致力于为普工提供更好的工作,为企业输送更多的普工." />
+<meta name="keywords" content="打工网,手机招聘网,招工网,壹打工网" />
+<title>壹打工网-工作让生活更精彩</title>
+
+<link href="/files/style/css/bootstrap.css" type="text/css" rel="stylesheet" /> 
+
+<link href="/files/style/css/all.css" type="text/css" rel="stylesheet" />
+
+<script src="/files/style/js/jquery.min.js" language="JavaScript" type="text/javascript" ></script>
+<script src="/files/style/js/bootstrap.min.js" language="JavaScript" type="text/javascript" ></script>
+<script src="/files/style/js/npm.js" language="JavaScript" type="text/javascript" ></script>
+
+</head>
+
+<body>
+<!-- head -->
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Cache-Control" content="no-transform" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<meta name="keywords" content="打工网,手机招聘网,招工网,壹打工网" />
+	<meta name="description" content="壹打工网是专业提供各大企业招聘招工信息的大型普工类网站。我们致力于为普工提供更好的工作,为企业输送更多的普工." />
+	<title>壹打工网-工作让生活更精彩</title>
+
+<link href="/files/style/css/bootstrap.css" type="text/css" rel="stylesheet" /> 
+
+<link href="/files/style/css/all.css" type="text/css" rel="stylesheet" />
+
+<script src="/files/style/js/jquery.min.js" language="JavaScript" type="text/javascript" ></script>
+<script src="/files/style/js/bootstrap.min.js" language="JavaScript" type="text/javascript" ></script>
+<script src="/files/style/js/npm.js" language="JavaScript" type="text/javascript" ></script>
+<script language="javascript" type="text/javascript" src="/include/login.js"></script>
+
+		<script language="javascript" type="text/javascript">
+		<!--
+			
+			function CheckLogin(){
+			  var taget_obj = document.getElementById('headlogin');
+			  myajax = new DedeAjax(taget_obj,false,false,'','','');
+			  myajax.SendGet2("/home/headlogin.php");
+			  DedeXHTTP = null;
+			}
+		-->
+		</script>
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+</head>
+<body>
+		 
+<nav class="navbar navbar-default top">
+  <div class="container">
+    <div class="navbar-header col-md-2 col-xs-6">
+      <a href="/" class="logo"><img src="/files/style/image/logo.png" height="90" width="190" class="img-responsive" /></a>
+    </div>
+
+      <ul class="nav navbar-nav col-md-6 hidden-xs">
+      	<li class="active ml_30"><a href="/">首页</a></li>
+        <li><a href="/home/position_search_list.php">工作库</a></li>
+        <li><a href="/gongzuo/">行业名企</a></li>
+      </ul>
+		
+       <div  id="headlogin" class="col-md-4 col-xs-6 logint">
+          <ul class="login pull-right">
+            <li class="dropwnd pr_10"><a href="/home/"  data-target="#denglu">登录</a></li>
+            <li class="pl_10">
+              <a href="/home/p_register.php" class="dropdown-toggle">注册 </a>
+            </li>
+          </ul><script language="javascript" type="text/javascript">CheckLogin();</script>
+       </div>
+	   
+  </div><!-- /.container-fluid -->
+</nav>
+<!--head end -->
+<!--            列表                  -->
+<div class="container">
+    <ol class="breadcrumb mt_20">
+        <li class="active"><a href='http://localhost/'>网站首页</a> / <a href='/gongzuoku/'>工作库</a> / <a href='/gongzuoku/jianzhu_zhuangxiu/'>建筑/装修</a> / <a href='/gongzuoku/jianzhu_zhuangxiu/qitajianzhugongzuo/'>其他建筑工作</a> / </li>
+    </ol>
+</div>
+<div class="container">
+	<div class="row">
+    	<div class="col-md-9">
+        	<div class="find mr_20">
+                <form action="/plus/search_position.php" method="post">
+                <div class="input-group search">
+                  <input type="text" class="form-control" placeholder="" name="q">
+                  <span class="input-group-btn">
+                    <input class="btn btn-yellow" type="submit" value="搜 索" />
+                  </span>
+                </div>
+                </form>
+                
+                <!--<dl class="reset">
+                    <dt>所在地区：</dt>
+                    <dd>
+                    <a class="active" title="" href="#">不限</a>
+                    <a title="" href="#">合肥</a>
+                    <a title="" href="#">合肥</a>
+                    <a title="" href="#">合肥</a>
+                    <a title="" href="#">合肥</a>
+                    <a title="" href="#">合肥</a>
+                    <a title="" href="#">合肥</a>
+                    </dd>
+                </dl>-->
+                
+                <!--<dl class="reset">
+                    <dt>行业领域：</dt>
+                    <dd>
+                    <a class="active" title="" href="#">不限</a>
+                    <a title="" href="#">电子商务</a>
+                    <a title="" href="#">社交/社区/媒体</a>
+                    <a title="" href="#">网游/手游</a>
+                    <a title="" href="#">iOS工程师</a>
+                    <a title="" href="#">在线广告</a>
+                    <a title="" href="#">  搜索引擎</a>
+                    <a title="" href="#">互联网金融</a>
+                    <a title="" href="#">网络招聘</a>
+                    <a title="" href="#">网络营销</a>
+                    <a title="" href="#">网络教育</a>
+                    </dd>
+                </dl>-->
+                
+                <dl class="reset">
+                    <dt>更新：</dt>
+                    <dd>
+                    <a class="active" title="" href="#">不限</a>
+                    <a title="" href="#">3天内</a>
+                    <a title="" href="#">5天内</a>
+                    <a title="" href="#">7天内</a>
+                    <a title="" href="#">15天内</a>
+                    </dd>
+                </dl>
+                
+            </div> 
+            
+            <div class="fine mr_20 busa mt_20">     
+                <span>共为您找到 <strong></strong> 职位 </span>
+                <div class=" pull-right">
+                    <!--<div class="btn-group">
+                      <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                        &nbsp;职位类型不限 <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">职位类型</a></li>
+                        <li><a href="#">职位类型</a></li>
+                        <li><a href="#">职位类型</a></li>
+                        <li><a href="#">职位类型</a></li>
+                        <li><a href="#">职位类型</a></li>
+                      </ul>
+                    </div>-->
+                    <!--<div class="btn-group">
+                      <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                        &nbsp;发布时间不限 <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">职位类型</a></li>
+                        <li><a href="#">职位类型</a></li>
+                        <li><a href="#">职位类型</a></li>
+                        <li><a href="#">职位类型</a></li>
+                        <li><a href="#">职位类型</a></li>
+                      </ul>
+                    </div>-->
+                    <div class="btn-group">
+                      <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                        &nbsp;薪酬范围不限 <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">0-2000</a></li>
+                        <li><a href="#">2000-5000</a></li>
+                        <li><a href="#">5000以上</a></li>
+                      </ul>
+                    </div>
+                </div> 
+            </div>       
+            <div class="over"></div>
+            <div class="l_list mr_20">
+                <div class="l_lie">
+                
+                </div>
+
+            <nav class="text-center">
+              <ul class="pagination pagination-lg ">
+                <li class="disabled">共 <strong>0</strong>页<strong>0</strong>条记录</li>
+
+              </ul>
+            </nav>
+            </div>
+             
+        </div>
+        
+        <div class="col-md-3 col-sm-12 rcon">
+            
+            <div class="mbott mb_30 mr_10">
+                <a href="/neijian">
+                    <img class="img-responsive" title="1+2事业平台" src="/files/style/image/nei_12.jpg" data-bd-imgshare-binded="1">
+                </a>
+            </div>
+            <ul class="list-group mr_10">
+                <li class="list-group-item"><span class="badge"> </span>相关的招聘企业</li>
+            </ul>
+            
+            	<dl class="mr_10">
+														
+				</dl>
+            
+            </div>            
+            
+        </div>
+        
+        
+    </div>
+    
+<!--            列表                  -->    
+
+
+
+<!-------baoming------->   
+<div class="extra">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 col-sm-3">
+				<h5>
+					用户帮助
+				</h5>
+				<ul class="icons-list">
+					
+					<li>
+						<i class="icon-li fa fa-angle-double-right">
+						</i>
+						<a href="#">
+							帐户状态
+						</a>
+					</li>
+					<li>
+						<i class="icon-li fa fa-angle-double-right">
+						</i>
+						<a href="#">
+							密码找回与修改
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /span3 -->
+			<div class="col-xs-6 col-sm-3">
+				<h5>
+					关注我们
+				</h5>
+				<ul class="icons-list">
+					<li>
+						<i class="icon-li fa fa-angle-double-right">
+						</i>
+						<a href="/home/weixin_x.php">
+							微信
+						</a>
+					</li>
+					<li>
+						<i class="icon-li fa fa-angle-double-right">
+						</i>
+						<a href="http://www.1dagong.com/m/index.html">
+							手机客户端
+						</a>
+					</li>
+					<li>
+						<i class="icon-li fa fa-angle-double-right">
+						</i>
+						<a href="http://www.1dagong.com/">
+							手机网页版
+						</a>
+					</li>
+					<li>
+						<i class="icon-li fa fa-angle-double-right">
+						</i>
+						<a href="#">
+							新浪微博
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /span3 -->
+			<div class="col-xs-12 col-sm-3">
+				<h5>
+					壹打工网相关
+				</h5>
+				<ul class="icons-list">
+					<li>
+						<i class="icon-li fa fa-twitter">
+						</i>
+						<a href="#" target="_blank">
+							友情链接
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /span3 -->
+			<div class="col-xs-12 col-sm-3">
+				<h5>
+					免费报名
+				</h5>
+				<p>
+					仅需留下您的手机或电话，我们专业的求职顾问便会迅速为您量身定制合适的职位。
+				</p>
+				<div id="mc_embed_signup">
+					<form class="form-signin" role="form" method="post" action="/home/p_register.php" id="regUser">
+						<input type="hidden" value="regbase" name="dopost"/>
+						<input type="hidden" value="1" name="step"/>
+						<input type="hidden" value="个人" name="mtype"/>
+
+						<div class="mc-field-group form-group">
+							<input type="text" class="required email form-control" placeholder="手机号码" required name="shouye" id="userid" maxlength="13">
+							<datalist id="userid">
+								<option value="0551-12345678">
+								<option value="13912345678">
+								<option value="055112345678">
+							</datalist>
+
+						</div>
+						
+						<div class="clear">
+							<button class="btn btn-primary btn-block" type="submit">免费报名</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- /row -->
+	</div>
+	<!-- /container -->
+</div>
+<!--------baoming------->
+
+
+<!-- /footer -->
+<div class="footer">
+	<div class="container">
+		<ul class="nav footer-nav pull-left">
+			<li>
+				© 2013-2014 Www.1dagong.Com 本站所有招聘信息及作品，未经书面授权不得转载！<br />
+				<a href="/help/aboutus.html">关于我们</a>
+			</li>
+		</ul>
+		<ul class="nav footer-nav pull-right">
+			<li>
+				最专业的求职招聘网站，致力打造人才网第一品牌！
+				<i class="fa fa-heart text-primary">
+				</i>
+				&amp;
+				<a href="http://www.1dagong.com" target="_blank">
+					壹打工网.
+				</a><br />
+				国家工业和信息化部备案号：<a href="http://www.miibeian.gov.cn/">皖ICP备13015030号-3</a>
+			</li>
+		</ul>
+	</div>
+	<!-- /container -->
+</div>
+<div class="none">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb41da31689d0e576af45aaeafc3be8d8' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>
+<!-- /footer -->
+
+
+</body>
+</html>

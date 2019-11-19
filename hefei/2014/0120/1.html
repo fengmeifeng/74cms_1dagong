@@ -1,0 +1,646 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>联胜（中国）科技有限公司_要工作网 - 让工作来找你！</title>
+<meta name="keywords" content="" />
+<meta name="description" content="湖南格兰博智能科技有限责任公司成立于2012年，是一家专注于智能家电生产、加工、销售和服务的企业，专门为国内外的客户提供具有新奇特点、性价比高和适用未来家居生活的产品（" />
+<link href="/templets/default/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+<script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+function CheckLogin()
+{
+	  var taget_obj = document.getElementById('_ajax_feedback');
+	  myajax = new DedeAjax(taget_obj,false,false,'','','');
+	  myajax.SendGet2("/member/ajax_feedback.php");
+	  DedeXHTTP = null;
+}
+
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+	DedeXHTTP = null;
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "/plus/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+	DedeXHTTP = null;
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+-->
+</script>
+</head>
+<body class="articleview">
+无法在这个位置找到： head.htm2
+<!-- /header -->
+
+<div class="channel-nav w960 center clear">
+	<div class='sonnav'>
+	<span><a href='/hefei/' class='thisclass'>合肥</a></span>
+		<span><a href='/wuhu/'>芜湖</a></span>
+		<span><a href='/bangbu/'>蚌埠</a></span>
+		<span><a href='/zhongqing/'>重庆</a></span>
+		<span><a href='/gongzuo/shanghai/'>上海</a></span>
+		<span><a href='/gongzuo/changshu/'>常熟</a></span>
+		<span><a href='/gongzuo/hubei/'>湖北</a></span>
+		<span><a href='/gongzuo/suzhou/'>苏州</a></span>
+		<span><a href='/gongzuo/wuxi/'>无锡</a></span>
+	</div>
+</div><!-- /channel-nav -->
+
+<div class="w960 center clear mt1">
+	<div class="pleft">
+		<div class="place">
+			<strong>当前位置:</strong> <a href='http://jobs.com/'>首页</a> > <a href='/gongzuo/'>企业库</a> > <a href='/hefei/'>合肥</a> > 
+		</div><!-- /place -->
+		<div class="viewbox">
+			<div class="title">
+				<h2>联胜（中国）科技有限公司</h2>
+			</div><!-- /title -->
+			<div class="info">
+				<small>时间:</small>2014-01-20 13:12<small>来源:</small>未知 <small>作者:</small>admin <small>点击:</small><script src="/plus/count.php?view=yes&aid=1&mid=1" type='text/javascript' language="javascript"></script>次
+			</div><!-- /info -->
+
+			<div class="content">
+			　<font color='red'> 你会看到这个提示，那是因为你的系统无法识别某栏目的模型信息，或者你新建模型后，没为这个模型设计单独的模板。不同模型的文档浏览页的模板为：article_模型名字标识.htm
+如“article_article.htm”，更多的信息你可以在频道模型管理的地方查看。 </font>
+<table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#BED1AB">
+<tr>
+	<td width="23%" height="24" align="center" bgcolor="#FBFEF5">
+		<b>综合工资</b> 内容：
+		<br />
+	  模板调用标记：
+	  <br />
+	  <script language='javascript'>document.write("{"+"dede:field.gongzi /"+"}");</script>
+	</td>
+	<td width="77%" bgcolor="#FFFFFF"> 2500-4600 </td>
+</tr>
+</table><table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#BED1AB">
+<tr>
+	<td width="23%" height="24" align="center" bgcolor="#FBFEF5">
+		<b>工作描述</b> 内容：
+		<br />
+	  模板调用标记：
+	  <br />
+	  <script language='javascript'>document.write("{"+"dede:field.miaoshu /"+"}");</script>
+	</td>
+	<td width="77%" bgcolor="#FFFFFF"> 公司环境优美，月收入2200元以上，5天8小时工作制。免费提供住宿，有生活补贴。 </td>
+</tr>
+</table><table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#BED1AB">
+<tr>
+	<td width="23%" height="24" align="center" bgcolor="#FBFEF5">
+		<b>工作地区</b> 内容：
+		<br />
+	  模板调用标记：
+	  <br />
+	  <script language='javascript'>document.write("{"+"dede:field.nativeplace /"+"}");</script>
+	</td>
+	<td width="77%" bgcolor="#FFFFFF"> 安徽省 -- 合肥市 --  </td>
+</tr>
+</table><table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#BED1AB">
+<tr>
+	<td width="23%" height="24" align="center" bgcolor="#FBFEF5">
+		<b>性别要求</b> 内容：
+		<br />
+	  模板调用标记：
+	  <br />
+	  <script language='javascript'>document.write("{"+"dede:field.xingbie /"+"}");</script>
+	</td>
+	<td width="77%" bgcolor="#FFFFFF"> 男 </td>
+</tr>
+</table><table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#BED1AB">
+<tr>
+	<td width="23%" height="24" align="center" bgcolor="#FBFEF5">
+		<b>学历要求</b> 内容：
+		<br />
+	  模板调用标记：
+	  <br />
+	  <script language='javascript'>document.write("{"+"dede:field.xueli /"+"}");</script>
+	</td>
+	<td width="77%" bgcolor="#FFFFFF"> 高中 </td>
+</tr>
+</table><table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#BED1AB">
+<tr>
+	<td width="23%" height="24" align="center" bgcolor="#FBFEF5">
+		<b>招聘人数</b> 内容：
+		<br />
+	  模板调用标记：
+	  <br />
+	  <script language='javascript'>document.write("{"+"dede:field.zhaopinshu /"+"}");</script>
+	</td>
+	<td width="77%" bgcolor="#FFFFFF"> 20000 </td>
+</tr>
+</table><table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#BED1AB">
+<tr>
+	<td width="23%" height="24" align="center" bgcolor="#FBFEF5">
+		<b>报名人数</b> 内容：
+		<br />
+	  模板调用标记：
+	  <br />
+	  <script language='javascript'>document.write("{"+"dede:field.baomingshu /"+"}");</script>
+	</td>
+	<td width="77%" bgcolor="#FFFFFF"> 1265 </td>
+</tr>
+</table><table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#BED1AB">
+<tr>
+	<td width="23%" height="24" align="center" bgcolor="#FBFEF5">
+		<b>收入情况</b> 内容：
+		<br />
+	  模板调用标记：
+	  <br />
+	  <script language='javascript'>document.write("{"+"dede:field.shouru /"+"}");</script>
+	</td>
+	<td width="77%" bgcolor="#FFFFFF"> 底薪+提成+岗位津贴+全勤奖，月综合收入2200元以上。
+加班费：加班费以底薪为计算基数，延时工资按国家法定标准150%（9.1元/时）发放，周末加班工资按国家法定标准200%（12.2元/时）发放，法定假日工资按国家法定标准300%（18.3元/时）发放。 </td>
+</tr>
+</table><table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#BED1AB">
+<tr>
+	<td width="23%" height="24" align="center" bgcolor="#FBFEF5">
+		<b>工作情况</b> 内容：
+		<br />
+	  模板调用标记：
+	  <br />
+	  <script language='javascript'>document.write("{"+"dede:field.gongzuo /"+"}");</script>
+	</td>
+	<td width="77%" bgcolor="#FFFFFF"> 【工作描述】 
+◆ 工作内容：太阳能电池、组件生产线作业员。 
+◆ 工作时间：基本工作时间为每周5天每天8小时，超出时间为加班时间，加班费严格按照劳动法发放。（白班的工作时间为7：30-19：30，夜班的工作时间为19：30-7：30）其中加班时间为2.5小时，休息时间为1.5小时）。 
+◆ 工作环境：根据工作内容不同有站式或者坐式工作，厂房内有中央空调，工作时需穿工作服，工作服由公司免费提供。 
+◆ 晋升空间：公司提供良好的教育培训平台，使每一位员工在学习中不断成长；对于表现优秀的员工给予调薪、晋升的机会。 
+【如何转正】 
+◆ 试用期两个月，两个月后转正。 </td>
+</tr>
+</table><table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#BED1AB">
+<tr>
+	<td width="23%" height="24" align="center" bgcolor="#FBFEF5">
+		<b>要求</b> 内容：
+		<br />
+	  模板调用标记：
+	  <br />
+	  <script language='javascript'>document.write("{"+"dede:field.yaoqiu /"+"}");</script>
+	</td>
+	<td width="77%" bgcolor="#FFFFFF"> 1、以女性为主，38岁以下，能吃苦耐劳、能识字写字，服从公司管理，从事相关生产制造岗位的工作；
+2、干净、无毒、无害车间，工作环境舒适，宿舍是花园式居住小区；
+3、工作时间：5天8小时制度；
+4、直接面试通过后即可入司，入司后公司统一安排体检。 </td>
+</tr>
+</table><table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#BED1AB">
+<tr>
+	<td width="23%" height="24" align="center" bgcolor="#FBFEF5">
+		<b>吃住情况</b> 内容：
+		<br />
+	  模板调用标记：
+	  <br />
+	  <script language='javascript'>document.write("{"+"dede:field.chizun /"+"}");</script>
+	</td>
+	<td width="77%" bgcolor="#FFFFFF"> 伙食：每月根据实际出勤天数给予10元/天的生活补贴；
+住宿：公司免费提供住宿，宿舍有阳台、洗澡间、卫生间、热水器，工作环境整洁、统一配发工衣、工鞋。 </td>
+</tr>
+</table><table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#BED1AB">
+<tr>
+	<td width="23%" height="24" align="center" bgcolor="#FBFEF5">
+		<b>待遇情况</b> 内容：
+		<br />
+	  模板调用标记：
+	  <br />
+	  <script language='javascript'>document.write("{"+"dede:field.daiyu /"+"}");</script>
+	</td>
+	<td width="77%" bgcolor="#FFFFFF"> 【公司福利】 
+◆ 缴险标准：按国家规定缴纳五险一金。 
+◆ 有薪假期：员工享受国家法定节假日。 
+◆ 生日礼物：员工生日之际，公司将会发放生日礼物。 
+◆ 节日庆祝：节假日举行晚会，对于春节不回家的员工，公司提供免费年夜饭。 
+◆ 员工融入奖：从2013年9月1日起新入职会员享受“新员工融入奖”，对电池和组件生产部的操作工，在公司工作满3个月，公司将给予300元的新员工融入奖。 
+◆ 带薪休假：每一位员工享受带薪年休假。 
+◆ 文娱设施：公司提供免费的网吧、KTV、健身房、桌球室，按兴趣加入韩华足球、篮球、羽毛球、兵乓球俱乐部，定期举办各种比赛。 
+【温馨提示】 
+◆ 4大免费：免费工作餐，免费宽带，免费KTV和免费健身房。 
+ </td>
+</tr>
+</table><table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#BED1AB">
+<tr>
+	<td width="23%" height="24" align="center" bgcolor="#FBFEF5">
+		<b>企业简介</b> 内容：
+		<br />
+	  模板调用标记：
+	  <br />
+	  <script language='javascript'>document.write("{"+"dede:field.qiye /"+"}");</script>
+	</td>
+	<td width="77%" bgcolor="#FFFFFF"> <p>
+	<img height="330" src="/file/allimg/140120/13212611F-0.jpg" width="653" /></p>
+<p>
+	湖南格兰博智能科技有限责任公司成立于2012年，是一家专注于智能家电生产、加工、销售和服务的企业，专门为国内外的客户提供具有新奇特点、性价比高和适用未来家居生活的产品（如智能吸尘器、空气净化器、蒸馏水机等）。</p>
+ </td>
+</tr>
+</table>
+			</div><!-- /content -->
+			<div class="dede_pages">
+				<ul class="pagelist">
+                    
+				</ul>
+			</div><!-- /pages -->
+			<div class="newdigg" id="newdigg">
+				<div class="diggbox digg_good" onmousemove="this.style.backgroundPosition='left bottom';" onmouseout="this.style.backgroundPosition='left top';" onclick="javascript:postDigg('good',1)">
+					<div class="digg_act">顶一下</div>
+					<div class="digg_num">(0)</div>
+					<div class="digg_percent">
+						<div class="digg_percent_bar"><span style="width:0%"></span></div>
+						<div class="digg_percent_num">0%</div>
+					</div>
+				</div>
+				<div class="diggbox digg_bad" onmousemove="this.style.backgroundPosition='right bottom';" onmouseout="this.style.backgroundPosition='right top';" onclick="javascript:postDigg('bad',1)">
+					<div class="digg_act">踩一下</div>
+					<div class="digg_num">(0)</div>
+					<div class="digg_percent">
+						<div class="digg_percent_bar"><span style="width:0%"></span></div>
+						<div class="digg_percent_num">0%</div>
+					</div>
+				</div>
+			</div>
+			 <script language="javascript" type="text/javascript">getDigg(1);</script>
+			<div class="boxoff">
+				<strong>------分隔线----------------------------</strong>
+			</div>
+			<div class="handle">
+				<div id='diggCt' class='digg'>
+					<div class="digg_num" title="积分：0 好评：0 差评：0">0</div>
+					<div class="digg_act">
+						<a href="javascript:postDigg('good',1)">顶</a>
+						<a href="javascript:postDigg('bad',1)">踩</a>
+					</div>
+				</div><!-- /digg -->
+				<div class="context">
+					<ul>
+						<li>上一篇：没有了 </li>
+						<li>下一篇：没有了 </li>
+					</ul>
+				</div><!-- /context -->
+				<div class="actbox">
+					<ul>
+						<li id="act-fav"><a href="/plus/stow.php?aid=1" target="_blank">收藏</a></li>
+						<li id="act-err"><a href="/plus/erraddsave.php?aid=1&title=联胜（中国）科技有限公司" target="_blank">挑错</a></li>
+						<li id="act-pus"><a href="/plus/recommend.php?aid=1" target="_blank">推荐</a></li>
+						<li id="act-pnt"><a href="#" onClick="window.print();">打印</a></li>
+					</ul>
+				</div><!-- /actbox -->
+			</div><!-- /handle -->
+		</div><!-- /viewbox -->
+
+<!-- //AJAX评论区 -->
+<!-- //主模板必须要引入/include/dedeajax2.js -->
+<a name='postform'></a>
+<div class="mt1">
+  <dl class="tbox">
+    <dt> <strong>发表评论</strong> <span class="more"></span> </dt>
+    <dd>
+      <div class="dede_comment_post">
+        <form action="#" method="post" name="feedback" onsubmit="return false;">
+          <input type="hidden" name="dopost" value="send" />
+          <input type="hidden" name="comtype" value="comments">
+          <input type="hidden" name="aid" value="1" />
+          <input type="hidden" name="fid" id='feedbackfid' value="0" />
+          <div class="dcmp-title"> <small>请自觉遵守互联网相关的政策法规，严禁发布色情、暴力、反动的言论。</small> </div>
+          <!-- /dcmp-title -->
+          <div class="dcmp-stand"> <strong>评价:</strong>
+            <input type="radio" name="feedbacktype" checked="1" value="feedback" id="dcmp-stand-neu" />
+            <label for="dcmp-stand-neu"><img src="/templets/default/images/cmt-neu.gif" />中立</label>
+            <input type="radio" name="feedbacktype" value="good" id="dcmp-stand-good" />
+            <label for="dcmp-stand-good"><img src="/templets/default/images/cmt-good.gif" />好评</label>
+            <input type="radio" name="feedbacktype" value="bad" id="dcmp-stand-bad" />
+            <label for="dcmp-stand-bad"><img src="/templets/default/images/cmt-bad.gif" />差评</label>
+          </div>
+          <!-- /dcmp-stand -->
+          <div class="clr"></div>
+          <div class="dcmp-content">
+            <script type="text/javascript">
+					//<![CDATA[
+					window.CKEDITOR_BASEPATH='/include/ckeditor/';
+					//]]>
+                    </script>
+            <script type="text/javascript" src="/include/ckeditor/ckeditor.js?t=B8DJ5M3"></script>
+             </div>
+          <!-- /dcmp-content -->
+          <div class="dcmp-post">
+            <!--未登陆-->
+            <div class="dcmp-userinfo" id="_ajax_feedback"> 
+              
+              <input type="checkbox" name="notuser" id="dcmp-submit-guest" />
+              <label for="dcmp-submit-guest" />
+              匿名?
+              </label>
+            </div>
+            
+            <div class="dcmp-submit">
+              <button type="button" onClick='PostComment()'>发表评论</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </dd>
+  </dl>
+</div>
+<!-- //评论表单区结束 -->
+<!-- //评论内容区 -->
+<a name='commettop'></a>
+<div class="mt1">
+  <dl class="tbox">
+    <dt> <strong>最新评论</strong> <span class="more"><a href="/feedback.php?aid=">进入详细评论页&gt;&gt;</a></span> </dt>
+    <!-- //这两个ID的区块必须存在，否则JS会出错 -->
+    <dd id='commetcontentNew'></dd>
+    <dd id='commetcontent'></dd>
+  </dl>
+</div>
+<!--
+//由于评论载入时使用异步传输，因此必须在最后一步加载（DIGG和评论框须放在评论内容前面）
+//如果一定需要提前的把myajax.SendGet改为myajax.SendGet2，但可能会引起页面阻滞
+-->
+<script language='javascript'>
+function LoadCommets(page)
+{
+		var taget_obj = document.getElementById('commetcontent');
+		var waithtml = "<div style='line-height:50px'><img src='/images/loadinglit.gif' />评论加载中...</div>";
+		var myajax = new DedeAjax(taget_obj, true, true, '', 'x', waithtml);
+		myajax.SendGet2("/plus/feedback_ajax.php?dopost=getlist&aid=&page="+page);
+		DedeXHTTP = null;
+}
+function PostComment()
+{
+		var f = document.feedback;
+		var msg = CKEDITOR.instances.msg.getData();
+		var nface = '6';
+		var nfeedbacktype = 'feedback';
+		var nvalidate = '';
+		var nnotuser = '';
+		var nusername = '';
+		var npwd = '';
+		var taget_obj = $DE('commetcontentNew');
+		var waithtml = "<div style='line-height:30px'><img src='/images/loadinglit.gif' />正在发送中...</div>";
+		if(msg=='')
+		{
+			alert("评论内容不能为空！");
+			return;
+		}
+		if(f.validate)
+		{
+			if(f.validate.value=='') {
+				alert("请填写验证码！");
+				return;
+			}
+			else {
+				nvalidate = f.validate.value;
+			}
+		}
+		if(msg.length > 500)
+		{
+			alert("你的评论是不是太长了？请填写500字以内的评论。");
+			return;
+		}
+		if(f.feedbacktype) {
+			for(var i=0; i < f.feedbacktype.length; i++)
+				if(f.feedbacktype[i].checked) nfeedbacktype = f.feedbacktype[i].value;
+		}
+		/*
+		if(f.face) {
+			for(var j=0; j < f.face.length; j++)
+				if(f.face[j].checked) nface = f.face[j].value;
+		}
+		*/
+		if(f.notuser.checked) nnotuser = '1';
+		if(f.username) nusername = f.username.value;
+		if(f.pwd) npwd = f.pwd.value;
+		
+		var myajax = new DedeAjax(taget_obj, false, true, '', '', waithtml);
+		myajax.sendlang = 'utf-8';
+		myajax.AddKeyN('dopost', 'send');
+		myajax.AddKeyN('aid', '');
+		myajax.AddKeyN('fid', f.fid.value);
+		myajax.AddKeyN('face', nface);
+		myajax.AddKeyN('feedbacktype', nfeedbacktype);
+		myajax.AddKeyN('validate', nvalidate);
+		myajax.AddKeyN('notuser', nnotuser);
+		myajax.AddKeyN('username', nusername);
+		myajax.AddKeyN('pwd', npwd);
+		myajax.AddKeyN('msg', msg);
+		myajax.SendPost2('/plus/feedback_ajax.php');
+		//msg = '';
+		CKEDITOR.instances.msg.setData('');
+		//taget_obj.removeAttribute('id');
+		f.fid.value = 0;
+		if(f.validate)
+		{
+			if($DE('validateimg')) $DE('validateimg').src = "/include/vdimgck.php?"+f.validate.value;
+			f.validate.value = '';
+		}
+		
+}
+function quoteCommet(fid)
+{
+	    document.feedback.fid.value = fid;
+}
+  
+function ajaxFeedback(aid, fid, type)
+{
+	
+	var taget_obj = $DE('ajaxfeedback_'+fid);
+	if(taget_obj.innerHTML == '')
+	{
+		var myajax = new DedeAjax(taget_obj, true, true, '', 'x');
+		myajax.SendGet2("/plus/feedback.php?aid="+aid+"&fid="+fid+"&action=quote&type=ajax");
+		eval('var result = typeof CKEDITOR.instances.msg_'+fid);
+		if(result != 'undefined')
+		{
+			// 删除实例
+			eval('var edit = CKEDITOR.instances.msg_'+fid);
+			CKEDITOR.remove(edit);
+		}
+		CKEDITOR.replace(document.getElementById('msg_'+fid) , CKEDITOR.instances.msg.config);
+		scroll(0, taget_obj.offsetTop - 120);
+		var formname = 'f = document.ajaxfeedback_'+fid;
+		eval(formname);
+		if(f.validate)
+		{
+			if($DE('vdimg_'+fid)) $DE('vdimg_'+fid).src = "/include/vdimgck.php?"+f.validate.value;
+			f.validate.value = '';
+		}
+		
+		DedeXHTTP = null;
+	}
+}
+
+
+
+function ajaxQuotePost(fid)
+{
+	var formname = 'f = document.ajaxfeedback_'+fid;
+	eval(formname);
+	//var f = document.formname;
+	//var f = f[0];
+	var nvalidate = '';
+	var nnotuser = '';
+	var nusername = '';
+	var npwd = '';
+	var taget_obj = $DE('commetcontentNew');
+	var waithtml = "<div style='line-height:30px'><img src='/images/loadinglit.gif' />正在发送中...</div>";
+	eval('var msg = CKEDITOR.instances.msg_'+fid+'.getData()');
+
+	if(f.validate)
+	{
+		if(f.validate.value=='') {
+			alert("请填写验证码！");
+			return;
+		}
+		else {
+			nvalidate = f.validate.value;
+		}
+	}
+	var myajax = new DedeAjax(taget_obj, false, true, '', '', waithtml);
+	
+	if(f.notuser.checked) nnotuser = '1';
+	if(f.username) nusername = f.username.value;
+	if(f.pwd) npwd = f.pwd.value;
+	
+	myajax.sendlang = 'utf-8';
+	myajax.AddKeyN('dopost', 'send');
+	myajax.AddKeyN('aid', '');
+	myajax.AddKeyN('fid', f.fid.value);
+	myajax.AddKeyN('type', 'ajax');
+	myajax.AddKeyN('comtype', f.comtype.value);
+	myajax.AddKeyN('isconfirm','yes');
+	
+	myajax.AddKeyN('typeid', f.typeid.value);
+	myajax.AddKeyN('quotemsg', f.quotemsg.value);
+	myajax.AddKeyN('validate', nvalidate);
+	myajax.AddKeyN('notuser', nnotuser);
+	myajax.AddKeyN('username', nusername);
+	myajax.AddKeyN('pwd', npwd);
+	myajax.AddKeyN('msg', msg);
+	myajax.SendPost2('/plus/feedback_ajax.php');
+	//alert(f.quotemsg.value);
+	if($DE('ajaxfeedback_'+fid).innerHTML != null)
+	{
+		$DE('ajaxfeedback_'+fid).innerHTML = '';
+	}
+	scroll(0, taget_obj.offsetTop);
+}
+LoadCommets(1);
+</script>
+<!-- //评论内容区结束 -->
+
+		
+	</div><!-- /pleft -->
+
+	<div class="pright">
+        	<div class="infos_userinfo">
+ 			
+   	 	</div>
+
+		<div class="commend mt1">
+			<dl class="tbox">
+				<dt><strong>推荐内容</strong></dt>
+				<dd>
+					<ul class="d4">
+           
+					</ul>
+				</dd>
+			</dl>
+		</div><!-- /commend -->
+        <div id="contentRtPicAD" style="margin:10px auto"><script type="text/javascript" src="http://ad.dedecms.com/adsview/?action=single&key=contentrtpicad&charset=gbk"></script></div>
+		<div class="hot mt1">
+			<dl class="tbox">
+				<dt><strong>热点内容</strong></dt>
+				<dd>
+					<ul class="c1 ico2">
+                    <li><a href="/hefei/2014/0120/1.html">联胜（中国）科技有限公</a></li>
+
+					</ul>
+				</dd>
+			</dl>
+		</div>
+		<div id="contentRtPicAD2" style="margin:10px auto"><script type="text/javascript" src="http://ad.dedecms.com/adsview/?action=single&key=contentrtpicad2&charset=gbk"></script></div>
+	</div><!-- /pright -->
+	
+</div>
+<div id="innerfooterAD2" style="margin:10px auto; width:726px"><script type="text/javascript" src="http://ad.dedecms.com/adsview/?action=single&key=innerfooterad2&charset=gbk"></script></div>
+
+<!-- //底部模板 -->
+<div class="footer w960 center mt1 clear">
+	<!-- 
+		为了支持织梦团队的发展,请您保留织梦内容管理系统的链接信息.
+		我们对支持织梦团队发展的朋友表示真心的感谢!织梦因您更精彩!
+	-->
+    <div class="footer_left"></div>
+    <div class="footer_body">
+	<p class="powered">    
+		Powered by <a href="http://www.dedecms.com" title="织梦内容管理系统(DedeCms)--国内最专业的PHP网站管理系统，轻松建站的首选利器。" target="_blank"><strong>DedeCMS_V57_UTF8_SP1</strong></a> &copy; 2004-2011 <a href="http://www.desdev.cn/" target="_blank">DesDev</a> Inc.<br /><div class="copyright">Copyright &copy; 2013-2014 1jobs.com. 要工作网 版权所有 <a href=http://www.dedecms.com target='_blank'>Power by DedeCms</a>&nbsp;&nbsp;</div></p>        
+<!-- /powered -->
+   </div>
+   <div class="footer_right"></div>
+</div>
+<!-- /footer -->
+
+</body>
+</html>
