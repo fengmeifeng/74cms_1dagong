@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<title>{#$title#}</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<meta name="author" content="骑士CMS" />
+<meta name="copyright" content="74cms.com" />
+<link href="/files/css/user_common.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/user_hunter.css" rel="stylesheet" type="text/css" />
+<script src="/files/js/jquery.js" type="text/javascript" language="javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	//---删除
+	$("#delete").click(function(){
+		if (confirm('你确定要删除吗？'))
+		{
+		$("#form1").attr("action","?act=del_jobs");
+		$("#form1").submit();
+		return true; 
+		}else{return false; }
+	});
+	//审核
+	$("#shenhe_jobs").click(function(){
+			if (confirm('你确定要审核吗？'))
+		{
+		$("#form1").attr("action","?act=shenhe_jobs");
+		$("#form1").submit();
+		return true; 
+		}else{return false; }
+	});
+	//刷新
+	$("#refreshtime_jobs").click(function(){
+			if (confirm('你确定要刷新吗？'))
+		{
+		$("#form1").attr("action","?act=refreshtime_jobs");
+		$("#form1").submit();
+		return true; 
+		}else{return false; }
+	});
+});
+</script>
+</head>
+<body>
+{#include file="user/header.htm"#}
+<div class="page_location link_bk">当前位置：<a href="{#$QISHI.main_domain#}">首页</a> > <a href="{#$userindexurl#}">会员中心</a> >职位审核</div>
+
+<div class="usermain">
+  <div class="leftmenu  hunter link_bk">
+  	 {#include file="member_shenhe/left.htm"#}	
+  </div>
+  <div class="rightmain">
+ 	<div class="bbox1 link_bk my_account intrgration">
+		<div class="title_h1" style="padding-left:15px;">职位列表</div>
+        <div style="margin:10px 0px 0px 20px;"><a href="?act=sheneh_company_jobs">已审核职位</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="?act=sheneh_company_jobs_tmp&audit=3">未审核职位</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="?act=sheneh_company_jobs_tmp&audit=1">过期职位</a></div>
+		<div class="data resume">
+			{#if $list#}
+			<form id="form1" name="form1" method="post" action="?act=sheneh_company_jobs">
+		  	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableall">
+		  		<tbody>
+		  			<tr bgcolor="#F5F5F5" align="left">
+		  				<th width="205" class="left"><input type="checkbox" name="chkAll"  id="chk" title="全选/反选" />
+		  				职位名称</th>
+		  				<th width="240">发布公司</th>
+		  				<th width="142">添加时间</th>
+		  				<!--<th width="91" align="center">刷新时间</th>-->
+                        <th width="91" align="center">过期时间</th>
+		  				<th width="91" align="center">点击次数</th>
+		  				<th width="200" align="center">操作</th>
+		  			</tr>
+		  			{#foreach from=$list item=list#}
+		  			{#if $list.sex_cn#}
+		  			<tr class="data_content">
+		  				<td width="20%" class="left">
+		  					<input name="y_id[]" type="checkbox" id="y_id"   value="{#$list.id#}"/>&nbsp;
+                            <a href="{#$list.jobs_url#}" target="_blank"{#if $list.deadline<$smarty.now || $list.display == "2"#}style="color:#999999"{#/if#}  >{#$list.jobs_name#}</a>		 
+		 {#if $list.emergency == "1"#}&nbsp;<span style="color: #FF6600">[急聘]</span>{#/if#}
+		{#if $list.recommend == "1"#}&nbsp;<span style="color: #339900">[推荐]</span>{#/if#}
+		{#if $list.stick == "1"#}&nbsp;<span style="color: #FF3399">[置顶]</span>{#/if#}
+		{#if $list.highlight != ""#}&nbsp;<span style="color: #6633CC">[变色]</span>{#/if#}
+		{#if $list.display == "2"#}&nbsp;<span style="color: #999999">[已暂停]</span>{#/if#}
+		  				</td>
+		  				<td width="20%">{#$list.companyname#}</td>
+		  				<td width="10%">{#$list.addtime|date_format:"%Y-%m-%d"#}</td>
+		  				<!--<td width="10%">{#$list.refreshtime|date_format:"%m-%d %H:%M"#}</td>-->
+                        <td width="10%">{#if $list.deadline>$smarty.now#}
+		{#$list.deadline|date_format:"%Y-%m-%d"#}
+		{#else#}
+			<span style="color:#FF6600">已经过期</span>
+		{#/if#}</td>
+		  				<td width="8%" align="center">{#$list.click#}</td>
+		  				<td width="18%" align="center"><a href="?act=edit_jobs&y_id={#$list.id#}&uid={#$list.uid#}">修改</a>|<a href="javascript:if(confirm('确实要刷新吗?'))location='?act=refreshtime_jobs&y_id={#$list.id#}'">刷新</a>|<a href="javascript:if(confirm('确实要删除吗?'))location='?act=del_jobs&y_id={#$list.id#}'">删除</a>|{#if $list.audit == "1"#}<a href="javascript:if(confirm('确实要审核吗?'))location='?act=shenhe_jobs&y_id={#$list.id#}&audit={#$list.audit#}&uid={#$list.uid#}&deadline={#$list.deadline#}'" style="color:#090;">已审核</a>{#elseif $list.audit == "2"#}<a href="javascript:if(confirm('确实要审核吗?'))location='?act=shenhe_jobs&y_id={#$list.id#}&audit={#$list.audit#}&uid={#$list.uid#}&deadline={#$list.deadline#}'" style=" color:#F00;">等待审核</a>{#elseif $list.audit == "3"#}<a href="javascript:if(confirm('确实要审核吗?'))location='?act=shenhe_jobs&y_id={#$list.id#}&audit={#$list.audit#}&uid={#$list.uid#}&deadline={#$list.deadline#}'" style="color:#F00;">未审核</a>{#/if#}</td>
+		  			</tr>
+		  			{#else#}
+		  			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableall">
+		  			<tr class="data_content">
+		  				<td>
+		  					<input name="y_id[]" type="checkbox" id="y_id"   value="{#$list.id#}"/><strong style="color:#333333">{#$list.resume_name#}</strong>的简历可能已从网站中移除，您可以删除本条记录
+		  				</td>
+		  			</tr>
+		  			</table>
+		  			{#/if#}
+		  			{#/foreach#}
+		  		</tbody>
+		  	</table>
+		  	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableall">
+		  		<tbody>
+		  			<tr>
+		  				<td width="84"><input type="submit" name="shift" id="delete" value="删除职位" class="but95_35lan"/></td>
+                        <td width="84"><input type="submit" name="shift" id="shenhe_jobs" value="审核职位" class="but95_35lan"/></td>
+                        <td width=""><input type="submit" name="shift" id="refreshtime_jobs" value="刷新职位" class="but95_35lan"/></td>
+		  			</tr>
+		  		</tbody>
+		  	</table>
+		  </form>
+  			{#if $page#}
+			<table border="0" align="center" cellpadding="0" cellspacing="0" class="link_bk">
+	          <tr>
+	            <td height="50" align="center"> <div class="page link_bk">{#$page#}</div></td>
+	          </tr>
+	      </table>
+	      {#/if#}
+		  	{#else#}
+		  	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableall">
+		  		<tbody>
+		  			<tr bgcolor="#F5F5F5" align="left">
+		  				<th width="175" class="left">职位名称</th>
+		  				<th width="138">发布公司</th>
+		  				<th width="128">添加时间</th>
+		  				<th width="123">过期时间</th>
+                        <th width="123">过期时间</th>
+		  				<th width="101">点击次数</th>
+		  				<th width="106">操作</th>
+		  			</tr>
+		  		</tbody>
+		  	</table>
+		  	<div class="emptytip">没有找到对应的信息！</div>
+		  	{#/if#}
+		  </div>
+  	</div>
+  </div>
+  <div class="clear"></div>
+</div>
+{#include file="user/footer.htm"#}
+</body>
+</html>

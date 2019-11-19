@@ -1,0 +1,1 @@
+<a rel="nofollow" href="[field:arcurl/]" target=_blank><img src="[field:litpic/]" width="980" height="60" alt="北京亿展资产管理有限公司安徽分公司" /></a>

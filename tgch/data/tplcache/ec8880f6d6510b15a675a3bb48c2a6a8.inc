@@ -1,0 +1,1 @@
+{dede:arclist typeid=&#39;0&#39; row=&#39;&#39; col=&#39;&#39; titlelen=&#39;&#39; infolen=&#39;&#39; imgwidth=&#39;&#39; imgheight=&#39;&#39; listtype=&#39;&#39; orderby=&#39;&#39; keyword=&#39;&#39; limit=&#39;0,1&#39;} <a href="[field:arcurl/]">[field:title/]</a> {/dede:arclist}

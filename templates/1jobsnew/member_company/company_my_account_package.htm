@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<title>{#$title#}</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<meta name="author" content="骑士CMS" />
+<meta name="copyright" content="74cms.com" />
+<link href="/files/css/user_common.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/user_company.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/user.css" rel="stylesheet" type="text/css" />
+<script src="/files/js/jquery.js" type="text/javascript" language="javascript"></script>
+<script src="/files/js/jquery.vtip-min.js" type='text/javascript' language="javascript"></script>
+</head>
+<body>
+{#include file="user/header.htm"#}
+<div class="page_location link_bk">当前位置：<a href="/">首页</a> > <a href="{#$userindexurl#}">会员中心</a> > 会员服务</div>
+
+<div class="usermain">
+  <div class="leftmenu  com link_bk">
+  	 {#include file="member_company/left.htm"#}
+  </div>
+  <div class="rightmain">
+  
+	<div class="bbox1 my_account link_bk">
+  		<div class="title_h1 intrgration">我的账户</div>
+  		<div class="balance">
+  			<div class="bal_text">您的套餐：<span> {#$setmeal.setmeal_name#} </span>，{#if $setmeal_endtime#}{#if $setmeal_endtime=="无限期"#}无限期{#else#}还有<span> {#$setmeal_endtime#} </span>到期{#/if#}{#else#}已经到期{#/if#}<span class="small"> (开通时间{#$setmeal.starttime|date_format:"%Y-%m-%d"#}，结束时间{#$setmeal.endtime|date_format:"%Y-%m-%d"#})</span></div>
+  			<div class="but100_30lan bal_but" onclick="javascript:location.href='company_service.php?act=setmeal_list'">升级套餐</div>
+  		</div>
+  		<div class="account_title" ><span>套餐余量</span><div class="clear"></div></div>
+  		<div class="account_list">
+			<div class="alist_tit">
+				<div class="lavet1">套餐内容</div>
+				<div class="lavet2">剩余/总量</div>
+				<div class="lavet3">套餐内容</div>
+				<div class="lavet4">剩余/总量</div>
+			</div>
+			<div class="alist_txt">
+				<div class="lavec1">发布招聘职位</div>
+				<div class="lavec2">{#$setmeal.jobs_ordinary#}/{#$setmeal_rule.jobs_ordinary#}</div>
+				<div class="lavec1 smo">下载普通人才简历</div>
+				<div class="lavec2 smo">{#$setmeal.download_resume_ordinary#}/{#$setmeal_rule.download_resume_ordinary#}</div>
+			</div>
+			<div class="alist_txt">
+				<div class="lavec1">下载高级人才简历</div>
+				<div class="lavec2">{#$setmeal.download_resume_senior#}/{#$setmeal_rule.download_resume_senior#}</div>
+				<div class="lavec1 smo">邀请普通人才面试数</div>
+				<div class="lavec2 smo">{#$setmeal.interview_ordinary#}/{#$setmeal_rule.interview_ordinary#}</div>
+			</div> 
+			<div class="alist_txt">
+				<div class="lavec1">邀请高级人才面试数</div>
+				<div class="lavec2">{#$setmeal.interview_senior#}/{#$setmeal_rule.interview_senior#}</div>
+				<div class="lavec1 smo">人才库容量</div>
+				<div class="lavec2 smo">{#$setmeal.talent_pool#}/{#$setmeal_rule.talent_pool#}</div>
+			</div>
+			<div class="alist_txt">
+				<div class="lavec1">职位推广-推荐</div>
+				<div class="lavec2">{#$setmeal.recommend_num#}/{#$setmeal_rule.recommend_num#}</div>
+				<div class="lavec1 smo">职位推广-置顶</div>
+				<div class="lavec2 smo">{#$setmeal.stick_num#}/{#$setmeal_rule.stick_num#}</div>
+			</div>
+			<div class="alist_txt">
+				<div class="lavec1">职位推广-紧急</div>
+				<div class="lavec2">{#$setmeal.emergency_num#}/{#$setmeal_rule.emergency_num#}</div>
+				<div class="lavec1 smo">职位推广-变色</div>
+				<div class="lavec2 smo">{#$setmeal.highlight_num#}/{#$setmeal_rule.highlight_num#}</div>
+			</div>
+			<div class="alist_txt">
+				<div class="lavec1">参加招聘会场次</div>
+				<div class="lavec2">{#$setmeal.jobsfair_num#}/{#$setmeal_rule.jobsfair_num#}</div>
+				<div class="lavec1 smo"></div>
+				<div class="lavec2 smo"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="account_title" ><span>消费明细</span><div class="clear"></div></div>
+		<div class="account_list">
+			<div class="alist_tit">
+				<div class="alistt1 sal">操作类型</div>
+				<div class="alistt2 pal">套餐余量</div>
+				<div class="alistt3 sal">操作时间</div>
+				<div class="alistt4 pal">详情</div>
+			</div>
+			{#if $report#}
+			{#foreach from=$report item=list#}
+			<div class="alist_txt">
+				<div class="alistc1 sal">{#$list.log_op_type_cn#}</div>
+				<div class="alistc2 pal">{#$list.log_op_leave#}</div>
+				<div class="alistc3 sal">{#$list.log_addtime|date_format:"%Y-%m-%d %H:%M"#}</div>
+				<div class="alistc4 pal"><a href="javascript:void(0);" class="reason vtip" title="{#$list.log_value#}" id="{#$li.id#}"></a></div>
+			</div>
+			{#/foreach#}
+			{#if $page#}
+				<table border="0" align="center" cellpadding="0" cellspacing="0" class="link_bk">
+		          <tr>
+		            <td height="50" align="center"> <div class="page link_bk">{#$page#}</div></td>
+		          </tr>
+		      </table>
+		      {#/if#}
+			{#else#}
+			<div class="emptytip">没有找到对应的信息！</div>
+			{#/if#}
+			<div class="clear"></div>
+		</div>
+	</div>
+			
+  </div>
+  </div>
+  <div class="clear"></div>
+</div>
+{#include file="user/footer.htm"#}
+</body>
+</html>

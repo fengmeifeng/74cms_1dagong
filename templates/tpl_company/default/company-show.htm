@@ -1,0 +1,173 @@
+{#qishi_company_show set="列表名:company,企业ID:GET[id],企业介绍长度:150"#}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<title>{#$company.companyname#} - {#$QISHI.site_name#}</title>
+<meta name="description" content="{#$company.description#}},公司简介">
+<meta name="keywords" content="{#$company.companyname#},公司简介">
+<meta name="author" content="骑士CMS" />
+<meta name="copyright" content="74cms.com" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link href="/files/css/jobs.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/files/tpl_company/css/css.css" rel="stylesheet" type="text/css" />
+<link href="../files/css/all.css" rel="stylesheet" type="text/css" />
+<link href="../files/css/font-awesome.min.css" rel="stylesheet" >
+<script src="/files/js/jquery.js" type="text/javascript" language="javascript"></script>
+<script src="/files/js/jquery.dialog.js" type="text/javascript" language="javascript"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=np21m1qLWsuF4gGwzSwYMpC4"></script>
+<SCRIPT TYPE="text/javascript">
+$(document).ready(function(){
+	$(".check_full_map").click(function(){
+		var map_x = $(this).attr("map_x");
+		var map_y = $(this).attr("map_y"); 
+		var map_zoom = $(this).attr("map_zoom"); 
+		var companyname = $(this).attr("companyname"); 
+		var address = $(this).attr("address"); 
+		dialog("完整地图","url:/plus/ajax_com_map.php?act=company_map&map_x="+map_x+"&map_y="+map_y+"&map_zoom="+map_zoom+"&companyname="+companyname+"&address="+address,"660px","auto","","");
+	});
+	var company_id="{#$company.id#}";
+	var tsTimeStamp= new Date().getTime();
+	$.get("/plus/ajax_contact.php", { "id": company_id,"time":tsTimeStamp,"act":"company_contact"},
+		function (data,textStatus)
+		 {			
+			$("#company_contact").html(data);
+		 }
+	);
+});
+</SCRIPT>
+</head>
+<body>
+{#include file="header.htm"#}
+<!--<img title="企业未认证" src="/files/images/noyan.jpg" border="0" />
+-->	<!-- 当前位置 -->
+	<div class="page_location link_bk">
+		当前位置：<a href="/">首页</a>><a href="{#"QS_jobs"|qishi_url#}">招聘信息</a>>{#$company.companyname#}
+	</div>
+    
+    <div class="kunag gongsi">
+		<div class="fl qylogo">
+        	<img src="{#$company.logo#}" width="236px" height="140px" />
+        </div>
+        
+        <div class="fl mingchen">
+        	<h1 class="fl">{#$company.companyname#}</h1>{#if $company.audit=="1"#}
+  <img class="fl" title="企业已认证" src="/files/images/yesyan.jpg" border="0" />
+			{#else#}
+	<img class="fl" title="企业未认证" src="/files/images/noyan.jpg" border="0" />
+	{#/if#}<!--<img class="fl" title="企业已认证" src="/files/images/yesyan.jpg" border="0" />-->
+            <div class="over"></div>
+            <p> <span>规模：<a href="{#"QS_jobslist,scale:"|cat:$company.scale|qishi_url#}" target="_blank">{#$company.scale_cn#}</a></span> <span>性质：{#$company.nature_cn#}</span> <span>所在地：<!-- 6015 --><a href="{#"QS_jobslist,district:"|cat:$company.district|cat:"-sdistrict:"|cat:$company.sdistrict|qishi_url#}" target="_blank">{#$company.district_cn#}</a></span> </p>
+
+        </div>
+	{#qishi_jobs_list set="列表名:jobs,填补字符:...,职位名长度:14,显示数目:1,会员UID:"|cat:$company.uid#}
+                  {#foreach from=$jobs item=list#}   
+        <div class="tabb fl">
+		{#foreach from=$list.tag item=tagli#}
+            <a href="{#"QS_jobtag,jobtag:"|cat:$tagli.0|qishi_url#}">{#$tagli.1#}</a>{#foreachelse#} 无
+			{#/foreach#}
+        </div>
+{#/foreach#}	
+    </div>
+    
+	<!-- 主体内容 -->
+
+    <div class="kunag">
+    	<div class="left_list"> 
+            <div class="d_led">
+                  <div class="topg" style="margin-top:0px;"><i class="fa fa-backward"></i><h4>招聘职位</h4></div>
+                  <!--begin-->
+                  {#qishi_jobs_list set="列表名:jobs,填补字符:...,职位名长度:14,显示数目:10,会员UID:"|cat:$company.uid#}
+                  {#foreach from=$jobs item=list#}
+                  <a href="{#$list.jobs_url#}" class="aish" style="padding:10px 0px;">
+                  	<dl>
+                    	<dt class="dtgd">{#$list.jobs_name#}{#if $list.emergency=="1"#} <img src="/files/images/61.gif" border="0" align="absmiddle" />{#/if#}
+							{#if $list.recommend=="1"#} <img src="/files/images/62.gif" border="0" align="absmiddle" />{#/if#}	</dt>
+                        <dd><strong>{#$list.wage_cn#}</strong><!--元/月--></dd>
+                        <dd>{#$list.refreshtime|date_format:"%Y-%m-%d"#}</dd>
+                    </dl>
+                  </a>
+				  
+                  {#/foreach#}
+                  
+					 
+			  </div>
+              
+              <div class="d_led" style="margin-top:20px;">
+                  <div class="topg"><i class="fa fa-backward"></i><h4>企业简介</h4></div>
+                 <p>{#$company.contents|nl2br#}</p>
+			  </div>
+
+            </div>   
+
+        
+        <div class="right_list">
+        
+            <div class="lndk">
+                      <h4>企业名片</h4>
+                    <ul>
+                        <li><span>地点：</span><span><a href="{#"QS_jobslist,district:"|cat:$company.district|cat:"-sdistrict:"|cat:$company.sdistrict|qishi_url#}" target="_blank">{#$company.district_cn#}</a></span></li>
+                        <li><span>性质：</span><span>{#$company.nature_cn#}</span></li>
+                        <li><span>领域：</span><span><a href="{#"QS_jobslist,trade:"|cat:$company.trade|qishi_url#}" target="_blank">{#$company.trade_cn#}</a></span></li>
+                        <li><span>规模：</span><span><a href="{#"QS_jobslist,scale:"|cat:$company.scale|qishi_url#}" target="_blank">{#$company.scale_cn#}</a></span></li>
+                    </ul>
+                    
+                    <div class="carousel slide" >  
+                    </div>
+                    
+                      <h4>公司地址</h4>
+                      <P><a href="{#"QS_jobslist,district:"|cat:$company.district|cat:"-sdistrict:"|cat:$company.sdistrict|qishi_url#}" target="_blank">{#$company.district_cn#}</a>{#if $company.street_cn#}&nbsp;&nbsp;<a href="{#"QS_street,streetid:"|cat:$company.street|qishi_url#}" target="_blank">{#$show.street_cn#}</a>{#/if#}{#if $company.officebuilding_cn#}&nbsp;&nbsp;<a href="{#"QS_officebuilding,officebuildingid:"|cat:$company.officebuilding|qishi_url#}" target="_blank">{#$company.officebuilding_cn#}</a>{#/if#}</P> 
+                     <!-- <img src="../files/img/map.jpg" />-->
+                     <!--地图开始-->
+                     {#if $company.map_open=="1" && $company.map_x && $company.map_y#}
+			   <script src="http://api.map.baidu.com/api?v=1.2" type="text/javascript"></script>
+			  <div style="width:100%;height:200px ; border:1px #CCCCCC solid; margin:0 auto; margin-top:6px;" id="map"></div>
+				<script type="text/javascript">
+				var map = new BMap.Map("map");   
+				var point = new BMap.Point({#$company.map_x#}, {#$company.map_y#});   
+				map.centerAndZoom(point, {#$company.map_zoom#});
+				var opts = {type: BMAP_NAVIGATION_CONTROL_SMALL,anchor: BMAP_ANCHOR_TOP_RIGHT}
+				map.addControl(new BMap.NavigationControl(opts)); //添加鱼骨
+				//map.enableScrollWheelZoom();//启用滚轮放大缩小，默认禁用。
+				// 创建标注
+				var qs_marker = new BMap.Marker(point);           
+				map.addOverlay(qs_marker); 
+				// 创建标注 
+				// 打开信息窗口 
+				var opts = {   
+				  width : 150,     // 信息窗口宽度   
+				  height: 50,     // 信息窗口高度   
+				  title : "{#$company.companyname#}"  // 信息窗口标题   
+				}   
+				var infoWindow = new BMap.InfoWindow("{#$company.address#}", opts);  // 创建信息窗口对象   
+				map.openInfoWindow(infoWindow, point);
+				// 打开信息窗口  			
+				</script>	
+				{#else#} 
+				该公司没有标注具体位置。 
+			  {#/if#}
+              <!--地图结合苏-->
+			  <h4>公司联系方式</h4>
+					  {#if $company.telephone_show=="1"#}
+					  <p style="color:#8F03C7;">&nbsp;&nbsp;{#$company.telephone#}</p>
+					  {#else#}
+					  <p style="color:#8F03C7;">&nbsp;&nbsp;公司未公布联系方式</p>
+					  {#/if#}
+                </div>
+        </div>
+    
+    </div>
+
+
+	<!-- 主体内容 结束 -->
+<script src="/files/js/swipe.js"></script>
+<script>
+	window.mySwipe = Swipe(document.getElementById('slider'), {
+		auto:3000,
+		speed:400,
+		continuous: true
+	});
+</script>
+{#include file="footer.htm"#}
+</body>
+</html>

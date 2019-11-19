@@ -1,0 +1,47 @@
+/* taglist */
+.pleft { float:left; width:640px;}
+.pleft .place { width:638px;background-color:#fff; border:1px solid #dadada; height:30px; line-height:30px; text-indent:1em; margin-bottom:10px;}
+.pleft .place strong { font-weight:100;} 
+.pleft .listbox {background-color:#fff; border:1px solid #dadada;}
+.pleft .listbox dl { clear:both;}
+.pleft .listbox dl dt { height:50px; line-height:50px; font-size:18px; border-bottom:1px solid #dadada; text-indent:0.5em;}
+.pleft .listbox dl dd { clear:both; width:97%;overflow:hidden; margin:0 auto; padding:15px 0px; border-bottom:1px dotted #dadada;}
+.pleft .listbox dl dd .pic { float:left; height:85px; width:90px;} 
+.pleft .listbox .tt { height:35px;}
+.pleft .listbox dl dd h3 { float:left; padding-right:20px;}
+.pleft .listbox dl dd h3 a { font-size:16px; font-weight:100; color:#007B99;}
+.pleft .listbox dl dd h3 b { font-weight:100; color:#007B99; font-size:16px;}
+.pleft .listbox .info { color:#D98001; line-height:20px;}
+
+.tag_pages { height:40px; padding-top:10px; width:80%; margin:0 auto;}
+.pageinfo { float:left; font-size:12px; padding-right:10px; line-height:25px;}
+.tag_pages li { float:left;background-color:#fff; margin:0px 3px;}
+.tag_pages li a { display:block; border:1px solid #dadada; padding:3px 10px;}
+.tag_pages li a:hover { background-color:#666;color:#fff;}
+.tag_pages a {font-size:12px;}
+.tag_pages .thisclass a { border:none;}
+.tag_pages .thisclass a:hover  { background-color:#FFFFFF; color:#666;}
+.pright { float:right; width:300px; overflow:hidden;}
+
+/* tag */
+.sp-title h2 { font-size:14px; text-indent:1em;background-color:#fff; height:30px; line-height:30px; border:1px solid #dadada; margin-bottom:10px; }
+.tags_list dl { background-color:#fff; border:1px solid #dadada; width:958px; overflow:hidden; margin-bottom:20px;}
+.tags_list dt { height:30px; line-height:30px; text-indent:1em; border-bottom:1px solid #dadada;}
+.tags_list dt strong { font-size:14px; font-weight:100;}
+.tags_list dd { padding:10px;}
+.tags_list dd a { padding-right:10px; line-height:30px;}
+.tags_list dd .tagc3 { font-size:16px; color:#0192B5; }
+.tags_list dd .tagc4 { font-size:18px; color:#FF0000; }
+.tags_list dd .tagc5 { font-size:16px; color:#00981D; }
+.tags_list dd .tagc6 { font-size:16px; color:#000; }
+
+
+/* map */
+.maps {background-color:#fff; border:1px solid #dadada; margin-bottom:20px; overflow:hidden; }
+.linkbox { width:100%; overflow:hidden;}
+.linkbox h3 { height:30px; line-height:30px; text-indent:1em;border-bottom:1px solid #dadada; }
+.linkbox h3 a {font-size:14px; font-weight:100;}
+.linkbox ul { clear:both; width:100%; overflow:hidden; border-bottom:1px solid #dadada;background-color:#fafafa;}
+.linkbox ul li { float:left; display:block; line-height:30px; height:30px; padding-right:30px; text-indent:1em;}
+
+

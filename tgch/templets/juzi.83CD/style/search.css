@@ -1,0 +1,18 @@
+/* search */
+	/* search_box */
+.s { width:960px; margin:0 auto; overflow:hidden;background-color:#fff; border:1px solid #dadada; padding:10px 0px;}
+.resultbar {width:960px; margin:0 auto; overflow:hidden; text-indent:1em; }
+.result_content { margin-bottom:10px;}
+.sidebar { margin-bottom:10px;}
+.sidebar h2 { line-height:50px; text-indent:0.7em; font-size:18px; font-weight:100; color:#0192B5;}
+.resultlist ul { width:95%; margin:0 auto;}
+.resultlist ul li { padding:20px 0px; border-bottom:1px solid #dadada;}
+.resultlist h3 { line-height:40px; height:40px;}
+.resultlist h3 a { color:#333; font-size:18px; font-weight:100;}
+.resultlist h3 font {font-size:18px; color:#D17B00;}
+.resultlist span { line-height:30px;}
+.resultlist span small { font-family:"新宋体"}
+.resultlist span small a { font-family:"新宋体"}
+.sear_pages { height:40px; line-height:40px; }
+.sear_pages a {font-size:14px;}
+.sear_pages td { padding:10px 3px;font-size:14px;}

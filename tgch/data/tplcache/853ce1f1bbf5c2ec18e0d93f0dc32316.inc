@@ -1,0 +1,1 @@
+<li><a href="/company/company-show.php?id=777" target=_blank><img src="/files/index/a2_2.jpg" width="485" height="60" alt="合肥市包河区荣升楼饭店" /></a></li>

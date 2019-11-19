@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{#if $smarty.get.key#}{#$smarty.get.key#} - {#/if#}{#if $smarty.get.category#}{#"QS_hunter_jobs,"|cat:$smarty.get.category|qishi_categoryname#} - {#/if#}{#if $smarty.get.subclass#}{#"QS_hunter_jobs,"|cat:$smarty.get.subclass|qishi_categoryname#} - {#/if#}{#if $smarty.get.district#}{#"QS_district,"|cat:$smarty.get.district|qishi_categoryname#} - {#/if#}{#if $smarty.get.sdistrict#}{#"QS_district,"|cat:$smarty.get.sdistrict|qishi_categoryname#} - {#/if#}{#if $smarty.get.trade#}{#"QS_trade,"|cat:$smarty.get.trade|qishi_categoryname#} - {#/if#}{#if $smarty.get.settr#}{#$smarty.get.settr#}天内 - {#/if#}高级职位列表  - {#$QISHI.site_name#}</title>
+<meta name="description" content="{#$QISHI.site_name#}招聘岗位">
+<meta name="keywords" content="{#$QISHI.site_name#},高级职位信息">
+<meta name="author" content="骑士CMS" />
+<meta name="copyright" content="74cms.com" />
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link href="/files/css/jobs.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/common.css" rel="stylesheet" type="text/css" />
+
+<link href="../files/css/all.css" rel="stylesheet" type="text/css" />
+<link href="../files/css/font-awesome.min.css" rel="stylesheet" >
+
+<link href="/files/css/company.css" rel="stylesheet" type="text/css" />
+<script src="/files/js/jquery.js" type="text/javascript" language="javascript"></script>
+</head>
+<body>
+<!--头部开始-->
+	{#include file="header.htm"#}
+	<!--头部结束-->
+<!-- 当前位置 -->
+<!--<div class="page_location link_bk">
+	当前位置：<a href="/">首页</a>>黄页
+</div>
+-->	<!-- 主体内容 -->
+    
+    
+    
+<div class="kuang over">
+	<div class="left_list"> 
+    	
+        <div class="com_sousuo">
+            <dl class="reset">
+                    <dt>行业领域：</dt>
+                    <dd id="hangye">
+                     <a class="ye" href="#" id="41">不限</a>   
+                     <a href="#" id="45">技工</a>
+                     <a href="#" id="53">销售/市场</a>
+                     <a href="#" id="50">物流/仓储</a>
+                     <a href="#" id="46">服务员</a>
+                     <a href="#" id="49">家政服务</a>
+                     <a href="#" id="52">建筑/装修</a>
+                     <a href="#" id="151">行政</a>
+                     <a href="#" id="160">IT行业</a>
+                     <a href="#" id="47">店员/营业员</a>
+                     <a href="#" id="51">汽车/摩托车修理</a>
+                     <a href="#" id="48">司机</a>
+                     <a href="#" id="44">普工</a>
+                     <a href="#" id="138">其他</a>
+                    </dd>
+                </dl>
+                
+                <dl class="reset">
+                    <dt>更新时间：</dt>
+                    <dd id="shijian">
+                    <a class="ye" title="" href="#" id="-1">不限</a>
+                    <a href="#" id="1">1天内</a>
+                    <a href="#" id="3">3天内</a>
+                    <a href="#" id="5">5天内</a>
+                    <a href="#" id="7">7天内</a>
+                    <a href="#" id="15">15天内</a>
+                    </dd>
+                </dl>
+	
+        </div>
+                  
+        <div class="in-list">
+        
+			{#qishi_company_list  set="分页显示:1,列表名:company,显示数目:GET[inforow],填补字符:...,企业名长度:30,描述长度:50,行业:GET[trade],行业名企:1,排序:id>desc"#}
+			{#foreach from=$company item=list#}
+         	<div class="in-list-con awidth" title="上海达丰电脑">
+            	<h3><a href="{#$li.companyname#}">{#$li.companyname#}</a></h3>
+                <P>月 工 资：<span>{#$li.wage_cn#}</span></P>
+                <P>接 待 站：松江火车站</P>
+                <P class="infdk">待遇丰厚</P>
+                <a href="#"><img src="../files/img/img01.jpg" width="236px" height="110px" /></a>
+                <div class="over wdids">
+                	<p class="fl"><strong>520人</strong>报名</p>
+                    <a href="#">去看看</a>
+                </div>
+<!--                <div class="hot"></div>--> 
+           </div>
+           {#/foreach#}
+           <div class="in-list-con awidth" title="上海达丰电脑">
+            	<h3><a href="#">广达上海制造城上海城上海城上海城上海达丰电脑</a></h3>
+                <P>月 工 资：<span>3000-3500元</span></P>
+                <P>接 待 站：松江火车站</P>
+                <P class="infdk">待遇丰厚</P>
+                <a href="#"><img src="../files/img/img01.jpg" width="236px" height="110px" /></a>
+                <div class="over wdids">
+                	<p class="fl"><strong>520人</strong>报名</p>
+                    <a href="#">去看看</a>
+                </div>
+<!--                <div class="hot"></div>--> 
+           </div>
+           <div class="in-list-con awidth none" title="上海达丰电脑">
+            	<h3><a href="#">广达上海制造城上海城上海城上海城上海达丰电脑</a></h3>
+                <P>月 工 资：<span>3000-3500元</span></P>
+                <P>接 待 站：松江火车站</P>
+                <P class="infdk">待遇丰厚</P>
+                <a href="#"><img src="../files/img/img01.jpg" width="236px" height="110px" /></a>
+                <div class="over wdids">
+                	<p class="fl"><strong>520人</strong>报名</p>
+                    <a href="#">去看看</a>
+                </div>
+<!--                <div class="hot"></div>--> 
+           </div>
+           <div class="in-list-con awidth" title="上海达丰电脑">
+            	<h3><a href="#">广达上海制造城上海城上海城上海城上海达丰电脑</a></h3>
+                <P>月 工 资：<span>3000-3500元</span></P>
+                <P>接 待 站：松江火车站</P>
+                <P class="infdk">待遇丰厚</P>
+                <a href="#"><img src="../files/img/img01.jpg" width="236px" height="110px" /></a>
+                <div class="over wdids">
+                	<p class="fl"><strong>520人</strong>报名</p>
+                    <a href="#">去看看</a>
+                </div>
+<!--                <div class="hot"></div>--> 
+           </div>
+        </div>   
+        
+         <div class="over"></div>  
+<table border="0" align="center" cellpadding="0" cellspacing="0" class="link_bk">
+          <tr>
+            <td height="50" align="center"> <div class="page link_bk"><li><a class="">首页</a></li><li><a class="">上一页</a></li><li><a class="select">1</a></li>
+<li><a  href="#">2</a></li>
+<li><a  href="#">3</a></li>
+<li><a  href="#">4</a></li>
+<li><a  href="#">5</a></li>
+<li><a  href="#">6</a></li>
+<li><a  href="#">7</a></li>
+<li><a  href="#">8</a></li>
+<li><a  href="#">下一页</a></li>
+<li><a  href="#">尾页</a></li>
+<div class="clear"></div></div></td>
+          </tr>
+      </table>    </div>
+    
+    <div class="right_list">
+    	<div class="ewma">
+        	<img src="/files/img/app.jpg" title="壹打工网客户端"  />
+            扫描二维码，手机轻松找工作
+        </div>
+        
+        <div class="rzhao">
+        	<h2>相关招聘职位</h2>
+            
+            <ul class="rzlist">
+            	<li>
+                	<h3><a href="#">光学设计</a></h3>
+                    <p>沈阳菲尼斯咨询服务有限公司</p>
+                    <font>月薪范围：4000-8000元</font>
+                </li>
+                <li>
+                	<h3><a href="#">光学设计</a></h3>
+                    <p>沈阳菲尼斯咨询服务有限公司</p>
+                    <font>月薪范围：4000-8000元</font>
+                </li>
+                <li>
+                	<h3><a href="#">光学设计</a></h3>
+                    <p>沈阳菲尼斯咨询服务有限公司</p>
+                    <font>月薪范围：4000-8000元</font>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+	<!-- 主体内容 结束 -->
+{#include file="footer.htm"#}
+</body>
+</html>

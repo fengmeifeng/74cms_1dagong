@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{dede:field.title/} - {dede:field.typename/} - {dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field.keywords/}" />
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/job/files/css/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/files/all.css" />
+
+<link href="/job/files/css/news.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+{dede:include filename="newheader.htm"/}
+
+<div id="topson">
+<ul>
+<li><a href="http://www.1jobs.com/" >合肥人才网</a></li>
+{dede:channel type='top' row='8' currentstyle="<li class='hoverlink'><a href='~typelink~'>~typename~</a></li>"}
+ <li><a href='[field:typelink/]'>[field:typename/]</a></li>
+{/dede:channel}
+</ul>
+</div>
+
+<!-- ad_tl -->
+<div class="index-ad-tl px960 banner">
+	<img src="/job/files/aimage/banner1.jpg" width="960" height="90" alt="" />
+</div>
+
+
+<!-- newsBox -->
+<div class="newsBox px960 b10">
+	<!-- newsLeft -->
+	<div class="newsLeft left">
+<div class="b10"><div class="position">当前位置:<span class="place">{dede:field name='position'/}</span></div></div>	
+		<div class="news b10">
+			 <h1>{dede:field.title/}</h1>
+    <div class="info"><span class="xin"><script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}" type='text/javascript' language="javascript"></script></span><span>发布时间：{dede:field.pubdate function="MyDate('Y-m-d H:i',@me)"/} </span><span>来源：{dede:field.source/}</span><span>类别：{dede:field.typename/}</span>
+</div>
+<div class="clear"></div>
+	<!-- neirong -->		
+<div class="nr">
+	<!-- ad -->
+<div class="art-main">
+
+{dede:field.body/}
+<p class="writer">（编辑：{dede:field.writer/}）</p>
+
+</div>
+</div>
+<div class="clear"></div>
+<!-- page -->
+<!-- xihuan -->
+<!-- <div class="like_b">
+ <div class="bdlikebutton">222</div>
+</div> -->
+	  <!-- //喜欢 -->	
+<!-- fenxiang -->
+
+<br />	
+<!-- sx -->
+<div class="sx">
+	<div class="sxs blue left">
+		<p> {dede:prenext get='pre'/}</p>
+		<p>{dede:prenext get='next'/}</p>
+	</div>
+</div>
+<!-- xg -->			
+</div>
+<div class="xg b10">
+<div class="xg_t y18">这些优秀的企业正在招聘...</div>
+ <ul>
+{dede:arclist row=6 titlelen='35' orderby=pubdate}	
+<li>
+<a target="_blank" title="[field:title/]" href="[field:arcurl/]"> <img width="120" height="120" src="[field:picname/]"</a>
+<h2><a target="_blank" title="[field:title/]" href="[field:arcurl/]">[field:title/]</a></h2>
+</li>
+{/dede:arclist}				
+        </ul>	
+</div>	
+<div class="pl">
+<a name='postform'></a>
+<div class="mt1">
+<div class="comments_input">
+          <!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+	
+<!-- Duoshuo Comment END -->
+ </div>	
+</div>	
+	</div>
+</div>
+	<!-- newsRight -->
+	<div class="newsRight right">
+		<!-- diandian -->	
+		<div class="diandian"><img src="/job/files/images/website.jpg" alt="寅特尼人才网" /></div>
+		<!-- faxian -->
+			
+    <!-- tj -->			
+		<div class="ilist-top b10">
+			<div class="ilist-top-t"><h3>"{dede:field.typename/}" 点击排行</h3></div>
+			<ul class="blue bc">
+                 {dede:arclist titlelen=30 row=10 orderby='click' subday='30'}
+		<li><a href="[field:arcurl/]" target="_blank">[field:title/]</a></li>
+		{/dede:arclist}
+			</ul>			
+		</div>			
+
+    <!-- ad -->	
+		<div class="ilist-top b10">
+			<div class="ilist-top-t"><h3>"{dede:field.typename/}" 热门推荐</h3></div>
+			<ul class="blue bc">
+                 {dede:arclist titlelen=30 row=10 orderby=hot}
+		<li><a href="[field:arcurl/]" target="_blank">[field:title/]</a></li>
+		{/dede:arclist}
+			</ul>			
+		</div>	
+	 <!-- ad -->	
+	 
+		<!-- 
+		<div class="ads b10" id="hot_article_div">
+		
+		
+		</div>	
+		<div class="ads b10">11111111111111111</div>
+		-->				
+	</div>
+</div>
+
+{dede:include filename="footer.htm"/}
+
+</body>
+</html>

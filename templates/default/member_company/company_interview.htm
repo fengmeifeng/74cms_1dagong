@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<title>{#$title#}</title>
+<link rel="shortcut icon" href="{#$QISHI.main_domain#}favicon.ico" />
+<meta name="author" content="骑士CMS" />
+<meta name="copyright" content="74cms.com" />
+<link href="{#$QISHI.site_template#}css/user_common.css" rel="stylesheet" type="text/css" />
+<link href="{#$QISHI.site_template#}css/user_company.css" rel="stylesheet" type="text/css" />
+<script src="{#$QISHI.site_template#}js/jquery.js" type="text/javascript" language="javascript"></script>
+<script src="{#$QISHI.site_template#}js/jquery.vtip-min.js" type="text/javascript" language="javascript"></script>
+<script>
+$(function(){
+	$("input[type='button'],input[type='submit']").hover(function(){
+		$(this).addClass("hover");
+	},function(){
+		$(this).removeClass("hover");
+	})
+})
+</script>
+</head>
+<body>
+{#include file="user/header.htm"#}
+<div class="page_location link_bk">当前位置：<a href="{#$QISHI.main_domain#}">首页</a> > <a href="{#$userindexurl#}">会员中心</a> > 面试邀请</div>
+
+<div class="usermain">
+  <div class="leftmenu com link_bk">
+  	 {#include file="member_company/left.htm"#}		
+  </div>
+  <div class="rightmain">
+  
+ 	<div class="bbox1 link_bk my_account intrgration">
+		<div class="title_h1">面试邀请</div>
+		<div class="data resume">
+			{#if $resume#}
+			<form id="form1" name="form1" method="post" action="?act=interview_del">
+		  	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableall">
+		  		<tbody>
+		  			<tr bgcolor="#F5F5F5" align="left">
+		  				<th width="135" class="left"><input type="checkbox" name="chkAll"  id="chk" title="全选/反选" /> 姓名</th>
+		  				<th width="178">邀请职位</th>
+		  				<th width="100">对方查看</th>
+		  				<th width="150" align="center">通知内容</th>
+		  				<th width="151">邀请时间</th>
+		  				<th width="60">操作</th>
+		  			</tr>
+		  			{#foreach from=$resume item=list#}
+			  		 {#if $list.sex_cn#}
+		  			<tr class="data_content">
+		  				<td width="135" class="left"><input name="y_id[]" type="checkbox" id="y_id"   value="{#$list.did#}"/> <a href="{#$list.resume_url#}" target="_blank">{#$list.fullname#}</a></td>
+		  				<td width="178">{#$list.jobs_name#}</td>
+		  				<td width="100">
+		  					{#if $list.personal_look=="1"#}
+				   			<span style="color: #FF6600">[对方未看]</span>
+				   			{#else#}
+				   			<span style="color: #999999">[对方已看]</span>
+				   			{#/if#}
+				   		</td>
+		  				<td width="150" align="center">
+							<img src="{#$QISHI.site_template#}images/17.jpg"  border="0"  style="cursor:pointer" title="{#$list.notes|nl2br#}" class="vtip"/>
+						</td>
+		  				<td width="151">{#$list.interview_addtime|date_format:"%Y-%m-%d"#}</td>
+		  				<td width="60"><a href="#">删除</a></td>
+		  			</tr>
+		  			{#else#}
+		  			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableall">
+		  			<tr class="data_content">
+		  				<td width="175" class="left">
+		  				<input name="y_id[]" type="checkbox" id="y_id"  value="{#$list.did#}"/>被邀请人[{#$list.resume_name#}] 的简历可能已被删除，您可以删除本条信息.				
+		  				</td>
+		  			</tr>
+		  			</table>
+		  			{#/if#}
+		  			{#/foreach#}
+		  		</tbody>
+		  	</table>
+		  	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableall">
+		  		<tbody>
+		  			<tr>
+		  				<td width="100" class="left"><input type="submit" name="delete" value="删除"  class="but95_35lan"    onClick="return confirm('您确定删除吗?')"/></td>
+		  				<td width="500"></td>
+		  			</tr>
+		  		</tbody>
+		  	</table>
+		  </form>
+  			{#if $page#}
+			<table border="0" align="center" cellpadding="0" cellspacing="0" class="link_bk">
+	          <tr>
+	            <td height="50" align="center"> <div class="page link_bk">{#$page#}</div></td>
+	          </tr>
+	      </table>
+	      {#/if#}
+			{#else#}
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableall">
+		  		<tbody>
+		  			<tr bgcolor="#F5F5F5" align="left">
+		  				<th width="135" class="left"><input type="checkbox" name="chkAll"  id="chk" title="全选/反选" /> 姓名</th>
+		  				<th width="178">邀请职位</th>
+		  				<th width="100">对方查看</th>
+		  				<th width="150" align="center">通知内容</th>
+		  				<th width="151">邀请时间</th>
+		  				<th width="60">操作</th>
+		  			</tr>
+		  		</tbody>
+		  	</table>
+			<div class="emptytip">没有找到对应的信息！</div>
+			{#/if#}
+		  </div>
+
+  	</div>
+  </div>
+  <div class="clear"></div>
+</div>
+{#include file="user/footer.htm"#}
+</body>
+</html>

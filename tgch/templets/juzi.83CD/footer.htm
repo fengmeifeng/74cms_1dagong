@@ -1,0 +1,68 @@
+<div class="clear"></div>
+<!-- footer -->
+<div class="footer">
+<p><a href="#">关于寅特尼人才网</a> | <a href="/about/lianxiwomen.html">联系我们</a> | <a href="/about/wangzhanjianjie.html">网站简介</a> | <a href="/about/yinsibaohu.html">隐私保护</a> | <a href="#">精彩专题</a>| <a href="#">网站地图</a> | <a href="/about/banquanshengming.html">版权声明</a><br />2012-2013 <a href="/">寅特尼人才网</a>(<span style="color: #ffcc00"> Www.1jobs.com </span>) 版权所有 |  皖ICP备12006327号-1 | </p>
+</div>
+<!-- TOP快捷按钮 -->
+<SCRIPT type=text/javascript> 
+$(function(){
+      $(window).scroll(function(){
+        var top=$(window).scrollTop();
+        if(top>100){
+          $("#scrolltop").fadeIn();
+        }else{
+          $("#scrolltop").fadeOut();
+        }
+      });
+      $("#scrolltop").click(function(){
+      $("html,body").animate({scrollTop:0});
+      });
+    });
+</SCRIPT>
+<DIV id=scrolltop></DIV><!-- End TOP快捷按钮 -->
+<script type="text/javascript"> 
+<!--
+var timeout         = 500;
+var closetimer		= 0;
+var ddmenuitem      = 0;
+ 
+// open hidden layer
+function mopen(id)
+{	
+	// cancel close timer
+	mcancelclosetime();
+ 
+	// close old layer
+	if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+ 
+	// get new layer and show it
+	ddmenuitem = document.getElementById(id);
+	ddmenuitem.style.visibility = 'visible';
+ 
+}
+// close showed layer
+function mclose()
+{
+	if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+}
+ 
+// go close timer
+function mclosetime()
+{
+	closetimer = window.setTimeout(mclose, timeout);
+}
+ 
+// cancel close timer
+function mcancelclosetime()
+{
+	if(closetimer)
+	{
+		window.clearTimeout(closetimer);
+		closetimer = null;
+	}
+}
+ 
+// close layer when click-out
+document.onclick = mclose; 
+// -->
+</script>

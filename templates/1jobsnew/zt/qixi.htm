@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="gb2312">
+	<title>壹打工网</title>
+	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<style>
+		body{
+			background:#DDA8C5 url({#$bg#}) no-repeat center top;
+			background-size: 100%;
+		}
+	</style>
+    <link type="text/css" rel="stylesheet" href="/files/qixi/style.css" />
+    <script src="/files/js/jquery.js" type='text/javascript' language="javascript"></script>
+    <script>
+	jQuery(function($){
+	 $("#sumbit").click(function(){//alert("1111");
+		 var to=$("#to").val();//alert(name);
+		 if(to =='' || to == null){ to='亲爱的';}
+		 var contents=$("#contents").val();
+		 var from=$("#from").val();
+		 if(from =='' || from == null){ from='爱你的';}
+		 var bg=$("#bg").val();//alert(bg);
+    $.post("/plus/ajax_qx.php", { "to": to,"contents": contents,"from": from,"bg": bg,"act":"qx_msg"},
+			function (data,textStatus)
+			 {	
+			 	$("#form1").hide();
+				$("#url").show();	
+				$("#url").html(data);
+			 }
+		);
+	 });
+	});
+	function oCopy(obj){
+		obj.select();
+		js=obj.createTextRange();
+		js.execCommand("Copy")
+		alert("复制成功!");
+		}
+    </script>
+</head>
+<body>
+
+<!--<div class="content">-->
+
+	<div class="top">
+		<a href="" title=""><img src="/files/qixi/images/logo.png" alt=""></a>
+		<span>[ 壹封情书 ]</span>
+	</div>
+	
+	<form class="main" method="post" id="form1">
+    <input name="bg" type="hidden" id="bg" value="{#$bg#}"/>
+		<div class="shoujian">
+			<input name="to" type="text" id="to" class="" placeholder="{#if $to==''#}请填写收件人{#else#}{#$to#}{#/if#}" />
+		</div>
+
+		<textarea name="contents" id="contents" cols="30" rows="10">{#$contents#}</textarea>
+
+		<div class="fajian">
+			<input name="from" type="text" id="from" class="" placeholder="{#if $from==''#}请填写发件人{#else#}{#$from#}{#/if#}" />
+		</div>
+		<div class="time">
+			{#$time#}
+		</div>
+		{#if $to =='' && $from == ''#}
+		<div class="yanz">
+			<button type="button" id="sumbit">提交</button>
+		</div>
+				<div class="footer">
+			&copy;<a href="" title="壹打工网">壹打工网</a>
+		</div>
+        {#/if#}
+
+	</form>
+    <div id="url" class="main" style="display:none;"></div>
+<!--</div>-->
+</body>
+</html>

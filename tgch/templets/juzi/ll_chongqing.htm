@@ -1,0 +1,171 @@
+
+
+<DIV class=city_box>
+	<DIV class=title>
+		<UL id=menu_news6>
+			<LI class=t onclick=nTabs(this,0);>
+				<A href="javascript:void(0);" target="_blank">
+					重庆
+				</A>
+			</LI>
+			<LI class=f onclick=nTabs(this,1);>
+				<A href="javascript:void(0);" target="_blank">
+					上海
+				</A>
+			</LI>
+			<LI class=f onclick=nTabs(this,2);>
+				<A href="javascript:void(0);" target="_blank">
+					江苏
+				</A>
+			</LI>
+			<LI class=f onclick=nTabs(this,3);>
+				<A href="javascript:void(0);" target="_blank">
+					湖北
+				</A>
+			</LI>
+			<LI class=f onclick=nTabs(this,4);>
+				<A href="javascript:void(0);" target="_blank">
+					全部
+				</A>
+			</LI>
+		</UL>
+	</DIV>
+	<DIV id=menu_news6_Content0 class=newslist>
+		<!-- s -->
+		{dede:sql sql='SELECT myhome_jobs.id, myhome_company.company_name, myhome_company.company_logo, myhome_company.company_address, myhome_jobs.job_title, myhome_jobs.job_yibao
+			FROM myhome_jobs
+			JOIN myhome_company ON myhome_company.id = myhome_jobs.company_id
+		WHERE myhome_company.company_diqu = "cq"
+		LIMIT 0 , 2' appname='lanling'}
+			<dl>
+				<dt><a href="http://www.ytnjob.com/index.php?m=IndexJob&a=jobView&job_id=[field:id /]" target="_blank"><img src="[field:company_logo /]" width="298" height="120" alt="[field:company_name /]" /></a></dt>
+				<dd class="name"><a href="http://www.ytnjob.com/index.php?m=IndexJob&a=jobView&job_id=[field:id /]" target="_blank">[field:company_name /]</a>&nbsp;<img src="/files/lanling/ji.gif" width="12" height="11" alt="紧急招聘" /></dd>
+				<dd class="jj">[field:job_title /]</dd>
+				<dd class="baoming">
+				<span><a href="http://www.ytnjob.com/index.php?m=IndexJob&a=jobView&job_id=[field:id /]" title="点击报名" target="_blank"></a></span>已有<strong></strong>人报名
+					
+					
+					</dd>
+			</dl>
+		{/dede:sql}
+
+
+		{dede:sql sql='SELECT myhome_jobs.id, myhome_company.company_name, myhome_company.company_logo, myhome_company.company_address, myhome_jobs.job_title, myhome_jobs.job_yibao
+			FROM myhome_jobs
+			JOIN myhome_company ON myhome_company.id = myhome_jobs.company_id
+			WHERE myhome_company.company_diqu != "cq"
+		LIMIT 0 , 10' appname='lanling'}
+			<dl>
+				<dt><a href="http://www.ytnjob.com/index.php?m=IndexJob&a=jobView&job_id=[field:id /]" target="_blank"><img src="[field:company_logo /]" width="298" height="120" alt="[field:company_name /]" /></a></dt>
+				<dd class="name"><a href="http://www.ytnjob.com/index.php?m=IndexJob&a=jobView&job_id=[field:id /]" target="_blank">[field:company_name /]</a>&nbsp;<img src="/files/lanling/ji.gif" width="12" height="11" alt="紧急招聘" /></dd>
+				<dd class="jj">[field:job_title /]</dd>
+				<dd class="baoming">
+				<span><a href="http://www.ytnjob.com/index.php?m=IndexJob&a=jobView&job_id=[field:id /]" title="点击报名" target="_blank"></a></span>已有<strong></strong>人报名
+					
+					
+					</dd>
+			</dl>
+		{/dede:sql}
+		<!-- e -->
+	</DIV>
+	<DIV style="DISPLAY: none" id=menu_news6_Content1 class=newslist>
+		<!-- s -->
+		{dede:sql sql='SELECT myhome_jobs.id, myhome_company.company_name, myhome_company.company_logo, myhome_company.company_address, myhome_jobs.job_title, myhome_jobs.job_yibao
+			FROM myhome_jobs
+			JOIN myhome_company ON myhome_company.id = myhome_jobs.company_id
+		WHERE myhome_company.company_diqu = "sh"
+		LIMIT 0 , 12' appname='lanling'}
+			<dl>
+				<dt><a href="http://www.ytnjob.com/index.php?m=IndexJob&a=jobView&job_id=[field:id /]" target="_blank"><img src="[field:company_logo /]" width="298" height="120" alt="[field:company_name /]" /></a></dt>
+				<dd class="name"><a href="http://www.ytnjob.com/index.php?m=IndexJob&a=jobView&job_id=[field:id /]" target="_blank">[field:company_name /]</a>&nbsp;<img src="/files/lanling/ji.gif" width="12" height="11" alt="紧急招聘" /></dd>
+				<dd class="jj">[field:job_title /]</dd>
+				<dd class="baoming">
+				<span><a href="http://www.ytnjob.com/index.php?m=IndexJob&a=jobView&job_id=[field:id /]" title="点击报名" target="_blank"></a></span>已有<strong></strong>人报名
+					
+					
+					</dd>
+			</dl>
+		{/dede:sql}
+		<!-- e -->
+	</DIV>
+	<DIV style="DISPLAY: none" id=menu_news6_Content2 class=newslist>
+		<!-- s -->
+		{dede:sql sql='SELECT myhome_jobs.id, myhome_company.company_name, myhome_company.company_logo, myhome_company.company_address, myhome_jobs.job_title, myhome_jobs.job_yibao
+			FROM myhome_jobs
+			JOIN myhome_company ON myhome_company.id = myhome_jobs.company_id
+		WHERE myhome_company.company_diqu = "js"
+		LIMIT 0 , 12' appname='lanling'}
+			<dl>
+				<dt><a href="http://www.ytnjob.com/index.php?m=IndexJob&a=jobView&job_id=[field:id /]" target="_blank"><img src="[field:company_logo /]" width="298" height="120" alt="[field:company_name /]" /></a></dt>
+				<dd class="name"><a href="http://www.ytnjob.com/index.php?m=IndexJob&a=jobView&job_id=[field:id /]" target="_blank">[field:company_name /]</a>&nbsp;<img src="/files/lanling/ji.gif" width="12" height="11" alt="紧急招聘" /></dd>
+				<dd class="jj">[field:job_title /]</dd>
+				<dd class="baoming">
+				<span><a href="http://www.ytnjob.com/index.php?m=IndexJob&a=jobView&job_id=[field:id /]" title="点击报名" target="_blank"></a></span>已有<strong></strong>人报名
+					
+					
+					</dd>
+			</dl>
+		{/dede:sql}
+		<!-- e -->
+	</DIV>
+	<DIV style="DISPLAY: none" id=menu_news6_Content3 class=newslist>
+		<!-- s -->
+		{dede:sql sql='SELECT myhome_jobs.id, myhome_company.company_name, myhome_company.company_logo, myhome_company.company_address, myhome_jobs.job_title, myhome_jobs.job_yibao
+			FROM myhome_jobs
+			JOIN myhome_company ON myhome_company.id = myhome_jobs.company_id
+		WHERE myhome_company.company_diqu = "hb"
+		LIMIT 0 , 12' appname='lanling'}
+			<dl>
+				<dt><a href="http://www.ytnjob.com/index.php?m=IndexJob&a=jobView&job_id=[field:id /]" target="_blank"><img src="[field:company_logo /]" width="298" height="120" alt="[field:company_name /]" /></a></dt>
+				<dd class="name"><a href="http://www.ytnjob.com/index.php?m=IndexJob&a=jobView&job_id=[field:id /]" target="_blank">[field:company_name /]</a>&nbsp;<img src="/files/lanling/ji.gif" width="12" height="11" alt="紧急招聘" /></dd>
+				<dd class="jj">[field:job_title /]</dd>
+				<dd class="baoming">
+				<span><a href="http://www.ytnjob.com/index.php?m=IndexJob&a=jobView&job_id=[field:id /]" title="点击报名" target="_blank"></a></span>已有<strong></strong>人报名
+					
+					
+					</dd>
+			</dl>
+		{/dede:sql}
+		<!-- e -->
+	</DIV>
+	<DIV style="DISPLAY: none" id=menu_news6_Content4 class=newslist>
+		<!-- s -->
+		{dede:sql sql='SELECT myhome_jobs.id, myhome_company.company_name, myhome_company.company_logo, myhome_company.company_address, myhome_jobs.job_title, myhome_jobs.job_yibao
+			FROM myhome_jobs
+			JOIN myhome_company ON myhome_company.id = myhome_jobs.company_id
+		LIMIT 0 , 12' appname='lanling'}
+			<dl>
+				<dt><a href="http://www.ytnjob.com/index.php?m=IndexJob&a=jobView&job_id=[field:id /]" target="_blank"><img src="[field:company_logo /]" width="298" height="120" alt="[field:company_name /]" /></a></dt>
+				<dd class="name"><a href="http://www.ytnjob.com/index.php?m=IndexJob&a=jobView&job_id=[field:id /]" target="_blank">[field:company_name /]</a>&nbsp;<img src="/files/lanling/ji.gif" width="12" height="11" alt="紧急招聘" /></dd>
+				<dd class="jj">[field:job_title /]</dd>
+				<dd class="baoming">
+				<span><a href="http://www.ytnjob.com/index.php?m=IndexJob&a=jobView&job_id=[field:id /]" title="点击报名" target="_blank"></a></span>已有<strong></strong>人报名
+					
+					
+					</dd>
+			</dl>
+		{/dede:sql}
+		<!-- e -->
+	</DIV>
+
+</DIV>
+
+
+<!--
+{dede:sql sql='SELECT myhome_jobs.id, myhome_company.company_name, myhome_company.company_logo, myhome_company.company_address, myhome_jobs.job_title, myhome_jobs.job_yibao
+FROM myhome_jobs
+JOIN myhome_company ON myhome_company.id = myhome_jobs.company_id
+WHERE myhome_company.company_address not LIKE  '%上海'
+LIMIT 0 , 12' appname='lanling'}
+	<dl>
+		<dt><a href="http://www.ytnjob.com/index.php?m=IndexJob&a=jobView&job_id=[field:id /]" target="_blank"><img src="[field:company_logo /]" width="298" height="120" alt="[field:company_name /]" /></a></dt>
+		<dd class="name"><a href="http://www.ytnjob.com/index.php?m=IndexJob&a=jobView&job_id=[field:id /]" target="_blank">[field:company_name /]</a>&nbsp;<img src="/files/lanling/ji.gif" width="12" height="11" alt="紧急招聘" /></dd>
+		<dd class="jj">[field:job_title /]</dd>
+		<dd class="baoming">
+		<span><a href="http://www.ytnjob.com/index.php?m=IndexJob&a=jobView&job_id=[field:id /]" title="点击报名" target="_blank"></a></span>已有<strong></strong>人报名
+			
+			
+			</dd>
+	</dl>
+{/dede:sql}
+-->

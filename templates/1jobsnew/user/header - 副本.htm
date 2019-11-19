@@ -1,0 +1,133 @@
+<link href="/files/css/header.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<script>
+	$(function(){
+		// 点击事件
+		$(".local_station").live("click",function(){
+			if($(".sub_station").attr('data') == "hide") {
+				$(this).blur();
+				$(this).parent().parent().before("<div class=\"menu_bg_layer\"></div>");
+				$(".menu_bg_layer").height($(document).height());
+				$(".menu_bg_layer").css({ width: $(document).width(), position: "absolute",left:"0", top:"0","z-index":"77","background-color":"#000000"});
+				$(".menu_bg_layer").css("opacity",0);
+				$(".sub_station").show();
+				$(".sub_station").attr('data',"show");
+				$(".menu_bg_layer, .station_close").click(function() {
+					$(".sub_station").hide();
+					$(".sub_station").attr('data',"hide");
+					$(".menu_bg_layer").remove();
+				});
+			} else {
+				$(".sub_station").hide();
+				$(".sub_station").attr('data',"hide");
+			}
+		});
+		//单数行变色
+		$(".local_station>p").hover(function(){
+			$(this).addClass("hover");
+		},function(){
+			$(this).removeClass("hover");
+		});
+		$(".sub_st_content li:last").css({
+			"border-bottom":"0"
+		}).find("div").css({"padding-bottom":"0"});
+	});
+	
+//顶部部登录
+$.get("/plus/ajax_user.php", {"act":"top_loginform"},
+function (data,textStatus)
+{			
+$(".top_nav").html(data);
+}
+);
+</script>
+
+<!--顶部-->
+<!--<div class="user_top_nav" >
+	<div class="main">
+	    <div class="ltit"><span id="top_loginform"></span></div>	
+	    <div class="rlink link_lan">
+	    	{#include file="top-nav.htm"#}
+	    </div>	
+	    <div class="clear"></div>
+    </div>
+</div>-->
+
+<!--头部开始-->
+	<div class="header">
+    	<div class="kuang">
+            <div class="logo fl" style="width:150px;"><a class="fl" href="/"><img src="/files/img/logo2.jpg" alt="" title="壹打工网" ></a>
+            </div>
+
+            <div class="nav fl">
+            	<ul>
+                	<li><a class="yes" href="/">首页</a></li>
+                    <li><a href="/jobs/jobs-list2.php">找工作</a></li>
+                    <li><a href="/jobs/jobs-list.php?key=&trade=&jobcategory=&citycategory=&wage=&education=&experience=&nature=63&settr=&sort=&page=1">找兼职</a></li>
+                    <li><a href="/company/index.php">行业名企</a></li>
+                    <li><a href="/jobfair/jobfair-list.php">招聘会</a></li>
+                    <li><a href="#">校园招聘</a></li>
+                    <li><a href="/user/personal/personal_index.php">会员中心</a></li>
+                </ul>
+            </div>
+            
+          <!--<div class="login fr">
+              <ul>
+                  <li class="mobile"><a href="#"><i class="fa fa-mobile"></i>手机壹打工</a>
+                      <div class="app">
+                          <i class="fa fa-sort-asc"></i>
+                          <img src="/files/img/app.jpg" alt="" title="壹打工网客户端" />
+                      </div>
+                  </li>
+              </ul>
+          </div>
+-->            
+            
+            <script type=text/javascript><!--//--><![CDATA[//><!-- 
+function menuFix() { 
+var sfEls = document.getElementById("hynav").getElementsByTagName("li"); 
+for (var i=0; i<sfEls.length; i++) { 
+sfEls[i].onmouseover=function() { 
+this.className+=(this.className.length>0? " ": "") + "sfhover"; 
+} 
+sfEls[i].onMouseDown=function() { 
+this.className+=(this.className.length>0? " ": "") + "sfhover"; 
+} 
+sfEls[i].onMouseUp=function() { 
+this.className+=(this.className.length>0? " ": "") + "sfhover"; 
+} 
+sfEls[i].onmouseout=function() { 
+this.className=this.className.replace(new RegExp("( ?|^)sfhover\\b"), 
+""); 
+} 
+} 
+} 
+window.onload=menuFix; 
+//--><!]]></script> 
+
+<style>
+.htnav{width:150px;}
+#hyzxnav{line-height: 24px; list-style-type: none; background:#666; } 
+#hyzxnav a{ overflow:hidden; background:#BB00BB; display: block; border-radius:1px; padding:8px 15px; text-align:center; font-size:14px;} 
+#hyzxnav span{ display: block; float:left; width:105px; font-size:14px;text-overflow:ellipsis; -o-text-overflow:ellipsis; white-space:nowrap; overflow:hidden;}
+#hyzxnav i{ display: block; float:left; margin-left:6px;}
+#hyzxnav a:link { color:#eee; text-decoration:none; } 
+
+#hyzxnav li{ position:relative;}
+#hyzxnav li a{ color:#eee;} 
+#hyzxnav li ul { line-height:27px; z-index:10000 !important; list-style-type: none;text-align:left; left: -999em; width:150px; position: absolute; } 
+#hyzxnav li ul li{ float: left; width:150px; background: #F6F6F6; } 
+#hyzxnav li ul a{ display: block; color:#eee; text-align:left; padding:4px 20px;} 
+#hyzxnav li ul a:link { color:#eee; text-decoration:none; } 
+#hyzxnav li ul a:visited { color:#eee;text-decoration:none; } 
+#hyzxnav li ul a:hover { color:#F3F3F3;text-decoration:none;font-weight:normal; background:#606; } 
+#hyzxnav li:hover ul { left: auto; } 
+#hyzxnav li.sfhover ul { left: auto; } 
+#content { clear: left; } 
+</style>
+           
+              	<div class="top_nav">
+            	</div>
+        </div>
+    </div>
+    <!--头部结束-->

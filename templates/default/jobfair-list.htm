@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+{#qishi_pageinfo set="列表名:pageinfo,调用:QS_noticelist"#}
+{#if $pageinfo.title#}
+<title>{#$pageinfo.title#}</title>
+{#else#}
+<title>招聘会 - {#$QISHI.site_name#}</title>
+{#/if#}
+<meta name="description" content="{#$pageinfo.description#}">
+<meta name="keywords" content="{#$pageinfo.keywords#}">
+<meta name="author" content="骑士CMS" />
+<meta name="copyright" content="74cms.com" />
+<link rel="shortcut icon" href="{#$QISHI.main_domain#}favicon.ico" />
+<link href="{#$QISHI.site_template#}css/common.css" rel="stylesheet" type="text/css" />
+<link href="{#$QISHI.site_template#}css/jobfair.css" rel="stylesheet" type="text/css" />
+<script src="{#$QISHI.site_template#}js/jquery.js" type='text/javascript' ></script>
+<script src="{#$QISHI.site_template#}js/jquery.dialog.js" type="text/javascript" language="javascript"></script>
+<script src="http://api.map.baidu.com/api?v=1.2" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".check_full_map").click(function(){
+		var map_x = $(this).attr("map_x");
+		var map_y = $(this).attr("map_y"); 
+		var map_zoom = $(this).attr("map_zoom"); 
+		var title = $(this).attr("title"); 
+		var address = $(this).attr("address"); 
+		dialog("地图定位","url:{#$QISHI.website_dir#}plus/ajax_com_map.php?act=company_map&map_x="+map_x+"&map_y="+map_y+"&map_zoom="+map_zoom+"&companyname="+title+"&address="+address,"660px","auto","","");
+	});
+	$(".booth").click(function(){
+		$.get("{#$QISHI.website_dir#}plus/ajax_booth_jobfair.php?act=booth&id="+$(this).attr("jobfair_id"),function(result){
+			dialog("温馨提示","text:"+result,"400px","","","");
+		});
+	});
+});
+$(function(){
+	$("input[type='button']").hover(function(){
+		$(this).addClass("hover");
+	},function(){
+		$(this).removeClass("hover");
+	})
+})
+</script>
+</head>
+<body>
+	{#include file="header.htm"#}
+	<!-- 当前位置 -->
+	<div class="page_location link_bk">
+		当前位置：<a href="{#$QISHI.website_dir#}">首页</a>>招聘会
+	</div>
+	<!-- 主体内容 -->
+	<div class="container link_bk">
+		{#qishi_ad set="显示数目:12,调用名称:QS_jobfairallimg,列表名:ad,文字长度:12"#}
+		{#if $ad#}
+		{#foreach from=$ad item=list#}
+		<div class="rec_banner">
+			<a target="_blank" href="{#$list.img_url#}"><img src="{#$list.img_path#}" alt="{#$list.img_explain#}" width="1000" height="60"/></a>
+		</div>
+		{#/foreach#}
+		{#/if#}
+		
+		{#qishi_jobfair_list set="列表名:jobfair,标题长度:10,分页显示:1,填补字符:..."#}
+		{#if $jobfair#}
+		{#foreach from=$jobfair.ing item=list#}  
+		<div class="rec_info">
+			<div class="info_bbox">
+				<div class="streamer"></div>
+				<div></div>
+				<div class="calendar sc">
+					<div class="cal1">{#$list.holddates|date_format:"%Y"#}年</div>
+					<div class="cal2">{#$list.holddates_week#}</div>
+					<div class="cal3">{#$list.holddates|date_format:"%d"#}</div>
+					<div class="cal4">{#$list.holddates|date_format:"%m"#}月</div>
+				</div>
+				<div class="info_txt si">
+					<h3>{#$list.title#}</h3>
+					<ul>
+						<li><span>行业主题：</span>{#$list.industry#}</li>
+						<li><span>举办时间：</span>{#$list.holddates|date_format:"%Y年%m月%d日"#}</li>
+						<li><span>举办地址：</span>{#$list.address#}</li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+				<div class="info_but sbut">
+					<input type="button" value="在线预订" class="but125_35lan booth" jobfair_id="{#$list.id#}"/>
+					<input type="button" value="地图定位" class="but125_35lan check_full_map" map_x="{#$list.map_x#}" map_y="{#$list.map_y#}" map_zoom="{#$list.map_zoom#}" title="{#$list.title_#}" address="{#$list.address#}"/>
+					<input type="button" value="参会企业" class="but125_35cheng" onclick="javascript:location.href='{#$list.exhibitorsurl#}'" />
+					<input type="button" value="查看详情" class="but125_35cheng" onclick="javascript:location.href='{#$list.url#}'"/>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		{#/foreach#}
+		{#/if#}
+	</div>
+	<!-- 招聘会列表 -->
+	{#if $jobfair#}
+	<div class="container link_bk jobfairlist">
+		<table cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tbody>
+				<tr>
+					<td bgcolor="#f5f5f5" class="listtit" style="width:350px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;招聘会名称</td>
+					<td bgcolor="#f5f5f5" align="center" class="listtit">举办时间</td>
+					<td bgcolor="#f5f5f5" align="center" class="listtit">举办地址</td>
+					<td bgcolor="#f5f5f5" align="center" class="listtit">招聘会状态&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				</tr>
+				<!-- 预定中 -->
+				{#qishi_jobfair_list set="列表名:jobfair,标题长度:23,分页显示:1,填补字符:..."#}
+				{#foreach from=$jobfair.ingTwo item=list#} 
+				<tr>
+					<td class="list" style="width:350px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="color:#0180CF" target="_blank" href="{#$list.url#}" title="{#$list.title_#}">{#$list.title#}</a></td>
+					<td align="center" class="list">{#$list.holddates|date_format:"%Y年%m月%d日"#}</td>
+					<td align="center" class="list" style="width:450px;">{#$list.address#}<a class="check_full_map" map_x="{#$list.map_x#}" map_y="{#$list.map_y#}" map_zoom="{#$list.map_zoom#}" title="{#$list.title_#}" address="{#$list.address#}" href="javascript:;"><img src="{#$QISHI.site_template#}images/jobfairmapbg.png"></a></td>
+					<td align="center" class="list"><a class="booth" jobfair_id="{#$list.id#}" style="color:#0180CF" href="javascript:;" title="立即预定">立即预定</a></td>
+				</tr>
+				{#/foreach#}
+				<!-- 预定中 End-->
+				<!-- 未开始 -->
+				{#qishi_jobfair_list set="列表名:jobfair,标题长度:23,分页显示:1,填补字符:..."#}
+				{#foreach from=$jobfair.yet item=list#} 
+				<tr>
+					<td class="list" style="width:350px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="color:#FF6600" target="_blank" href="{#$list.url#}" title="{#$list.title_#}">{#$list.title#}</a></td>
+					<td align="center" class="list">{#$list.holddates|date_format:"%Y年%m月%d日"#}</td>
+					<td align="center" class="list" style="width:450px;">{#$list.address#}<a class="check_full_map" map_x="{#$list.map_x#}" map_y="{#$list.map_y#}" map_zoom="{#$list.map_zoom#}" title="{#$list.title_#}" address="{#$list.address#}" href="javascript:;"><img src="{#$QISHI.site_template#}images/jobfairmapbg.png"></a></td>
+					<td align="center" class="list" style="color:#FF6600">即将开始</td>
+				</tr>
+				{#/foreach#}
+				<!-- 未开始 End-->
+				<!-- 已结束 -->
+				{#qishi_jobfair_list set="列表名:jobfair,标题长度:23,分页显示:1,填补字符:..."#}
+				{#foreach from=$jobfair.over item=list#} 
+				<tr>
+					<td class="list" style="width:350px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="{#$list.url#}" title="{#$list.title_#}">{#$list.title#}</a></td>
+					<td align="center" class="list">{#$list.holddates|date_format:"%Y年%m月%d日"#}</td>
+					<td align="center" class="list" style="width:450px;">{#$list.address#}<a class="check_full_map" map_x="{#$list.map_x#}" map_y="{#$list.map_y#}" map_zoom="{#$list.map_zoom#}" title="{#$list.title_#}" address="{#$list.address#}" href="javascript:;"><img src="{#$QISHI.site_template#}images/jobfairmapbg.png"></a></td>
+					<td align="center" class="list">预定结束</td>
+				</tr>
+				{#/foreach#}
+				<!-- 已结束 End-->
+			</tbody>
+		</table>
+	</div>
+	{#/if#}
+	<!-- 招聘会列表 End-->
+	{#include file="footer.htm"#}
+</body>
+</html>

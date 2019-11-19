@@ -1,0 +1,99 @@
+<div class="user_top_nav" >
+	<div class="main">
+	    <div class="ltit"><span id="top_loginform"></span></div>	
+	    <div class="rlink link_lan">
+	    	{#include file="top-nav.htm"#}
+	    </div>	
+	    <div class="clear"></div>
+    </div>
+</div>
+<div class="user_top_logo">
+	  <div class="logobox">
+		<a href="{#$QISHI.website_dir#}"><img src="{#$QISHI.upfiles_dir#}{#$QISHI.web_logo#}" alt="" border="0" align="absmiddle" /></a>
+	  </div>
+      <div class="sobox">	  
+  		<div class="keybox">
+  		  <div class="lbox"><input name="key" value="请输入关键字..." style="color: #CCCCCC" type="text" id="index-search-key" class="keyinput" /></div>
+  		  <div class="rbox"><input name="" id="index-search-button" type="button"  class="but"/></div>
+		  <div class="clear"></div>
+	      <div class="selectbox" id="usertopselectbox">
+				<div class="seltxt" id="seltxt">职位</div>
+				<div class="selmenu" id="selmenu">简历</div>
+				<input name="topsotype" id="topsotype" type="hidden" value="1" />
+	      </div>
+	      <script src="{#$QISHI.site_template#}js/jquery.autocomplete.js" type="text/javascript"></script>
+	      <script language="javascript" type="text/javascript">
+			 $(document).ready(function()
+			{
+				  var a = $('#index-search-key').autocomplete({ 
+					serviceUrl:'{#$QISHI.website_dir#}plus/ajax_common.php?act=hotword',
+					minChars:1, 
+					maxHeight:400,
+					width:360,
+					zIndex: 9999,
+					deferRequestBy: 0 
+				  });
+				  $("#index-search-button").click(function()
+					{
+						index_search_location();
+					});
+					function index_search_location()
+					{
+						$("body").append('<div id="pageloadingbox">页面加载中....</div><div id="pageloadingbg"></div>');
+						$("#pageloadingbg").css("opacity", 0.5);
+
+						 var sotype=$("#topsotype").val();
+					 	if(sotype==1){
+					 		var sotype_code = "QS_jobslist";
+					 	}else{
+					 		var sotype_code = "QS_resumelist";
+					 	}
+					 	var patrn=/^(请输入关键字)/i; 
+						var key=$("#index-search-key").val();
+						if (patrn.exec(key))
+						{
+						$("#index-search-key").val('');
+						key='';
+						}
+						$.get("{#$QISHI.website_dir#}plus/ajax_search_location.php", {"act":sotype_code,"key":key},
+							function (data,textStatus)
+							 {
+								 window.location.href=data;
+							 }
+						);
+					}
+					$("#index-search-key").focus(function()
+					{
+					 var patrn=/^(请输入关键字)/i; 
+					 var key=$(this).val();
+						if (patrn.exec(key))
+						{
+						$(this).css('color','').val('');
+						} 
+						$('input[id="index-search-key"]').keydown(function(e)
+						{
+						if(e.keyCode==13){
+					   index_search_location()
+						}
+						});
+					});
+			
+			});
+			</script>
+  		</div>		
+        <div class="hotkey link_bk"><strong>热门关键字：</strong>
+        	{#qishi_hotword set="显示数目:8,列表名:list"#}
+			{#foreach from=$list item=li#}
+			<a href="{#"QS_jobslist,key:"|cat:$li.w_word_code|qishi_url#}" target="_blank">{#$li.w_word#}</a>
+			{#/foreach#}
+		</div>
+      </div>
+	  <div class="clear"></div>
+</div>
+<div class="nav">
+	{#qishi_nav set="调用名称:QS_top,列表名:list"#}
+	{#foreach from=$list item=list#}
+        <div class="li"><a href="{#$list.url#}" target="{#$list.target#}" {#if $list.tag==$page_select && $list.tag!=""#}class="select"{#/if#}>{#$list.title#}</a></div>
+    {#/foreach#}
+  <div class="clear"></div>
+</div>

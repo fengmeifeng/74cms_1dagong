@@ -1,0 +1,102 @@
+.topk0{ width:100%; height:30px; background:url(../images/topbar_bg.gif) repeat-x;}
+.top0{ width:960px; height:30px; margin:auto;}
+.top0 ul{ width:440px; height:32px; float:left;padding-top:1px;_padding-top:4px}
+.top0 ul li{ width:340px; float:left; height:28px; line-height:28px; font-size:13px;}
+.toprlink0{ width:220px; float:right; }
+.toprlink0 a{ line-height:32px; display:block; float:left; width:68px; height:23px; overflow:hidden; text-align:center;line-height:23px; margin-top:4px}
+.toprlink0 a.linebg{ background:url(../images/nav-list.gif) no-repeat right;}
+.toprlink0 a.shouji{ text-indent:3px; color:#fff; width:78px; height:23px; display:block; float:right; text-align:left; font-weight:bold;background:url(../images/na_bg2.gif) no-repeat;}
+.channel-nav ul li.thisclass{
+}
+.channel-nav ul li.thisclass a,.channel-nav ul li.thisclass a:hover{
+	background:url(../images/channel-nav-bg.gif) right -44px no-repeat;
+	cursor:default;
+}
+.channel-nav ul li.thisclass a span,.channel-nav ul li.thisclass a:hover span{
+	background:url(../images/channel-nav-bg.gif) left -44px no-repeat;
+	color:#FFF;
+	cursor:default;
+}
+
+body{color:#333333; line-height:21px;}
+.inner{width:960px; margin:0 auto;}
+
+/** header,wrapper,footer **/
+.header{
+              width:100%; height:70px; background:url(../images/topbg.jpg) repeat-x; padding:25px 0 10px 0}
+.wrapper{
+          width:960px; margin:0 auto;
+}
+
+/** logo **/
+.logo{width:186px; height:61px; float:left;}
+.dis{float:left; margin:15px 0px 0 0px; padding:0px 0px 0 10px; border-left:1px solid #d9d9d9;}
+
+/** search form **/
+.search{width:335px; height:42px; float:right; background:url(../images/search.jpg) no-repeat; margin-top:12px;}
+.search-input{width:260px; height:32px; line-height:32px; border:0; float:left; margin:5px 0 0 10px;}
+.search-submit{width:58px; height:35px; margin:3px 0 0 0; border:0; background:none;}
+
+/** rss **/
+.rss{float:right; margin:14px 0 0 5px;}
+
+#top {border-bottom: 4px solid #c0c0c0; background: url(../images/mainmenu.gif) repeat-x center top; HEIGHT: 36px}
+#top a {text-decoration: none}
+#top UL {
+	MARGIN: 0px auto; WIDTH: 960px
+           
+}
+#top LI {
+	FLOAT: left; HEIGHT: 36px;
+}
+#top LI A {
+	PADDING-BOTTOM: 7px; PADDING-LEFT: 20px; PADDING-RIGHT: 20px; DISPLAY: block; COLOR: #ffffff; PADDING-TOP: 8px;font-size: 14px;
+}
+#top LI A:hover {
+	BACKGROUND: #ff5809;border-bottom:4px solid #0054a8
+}
+#top .top_hover a,#top .top_hover a:hover{
+	background:#3eaf0e;
+	color:#fff;
+}
+#top .top_right {
+	FLOAT: right
+}
+
+#top ul li .atthis{
+	border-bottom: 4px solid #f5f5f5;
+	background: url(../images/atthis.gif) no-repeat center bottom;
+	background-color:none;
+}
+
+
+#topson {
+ width:960px;
+ margin:0 auto;
+ HEIGHT: 36px;
+ background: #ff6600
+ }
+#topson a {text-decoration: none;}
+#topson UL {
+	MARGIN: 0px auto; WIDTH: 960px; background: #ff6600;           
+}
+#topson LI {
+	FLOAT: left; HEIGHT: 36px;
+}
+#topson LI A {
+	PADDING-BOTTOM: 7px; PADDING-LEFT: 20px; PADDING-RIGHT: 20px; DISPLAY: block; COLOR: #ffffff; PADDING-TOP: 8px;font-size: 14px;
+}
+#topson LI A:hover {
+	BACKGROUND: #ff5809;border-bottom:4px solid #cc0000;color:#000
+}
+#topson .top_hover a,#top .top_hover a:hover{
+	background:#3eaf0e;
+	color:#fff;
+}
+#topson .top_right {
+	FLOAT: right
+}
+
+.hoverlink A{
+	BACKGROUND: #ff5809;border-bottom:4px solid #cc0000;color:#000000 !important;
+}

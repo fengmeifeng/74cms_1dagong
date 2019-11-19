@@ -1,0 +1,889 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>会员注册</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<meta name="author" content="骑士CMS" />
+<meta name="copyright" content="74cms.com" />
+<!--<link href="/files/css/user_common.css" rel="stylesheet" type="text/css" />
+-->
+<link href="/files/css/font-awesome.min.css" rel="stylesheet" >
+<link href="/files/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/reg.css" rel="stylesheet" type="text/css" />
+<!---->
+<link href="/files/css/header.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/jobs.css" rel="stylesheet" type="text/css" />
+<!---->
+<script src="/files/js/jquery.js" type='text/javascript' language="javascript"></script>
+<script src="/files/js/jquery.validate.min.js" type='text/javascript' language="javascript"></script>
+
+
+<script src="/data/cache_classify.js" type="text/javascript" charset="utf-8"></script>
+<script src="/files/js/jquery.reg.selectlayer.js" type='text/javascript' language="javascript"></script>
+<script src="/files/js/jquery.hoverDelay.js" type='text/javascript'></script>
+
+
+
+
+<script type="text/javascript">
+//验证
+$(document).ready(function() {
+	
+	//-----地区显示
+	allaround('{#$QISHI.site_dir#}');
+	$("#jobsCity").hoverDelay({
+		    hoverEvent: function(){
+		        $("#divCityCate").show();
+		        var dx = $("#divCityCate").offset().left; // 获取弹出框的x坐标
+		        var dwidth = $("#divCityCate").outerWidth(true); // 获取弹出框的宽度
+		        var lastx = dx + dwidth; // 加上弹出框的宽度获取弹出框最右边的x坐标
+	 			$("#divCityCate li").each(function(index, el) {
+	 				var that = $(this);
+	 				var sx = that.offset().left; // 获取当前li的x坐标
+	 				that.hoverDelay({
+					    hoverEvent: function(){
+					        if(that.find('.subcate').length > 0) {
+			 					that.addClass('selected');
+			 					var tharsub = that.find('.subcate');
+			 					var thap = that.find('p');
+			 					thap.css("border-bottom","0px");
+			 					var swidth = tharsub.outerWidth(true); // 获取三级弹出框的宽度
+			 					if((lastx - sx) < swidth) { // 判断li与弹出框最右边的距离是否大于三级弹出框的宽度
+			 						tharsub.css("left",-265); // 如果小于就改变三级弹出框x方向的位置
+			 					}
+			 					tharsub.show();
+			 				} else {
+			 					that.find('a').css("color","#f77d40");
+			 				}
+					    },
+					    outEvent: function(){
+			                if(that.find('.subcate').length > 0) {
+				 				that.removeClass('selected');
+				 				that.find('.subcate').hide();
+			 				} else {
+			 					that.find('a').css("color","#0180cf");
+			 				}    
+			            }
+					});
+	 			});
+		    },
+		    outEvent: function(){
+                $("#divCityCate").hide(); 
+            }
+		});
+	
+	//-----地区显示结束
+	
+ $("#Form1").validate({
+//debug: true,
+// onsubmit:false,
+//onfocusout :true,
+submitHandler:function(form){
+if($("#agreement").attr("checked")==false)
+{
+alert("您必须同意[注册协议]才能继续下一步");
+return false;
+}
+		$("#reg").hide();
+		$("#waiting").show();
+		$("#sub").hide();
+		var tsTimeStamp= new Date().getTime();
+		$.post("/plus/ajax_user.php", { "username": $("#username").val(),"password": $("#password").val(),"member_type": $("#member_type").val(),"email":$("#email").val(),"postcaptcha": $("#postcaptcha").val(),"xs_user":$("#xs_user").val(),"district_cn":$("#district_cn").val(),"district":$("#district").val(),"sdistrict":$("#sdistrict").val(),"companyname":$("#companyname").val(),"time":tsTimeStamp,"act":"do_reg"},
+	 	function (data,textStatus)
+	 	 {
+			if (data=="err")
+			{
+			$("#waiting").hide();
+			$("#sub").show();
+			$("#reg").show();
+			//$("#username").attr("value","");
+			//$("#email").attr("value","");
+			alert("注册失败");
+			}
+			else
+			{
+				$("body").append(data);
+			}
+	 	 })
+//$(form).ajaxSubmit();
+},
+success: function(label) {
+				label.text(" ").addClass("success");
+			},
+   rules:{
+   username:{
+    required: true,
+	userName : true,
+	nomobile : false,
+	byteRangeLength : [3, 18],
+	remote:{     
+		url:"/plus/ajax_user.php",     
+		type:"post",    
+		data:{"usname":function (){return $("#username").val()},"act":"check_usname","time":function (){return new Date().getTime()}}     
+		}
+   },
+   email:{
+    required: true,
+	email:true,
+	remote:{     
+		url:"/plus/ajax_user.php",     
+		type:"post",    
+		data:{"email":function (){return $("#email").val()},"act":"check_email","time": new Date().getTime()}     
+		}
+   },
+   {#if $verify_userreg=="1"#}
+    postcaptcha:{
+	IScaptchastr:true,
+    required: true,
+	remote:{     
+	url:"/include/imagecaptcha.php",     
+	type:"post",    
+	data:{"postcaptcha":function (){return $("#postcaptcha").val()},"act":"verify","time":function (){return new Date().getTime()}}     
+	}
+   },
+   {#/if#}
+   password:{
+    required: true,
+	minlength:6,
+    maxlength:18
+   },
+   password2:{
+   required: true,
+	 equalTo:"#password"
+   },
+   companyname:{
+    required: true,
+	remote:{     
+		url:"/plus/ajax_user.php",     
+		type:"post",    
+		data:{"companyname":function (){return $("#companyname").val()},"act":"check_companyname","time":new Date().getTime()}     
+		}
+   }
+	},
+    messages: {
+    username: {
+    required: "请填写用户名",
+	remote: jQuery.format("用户名已经存在或者不合法")	
+   },
+   companyname: {
+    required: "请填写公司名称",
+	remote: jQuery.format("公司名称已经存在")	
+   },
+    email: {
+    required: "请填写电子邮箱",
+	email: jQuery.format("电子邮箱格式错误"),
+	remote: jQuery.format("email已经存在")	
+   },
+    {#if $verify_userreg=="1"#}
+    postcaptcha: {
+    required: "请填写验证码",
+	remote: jQuery.format("验证码错误")	
+   },
+    {#/if#}
+   password: {
+    required: "请填写密码",
+    minlength: jQuery.format("填写不能小于{0}个字符"),
+	maxlength: jQuery.format("填写不能大于{0}个字符")
+   },
+   password2: {
+   required: "请填写密码",
+    equalTo: "两次输入的密码不同"
+   }
+  },
+  errorPlacement: function(error, element) {
+    if ( element.is(":radio") )
+        error.appendTo( element.parent().next().next() );
+    else if ( element.is(":checkbox") )
+        error.appendTo ( element.next());
+    else
+        error.appendTo(element.parent().next());
+	}
+    });
+	 //中文字两个字节
+	jQuery.validator.addMethod("byteRangeLength", function(value, element,	param) {
+	var length = value.length;
+	for (var i = 0; i < value.length; i++) {
+			if (value.charCodeAt(i) > 127) {
+			length++;
+			}
+		}
+	return this.optional(element)	|| (length >= param[0] && length <= param[1]);
+	}, "确保的值在3-18个字节之间");
+	 //字符验证
+	jQuery.validator.addMethod("userName", function(value, element) {
+	return this.optional(element) || /^[\u0391-\uFFE5\w]+$/.test(value);
+	}, "只能包含中英文、数字和下划线");
+	jQuery.validator.addMethod("nomobile", function(value, element) { 
+    var tel = /^(13|15|14|17|18)\d{9}$/;
+	var $cstr= true;
+	if (tel.test(value)) $cstr= false;
+	return $cstr || this.optional(element); 
+}, "用户名不能是手机号");
+	jQuery.validator.addMethod("IScaptchastr", function(value, element) {
+	var str="点击获取验证码";
+	var flag=true;
+	if (str==value)
+	{
+	flag=false;
+	}
+	return  flag || this.optional(element) ;
+	}, "请填写验证码");
+/////验证码部分
+{#if $verify_userreg=="1"#}
+function imgcaptcha(inputID,imgdiv)
+{
+	$(inputID).focus(function(){
+		if ($(inputID).val()=="点击获取验证码")
+		{
+		$(inputID).val("");
+		$(inputID).css("color","#333333");
+		}
+		$(inputID).parent("div").css("position","relative");
+		//设置验证码DIV
+		//$(imgdiv).css({ position: "absolute",right: "-148px", "top": "0px" , "z-index": "10", "background-color": "#FFFFFF", "border": "1px #A3C8DC solid","display": "none","margin-left": "15px"});
+		$(imgdiv).show();
+		if ($(imgdiv).html()=='')
+		{
+		$(imgdiv).append("<img src=\"/include/imagecaptcha.php?t={#$random#}\" id=\"getcode\" align=\"absmiddle\"  style=\"cursor:pointer; margin:3px;\" title=\"看不请验证码？点击更换一张\"  border=\"0\"/>");
+		}
+		$(imgdiv+" img").click(function()
+		{
+			$(imgdiv+" img").attr("src",$(imgdiv+" img").attr("src")+"1");
+			$(inputID).val("");
+			$("#Form1").validate().element("#postcaptcha");	
+		});
+		$(document).unbind().click(function(event)
+		{
+			var clickid=$(event.target).attr("id");
+			if (clickid!="getcode" &&  clickid!="postcaptcha")
+			{
+			$(imgdiv).hide();
+			$(inputID).parent("div").css("position","");
+			$(document).unbind();
+			}			
+		});
+	});
+}
+imgcaptcha("#postcaptcha","#imgdiv");
+//验证码结束
+{#/if#}
+//
+$(".but-reg").hover(function(){$(this).addClass("but-reg-hover")},function(){$(this).removeClass("but-reg-hover")});
+$(".but-reg-login").hover(function(){$(this).addClass("but-reg-login-hover")},function(){$(this).removeClass("but-reg-login-hover")});
+//-------企业注册提交结束
+
+//-------个人注册提交
+// 显示地区
+ 		$("#jobsCity_1").hoverDelay({
+		    hoverEvent: function(){
+		        $("#divCityCate_1").show();
+		        var dx = $("#divCityCate_1").offset().left; // 获取弹出框的x坐标
+		        var dwidth = $("#divCityCate_1").outerWidth(true); // 获取弹出框的宽度
+		        var lastx = dx + dwidth; // 加上弹出框的宽度获取弹出框最右边的x坐标
+	 			$("#divCityCate_1 li").each(function(index, el) {
+	 				var that = $(this);
+	 				var sx = that.offset().left; // 获取当前li的x坐标
+	 				that.hoverDelay({
+					    hoverEvent: function(){
+					        if(that.find('.subcate').length > 0) {
+			 					that.addClass('selected');
+			 					var tharsub = that.find('.subcate');
+			 					var thap = that.find('p');
+			 					thap.css("border-bottom","0px");
+			 					var swidth = tharsub.outerWidth(true); // 获取三级弹出框的宽度
+			 					if((lastx - sx) < swidth) { // 判断li与弹出框最右边的距离是否大于三级弹出框的宽度
+			 						tharsub.css("left",-265); // 如果小于就改变三级弹出框x方向的位置
+			 					}
+			 					tharsub.show();
+			 				} else {
+			 					that.find('a').css("color","#f77d40");
+			 				}
+					    },
+					    outEvent: function(){
+			                if(that.find('.subcate').length > 0) {
+				 				that.removeClass('selected');
+				 				that.find('.subcate').hide();
+			 				} else {
+			 					that.find('a').css("color","#0180cf");
+			 				}    
+			            }
+					});
+	 			});
+		    },
+		    outEvent: function(){
+                $("#divCityCate_1").hide(); 
+            }
+		});
+		
+		//---显示年份
+		showyearbox(".date_input","#birthday");
+function showyearbox(divname,inputname)
+{
+	$(divname).click(function(){
+		var inputdiv=$(this);
+		$(inputdiv).parent("div").before("<div class=\"menu_bg_layer\"></div>");
+		$(".menu_bg_layer").height($(document).height());
+		$(".menu_bg_layer").css({ width: $(document).width(), position: "absolute", left: "0", top: "0" , "z-index": "0"});
+		$(inputdiv).parent("div").css("position","relative");
+		
+		var myDate = new Date();
+		var y=myDate.getFullYear();
+			 y=y-16;
+		var ymin=y-35;
+		htm="<div class=\"showyearbox yearlist\">";		
+		htm+="<ul>";
+		for (i=y;i>=ymin;i--)
+		{
+		htm+="<li title=\""+i+"\">"+i+"年</li>";
+		}
+		htm+="<div class=\"clear\"></div>";
+		htm+="</ul>";
+		htm+="</div>";
+		$(inputdiv).blur();
+		if ($(inputdiv).parent("div").find(".showyearbox").html())
+		{
+			$(inputdiv).parent("div").children(".showyearbox.yearlist").slideToggle("fast");
+		}
+		else
+		{
+			$(inputdiv).parent("div").append(htm);
+			$(inputdiv).parent("div").children(".showyearbox.yearlist").slideToggle("fast");
+		}
+		//
+		$(inputdiv).parent("div").children(".yearlist").find("li").unbind("click").click(function()
+		{
+			$(inputname).val($(this).attr("title"));
+			$(inputdiv).html($(this).attr("title"));
+			$(inputdiv).parent("div").children(".yearlist").hide();
+			$(".menu_bg_layer").remove();
+		});	
+		//
+		$(".showyearbox>ul>li").hover(
+		function()
+		{
+		$(this).css("background-color","#DAECF5");
+		$(this).css("color","#ff0000");
+		},
+		function()
+		{
+		$(this).css("background-color","");
+		$(this).css("color","");
+		}
+		);
+		//
+		$(".menu_bg_layer").click(function(){
+					$(".menu_bg_layer").hide();
+					$(inputdiv).parent("div").css("position","");
+					$(inputdiv).parent("div").find(".showyearbox").hide();
+					
+		});
+	});
+}
+		
+//----显示年份结束
+//性别单选
+$("#sex_radio .input_radio").click(function(){
+		$("#sex").val($(this).attr('id'));
+		$("#sex_cn").val($(this).text());
+		$("#sex_radio .input_radio").removeClass("select");
+		$(this).addClass("select");
+});
+
+//----性别单选结束
+$("#Form1_1").validate({
+//debug: true,
+// onsubmit:false,
+//onfocusout :true,
+submitHandler:function(form){
+if($("#agreement_1").attr("checked")==false)
+{
+alert("您必须同意[注册协议]才能继续下一步");
+return false;
+}
+		$("#reg_1").hide();
+		$("#waiting_1").show();
+		$("#sub_1").hide();
+		var tsTimeStamp= new Date().getTime();
+		$.post("/plus/ajax_user.php", { "username_1": $("#username_1").val(),"password": $("#password_1").val(),"member_type": $("#member_type_1").val(),"sex":$("#sex").val(),"sex_cn":$("#sex_cn").val(),"realname":$("#realname").val(),"birthday":$("#birthday").val(),"residence":$("#residence").val(),"residence_cn":$("#residence_cn").val(),"postcaptcha": $("#postcaptcha_1").val(),"time":tsTimeStamp,"act":"do_reg"},
+	 	function (data,textStatus)
+	 	 {
+			if (data=="err")
+			{
+			$("#waiting_1").hide();
+			$("#sub_1").show();
+			$("#reg_1").show();
+			$("#username_1").attr("value","");
+			$("#email_1").attr("value","");
+			alert("注册失败");
+			}
+			else
+			{
+				$("body").append(data);
+			}
+	 	 })
+//$(form).ajaxSubmit();
+},
+success: function(label) {
+				label.text(" ").addClass("success");
+			},
+   rules:{
+   username_1:{
+    required: true,
+	userName_1 : true,
+	nomobile : false,
+	byteRangeLength_1 : [11, 18],
+	remote:{     
+		url:"/plus/ajax_user.php",     
+		type:"post",    
+		data:{"usname":function (){return $("#username_1").val()},"act":"check_usname","time":function (){return new Date().getTime()}}     
+		}
+   },
+   email:{
+    required: true,
+	email:true,
+	remote:{     
+		url:"/plus/ajax_user.php",     
+		type:"post",    
+		data:{"email":function (){return $("#email_1").val()},"act":"check_email","time": new Date().getTime()}     
+		}
+   },
+   realname:{
+    required: true,
+	/*remote:{     
+		url:"/plus/ajax_user.php",     
+		type:"post",    
+		data:{"realname":function (){return $("#realname").val()},"act":"realname","time": new Date().getTime()}     
+		}*/
+   },
+   birthday:{
+    required: true,
+   },
+    residence_cn:{
+    required: true,
+   },
+   {#if $verify_userreg=="1"#}
+    postcaptcha:{
+	IScaptchastr:true,
+    required: true,
+	remote:{     
+	url:"/include/imagecaptcha.php",     
+	type:"post",    
+	data:{"postcaptcha":function (){return $("#postcaptcha_1").val()},"act":"verify","time":function (){return new Date().getTime()}}     
+	}
+   },
+   {#/if#}
+   password:{
+    required: true,
+	minlength:6,
+    maxlength:18
+   },
+   password2:{
+   required: true,
+	 equalTo:"#password_1"
+   }
+	},
+    messages: {
+    username_1: {
+    required: "请填写用户名",
+	remote: jQuery.format("用户名已经存在或者不合法")	
+   },
+    {#if $verify_userreg=="1"#}
+    postcaptcha: {
+    required: "请填写验证码",
+	remote: jQuery.format("验证码错误")	
+   },
+    {#/if#}
+   realname: {
+    required: "请填写您的姓名",
+   },
+   birthday: {
+    required: "请选择出生年份",
+   },
+   residence_cn: {
+    required: "请选择地区",
+   },
+   password2: {
+   required: "请填写密码",
+    equalTo: "两次输入的密码不同"
+   }
+  },
+  errorPlacement: function(error, element) {
+    if ( element.is(":radio") )
+        error.appendTo( element.parent().next().next() );
+    else if ( element.is(":checkbox") )
+        error.appendTo ( element.next());
+    else
+        error.appendTo(element.parent().next());
+	}
+    });
+	 //中文字两个字节
+	jQuery.validator.addMethod("byteRangeLength_1", function(value, element,	param) {
+	var length = value.length;
+	for (var i = 0; i < value.length; i++) {
+			if (value.charCodeAt(i) > 127) {
+			length++;
+			}
+		}
+	return this.optional(element)	|| (length >= param[0] && length <= param[1]);
+	}, "确保的值在11-18个字节之间");
+	 //字符验证
+	 jQuery.validator.addMethod("userName_1", function(value, element) {
+	return this.optional(element) || /^(13|15|14|17|18)\d{9}$/.test(value);
+	}, "只能是手机号码");
+	/*jQuery.validator.addMethod("userName", function(value, element) {
+	return this.optional(element) || /^[\u0391-\uFFE5\w]+$/.test(value);
+	}, "只能包含中英文、数字和下划线");
+	jQuery.validator.addMethod("nomobile", function(value, element) { 
+    var tel = /^(13|15|14|17|18)\d{9}$/;
+	var $cstr= true;
+	if (tel.test(value)) $cstr= false;
+	return $cstr || this.optional(element); 
+}, "用户名不能是手机号");*/
+	jQuery.validator.addMethod("IScaptchastr", function(value, element) {
+	var str="点击获取验证码";
+	var flag=true;
+	if (str==value)
+	{
+	flag=false;
+	}
+	return  flag || this.optional(element) ;
+	}, "请填写验证码");
+/////验证码部分
+{#if $verify_userreg=="1"#}
+function imgcaptcha_1(inputID,imgdiv_1)
+{
+	$(inputID).focus(function(){
+		if ($(inputID).val()=="点击获取验证码")
+		{
+		$(inputID).val("");
+		$(inputID).css("color","#333333");
+		}
+		$(inputID).parent("div").css("position","relative");
+		//设置验证码DIV
+		//$(imgdiv).css({ position: "absolute",right: "-148px", "top": "0px" , "z-index": "10", "background-color": "#FFFFFF", "border": "1px #A3C8DC solid","display": "none","margin-left": "15px"});
+		$(imgdiv_1).show();
+		if ($(imgdiv_1).html()=='')
+		{
+		$(imgdiv_1).append("<img src=\"/include/imagecaptcha.php?t={#$random#}\" id=\"getcode\" align=\"absmiddle\"  style=\"cursor:pointer; margin:3px;\" title=\"看不请验证码？点击更换一张\"  border=\"0\"/>");
+		}
+		$(imgdiv_1+" img").click(function()
+		{
+			$(imgdiv_1+" img").attr("src",$(imgdiv_1+" img").attr("src")+"1");
+			$(inputID).val("");
+			$("#Form1_1").validate().element("#postcaptcha_1");	
+		});
+		$(document).unbind().click(function(event)
+		{
+			var clickid=$(event.target).attr("id");
+			if (clickid!="getcode" &&  clickid!="postcaptcha")
+			{
+			$(imgdiv).hide();
+			$(inputID).parent("div").css("position","");
+			$(document).unbind();
+			}			
+		});
+	});
+}
+imgcaptcha_1("#postcaptcha_1","#imgdiv_1");
+//验证码结束
+{#/if#}
+//
+$(".but-reg").hover(function(){$(this).addClass("but-reg-hover")},function(){$(this).removeClass("but-reg-hover")});
+$(".but-reg-login").hover(function(){$(this).addClass("but-reg-login-hover")},function(){$(this).removeClass("but-reg-login-hover")});
+//
+
+});
+
+
+</script>
+</head>
+<body>
+<!--头部开始-->
+	{#include file="user/header.htm"#}
+	<!--头部结束-->
+<div class="kua">
+  <div class="panel-heading">欢迎加入壹打工网</div>
+        <div class="left_list">
+        
+            
+                <script type="text/javascript"> 
+            function setTab(name,m,n){ 
+            for( var i=1;i<=n;i++){ 
+            var menu = document.getElementById(name+i); 
+            var showDiv = document.getElementById("cont_"+name+"_"+i); 
+            menu.className = i==m ?"on":""; 
+            showDiv.style.display = i==m?"block":"none"; 
+            } 
+            } 
+            </script> 
+            
+            <div class="tab"> 
+                <ul> 
+                    <li id="one1" class="on" onmouseover='setTab("one",1,5)'>个人会员注册</li> 
+                    <li id="one2" onmouseover='setTab("one",2,5)'>企业会员注册</li> 
+                </ul> 
+            </div> 
+            <div class="tabList ergao"> 
+                <div id="cont_one_1" class="the01 one block"> 
+                    <form id="Form1_1" name="Form1" method="post" action="?sd" class="form-horizontal home-form">
+					<input name="member_type" type="hidden" id="member_type_1" value="2" />	
+                                <div class="form-group">
+										<h2>个人会员注册<span class=""><font color="#ff0000">*</font>&nbsp;为必填项，谢谢合作。</span></h2>
+								</div>
+						<div class="form-group">
+							<label class=" fl control-label"><font color="#ff0000">*</font>手机号：</label>
+							<div class="fl">
+								<input type="text" name="username_1" id="username_1" class="sign_up_input_name form-control" placeholder="请输入手机号码" maxlength="11" />
+							</div>
+                            <div class="item-tip_1">
+                            	
+                            </div>
+							<div class="clear"></div>
+						</div>
+
+						<div class="form-group">
+							<label class="fl control-label"><font color="#ff0000">*</font>性别：</label>
+							<div class="fl">
+								<div id="sex_radio">
+                                    <input name="sex" id="sex" type="hidden" value="" />
+                                    <input name="sex_cn" id="sex_cn" type="hidden" value="" />
+                                      <div class="input_radio{#if $userprofile.sex==1||$userprofile.sex==""#} select{#/if#}" id="1">男</div>
+                                      <div class="input_radio{#if $userprofile.sex==2#} select{#/if#}" id="2">女</div>			  
+                                      <div class="clear"></div>
+			  					</div>
+                                <div class="item-tip_1"></div>
+								<div class="clear"></div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="fl control-label"><font color="#ff0000">*</font>您的姓名：</label>
+							<div class="fl">
+                                <input name="realname" type="text" class="input_text_200 form-control" id="realname" maxlength="6"   value="" />
+							</div>
+                            <div class="item-tip_1"></div>
+							<div class="clear"></div>
+						</div>
+
+						<div class="form-group">
+							<label class="fl control-label"><font color="#ff0000">*</font>您的出生年份：</label>
+							<div class="fl">
+								<div style="z-index:10; float:left">
+                                 <div class="input_text_wc0_bg date_input">{#if $userprofile.birthday#}{#$userprofile.birthday#}{#else#}请选择{#/if#}</div>
+                                  <input name="birthday" id="birthday" type="hidden" value="" />
+                                </div>
+								<div class="item-tip_1"></div>
+							<div class="clear"></div>
+							</div>
+						</div>
+
+						<div class="form-group idng" id="jobsCity_1" style="position:relative;z-index:9">
+							<label class="fl control-label"><font color="#ff0000">*</font>目前居住地区：</label>
+							<div class="fl" style="width:220px;">
+								
+                                <div class="input_text_wc0_bg" id="cityText_1">{#$userprofile.residence_cn|default:"请选择"#}</div>
+                                 <div style="display:none;left:1px;top:46px; width:600px;" id="divCityCate_1" class="divJobCate">
+                                     <table class="jobcatebox citycatebox"><tbody></tbody></table>
+                                 </div>
+                                 <input name="residence" id="residence" type="hidden" value="" />
+                                 <input name="residence_cn" id="residence_cn" type="hidden" value="" />
+
+							</div>
+                            <div class="item-tip_1"></div>
+							<div class="clear"></div>
+						</div>
+                        
+                        {#if $verify_userreg=="1"#}
+                        <div class="form-group">
+                            <label class="fl control-label"><font color="#ff0000">*</font>验证码：</label>
+                            
+                            <div class="fl" >
+                                <input  class="sign_up_input_varcode form-control" name="postcaptcha" id="postcaptcha_1" type="text" value="点击获取验证码" style="color:#999999;width:110px;"/>
+                            </div><div id="imgdiv_1" class="fl item-tip"></div>
+                        </div>
+						{#/if#}
+                        <div class="clear"></div>
+                        
+                        <div class="form-group">
+							<div class="col-sm-offset-3">
+								<div class="checkbox">
+									<label style="line-height:24px;">
+										<input type="checkbox" class="heif" name="agreement" id="agreement_1" value="1" checked="checked"/> 我已阅读并同意遵
+                               			<a href="/agreement/">《{#$QISHI.site_name#}用户服务协议》</a>
+									</label>
+								</div>
+							</div>
+						</div>
+                        
+                        <!--注册成功后提示-->
+                        <div class="form-group" id="waiting_1" style="display:none">
+                            <label class="fl control-label">&nbsp;</label>
+                            <div class="fl col-sm-offset-3">
+                                <button class="btn btn-lg btn-primary btn-block" name="signup" type="submit" style="color:#fff; background:#999;">正在注册中... </button>
+                            </div> 
+                        </div>
+						<!--注册提交-->
+                        <div class="form-group" id="sub_1">
+							<label class="fl control-label">&nbsp;</label>
+                            <div class="fl abc">
+                                <button class="btn btn-lg btn-primary btn-block" name="signup" type="submit">提交注册</button>
+                            </div>
+                        </div>
+						
+					</form>
+                </div> 
+                <div id="cont_one_2" class="the01 the02 one sign_form"> 
+                <form id="Form1" name="Form1" method="post" action="?sd" class="form-horizontal home-form">
+                 <input name="member_type" type="hidden" id="member_type" value="1" />
+						<div class="form-group">
+								<h2>企业会员注册<span class=""><font color="#ff0000">*</font>&nbsp;为必填项，谢谢合作。</span></h2>
+						</div>
+
+						<div class="form-group">
+							<label class=" fl control-label"><font color="#ff0000">*</font><!--手机号-->用户名：</label>
+							<div class="fl input_box">
+								<input type="text" name="username" id="username" class="sign_up_input_name form-control error" placeholder="请输入用户名" maxlength="25" />
+							</div>
+                            <div class="item-tip"></div>
+						</div>
+
+						<div class="form-group">
+							<label class="fl control-label"><font color="#ff0000">*</font>密码：</label>
+							<div class="fl input_box">
+								<input type="password" name="password" id="password" class="sign_up_input_pwd form-control" placeholder="请输入登录密码" maxlength="18" />
+							</div>
+                            <div class="item-tip"></div>
+                            <div class="clear"></div>
+						</div>
+
+						<div class="form-group">
+							<label class="fl control-label"><font color="#ff0000">*</font>确认密码：</label>
+							<div class="fl input_box">
+								<input type="password" name="password2" id="password2" class="sign_up_input_pwd form-control" placeholder="请确认登录密码" maxlength="18"/>
+							</div>
+                            <div class="item-tip"></div>
+							<div class="clear"></div>
+						</div>
+						
+                        <div class="form-group">
+							<label class="fl control-label"><font color="#ff0000">*</font>公司名称：</label>
+							<div class="fl input_box">
+                            	<input type="text" name="companyname" id="companyname" class="form-control" placeholder="请输入公司名称" maxlength="60" />
+							</div>
+                            <div class="item-tip"></div>
+							<div class="clear"></div>
+						</div>
+                        
+						<div class="form-group">
+							<label class="fl control-label"><font color="#ff0000">*</font>电子邮箱：</label>
+							<div class="fl input_box">
+                            	<input type="text" name="email" id="email" class="sign_up_input_mail form-control" placeholder="请输入您的常用邮箱" maxlength="60" />
+							</div>
+                            <div class="item-tip"></div>
+							<div class="clear"></div>
+						</div>
+                        
+                        <div class="form-group jobmain idng">
+							<label class="fl control-label"><font color="#ff0000">*</font>所在地区：</label>
+							<div id="jobsCity" style="position:relative;">
+                           <div class="input_text_wc0_bg" id="cityText">{#$company_profile.district_cn|default:"请选择"#}</div>
+							<div style="display:none;left:1px;top:46px;" id="divCityCate" class="divJobCate">
+								<table class="jobcatebox citycatebox"><tbody></tbody></table>
+							</div>
+							<input id="district" type="hidden" value="" name="district">
+							<input id="sdistrict" type="hidden" value="" name="sdistrict">
+							<input id="districtID" type="hidden" value="">
+							<input name="district_cn" id="district_cn" type="hidden" value="" />
+                              </div>
+						</div>
+
+						<!--<div class="form-group">
+							<label class="fl control-label">备用手机号：</label>
+							<div class="fl">
+								<input type="text" class="form-control" placeholder=""  name="sphone2" maxlength="11" />
+
+							</div>
+						</div>-->
+                        
+						<div class="form-group">
+							<label class="fl control-label">客户经理：</label>
+							<div class="fl">
+								<input type="text" class="form-control" name="xs_user" id="xs_user">
+							</div>
+						</div>						
+                        {#if $verify_userreg=="1"#}
+                        <div class="form-group">
+                            <label class="fl control-label">验证码：</label>
+                            
+                            <div class="fl" >
+                                <input  class="sign_up_input_varcode form-control" name="postcaptcha" id="postcaptcha" type="text" value="点击获取验证码" style="color:#999999;width:110px;"/>
+                            </div><div id="imgdiv" class="fl item-tip"></div>
+                        </div>
+                        {#/if#}
+                        <div class="clear"></div>
+						 <div class="form-group">
+							<div class="col-sm-offset-3">
+								<div class="checkbox">
+									<label style="line-height:24px;">
+										<input type="checkbox" class="heif" name="agreement" id="agreement" value="1" checked="checked"/> 我已阅读并同意遵
+                               			<a href="/agreement/">《{#$QISHI.site_name#}用户服务协议》</a>
+									</label>
+								</div>
+							</div>
+						</div>
+                        <!--注册之后提示-->
+                       <!-- <div class="form-group">
+                            <div class="item-input-box waiting" id="waiting" style="display:none">
+                              正在注册中,请等待... 
+                            </div>
+                        </div>-->
+                        <div class="form-group" id="waiting" style="display:none">
+									<label class="fl"> &nbsp;</label>
+							<div class="fl col-sm-offset-3">
+								<button class="btn btn-lg btn-primary btn-block" name="signup" id="waiting" type="submit" style="color:#fff; background:#999;">正在注册中...</button>
+							</div>
+						</div>
+
+						<div class="form-group" id="sub">
+									<label class="fl"> &nbsp;</label>
+							<div class="fl col-sm-offset-3">
+								<button class="btn btn-lg btn-primary btn-block" name="signup" id="waiting" type="submit">提交注册</button>
+							</div>
+						</div>
+
+						<!--  -->
+                        
+                    </form>
+                </div> 
+            </div> 
+                        
+
+        </div>
+
+
+
+
+
+        <div class="right_list">
+                
+                <div class="h_anniu">
+                <p>您已注册，请点击登录：</p>
+                <a href="/user/login.php" class="btn-warning">个人 / 企业登录入口</a>
+                
+                </div>
+
+                <div class="h_tishi">
+                    <p>全国免费服务热线：</p>
+                    <a href="tel:400-118-5188">400-118-5188</a>
+                </div>
+
+        </div>
+
+</div>
+
+<!--底部开始-->
+   {#include file="user/footer.htm"#}
+	<!--底部结束-->
+</body>
+</html>

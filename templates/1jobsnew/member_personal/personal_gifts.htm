@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{#$title#}</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<meta name="author" content="骑士CMS" />
+<meta name="copyright" content="74cms.com" />
+<link href="/files/css/user_common.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/user_company.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/user.css" rel="stylesheet" type="text/css" />
+<script src="/files/js/jquery.js" type="text/javascript" language="javascript"></script>
+<script src="/files/js/jquery.validate.min.js" type='text/javascript' language="javascript"></script>
+<link href="/files/css/cep/cheping_login.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+$(document).ready(function()
+{
+$("#Form1").validate({
+// debug: true,
+// onsubmit:false,
+//onfocusout :true,
+   rules:{
+   account:{
+    required: true
+   },
+   pwd: {
+	required:true
+   }
+   {#if $verify_gifts=="1"#}
+   ,
+   postcaptcha: {
+   IScaptchastr:true,
+   required:true,
+   remote:{     
+	url:"/include/imagecaptcha.php",     
+	type:"post",    
+	data:{"postcaptcha":function (){return $("#postcaptcha").val()},"act":"verify","time":function (){return new Date().getTime()}}     
+	}
+   }
+   {#/if#} 
+	},
+    messages: {
+    account: {
+    required: "请输入卡号"
+   },
+   pwd: {
+    required: "请输入密码"
+   }
+   {#if $verify_gifts=="1"#}
+   ,
+   postcaptcha: {
+    required: jQuery.format("请输入验证码"),
+	 remote: jQuery.format("验证码错误")
+   }
+   {#/if#}
+  },
+  errorPlacement: function(error, element) {
+    if ( element.is(":radio") )
+        error.appendTo( element.parent().next().next() );
+    else if ( element.is(":checkbox") )
+        error.appendTo ( element.next());
+    else
+        error.appendTo(element.parent());
+	}
+    });
+	jQuery.validator.addMethod("IScaptchastr", function(value, element) {
+	var str="点击获取验证码";
+	var flag=true;
+	if (str==value)
+	{
+	flag=false;
+	}
+	return  flag || this.optional(element) ;
+	}, "请填写验证码");
+
+
+function imgcaptcha(inputID,imgdiv)
+{
+	$(inputID).focus(function(){
+		if ($(inputID).val()=="点击获取验证码")
+		{
+		$(inputID).val("");
+		$(inputID).css("color","#333333");
+		}
+		$(inputID).parent("div").css("position","relative");
+		//设置验证码DIV
+		$(imgdiv).css({ position: "absolute", left:  $(inputID).width(), "bottom": "0px" , "z-index": "10", "background-color": "#FFFFFF", "border": "1px #A3C8DC solid","display": "none","margin-left": "25px"});
+		$(imgdiv).show();
+		if ($(imgdiv).html()=='')
+		{
+		$(imgdiv).append("<img src=\"/include/imagecaptcha.php?t={#$random#}\" id=\"getcode\" align=\"absmiddle\"  style=\"cursor:pointer; margin:3px;\" title=\"看不请验证码？点击更换一张\"  border=\"0\"/>");
+		}
+		$(imgdiv+" img").click(function()
+		{
+			$(imgdiv+" img").attr("src",$(imgdiv+" img").attr("src")+"1");		
+		});
+		$(document).unbind().click(function(event)
+		{
+			var clickid=$(event.target).attr("id");
+			if (clickid!="getcode" &&  clickid!="postcaptcha")
+			{
+			$(imgdiv).hide();
+			$(inputID).parent("div").css("position","");
+			$(document).unbind();
+			}			
+		});
+	});
+}
+imgcaptcha("#postcaptcha","#imgdiv");
+});
+
+///----------使用时间设置
+/*$("#btn").click(){
+	$.get("/user/personal/personal_service.php", {"act":"ceping"},
+		function (data,textStatus)
+		 {			
+			//alert(data);
+		 }
+	);
+	}*/
+	
+function ceping(){	
+//var tsTimeStamp= new Date().getTime();
+	$.get("/user/personal/personal_service.php", {"act":"ceping"},
+		function (data,textStatus)
+		 {			
+			//alert(data);
+			$(".click").html(data);
+		 }
+	);
+	}
+</script>
+</head>
+
+<body>
+{#include file="user/header.htm"#}
+
+<div class="page_location link_bk">当前位置：<a href="/">首页</a> > <a href="/user/personal/personal_index.php">会员中心</a> >职业测评</div>
+
+<div class="usermain">
+  <div class="leftmenu com link_bk">
+   {#include file="member_personal/left.htm"#}
+  </div>
+<div class="rightmain">
+  
+	<div class="bbox1">
+   <div class="titleH1">
+		<div class="h1-title">职业测评</div>
+	</div>
+    <div style="height:40px; line-height:40px; color:#F00; padding-left:20px;">温馨提示：只有填写简历了并且简历完整度达到40%以上才可以获取。</div>
+	  <div class="gifts_list">
+			<div class="ilist_tit">
+				<div class="ilistt1">卡号</div>
+				<div class="ilistt2">密码</div>
+				<div class="ilistt3">有效时间</div>
+				<div class="ilistt4">使用时间</div>
+			</div>
+  		 	{#if $gifts#}
+			{#foreach from=$gifts item=list#}
+			<div class="ilist_txt">
+				<div class="ilistc1">{#$list.account#}</div><!--#$list.giftsname#-->
+				<div class="ilistc2">{#$list.password#}</div>
+				<div class="ilistc3">{#if $list.t_starttime=="0" && $list.t_endtime=="0"#} 
+		不限制
+		{#else#}
+			 {#if $list.t_starttime=="0"#} 
+			不限制
+			{#else#}
+			{#$list.t_starttime|date_format:"%Y-%m-%d"#}
+			{#/if#}
+			--
+			{#if $list.t_endtime=="0"#} 
+			不限制
+			{#else#}
+			{#$list.t_endtime|date_format:"%Y-%m-%d"#}
+			{#/if#}
+		{#/if#}</div>
+				<div class="ilistc4">{#if $list.usetime == '0'#}未使用{#else#}{#$list.usetime|date_format:"%Y-%m-%d"#}{#/if#}</div>
+			</div>
+			 {#/foreach#}
+			{#else#}
+			<div class="emptytip" style="height:40px; line-height:40px; margin:0px; padding:0px;">您还没有职业测评过！</div>
+			{#/if#}
+                <div><!--style="height:100px;"-->
+      <table width="100%" border="0">
+        <tr>
+          <td height="94" align="center">
+          {#if !$gifts#}
+          <h3><a href="?act=get_gifts" style="height:50px; width:240px; display:block;line-height:50px; background:#099; color:#FFF; border-radius: 8px;">立即获取职业测评卡号和密码</a></h3>
+          {#else#}
+          <!--<h3><a href="?act=ceping" style="height:50px; width:100px; display:block;line-height:50px; background:#099; color:#FFF; border-radius: 8px;">立即测评</a></h3>-->
+           <div class="body resize">        
+       <form id="loginForm" action="http://www.lgser.net/person/login.do" target="_blank" method="post" class="login form" onsubmit=" return ceping();">
+       
+       	<div class="cepinglogin">登录壹打工网 职业测评系统</div>
+         
+        {#if $gifts#}
+		{#foreach from=$gifts item=list#}
+         <p><label class="lbl">卡号：</label><input type="text" name="person.personName" value="{#$list.account#}" id="person_personName" class="txt"/><span class="red">*</span></p>
+         <p><label class="lbl">密码：</label><input type="password" name="person.personPassword" id="person_personPassword" value="{#$list.password#}" class="txt"/><span class="red">*</span></p>
+        {#/foreach#}
+		{#else#}
+        <p><label class="lbl">卡号：</label><input type="text" name="person.personName" value="" id="person_personName" class="txt"/><span class="red">*</span></p>
+        <p><label class="lbl">密码：</label><input type="password" name="person.personPassword" id="person_personPassword" class="txt"/><span class="red">*</span></p>
+        {#/if#}
+         <p class="none"><label class="lbl">&nbsp;</label><input id="login_type1" type="radio" name="type" value="1" checked="checked"/><label for="login_type1"> 个人用户</label>
+         </p>      
+         <p><label class="lbl">&nbsp;</label><input type="submit" value="登录" class="btn"/>
+         &nbsp;&nbsp;&nbsp;&nbsp;忘记密码：&nbsp;&nbsp;<a href="/zt/index.php?act=jobs_guide" target="_blank">查看帮助</a></p>
+       </form>
+       <div class="clr"></div>
+    </div>
+          {#/if#}
+          </td>
+          </tr>
+      </table>
+    
+    </div>
+			<div class="clear"></div>
+		</div>
+
+	</div>
+  </div>
+	</div>
+</div>
+
+<div class="clear"></div>
+</div>
+
+{#include file="user/footer.htm"#}
+</body>
+</html>

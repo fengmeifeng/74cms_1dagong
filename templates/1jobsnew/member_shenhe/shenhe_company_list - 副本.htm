@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<title>{#$title#}</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<meta name="author" content="骑士CMS" />
+<meta name="copyright" content="74cms.com" />
+<link href="/files/css/user_common.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/user_hunter.css" rel="stylesheet" type="text/css" />
+<script src="/files/js/jquery.js" type="text/javascript" language="javascript"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	//更多操作
+ $(".publicity").hover(
+  function () {
+     $(this).children(".selbox").slideDown('fast');
+  },
+  function () {
+     $(this).children(".selbox").hide();
+  }
+);
+//更多操作-菜单效果
+$(".publicity .selbox li").hover(
+  function () {
+     $(this).css("background-color","#F6F6F6");
+  },
+  function () {
+     $(this).css("background-color","#FFFFFF");
+  }
+);
+{#if $QISHI.operation_shenhe_mode=="1" && $points_rule.shenhe_shenheshenhe_shenhejobs_refresh.value>"0"#}
+		$("#refresh").click(function(){
+			var length=$("#form1 :checkbox[checked]").length;
+			var refresh_point="{#$points_rule.shenhe_shenheshenhe_shenhejobs_refresh.value#}";
+			var total_point=length*refresh_point;
+			alert("刷新职位可提高职位排名，每条职位消耗{#$points_rule.shenhe_shenheshenhe_shenhejobs_refresh.value#}{#$QISHI.shenhe_points_quantifier#}{#$QISHI.shenhe_points_byname#}，您选择了"+length+"条职位，总共需要消耗"+total_point+"{#$QISHI.shenhe_points_quantifier#}{#$QISHI.shenhe_points_byname#}，确定刷新吗？")
+		});
+	{#/if#}
+});
+
+</script>
+</head>
+<body>
+{#include file="user/header.htm"#}
+
+<div class="page_location link_bk">当前位置：<a href="{#$QISHI.main_domain#}">首页</a> > <a href="/user/shenhe/shenhe_index.php">会员中心</a> > 行业名企管理</div>
+<div class="usermain">
+  <div class="leftmenu  hunter link_bk">
+  	 {#include file="member_shenhe/left.htm"#}
+  </div>
+  <div class="rightmain">
+  
+ 	<div class="bbox1 link_bk">
+		<div class="topnav">
+			<div class="titleH1">
+				<div class="h1-title">管理行业名企</div>
+			</div>
+			<div class="title_text">
+				{#if $QISHI.operation_shenhe_mode=="2"#}
+				您已发布&nbsp;<span>{#$total#}</span>&nbsp;个行业名企，还可发布&nbsp;<span>{#$setmeal.jobs_add#}</span>&nbsp;个行业名企。
+				{#/if#}
+				<div class="but95lan" onclick="javascript:location.href='?act=addjobs'">立即发布</div>
+			</div>
+
+			<div class="navs">
+				<a href="javascript:void(0);" class="se">所有职位</a>
+					
+				<div class="clear"></div>
+			</div>
+		
+		</div>
+		<form id="form1" name="form1" method="post" action="?act=jobs_perform">
+		<!-- 所有职位 -->
+		
+		{#if $smarty.get.jobtype==""#}
+		<div class="new_shenhe_job">
+			<table class="n_shenhe_table" cellspacing="0">
+				<tr bgcolor="F5F5F5">
+					<th class="n_shenhe_first" align="left">
+						<label><input type="checkbox" id="chk" name="chkAll"> 
+						公司名称</label>
+					</th>
+                    <th>会员名称</th>
+                    <th>营业执照</th>
+                    <th>客户经理</th>
+                    <th>注册时间</th>
+					<th align="center">操作</th>
+				</tr>
+				{#if $list#}
+				{#foreach from=$list item=li#}
+				<tr>
+					<td class="n_shenhe_first" align="left">
+						<input name="y_id[]" type="checkbox" id="y_id"  value="{#$li.id#}"/> <a href="{#$li.company_url#}" target="_blank">{#$li.companyname#}</a><br />
+					</td>
+                    <td>{#$li.username#}</td>
+                    <td>{#if $list.license#}
+						{#if $list.certificate_img#}
+						<a href="{#$certificate_dir#}{#$list.certificate_img#}" target="_blank" title="点击查看">{#$list.license#}</a>&nbsp;
+						{#else#}
+						{#$list.license#}
+						{#/if#}
+						{#else#}
+						<span  style="color: #999999">未上传</span>
+						{#/if#}		
+                        </td>
+                    <td>{#$li.xs_user#}</td>
+                    <td>{#$li.reg_time|date_format:"%Y-%m-%d"#}</td>
+					<td align="center" width="15%">
+						<a href="?act=jobs_perform&delete=1&y_id={#$li.id#}" class="but_a">删除</a>&nbsp;&nbsp;&nbsp;<a href="?act=edit_jobs&id={#$li.id#}" class="but_a">修改</a><br />{#if $li.status=="2"#}<a href="?act=jobs_perform&display1=1&y_id={#$li.id#}" class="but_a">审核</a>&nbsp;&nbsp;&nbsp;{#/if#}{#if $li.status=="1"#}<a href="?act=jobs_perform&display2=1&y_id={#$li.id#}" class="but_a">修改</a>&nbsp;&nbsp;&nbsp;{#/if#}<a href="{#"QS_resumelist,talent:2-trade:"|cat:$li.trade|qishi_url#}" class="but_a">审核</a>
+					</td>
+				</tr>
+				{#/foreach#}
+				<tr>
+					<td colspan="2" style="border:0;" class="n_shenhe_first">
+						<input type="submit" name="delete" value="删除会员" class="but95_35lan" id="delete"/>
+					</td>
+				</tr>
+				{#if $page#}
+				<table border="0" align="center" cellpadding="0" cellspacing="0" class="link_bk">
+		          		<tr>
+		            			<td height="50" align="center"> <div class="page link_bk">{#$page#}</div></td>
+		          		</tr>
+		      		</table>
+		      		{#/if#}
+				{#else#}
+				<tr><td colspan="2" style="border:0"><div class="emptytip">没有企业会员！</div></td></tr>
+				{#/if#}
+			</table>
+		</div>
+		{#/if#}
+		</form>
+
+  	</div>
+  </div>
+  <div class="clear"></div>
+</div>
+{#include file="user/footer.htm"#}
+</body>
+</html>

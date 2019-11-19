@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<title>{#$title#}</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<meta name="author" content="骑士CMS" />
+<meta name="copyright" content="74cms.com" />
+<link href="/files/css/user_common.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/user_hunter.css" rel="stylesheet" type="text/css" />
+<script src="/files/js/jquery.js" type="text/javascript" language="javascript"></script>
+</head>
+<body>
+{#include file="user/header.htm"#}
+
+<div class="page_location link_bk">当前位置：<a href="{#$QISHI.main_domain#}">首页</a> > <a href="/user/login.php">登录</a> > 找回密码</div>
+	<div class="forget_password">
+	<div style="font-size:18pt; color:#333; font-weight:bold; margin-bottom:30px;">个人会员密码找回</div>
+    	<form method="post" action="{#$QISHI.main_domain#}user/user_getpass.php?dopost=step2">
+            <input name="sphone" type="text" class="input_text_200 form-control"> 请输入您的手机号码
+            <input type="submit" value="点击发送密码到您的手机" class="fasong_btn">
+			<h2 style="margin-top:20px;color:#880088;">支持个人会员密码找回，企业会员如需密码找回服务请<a href="/user/user_getpass_c.php" style="color:#f00;">点击这里</a>或者联系客户经理或拨打客服热线。</h2>
+		</form>
+    </div>	
+  <div class="clear"></div>
+</div>
+{#include file="user/footer.htm"#}
+</body>
+</html>

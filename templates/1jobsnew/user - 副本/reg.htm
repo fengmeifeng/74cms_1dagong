@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>壹打工网-注册</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<meta name="author" content="骑士CMS" />
+<meta name="copyright" content="74cms.com" />
+<link href="/files/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/reg.css" rel="stylesheet" type="text/css" />
+<script src="/files/js/jquery.js" type='text/javascript' language="javascript"></script>
+<script src="/files/js/jquery.validate.min.js" type='text/javascript' language="javascript"></script>
+<script type="text/javascript">
+//验证
+$(document).ready(function() {
+ $("#Form1").validate({
+//debug: true,
+// onsubmit:false,
+//onfocusout :true,
+submitHandler:function(form){
+if($("#agreement").attr("checked")==false)
+{
+alert("您必须同意[注册协议]才能继续下一步");
+return false;
+}
+		$("#reg").hide();
+		$("#waiting").show();
+		var tsTimeStamp= new Date().getTime();
+		$.post("{#$QISHI.main_domain#}plus/ajax_user.php", { "username": $("#username").val(),"password": $("#password").val(),"member_type": $("#member_type").val(),"email":$("#email").val(),"postcaptcha": $("#postcaptcha").val(),"time":tsTimeStamp,"act":"do_reg"},
+	 	function (data,textStatus)
+	 	 {
+			if (data=="err")
+			{
+			$("#waiting").hide();
+			$("#reg").show();
+			$("#username").attr("value","");
+			$("#email").attr("value","");
+			alert("注册失败");
+			}
+			else
+			{
+				$("body").append(data);
+			}
+	 	 })
+//$(form).ajaxSubmit();
+},
+success: function(label) {
+				label.text(" ").addClass("success");
+			},
+   rules:{
+   username:{
+    required: true,
+	userName : true,
+	nomobile : true,
+	byteRangeLength : [3, 18],
+	remote:{     
+		url:"{#$QISHI.main_domain#}plus/ajax_user.php",     
+		type:"post",    
+		data:{"usname":function (){return $("#username").val()},"act":"check_usname","time":function (){return new Date().getTime()}}     
+		}
+   },
+   email:{
+    required: true,
+	email:true,
+	remote:{     
+		url:"{#$QISHI.main_domain#}plus/ajax_user.php",     
+		type:"post",    
+		data:{"email":function (){return $("#email").val()},"act":"check_email","time": new Date().getTime()}     
+		}
+   },
+   {#if $verify_userreg=="1"#}
+    postcaptcha:{
+	IScaptchastr:true,
+    required: true,
+	remote:{     
+	url:"{#$QISHI.main_domain#}include/imagecaptcha.php",     
+	type:"post",    
+	data:{"postcaptcha":function (){return $("#postcaptcha").val()},"act":"verify","time":function (){return new Date().getTime()}}     
+	}
+   },
+   {#/if#}
+   password:{
+    required: true,
+	minlength:6,
+    maxlength:18
+   },
+   password2:{
+   required: true,
+	 equalTo:"#password"
+   }
+	},
+    messages: {
+    username: {
+    required: "请填写用户名",
+	remote: jQuery.format("用户名已经存在或者不合法")	
+   },
+    email: {
+    required: "请填写电子邮箱",
+	email: jQuery.format("电子邮箱格式错误"),
+	remote: jQuery.format("email已经存在")	
+   },
+    {#if $verify_userreg=="1"#}
+    postcaptcha: {
+    required: "请填写验证码",
+	remote: jQuery.format("验证码错误")	
+   },
+    {#/if#}
+   password: {
+    required: "请填写密码",
+    minlength: jQuery.format("填写不能小于{0}个字符"),
+	maxlength: jQuery.format("填写不能大于{0}个字符")
+   },
+   password2: {
+   required: "请填写密码",
+    equalTo: "两次输入的密码不同"
+   }
+  },
+  errorPlacement: function(error, element) {
+    if ( element.is(":radio") )
+        error.appendTo( element.parent().next().next() );
+    else if ( element.is(":checkbox") )
+        error.appendTo ( element.next());
+    else
+        error.appendTo(element.parent().next());
+	}
+    });
+	 //中文字两个字节
+	jQuery.validator.addMethod("byteRangeLength", function(value, element,	param) {
+	var length = value.length;
+	for (var i = 0; i < value.length; i++) {
+			if (value.charCodeAt(i) > 127) {
+			length++;
+			}
+		}
+	return this.optional(element)	|| (length >= param[0] && length <= param[1]);
+	}, "确保的值在3-18个字节之间");
+	 //字符验证
+	jQuery.validator.addMethod("userName", function(value, element) {
+	return this.optional(element) || /^[\u0391-\uFFE5\w]+$/.test(value);
+	}, "只能包含中英文、数字和下划线");
+	jQuery.validator.addMethod("nomobile", function(value, element) { 
+    var tel = /^(13|15|14|17|18)\d{9}$/;
+	var $cstr= true;
+	if (tel.test(value)) $cstr= false;
+	return $cstr || this.optional(element); 
+}, "用户名不能是手机号");
+	jQuery.validator.addMethod("IScaptchastr", function(value, element) {
+	var str="点击获取验证码";
+	var flag=true;
+	if (str==value)
+	{
+	flag=false;
+	}
+	return  flag || this.optional(element) ;
+	}, "请填写验证码");
+/////验证码部分
+{#if $verify_userreg=="1"#}
+function imgcaptcha(inputID,imgdiv)
+{
+	$(inputID).focus(function(){
+		if ($(inputID).val()=="点击获取验证码")
+		{
+		$(inputID).val("");
+		$(inputID).css("color","#333333");
+		}
+		$(inputID).parent("div").css("position","relative");
+		//设置验证码DIV
+		$(imgdiv).css({ position: "absolute",right: "-148px", "top": "0px" , "z-index": "10", "background-color": "#FFFFFF", "border": "1px #A3C8DC solid","display": "none","margin-left": "15px"});
+		$(imgdiv).show();
+		if ($(imgdiv).html()=='')
+		{
+		$(imgdiv).append("<img src=\"{#$QISHI.main_domain#}include/imagecaptcha.php?t={#$random#}\" id=\"getcode\" align=\"absmiddle\"  style=\"cursor:pointer; margin:3px;\" title=\"看不请验证码？点击更换一张\"  border=\"0\"/>");
+		}
+		$(imgdiv+" img").click(function()
+		{
+			$(imgdiv+" img").attr("src",$(imgdiv+" img").attr("src")+"1");
+			$(inputID).val("");
+			$("#Form1").validate().element("#postcaptcha");	
+		});
+		$(document).unbind().click(function(event)
+		{
+			var clickid=$(event.target).attr("id");
+			if (clickid!="getcode" &&  clickid!="postcaptcha")
+			{
+			$(imgdiv).hide();
+			$(inputID).parent("div").css("position","");
+			$(document).unbind();
+			}			
+		});
+	});
+}
+imgcaptcha("#postcaptcha","#imgdiv");
+//验证码结束
+{#/if#}
+//
+$(".but-reg").hover(function(){$(this).addClass("but-reg-hover")},function(){$(this).removeClass("but-reg-hover")});
+$(".but-reg-login").hover(function(){$(this).addClass("but-reg-login-hover")},function(){$(this).removeClass("but-reg-login-hover")});
+//
+
+});
+</script>
+</head>
+<body class="login_body">
+	<div class="sign_up_box">
+		<div class="container">
+			<div class="sign_lgo">
+				<a href="{#$QISHI.main_domain#}"><img src="{#$QISHI.upfiles_dir#}{#$QISHI.web_logo#}" alt="{#$QISHI.site_name#}" border="0" align="absmiddle" /></a>
+				<a href="{#$QISHI.main_domain#}" class="back-to-index"></a>
+			</div>
+			<div class="reg_type">{#if $smarty.get.type=="2"||$smarty.get.type==""#}个人注册{#elseif $smarty.get.type=="1"#}企业注册{#elseif $smarty.get.type=="3"#}注册猎头会员{#elseif $smarty.get.type=="4"#}注册培训会员{#else#}注册审核会员{#/if#}</div>
+			<div class="clear"></div>
+			<div class="sign_centent">
+				<!-- 注册表单 -->
+				<div class="sign_left">
+					<div class="sign_nav">
+						<ul>
+							{#if $smarty.get.type=="3"#}
+							<!-- <li><a href="?type=3" class="select">猎头注册</a></li> -->
+							{#elseif $smarty.get.type=="4"#}
+							<!-- <li><a href="?type=4" class="select">培训注册</a></li> -->
+							{#else#}
+							<li><a href="?type=2" {#if $smarty.get.type=="2"||$smarty.get.type==""#}class="select"{#/if#}>个人注册</a></li>
+							<li><a href="?type=1" {#if $smarty.get.type=="1"#}class="select"{#/if#}>企业注册</a></li>
+							{#/if#}
+							<div class="clear"></div>
+						</ul>
+					</div>
+					<form id="Form1" name="Form1" method="post" action="?sd">
+					<div class="sign_form">
+						<ul>
+							<li>
+								<div class="w99"><span>*</span>用户名：</div>
+								<div class="input_box"><input type="text" name="username" id="username" class="sign_up_input_name" placeholder="请输入用户名" maxlength="25" /></div>
+								<div class="item-tip"></div>
+								<div class="clear"></div>
+							</li>
+							<li>
+								<div class="w99"><span>*</span>密码：</div>
+								<div class="input_box"><input type="password" name="password" id="password" class="sign_up_input_pwd" placeholder="请输入登录密码" maxlength="18" /></div>
+								<div class="item-tip"></div>
+								<div class="clear"></div>
+							</li>
+							<li>
+								<div class="w99"><span>*</span>确认密码：</div>
+								<div class="input_box"><input type="password" name="password2" id="password2" class="sign_up_input_pwd" placeholder="请确认登录密码" maxlength="18"/></div>
+								<div class="item-tip"></div>
+								<div class="clear"></div>
+							</li>
+							<li>
+								<div class="w99"><span>*</span>电子邮箱：</div>
+								<div class="input_box"><input type="text" name="email" id="email" class="sign_up_input_mail" placeholder="请输入您的常用邮箱" maxlength="60" /></div>
+								<div class="item-tip"></div>
+								<div class="clear"></div>
+							</li>
+							{#if $verify_userreg=="1"#}
+							<li>
+								<div class="w99"><span>*</span>验证码：</div>
+								<div class="input_box">
+									<div id="imgdiv"></div>
+									<input  class="sign_up_input_varcode" name="postcaptcha" id="postcaptcha" type="text" value="点击获取验证码" style="color:#999999"/>
+								</div>
+								<div class="item-tip"></div>
+								<div class="clear"></div>
+							</li>
+							{#/if#}
+							<li>
+								<div class="w99">&nbsp;</div>
+								<div class="input_box user_agree"><input type="checkbox" name="agreement" id="agreement" value="1" checked="checked"/>我已阅读并同意<a href="{#$QISHI.main_domain#}agreement/">《{#$QISHI.site_name#}用户服务协议》</a></div>
+								<div class="clear"></div>
+							</li>
+							<li>
+								<div class="w99">&nbsp;</div>
+								<div class="input_box">
+									<input name="member_type" type="hidden" id="member_type" value="{#$smarty.get.type|default:2#}" />
+									<input type="submit" name="reg" id="reg" value="{#if $smarty.get.type=='3'#}注册猎头会员{#elseif $smarty.get.type=='4'#}注册培训会员{#elseif $smarty.get.type=='5'#}注册审核员{#elseif $smarty.get.type=='2'||$smarty.get.type==''#}注册个人会员{#else#}注册企业会员{#/if#}" class="sign_up_but_sign" /></div>
+							</li>
+							<li>
+								<div class="w99">&nbsp;</div>
+								<div class="item-input-box waiting" id="waiting" style="display:none">
+								正在注册中,请等待...
+								</div>
+							</li>
+						</ul>
+					</div>
+					</form>
+				</div>
+				<!-- 注册表单 结束 -->
+
+				<div class="sign_right">
+					<div class="fast_login">
+						<p class="title">已有{#$QISHI.site_name#}账号？</p>
+						<div><input type="button" value="马上登陆" class="sign_up_but_login" onclick="window.location='{#"QS_login"|qishi_url#}'"/></div>
+						{#if $QISHI.qq_apiopen=="1" || $QISHI.sina_apiopen=="1"  || $QISHI.taobao_apiopen=="1"#}
+						<div class="content_box">
+							<p>使用合作网站账号登录：</p>
+							
+							<ul style="margin-bottom:40px;">
+								{#if $QISHI.qq_apiopen=="1"#}
+								<li><a href="{#$QISHI.main_domain#}user/{#if $QISHI.qq_logintype=='1'#}connect_qq_client.php{#else#}connect_qq_server.php{#/if#}"class="qq">QQ</a></li>
+								{#/if#}
+								{#if $QISHI.sina_apiopen=="1"#}
+								<li><a href="{#$QISHI.main_domain#}user/connect_sina.php" class="weibo">weibo</a></li>
+								{#/if#}
+								{#if $QISHI.taobao_apiopen=="1"#}
+								<li><a href="{#$QISHI.main_domain#}user/connect_taobao.php" class="taobao">taobao</a></li>
+								{#/if#}
+								<div class="clear"></div>
+							</ul>
+								<div class="clear"></div>
+						</div>
+						{#/if#}
+					</div>
+					<div class="other_sign">
+						{#if $smarty.get.type=="3"#}
+						<p>您是企业用户？<a href="{#$QISHI.main_domain#}user/user_reg.php?type=1">注册<strong>企业会员</strong></a></p>
+						<p>您是个人用户？<a href="{#$QISHI.main_domain#}user/user_reg.php?type=2">注册<strong>个人会员</strong></a></p>
+						<p>您是培训机构？<a href="{#$QISHI.main_domain#}user/user_reg.php?type=4">注册<strong>培训会员</strong></a></p>
+						{#elseif $smarty.get.type=="4"#}
+						<p>您是企业用户？<a href="{#$QISHI.main_domain#}user/user_reg.php?type=1">注册<strong>企业会员</strong></a></p>
+						<p>您是个人用户？<a href="{#$QISHI.main_domain#}user/user_reg.php?type=2">注册<strong>个人会员</strong></a></p>
+						<p>您是猎头顾问？<a href="{#$QISHI.main_domain#}user/user_reg.php?type=3">注册<strong>猎头会员</strong></a></p>
+						{#else#}
+						<p>您是猎头顾问？<a href="{#$QISHI.main_domain#}user/user_reg.php?type=3">注册<strong>猎头会员</strong></a></p>
+						<p>您是培训机构？<a href="{#$QISHI.main_domain#}user/user_reg.php?type=4">注册<strong>培训会员</strong></a></p>
+						{#/if#}
+					</div>
+				</div>
+				<div class="clear"></div>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

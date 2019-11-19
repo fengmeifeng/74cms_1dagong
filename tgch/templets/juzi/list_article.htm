@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+<title>{dede:field.seotitle /} - {dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/job/files/css/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/files/all.css" />
+
+<link rel="stylesheet" href="/job/files/css/list_index.css" type="text/css" media="screen" />
+
+</head>
+<body>
+
+{dede:include filename="newheader.htm" /}
+
+<div id="topson">
+<ul>
+<li><a href="http://www.1jobs.com/" >合肥人才网</a></li>
+{dede:channel type='top' row='8' currentstyle="<li class='hoverlink'><a href='~typelink~'>~typename~</a></li>"}
+ <li><a href='[field:typelink/]'>[field:typename/]</a></li>
+{/dede:channel}
+</ul>
+</div>
+
+<!-- ad_tl -->
+<div class="index-ad-tl px960 banner">
+	<img src="/job/files/aimage/banner1.jpg" width="960" height="90" alt="" />
+</div>
+
+<!-- list-box -->
+<div class="list-box px960 b10">
+	<!-- list-left -->
+	<div class="list-left left">
+	<div class="position b10">当前位置：{dede:field name='position'/} </div>
+<div class="xg b10">
+	<div class="xg_t y18">这些优秀的企业正在招聘...</div>
+        <ul>
+{dede:arclist row=6 titlelen='35' orderby=pubdate}
+<li>
+<a target="_blank" title="[field:title/]" href="[field:arcurl/]"> <img width="120" height="120" src="[field:picname/]"</a>
+<h2><a target="_blank" title="[field:title/]" href="[field:arcurl/]">[field:title/]</a></h2>
+</li>
+{/dede:arclist}
+        </ul>		
+</div>	
+	<div class="list-nr">
+		<div class="faxian y18"><h1>{dede:field.typename/}</h1>发现</div>
+		<div class="sontype">
+		<ul>
+              {dede:channel type='son' currentstyle=" <li><a href='~typelink~' target='_blank'><span>~typename~</span></a></li>"}
+       <li><a href='[field:typeurl/]' target="_blank">[field:typename/]</a></li>
+       {/dede:channel}
+		</ul>
+		</div>			
+		<div class="list-s">	
+<dl class="listdl">
+
+{dede:list pagesize='8'}
+<dt><p class="left"><a href="[field:arcurl/]" target="_blank"><strong>[field:title/]</strong></a></p><span class="right">[field:click/]</span></dt>
+<dd><span><a [field:typelink/]</a>-摘要：</span>[field:description/]... <a href="[field:arcurl/]" target="_blank">[阅读全文]</a></dd>
+{/dede:list}
+
+</dl>	
+		</div>	
+		<div class="clear" style="text-align:center; overflow:hidden;">		
+		<script src="/tool/sg640.js" type=text/javascript></script>
+		</div>		
+		<div class="list-pages">
+			<ul class="pagelist">
+{dede:pagelist listitem="index,end,pre,next,pageno" listsize="5"/}
+			</ul>
+		</div> 		
+		</div>
+</div>
+<!-- list-right -->
+	<div class="list-right right">
+		<!-- diandian -->	
+		<div class="diandian"><img src="/job/files/images/website.jpg" alt="寅特尼人才网" /></div>
+    <!-- ad -->		
+   <!-- tj -->			
+		<div class="ilist-top b10">
+			<div class="ilist-top-t"><h3>"{dede:field.typename/}" 点击排行</h3></div>
+			<ul class="blue bc">
+                 {dede:arclist titlelen=30 row=10 orderby='click' subday='30'}
+		<li><a href="[field:arcurl/]" target="_blank">[field:title/]</a></li>
+		{/dede:arclist}
+			</ul>			
+		</div>			
+
+    <!-- ad -->	
+		<div class="ilist-top b10">
+			<div class="ilist-top-t"><h3>"{dede:field.typename/}" 相关推荐</h3></div>
+			<ul class="blue bc">
+                 {dede:arclist titlelen=30 row=10 orderby=hot}
+		<li><a href="[field:arcurl/]" target="_blank">[field:title/]</a></li>
+		{/dede:arclist}
+			</ul>			
+		</div>	
+	 <!-- ad -->	
+	</div>	
+</div>
+  {dede:include filename="footer.htm"/}
+</div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+<li class="right"><a href="[field:arcurl/]" target=_blank><img src="[field:litpic/]" width="485" height="60" alt="合肥华谊塑胶制品有限公司" /></a></li>

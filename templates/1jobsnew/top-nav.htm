@@ -1,0 +1,13 @@
+<a href="{#$QISHI.main_domain#}mobile/" class="mphone">手机频道</a>
+<a href="{#$QISHI.main_domain#}salary">薪酬统计</a>
+<a href="/">网站首页</a>
+<a href="/plus/shortcut.php">保存到桌面</a>
+<script type="text/javascript">
+//顶部部登录
+$.get("/plus/ajax_user.php", {"act":"top_loginform"},
+function (data,textStatus)
+{			
+$("#top_loginform").html(data);
+}
+);
+</script>

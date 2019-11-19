@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<title>{#$title#}</title>
+<link rel="shortcut icon" href="{#$QISHI.domain#}favicon.ico" />
+<meta name="author" content="骑士CMS" />
+<meta name="copyright" content="74cms.com" />
+<link href="{#$QISHI.site_template#}css/user_common.css" rel="stylesheet" type="text/css" />
+<link href="{#$QISHI.site_template#}css/user_company.css" rel="stylesheet" type="text/css" />
+<script src="{#$QISHI.site_template#}js/jquery.js" type="text/javascript" language="javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#delete").click(function(){
+		$("#form1").attr("action","?act=apply_jobs_del");
+		$("#form1").submit();
+	});
+});
+$(function(){
+	$("input[type='button'],input[type='submit']").hover(function(){
+		$(this).addClass("hover");
+	},function(){
+		$(this).removeClass("hover");
+	})
+})
+</script>
+</head>
+<body>
+{#include file="user/header.htm"#}
+<div class="page_location link_bk">当前位置：<a href="{#$QISHI.main_domain#}">首页</a> > <a href="{#$userindexurl#}">会员中心</a> > 收到的简历</div>
+<div class="usermain">
+  <div class="leftmenu  com link_bk">
+  	 {#include file="member_company/left.htm"#}
+  </div>
+  <div class="rightmain">
+  
+ 	<div class="bbox1 link_bk my_account intrgration">
+		<div class="title_h1">收到的简历</div>
+		<div class="data resume">
+			{#if $jobs_apply#}
+			<form id="form1" name="form1" method="post" action="?act=set_apply_jobs">
+		  	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableall">
+		  		<tbody>
+		  			<tr bgcolor="#F5F5F5" align="left">
+		  				<th width="140" class="left"><input type="checkbox" name="chkAll"  id="chk" title="全选/反选" /> 姓名</th>
+		  				<th width="120">学历</th>
+		  				<th width="148">工作经验</th>
+		  				<th width="200">申请职位</th>
+		  				<th width="101">申请时间</th>
+		  				<th width="106" align="center">操作</th>
+		  			</tr>
+		  			{#foreach from=$jobs_apply item=list#}
+		  			<tr class="data_content">
+		  				<td width="140" class="left">
+		  					<input name="y_id[]" type="checkbox" id="y_id"   value="{#$list.did#}"/>
+							{#if $list.sex_cn#}
+							<a href="{#$list.resume_url#}" target="_blank" {#if $list.personal_look=="1"#}class="nolook"{#/if#}>{#$list.resume_name#}</a>
+							{#else#}
+							{#$list.resume_name#}
+							{#/if#}
+		  				</td>
+		  				<td width="120">{#$list.education_cn#}</td>
+		  				<td width="148">{#$list.experience_cn#}</td>
+		  				<td width="200"><div style="width:200px;height:20px;overflow:hidden;">{#$list.jobs_name#}</div></td>
+		  				<td width="101">{#$list.apply_addtime|date_format:"%Y-%m-%d"#}</td>
+		  				<td width="106" align="center"><a href="?act=apply_jobs_del&y_id={#$list.did#}">删除</a></td>
+		  			</tr>
+		  			{#/foreach#}
+		  		</tbody>
+		  	</table>
+		  	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableall">
+		  		<tbody>
+		  			<tr>
+		  				<td width="500" class="left"><input type="submit" name="set" value="设为已查看" class="but95_35lan"/>
+		  					<input type="button" name="delete" id="delete" value="删除" class="but95_35lan"/></td>
+		  				<td width="100">
+		  				</td>
+		  			</tr>
+		  		</tbody>
+		  	</table>
+		  	</form>
+  			{#if $page#}
+			<table border="0" align="center" cellpadding="0" cellspacing="0" class="link_bk">
+	          <tr>
+	            <td height="50" align="center"> <div class="page link_bk">{#$page#}</div></td>
+	          </tr>
+	      </table>
+	      {#/if#}
+		  	{#else#}
+		  	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableall">
+		  		<tbody>
+		  			<tr bgcolor="#F5F5F5" align="left">
+		  				<th width="140" class="left"><input type="checkbox" name="chkAll"  id="chk" title="全选/反选" /> 姓名</th>
+		  				<th width="120">学历</th>
+		  				<th width="148">工作经验</th>
+		  				<th width="200">申请职位</th>
+		  				<th width="101">申请时间</th>
+		  				<th width="106" align="center">操作</th>
+		  			</tr>
+		  		</tbody>
+		  	</table>
+			<div class="emptytip">没有找到对应的信息！</div>
+			{#/if#}
+		  </div>
+
+	
+
+
+  	</div>
+  </div>
+  <div class="clear"></div>
+</div>
+{#include file="user/footer.htm"#}
+
+</body>
+</html>

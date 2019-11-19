@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+<title>{dede:global name='keyword'/}-搜索结果-唯美句子网</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="{dede:global.cfg_templeturl/}/juzi/style/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="{dede:global.cfg_templeturl/}/juzi/style/search.css" type="text/css" media="screen" />
+</head>
+<body>
+{dede:include filename="header.htm"/}
+<div class="resultbar">搜索 <strong class="fc_03c">{dede:global name='keyword'/}</strong> 的结果 </div>
+<div class="result_content">	
+	<div class="sidebar s">
+        <h2>相关搜索</h2>
+        <ul>
+            {dede:likewords num='10'/} 
+	    </ul>
+    </div>
+<div class="px960 b10"><script src="/images/adjs/baidutop.js" type=text/javascript></script></div>
+		<div class="resultlist s">
+			<ul>
+               {dede:list perpage='20'}
+ <li>
+		<h3><a href="[field:arcurl/]" target="_blank">[field:title/]</a></h3>
+		<p>[field:description/]... </p>
+			<small>分类：</small><span> <a href="[field:typeurl/]" target="_blank">[field:typename/]</a></span>
+			<small>点击：</small><span> [field:click/]</span>
+			<small>日期：</small><span> [field:stime/]</span>
+{/dede:list}
+</li>
+</ul>
+			<div class="fl sear_pages">
+			<ul class="pagelist">
+{dede:pagelist listsize='5'/}  
+  </ul>
+		</div><!-- /pages -->
+		</div><!-- /listbox -->
+</div>
+
+{dede:include filename="footer.htm"/}
+</body>
+</html>

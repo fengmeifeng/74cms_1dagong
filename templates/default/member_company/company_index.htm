@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{#$title#}</title>
+<link rel="shortcut icon" href="{#$QISHI.main_domain#}favicon.ico" />
+<meta name="author" content="骑士CMS" />
+<meta name="copyright" content="74cms.com" />
+<link href="{#$QISHI.site_template#}css/user_common.css" rel="stylesheet" type="text/css" />
+<link href="{#$QISHI.site_template#}css/user_company.css" rel="stylesheet" type="text/css" />
+<script src="{#$QISHI.site_template#}js/jquery.js" type="text/javascript" language="javascript"></script>
+</head>
+<body>
+{#include file="user/header.htm"#}
+<div class="page_location link_bk">当前位置：<a href="{#$QISHI.main_domain#}">首页</a> > <a href="{#$userindexurl#}">会员中心</a></div>
+<div class="usermain">
+    <div class="leftmenu  com link_bk">
+  	    {#include file="member_company/left.htm"#}
+    </div>
+    <div class="rightmain">
+	   	<div class="bbox1">
+			<div class="cominfo">
+			    <div class="lbox">
+					<div class="username">欢迎：{#$user.username#} 登录</div>			  
+				    <div class="logobox">
+						<div class="limg">
+							{#if $company.logo==""#}
+							<img name="" src="{#$QISHI.site_template#}images/no_logo.gif"   alt="" style="cursor:pointer" onclick="javascript:location.href='company_info.php?act=company_logo'"/>
+							{#else#}
+							<img name="" src="{#$QISHI.main_domain#}data/logo/{#$company.logo#}?rand={#$rand#}"   alt="" style="cursor:pointer" onclick="javascript:location.href='company_info.php?act=company_logo'"/>
+							{#/if#}
+						</div>
+						<div class="rtxt">
+						  <div class="cname h1-title" title="{#$company.companyname#}"><strong>{#if $company#}{#$company.companyname#}{#else#}未完善企业资料{#/if#}</strong></div>				  
+						  <div class="txt">{#if $loginlog#}上次登录：{#$loginlog.log_addtime|date_format:"%Y-%m-%d %H:%M"#}{#else#}从未登录{#/if#}</div>
+						  <a href="company_info.php?act=company_profile"  class="edit">编辑企业资料</a>
+						</div>
+						<div class="clear"></div>
+						<div class="certification">认证状态：{#if $sms.open=="1"#}{#if $user.mobile_audit=="1"#}<a href="company_user.php?act=authenticate" class="m">手机已认证</a>{#else#}<a href="company_user.php?act=authenticate" class="m no">手机未认证</a>{#/if#}{#/if#}{#if $user.email_audit=="1"#}<a href="company_user.php?act=authenticate" class="e">邮箱已认证</a>{#else#}<a href="company_user.php?act=authenticate" class="e no">邮箱未认证</a>{#/if#}{#if $company.audit=="1"#}<a href="company_info.php?act=company_auth" class="c">营业执照已认证</a>{#else#}<a href="company_info.php?act=company_auth" class="c no">营业执照未认证</a>{#/if#}</div>
+				  	</div>
+			    </div>
+				<div class="rbox link_lan">
+				<!--积分模式  -->
+				{#if $QISHI.operation_mode=="1"#}
+				<div class="mode1">
+		 		    <div class="titcount">账户{#$QISHI.points_byname#}：<span>{#$points#}</span> {#$QISHI.points_quantifier#}<u><a href="company_service.php?act=order_add">[查看消费明细]</a></u></div>					
+				    <div class="pay">
+						<input name="" type="button" onclick="javascript:location.href='company_service.php?act=order_add'"  value="立即充值" class="but95cheng"/>
+						实时到账，还有惊喜等着你！
+					</div>
+					<div class="msg">系统消息：<a href="company_user.php?act=pm">已读({#$msg_total1#})</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="company_user.php?act=pm">未读<span>({#$msg_total2#})</span></a></div>
+				</div>
+				{#/if#}
+				<!--积分模式结束 -->
+				<!--套餐模式 -->
+				{#if $QISHI.operation_mode=="2"#}
+				<div class="mode2">
+				    <div class="cmname">{#$setmeal.setmeal_name#}：{#if $meal_min_remind=="无限期"#}无限期<u><a href="company_service.php?act=setmeal_list">[重新开通]</a></u>{#elseif $meal_min_remind=="已经到期"#}已经到期<u><a href="company_service.php?act=setmeal_list">[续费延期]</a></u>{#else#}还有<span>{#$meal_min_remind#}</span>到期<u><a href="company_service.php?act=setmeal_list">[续费延期]</a></u>{#/if#}</div>		
+				    <div class="cmtxt">开通：{#$setmeal.starttime|date_format:"%Y-%m-%d"#}&nbsp;&nbsp;&nbsp;&nbsp;到期：{#if $setmeal.endtime=="0"#}无限期{#else#}{#$setmeal.endtime|date_format:"%Y-%m-%d"#}{#/if#}</div>
+				    <div class="cmtxt"><a href="company_service.php?act=account">[查看套餐余量]</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="company_service.php?act=account">[查看消费明细]</a></div>
+				    <div class="msg">系统消息：<a href="company_user.php?act=pm">已读({#$msg_total1#})</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="company_user.php?act=pm">未读<span>({#$msg_total2#})</span></a></div>
+				</div>
+				{#/if#}
+				<!--套餐模式结束 -->
+				<!--混合模式-->
+				{#if $QISHI.operation_mode=="3"#}
+				<div class="mode3">
+				    <div class="cmname">{#$setmeal.setmeal_name#}：{#if $meal_min_remind=="无限期"#}无限期<u><a href="company_service.php?act=setmeal_list">[重新开通]</a></u>{#elseif $meal_min_remind=="已经到期"#}已经到期<u><a href="company_service.php?act=setmeal_list">[续费延期]</a></u>{#else#}还有<span>{#$meal_min_remind#}</span>到期<u><a href="company_service.php?act=setmeal_list">[续费延期]</a></u>{#/if#}</div>		
+				    <div class="cmtxt">开通：{#$setmeal.starttime|date_format:"%Y-%m-%d"#}&nbsp;&nbsp;&nbsp;&nbsp;到期：{#if $setmeal.endtime=="0"#}无限期{#else#}{#$setmeal.endtime|date_format:"%Y-%m-%d"#}{#/if#}</div>
+				    <div class="potxt">账户{#$QISHI.points_byname#}：<span>{#$points#}</span> {#$QISHI.points_quantifier#}<u><a href="company_service.php?act=order_add">[积分充值]</a></u></div>
+				    <div class="msg">系统消息：<a href="company_user.php?act=pm">已读({#$msg_total1#})</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="company_user.php?act=pm">未读<span>({#$msg_total2#})</span></a></div>
+				</div>
+				{#/if#}
+				<!--混合模式结束 -->
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="commanage">
+		    <div class="list">
+		  		<div class="t">职位管理</div>
+				<div class="p">
+				<a href="company_jobs.php?act=jobs&jobtype=1"><span class="s_a">发布中的职位：</span>{#$total_audit_jobs#}</a><br />
+			    <a href="company_jobs.php?act=jobs&jobtype=3"><span class="s_a">审核中的职位：</span>{#$total_noaudit_jobs#}</a>
+				</div>
+		    	<div class="but"><input name="" type="button" value="发布职位" class="but180lan" onclick="javascript:location.href='company_jobs.php?act=addjobs'" /></div>
+		    </div>
+		    <div class="list">
+		  		<div class="t">简历管理</div>
+				<div class="p">
+				<a href="company_recruitment.php?act=apply_jobs"><span class="s_a">未查看的简历：</span>{#$total_nolook_resume#}</a><br />
+			    <a href="company_recruitment.php?act=down_resume_list"><span class="s_a">已下载的简历：</span>{#$total_down_resume#}</a>
+				</div>
+		    	<div class="but"><input name="" type="button" value="管理简历" class="but180lan" onclick="javascript:location.href='company_recruitment.php?act=apply_jobs'" /></div>
+		    </div>
+		    <div class="list last">
+		  		<div class="t">简历搜索</div>
+				<div class="p">
+				<a href="company_recruitment.php?act=my_attention"><span class="s_a">浏览过的简历：</span>{#$total_view_resume#}</a><br />
+			    <a href="company_recruitment.php?act=favorites_list"><span class="s_a">已收藏的简历：</span>{#$total_favorites_resume#}</a>
+				</div>
+		    	<div class="but"><input name="" type="button" value="搜索简历" class="but180lan" onclick="javascript:window.open('{#"QS_resumelist"|qishi_url#}')" /></div>
+		    </div>
+		    <div class="clear"></div>
+		</div>	
+	 	<div class="myrec link_lan">
+		    <div class="tit h1-title">为您推荐的人才</div>
+		    <div class="more"><a href="{#"QS_resumelist"|qishi_url#}"  target="_blank">更多人才</a></div>
+		    <div class="clear"></div>	 
+		   {#qishi_resume_list set="列表名:resumelist,显示数目:6,意向职位长度:30,填补字符:...,排序:rtime>desc,职位大类:"|cat:$concern_id#}
+		  {#if !$resumelist#}
+		  {#qishi_resume_list set="列表名:resumelist,显示数目:6,意向职位长度:30,填补字符:...,排序:rtime>desc"#}
+		  {#/if#}
+			{#if $resumelist#}
+		    <div class="listtit">
+			    <div class="listt1"><strong>姓名</strong></div>
+			    <div class="listt2"><strong>学历</strong></div>
+			    <div class="listt3"><strong>工作经验</strong></div>
+			    <div class="listt5"><strong>求职意向</strong></div>
+			    <div class="listt6"><strong>更新时间</strong></div>
+			    <div class="clear"></div>
+		    </div>
+		    {#foreach from=$resumelist item=list#}
+		    <div class="listtxt">
+			    <div class="listc1"><a href="{#$list.resume_url#}" target="_blank">{#$list.fullname#}</a></div>
+			    <div class="listc2">{#$list.education_cn#}</div>
+			    <div class="listc3">{#$list.experience_cn#}</div>
+			    <div class="listc5" title="{#$list.intention_jobs#}">{#$list.intention_jobs#}</div>
+			    <div class="listc6">{#$list.refreshtime|date_format:"%Y-%m-%d"#}</div>
+			    <div class="clear"></div>
+		    </div>
+		    <div class="clear"></div>
+		    {#/foreach#}
+		    {#else#}
+		    <div class="emptytip">对不起！没有找到您要的信息！</div>
+		    {#/if#}
+	 	</div>
+	</div>
+</div>
+<div class="clear"></div>
+</div>
+{#include file="user/footer.htm"#}
+</body>
+</html>

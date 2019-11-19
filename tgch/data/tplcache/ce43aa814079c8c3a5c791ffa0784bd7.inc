@@ -1,0 +1,2 @@
+<dt><p class="left"><a href="[field:arcurl/]" target="_blank"><strong>[field:title/]</strong></a></p><span class="right">[field:click/]</span></dt>
+<dd><span><a [field:typelink/]</a>-у╙р╙ё╨</span>[field:description/]... <a href="[field:arcurl/]" target="_blank">[тд╤ах╚нд]</a></dd>

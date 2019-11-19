@@ -1,0 +1,822 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />{#qishi_pageinfo set="列表名:page,调用:QS_index"#}
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Cache-Control" content="no-transform" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<meta name="keywords" content="{#$page.keywords#}" />
+	<meta name="description" content="{#$page.description#}" />
+    <link rel="shortcut icon" href="favicon.ico" />
+	<title>{#$page.title#}</title>
+	<!-- css -->
+	<link href="/files/css/font-awesome.min.css" rel="stylesheet" >
+    <link href="/files/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="/files/css/all.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="/files/js/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/files/js/lrtk.js"></script>
+    <script language="javascript" type="text/javascript" src="/files/js/google-maps.js"></script>
+    <script language="javascript" type="text/javascript" src="/files/js/divselect.js"></script>
+    <!--#############################################zzzzzzzzz####################################-->
+	<script src="/files/js/jquery.jobs-search-shouye.js" type='text/javascript'></script>
+    
+    <!--<script src="/files/js/jquery.js" type="text/javascript" language="javascript"></script>-->
+    <script src="/files/js/jquery.lazyload.js" type="text/javascript"></script>
+    <script src="/data/cache_classify.js" type='text/javascript' charset="utf-8"></script>
+    <script src="/files/js/jquery.KinSlideshow.min.js" type="text/javascript"></script>
+    <!--中部菜单显示-->
+    <script src="/files/js/jquery.comtip-min.js" type="text/javascript"></script>
+    
+    <script src="/files/js/jquery.index.js" type='text/javascript' ></script>
+    <link  href="/files/css/new.css" rel="stylesheet" type="text/css"/>
+   <script>
+$(document).ready(function()
+{
+	index("/","/files/");
+	get_right_menu(QS_jobs);
+});
+$(function(){
+	$(".ad_box .ad_img:eq(3)").css("margin-right", 0);
+	$(".leftMenu li,.leftmenu_box").hover(function(){
+		$(this).addClass("hover");
+		$(this).find(".category").stop().animate({
+			"position":"relative",
+			"left":10
+		},200);
+		$(".leftMenu li").siblings("li").css("border-right-color","#0180CF");
+		
+	},function(){
+		$(this).removeClass("hover");
+		$(this).find(".category").stop().animate({
+			"position":"relative",
+			"left":0
+		},200);
+		$(".leftMenu li").siblings("li").css("border-right-color","#CCC");
+	});
+	
+}) 
+</script>
+</head>
+<body>
+    <div id="top"></div>
+
+<!--------------头部大横幅-------------->
+
+<SCRIPT> 
+function toueme(){ 
+document.getElementById("toubiao").style.display="none"; 
+} 
+</SCRIPT> 
+<!--<div id="toubiao"> 
+    <table width="100%" border="0" cellspacing="0" cellpadding="0"> 
+        <tr> 
+            <td>
+                <a target="_blank" href=""> 
+                    <img class="topb" src="/files/img/topb.jpg" alt="" title="活动banner" >
+                </a>
+            </td> 
+            <td class="guangbi" align="right">
+                <a class="guanbi" onClick=toueme() >X</a>
+            </td> 
+        </tr> 
+    </table> 
+</div> -->
+
+<SCRIPT> 
+function baoming(){ 
+document.getElementById("mianfei").style.display="none"; 
+} 
+</SCRIPT> 
+<div id="mianfei"> 
+    <div class="fei01">
+    <span>没有找到合适的工作？</span>
+    <a class="baoming" href="/user/user_reg.php">1分钟留下信息 <i class="fa fa-arrow-circle-right"></i></a>
+    <span>我们会将你推荐给优秀企业！坐等好工作来找你！</span>
+    <a class="guanbi" onClick=baoming() >X</a>
+    </div>
+    
+</div>
+	
+	<!--头部开始-->
+	{#include file="header.htm"#}
+	<!--头部结束-->
+    <div class="kuang">
+        <div class="gonggao fr">
+            <p class="fl"><i class="fa fa-bullhorn"></i>公告：</p>
+            <div class="fr" id="spds" >
+                
+                <div id="spds1">
+                {#qishi_notice_list set="列表名:notice,显示数目:6,标题长度:24,分类:1,填补字符:...,排序:id>desc"#}
+				{#foreach from=$notice item=list#}
+                    <a  href="{#$list.url#}" target="_blank">{#$list.title#}</a>
+                {#/foreach#}
+                </div> 
+                <div id="spds2"></div> 
+            </div> 
+        </div>
+    </div>
+<script> 
+var speed=150 
+spds2.innerHTML=spds1.innerHTML 
+function Marquee(){ 
+if(spds2.offsetTop-spds.scrollTop<=100) 
+spds.scrollTop-=spds1.offsetHeight 
+else{ 
+spds.scrollTop++ 
+} 
+} 
+var MyMar=setInterval(Marquee,speed) 
+spds.onmouseover=function() {clearInterval(MyMar)} 
+spds.onmouseout=function() {MyMar=setInterval(Marquee,speed)} 
+</script> 
+
+    
+       <div class="main over">
+         <div class="search">
+<script type="text/javascript">
+/*屏蔽这两句js，重新写zzzzzz*/
+	$(function(){
+	$.divselect("#divselect","#inputselect");
+	$.divselect("#divselect001","#inputselect001");
+});
+	$(document).ready(function(){
+	/*按公司或者职位进行搜索*/
+	/*$('#divselect li a').click(function(){
+	$('#divselect .change_area input[name=areacode]').val($(this).attr('rel'));
+	$('#divselect cite').text($(this).text());
+	$('#divselect ul').hide();
+	});*/
+	/*按地区搜索*/
+	$('#divselect001 li a').click(function(){
+	$('#divselect001 input[name=citycategory]').val($(this).attr('selectid'));
+	$('#divselect001 cite').text($(this).text());
+	$('#divselect001 ul').hide();
+	});
+	
+	});
+</script>
+            <form name="form1" action="/index_search.php" method="post">
+              <div id="divselect">
+                  <cite>职位</cite>
+                  <ul>
+                     <li><a href="javascript:;" selectid="1">职位</a></li>
+                     <li><a href="javascript:;" selectid="2">公司</a></li>
+                  </ul>
+              </div>           
+                         
+                <div class="text" id="searckeybox">
+                    <input type="text" name="key" id="searchkey" data="{#$smarty.get.key#}"  onfocus="this.value=''"   />
+					<!--其他字段-->
+					<!--<input name="trade_id" id="trade_id" type="hidden" value="{#$smarty.get.trade#}" />
+					<input name="jobs_id" id="jobs_id" type="hidden" value="{#$smarty.get.jobcategory#}" />
+					<input type="hidden" value="{#$smarty.get.wage#}" name="wage">
+					<input type="hidden" value="{#$smarty.get.education#}" name="education">
+					<input type="hidden" value="{#$smarty.get.experience#}" name="experience">
+					<input type="hidden" value="{#$smarty.get.nature#}" name="nature">
+					<input type="hidden" value="{#$smarty.get.settr#}" name="settr">
+					<input type="hidden" value="" name="sort">
+					<input type="hidden" value="1" name="page">-->
+					<!--其他字段结束-->
+                </div>
+                
+              <div id="divselect001">
+                  <cite>地区</cite>
+				  <input type="hidden" name="citycategory" value="">
+                  <ul>
+                     <li><a href="javascript:;" selectid="">不限</a></li>
+                     <li><a href="javascript:;" selectid="13.224">合肥</a></li>
+                     <li><a href="javascript:;" selectid="13.225">芜湖</a></li>
+                     <li><a href="javascript:;" selectid="2.0">上海</a></li>
+                     <li><a href="javascript:;" selectid="4.0">重庆</a></li>
+                  </ul>
+              </div>
+                 
+                 <div><input class="button" id="btnsearch" ty="QS_jobslist" type="submit" value="搜索" /></div>
+                 
+            </form>
+        </div>
+        <div class="hotse">  热门搜索：
+        	<!--热门关键字-->
+        	{#qishi_hotword set="显示数目:8,列表名:list"#}
+            {#foreach from=$list item=li#}
+            <a href="{#"QS_jobslist,key:"|cat:$li.w_word_code|qishi_url#}" target="_blank">{#$li.w_word#}</a>
+            {#/foreach#} 
+            <!--<a href="#">技工</a>-->
+            
+        </div>
+    </div>
+<!--------------第一个选项卡-------------->  
+<script type="text/javascript"> 
+function setTab(name,m,n){ 
+for( var i=1;i<=n;i++){ 
+var menu = document.getElementById(name+i); 
+var showDiv = document.getElementById("cont_"+name+"_"+i); 
+menu.className = i==m ?"on":""; 
+showDiv.style.display = i==m?"block":"none"; 
+} 
+} 
+</script> 
+
+<div class="kuang over">
+    <div class="container fl wid220">
+    <!-- 行业职位 -->
+	<div class="left">
+			<div class="category_wrap leftMenu" id="topWrap">
+				<div class="h3"><i class="fa fa-bars"></i>全部职位分类</div>
+				<ul>
+					{#qishi_get_classify set="列表名:category,类型:QS_jobs,显示数目:8"#}
+					{#foreach from=$category item=list#}	
+					<li class="clearfix" id="{#$list.id#}">
+						<div class="category">
+                        
+							<p><a href="javascript:void(0);">{#$list.categoryname#}</a></p>
+							<div class="icon_right">
+								<span class="angle_right"><i class="submenu-icon fa fa-plus"></i></span>
+							</div>
+						</div>
+						<div class="sub_category"></div>
+					</li>
+					{#/foreach#}
+				</ul>
+				
+			</div>
+			<div class="leftmenu_box">
+					<div class="show">
+                    
+					</div>
+	  </div>
+	  </div>
+	<!-- 行业职位 结束 -->
+   </div>
+    
+    <div class="wid515 mr25 fl">
+        
+<script type="text/javascript">
+jQuery(function($){
+	var index = 0;
+	var maximg = 5;
+	//$('<div id="flow"></div>').appendTo("#myjQuery");
+
+	//滑动导航改变内容	
+	$("#myjQueryNav li").hover(function(){
+		if(MyTime){
+			clearInterval(MyTime);
+		}
+		index  =  $("#myjQueryNav li").index(this);
+		MyTime = setTimeout(function(){
+		ShowjQueryFlash(index);
+		$('#myjQueryContent').stop();
+		} , 400);
+
+	}, function(){
+		clearInterval(MyTime);
+		MyTime = setInterval(function(){
+		ShowjQueryFlash(index);
+		index++;
+		if(index==maximg){index=0;}
+		} , 3000);
+	});
+	//滑入 停止动画，滑出开始动画.
+	 $('#myjQueryContent').hover(function(){
+			  if(MyTime){
+				 clearInterval(MyTime);
+			  }
+	 },function(){
+				MyTime = setInterval(function(){
+				ShowjQueryFlash(index);
+				index++;
+				if(index==maximg){index=0;}
+			  } , 3000);
+	 });
+	//自动播放
+	var MyTime = setInterval(function(){
+		ShowjQueryFlash(index);
+		index++;
+		if(index==maximg){index=0;}
+	} , 3000);
+});
+function ShowjQueryFlash(i) {
+$("#myjQueryContent div").eq(i).animate({opacity: 1},1000).css({"z-index": "1"}).siblings().animate({opacity: 0},1000).css({"z-index": "0"});
+//$("#flow").animate({ left: 652+(i*76) +"px"}, 300 ); //滑块滑动
+$("#myjQueryNav li").eq(i).addClass("current").siblings().removeClass("current");
+}
+</script>
+        <div class="topvebanner fr">
+          <div id="myjQuery">
+            <div id="myjQueryContent">
+            {#qishi_ad set="显示数目:8,调用名称:QS_indexfocus,列表名:ad"#}{#foreach from=$ad item=list#}
+              <div><a href="{#$list.img_url#}" target="_blank"><img src="{#$list.img_path#}" title="{#$list.img_explain#}"></a></div>
+            {#/foreach#}
+            </div>
+            <ul id="myjQueryNav">
+              <li class="current"></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="tab"> 
+            <div class="yesc"> 
+                <ul> 
+                    <li id="one1" class="on" onmouseover='setTab("one",1,5)'>紧急招聘</li> 
+                    <li id="one2" onmouseover='setTab("one",2,5)'>热门招聘</li>
+                    <li id="one3" onmouseover='setTab("one",3,5)'>推荐招聘</li> 
+                    <li id="one4" onmouseover='setTab("one",4,5)'>兼职/实习</li> 
+                    <li class="none" id="one5" onmouseover='setTab("one",5,5)'>高薪职位</li> 
+                </ul> 
+            </div> 
+            <div class="tabList"> 
+                <div id="cont_one_1" class="the01"> 
+                	<ul>
+                    	<!--紧急招聘-->
+                        {#qishi_companyjobs_list set="列表名:company,显示数目:6,显示职位:3,职位名长度:4,企业名长度:12,紧急招聘:1,排序:rtime>desc"#}
+                        {#foreach from=$company item=list#}
+                    	<li>
+                            <P>
+                            	{#qishi_jobs_list set="列表名:list.jobs,显示数目:9,填补字符:...,职位名长度:6,紧急招聘:1,排序:rtime>desc"#}
+                        		{#foreach from=$list.jobs item=jobslist#}
+                                <a href="{#$jobslist.jobs_url#}">{#$jobslist.jobs_name#}</a>
+                                {#/foreach#}
+                                
+                            </P>
+                            <span>{#$list.refreshtime_cn#}</span>
+                            <span>{#$list.amount#}人</span>
+                        </li>
+                        {#/foreach#}
+                        
+                    </ul>
+                </div>
+
+                <div id="cont_one_2" class="the01 one"> 
+                	<ul>
+                    	<!--热门招聘(推荐企业推广)-->
+                        {#qishi_companyjobs_list set="列表名:company,显示数目:6,显示职位:3,职位名长度:4,企业名长度:12,排序:hot>desc"#}<!--推荐:1-->
+                        {#foreach from=$company item=list#}
+                   	  <li>
+                            <!---字体颜色-class="wids"--><P>{#foreach from=$list.jobs item=jobslist#}<a href="{#$jobslist.jobs_url#}" >{#$jobslist.jobs_name#}</a>{#/foreach#}</P>
+                            <span>{#$list.refreshtime_cn#}</span>
+                            <span>{#$list.amount#}人</span>
+                        </li>
+                        {#/foreach#}
+                    </ul>
+                </div> 
+                <div id="cont_one_3" class="the03 one"> 
+                	<ul>
+                    	<!--推荐招聘-->
+                    	<!--<li>
+                        	<a href="#">销售/市场sdfsdg索噶</a>
+                            <p>10000-14999<font color="#999" size="2">元/月</font></p>
+                            <span>安徽合肥
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </span>
+                        </li>
+                        <li class="width40">&nbsp;</li>-->
+                        
+                        <!--推荐招聘-->
+                        
+                    	{#qishi_jobs_list set="列表名:list,显示数目:6,推荐:1,排序:refreshtime>desc"#}
+                        {#foreach from=$list item=li#}
+                      <li>
+                                <a href="{#$li.jobs_url#}">{#$li.jobs_name#}</a>
+                                <p>{#$li.wage_cn#}<!--<font color="#999" size="2">元/月</font>--></p>
+                                <span>{#$li.district_cn#}
+                                    <!--<i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>-->
+                                </span>
+                            </li>
+                            <li style="width:20px;">&nbsp;</li>
+                            {#/foreach#}
+                    </ul>
+                </div> 
+                <div id="cont_one_4" class="the01 the04 one">
+                	
+                	<ul>
+                    	<!--兼职/实习-->
+                        {#qishi_jobs_list set="列表名:list,显示数目:6,排序:id>desc"#}
+                           {#foreach from=$list item=li#}
+                            {#if ($li.nature_cn =='兼职' || $li.nature_cn =='实习')#}
+                            <li>
+                                <P><a href="{#$li.jobs_url#}">{#$li.jobs_name#}</a></P>
+                                <span class="qian">{#$li.wage_cn#}</span>
+                                <!--<span>{#$li.refreshtime_cn#}</span>-->
+                                <span>{#$li.amount#}人</span>
+                        	</li>
+                            {#/if#}
+                            {#/foreach#} 
+                    </ul>
+                </div> 
+                
+                <div id="cont_one_5" class="the03 one"> 
+                	<ul>
+                    	<!--高薪职位-->
+                    	<!--<li>
+                        	<a href="#">销售/市场sdfsdg索噶</a>
+                            <p>10000-14999<font color="#999" size="2">元/月</font></p>
+                            <span>安徽合肥
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </span>
+                        </li>
+                        <li class="width40">&nbsp;</li>-->
+                        <!--高薪职位-->
+                       {#qishi_jobs_list set="列表名:list,显示数目:6,排序:wage>desc,日期范围:356"#}
+                       {#foreach from=$list item=li#}
+                    	<li>
+                        	<a href="{#$li.jobs_url#}">{#$li.jobs_name#}</a>
+                            <p>{#$li.wage_cn#}<!--<font color="#999" size="2">元/月</font>--></p>
+                            <span>{#$li.district_cn#}
+                                <!--<i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>-->
+                            </span>
+                        </li>
+                         <li style="width:20px;">&nbsp;</li>
+                        {#/foreach#}
+                        
+                        
+                    </ul>
+                </div> 
+            </div>
+        </div> 
+        
+	</div>
+    
+    <div class="wid270 fr">
+    	
+        <div class="fabu over">
+            <p><font>壹打工网，海量职位，任你挑选</font>仅仅只需一步，让工作来找你。</p>
+        	<a href="/user/personal/personal_resume.php?act=make1" class="geren fl"><i class="fa fa-file-text"></i>填写简历</a>
+            <a href="/user/company/company_jobs.php?act=addjobs" class="qiye fr"><i class="fa fa-align-center"></i>发布职位</a>
+        </div>
+        <div class="newzw">
+        	本周新增职位&nbsp;<span>{#$time_display#}</span>&nbsp;个
+        </div>
+       <!--调取本分站的最新招聘会 开始-->
+        <div class="scene">
+            <div class="hnsd">
+            	<dl>
+                	<dt><h3 class="fl">现场招聘会</h3></dt>
+					{#qishi_jobfair_list set="列表名:jobfair,显示数目:1,标题长度:35,分页显示:1,标题长度:35,填补字符:..."#}
+					{#foreach from=$jobfair item=list#} 
+                    <dd><a href="{#$list.url#}&dqid={#$dqid#}">壹打工网全国巡回招聘会 <br /><font color="#606"> — 合肥站</font></a></dd>
+                    <dd><i class="fa fa-clock-o"></i>{#$list.holddates|date_format:"%Y年%m月%d日"#}</dd>
+                    <dd><i class="fa fa-map-marker"></i>{#$list.address#}</dd>
+					{#/foreach#}
+                </dl>
+                
+            </div>
+        </div>
+    	<!--调取本分站的最新招聘会 结束-->
+    	
+    </div> 
+</div>   
+        
+    <!--------------广告-------------->       
+            
+
+    <div class="kuang company">
+    	<h2>
+            <i class="fa fa-institution"></i>行业名企 
+        </h2>
+         <div class="in-list">
+			{#qishi_hymq_jobs_list  set="分页显示:1,列表名:jobslist,显示数目:6,填补字符:...,职位名长度:13,企业名长度:19,描述长度:65,关键字:GET[key],职位分类:GET[jobcategory],职位大类:GET[category],职位小类:GET[subclass],地区分类:GET[citycategory],地区大类:GET[district],地区小类:GET[sdistrict],行业:GET[trade],日期范围:GET[settr],工资:GET[wage],年龄:GET[age],公司规模:GET[scale],排序:id>desc"#}
+        	{#foreach from=$jobslist item=list#}
+         	<div class="in-list-con {#if $list.y%3 == 0 #}noma{#/if#}" title="{#$list.companyname#}">
+            	<h3><a href="{#$list.jobs_url#}">{#$list.companyname#}</a></h3>
+                <P>月 工 资：<span>{#$list.wage_cn#}</span></P>
+                <P>接 待 站：{#$list.jiezhan#}</P>
+                <P class="infdk">{#$list.shortitle#}</P>
+                <a href="{#$list.jobs_url#}"><img src="/data/hymq_img/{#$list.logo#}" width="312px" height="110px" /></a>
+                <div class="over wdids">
+                	<p class="fl"><strong>{#$list.bmrenshu#}人</strong>报名</p>
+                    <a href="{#$list.jobs_url#}">去看看</a>
+                </div>
+                <div class="{#if $list.zp_cn == '热聘'#}hot{#/if#} {#if $list.zp_cn =='急聘'#}urgent{#/if#}"></div>
+            </div>
+            {#/foreach#}
+       	  
+         </div>
+	</div> 
+    <div style="clear:both;"></div>
+  <!--------------第二个选项卡-------------->  
+<script type="text/javascript">
+
+    $(function(){
+            var timeid;
+          $("#tab").find("li").each(function(index){
+              var sLi=$(this);
+              sLi.mouseenter(function(){
+                  timeid= setTimeout(function(){
+                      sLi.addClass("current").siblings().removeClass("current");
+                      sLi.parent().next().find("ul:eq(" + index +")").show().siblings().hide() ;
+                 },300);
+              }).mouseleave(function(){
+                     clearTimeout(timeid);
+                      })
+
+          })
+        })
+	
+</script>
+		<!--中部分类栏目内容-->
+		<div id="outer" class="kuang over">
+            <ul id="tab">
+                <!--{#qishi_get_classify set="列表名:category,类型:QS_jobs,显示数目:5"#}
+                {#section loop=$category name=list#}
+                <li  id="{#$category[list].id#}" {#if $smarty.section.list.index==0#} class="current"{#/if#}>{#$category[list].categoryname#}</li>
+                {#/section#}-->
+             	<li class="current">经营/管理/营销策划</li>
+                <li>销售/市场类</li>
+                <li>物流/仓储类</li>
+                <li>教育/培训</li>
+                <li>建筑/装修类</li>
+                <li id="brnone">酒店/餐饮/旅游/服务</li>
+            </ul>
+            <div id="content">
+                <ul style="display:block;">
+                     <li>
+                     <!--经营/管理/营销策划-->
+                    {#qishi_hymq_jobs_list  set="分页显示:1,列表名:jobslist,显示数目:4,填补字符:...,职位名长度:13,企业名长度:19,描述长度:65,关键字:GET[key],职位分类:GET[jobcategory],职位大类:42,职位小类:GET[subclass],地区分类:GET[citycategory],地区大类:GET[district],地区小类:GET[sdistrict],行业:GET[trade],日期范围:GET[settr],工资:GET[wage],年龄:GET[age],公司规模:GET[scale],排序:id>desc"#}
+        			{#foreach from=$jobslist item=list#}
+                        <div class="list-ksm">
+                            <a href="{#$list.jobs_url#}">
+                                <img src="/data/hymq_img/{#$list.logo#}" height="160px" width="229px" />
+                                <h2><i class="fa fa-plus"></i>{#$list.companyname#}</h2>
+                            </a>
+                            <div class="ksm-con">
+                                <a href="{#$list.jobs_url#}">
+                                    <P class="gongzi">月 工 资：<font>{#$list.wage_cn#}</font></P>
+                                    <div class="sjd">
+                                    {#foreach from=$list.tag item=tagli#}
+            						<span>{#$tagli.1#}</span>{#foreachelse#} 无
+									{#/foreach#}
+                                       
+                                    </div>
+                                    <p class="mfbm" href="{#$list.jobs_url#}">点击查看</p>
+                                </a>
+                            </div>
+                        </div>
+                        {#/foreach#}
+                     </li>
+                </ul>
+                <ul>
+                     <li>
+                     <!--销售/市场类-->
+                    {#qishi_hymq_jobs_list  set="分页显示:1,列表名:jobslist,显示数目:4,填补字符:...,职位名长度:13,企业名长度:19,描述长度:65,关键字:GET[key],职位分类:GET[jobcategory],职位大类:30,职位小类:GET[subclass],地区分类:GET[citycategory],地区大类:GET[district],地区小类:GET[sdistrict],行业:GET[trade],日期范围:GET[settr],工资:GET[wage],年龄:GET[age],公司规模:GET[scale],排序:id>desc"#}
+        			{#foreach from=$jobslist item=list#}
+                        <div class="list-ksm">
+                            <a href="{#$list.jobs_url#}">
+                                <img src="/data/hymq_img/{#$list.logo#}" height="160px" width="229px" />
+                                <h2><i class="fa fa-plus"></i>{#$list.companyname#}</h2>
+                            </a>
+                            <div class="ksm-con">
+                                <a href="{#$list.jobs_url#}">
+                                    <P class="gongzi">月 工 资：<font>{#$list.wage_cn#}</font></P>
+                                    <div class="sjd">
+                                    {#foreach from=$list.tag item=tagli#}
+            						<span>{#$tagli.1#}</span>{#foreachelse#} 无
+									{#/foreach#}
+                                       
+                                    </div>
+                                    <p class="mfbm" href="{#$list.jobs_url#}">点击查看</p>
+                                </a>
+                            </div>
+                        </div>
+                        {#/foreach#}
+                     </li>
+                </ul>
+                <ul>
+                     <li>
+                       <!--物流/仓储类-->
+                    {#qishi_hymq_jobs_list  set="分页显示:1,列表名:jobslist,显示数目:4,填补字符:...,职位名长度:13,企业名长度:19,描述长度:65,关键字:GET[key],职位分类:GET[jobcategory],职位大类:211,职位小类:GET[subclass],地区分类:GET[citycategory],地区大类:GET[district],地区小类:GET[sdistrict],行业:GET[trade],日期范围:GET[settr],工资:GET[wage],年龄:GET[age],公司规模:GET[scale],排序:id>desc"#}
+        			{#foreach from=$jobslist item=list#}
+                        <div class="list-ksm">
+                            <a href="{#$list.jobs_url#}">
+                                <img src="/data/hymq_img/{#$list.logo#}" height="160px" width="229px" />
+                                <h2><i class="fa fa-plus"></i>{#$list.companyname#}</h2>
+                            </a>
+                            <div class="ksm-con">
+                                <a href="{#$list.jobs_url#}">
+                                    <P class="gongzi">月 工 资：<font>{#$list.wage_cn#}</font></P>
+                                    <div class="sjd">
+                                    {#foreach from=$list.tag item=tagli#}
+            						<span>{#$tagli.1#}</span>{#foreachelse#} 无
+									{#/foreach#}
+                                       
+                                    </div>
+                                    <p class="mfbm" href="{#$list.jobs_url#}">点击查看</p>
+                                </a>
+                            </div>
+                        </div>
+                        {#/foreach#}
+                     </li>
+                </ul>
+                <ul>
+                     <li>
+                    <!--教育/培训-->
+                    {#qishi_hymq_jobs_list  set="分页显示:1,列表名:jobslist,显示数目:4,填补字符:...,职位名长度:13,企业名长度:19,描述长度:65,关键字:GET[key],职位分类:GET[jobcategory],职位大类:439,职位小类:GET[subclass],地区分类:GET[citycategory],地区大类:GET[district],地区小类:GET[sdistrict],行业:GET[trade],日期范围:GET[settr],工资:GET[wage],年龄:GET[age],公司规模:GET[scale],排序:id>desc"#}
+        			{#foreach from=$jobslist item=list#}
+                        <div class="list-ksm">
+                            <a href="{#$list.jobs_url#}">
+                                <img src="/data/hymq_img/{#$list.logo#}" height="160px" width="229px" />
+                                <h2><i class="fa fa-plus"></i>{#$list.companyname#}</h2>
+                            </a>
+                            <div class="ksm-con">
+                                <a href="{#$list.jobs_url#}">
+                                    <P class="gongzi">月 工 资：<font>{#$list.wage_cn#}</font></P>
+                                    <div class="sjd">
+                                    {#foreach from=$list.tag item=tagli#}
+            						<span>{#$tagli.1#}</span>{#foreachelse#} 无
+									{#/foreach#}
+                                       
+                                    </div>
+                                    <p class="mfbm" href="{#$list.jobs_url#}">点击查看</p>
+                                </a>
+                            </div>
+                        </div>
+                        {#/foreach#}
+                     </li>
+                </ul>
+                <ul>
+                     <li>
+                    <!--建筑/装修类-->
+                    {#qishi_hymq_jobs_list  set="分页显示:1,列表名:jobslist,显示数目:4,填补字符:...,职位名长度:13,企业名长度:19,描述长度:65,关键字:GET[key],职位分类:GET[jobcategory],职位大类:157,职位小类:GET[subclass],地区分类:GET[citycategory],地区大类:GET[district],地区小类:GET[sdistrict],行业:GET[trade],日期范围:GET[settr],工资:GET[wage],年龄:GET[age],公司规模:GET[scale],排序:id>desc"#}
+        			{#foreach from=$jobslist item=list#}
+                        <div class="list-ksm">
+                            <a href="{#$list.jobs_url#}">
+                                <img src="/data/hymq_img/{#$list.logo#}" height="160px" width="229px" />
+                                <h2><i class="fa fa-plus"></i>{#$list.companyname#}</h2>
+                            </a>
+                            <div class="ksm-con">
+                                <a href="{#$list.jobs_url#}">
+                                    <P class="gongzi">月 工 资：<font>{#$list.wage_cn#}</font></P>
+                                    <div class="sjd">
+                                    {#foreach from=$list.tag item=tagli#}
+            						<span>{#$tagli.1#}</span>{#foreachelse#} 无
+									{#/foreach#}
+                                       
+                                    </div>
+                                    <p class="mfbm" href="{#$list.jobs_url#}">点击查看</p>
+                                </a>
+                            </div>
+                        </div>
+                        {#/foreach#}
+                     </li>
+                </ul>
+                <ul>
+                     <li>
+                    <!--酒店/餐饮/旅游/服务-->
+                    {#qishi_hymq_jobs_list  set="分页显示:1,列表名:jobslist,显示数目:4,填补字符:...,职位名长度:13,企业名长度:19,描述长度:65,关键字:GET[key],职位分类:GET[jobcategory],职位大类:413,职位小类:GET[subclass],地区分类:GET[citycategory],地区大类:GET[district],地区小类:GET[sdistrict],行业:GET[trade],日期范围:GET[settr],工资:GET[wage],年龄:GET[age],公司规模:GET[scale],排序:id>desc"#}
+        			{#foreach from=$jobslist item=list#}
+                        <div class="list-ksm">
+                            <a href="{#$list.jobs_url#}">
+                                <img src="/data/hymq_img/{#$list.logo#}" height="160px" width="229px" />
+                                <h2><i class="fa fa-plus"></i>{#$list.companyname#}</h2>
+                            </a>
+                            <div class="ksm-con">
+                                <a href="{#$list.jobs_url#}">
+                                    <P class="gongzi">月 工 资：<font>{#$list.wage_cn#}</font></P>
+                                    <div class="sjd">
+                                    {#foreach from=$list.tag item=tagli#}
+            						<span>{#$tagli.1#}</span>{#foreachelse#} 无
+									{#/foreach#}
+                                       
+                                    </div>
+                                    <p class="mfbm" href="{#$list.jobs_url#}">点击查看</p>
+                                </a>
+                            </div>
+                        </div>
+                        {#/foreach#}
+                     </li>
+                </ul>
+            </div>
+        </div>
+	  <!--中部分类栏目内容--结束-->  
+        <div class="kuang company over">
+        
+<!--             <div class="column newcol"><a href="#">
+             	<p><img src="/files/img/img02.jpg" /></p>
+                <dl>
+                    <dt><h4>质员 一名</h4></dt>
+                    <dd>
+                        <span>上海检员巡检员公司</span>
+                    </dd>
+                    <dd>发布日期：<font color="#999">2015-05-02</font></dd>
+                </dl></a>
+             </div>
+--> 
+           <h2 class="mb10"><i class="fa fa-leanpub"></i>最新招聘</h2>
+           {#qishi_companyjobs_list set="列表名:company,显示数目:35,显示职位:3,职位名长度:4,企业名长度:16,排序:refreshtime>desc"#}
+           	{#foreach from=$company item=list#}
+             <div class="column newcol">
+                <dl>
+                    <dt><h4><a href="{#$list.company_url#}">{#$list.companyname#}</a></h4></dt>
+                    <dd>
+                        {#foreach from=$list.jobs item=jobslist#}
+                        <a href="{#$jobslist.jobs_url#}"  target="_blank">{#$jobslist.jobs_name#}</a>
+						{#/foreach#}
+                    </dd>
+                </dl>
+             </div>
+             {#/foreach#}
+            
+		</div>
+        
+        <div class="kuang company hezuo">
+           <h2 class="mb10"><i class="fa fa-file-text"></i>职场指南</h2>
+        	<div class="wid333 nes">
+            	<h3>资讯栏目<a href="/news/news-list.php?id=7">更多 >></a></h3>  
+                <ul>
+                	<!--职场观察-->
+                	{#qishi_news_list set="列表名:news,显示数目:6,标题长度:24,资讯小类:7,填补字符:...,排序:article_order>desc"#}
+					{#foreach from=$news item=list#}
+					<li><i class="fa fa-chevron-right"></i><a href="{#$list.url#}" target="_blank">{#$list.title#}</a></li>
+					{#/foreach#}
+                	
+                </ul>          	
+            </div>
+            <div class="wid333 nes">
+            	<h3>打工面试技巧<a href="/news/news-list.php?id=4">更多 >></a></h3>  
+                <ul>
+                	<!--面试宝典-->
+                	{#qishi_news_list set="列表名:news,显示数目:6,标题长度:24,资讯小类:4,填补字符:...,排序:article_order>desc"#}
+					{#foreach from=$news item=list#}
+					<li><i class="fa fa-chevron-right"></i><a href="{#$list.url#}" target="_blank">{#$list.title#}</a></li>
+					{#/foreach#}
+                	
+                </ul>          	
+            </div>
+            <div class="wid333">
+            	<h3>感谢信栏目<a href="/news/news-list.php?id=8">更多 >></a></h3>  
+                <ul>
+                	<!--站点活动-->
+                	{#qishi_news_list set="列表名:news,显示数目:6,标题长度:24,资讯小类:8,填补字符:...,排序:article_order>desc"#}
+					{#foreach from=$news item=list#}
+					<li><i class="fa fa-chevron-right"></i><a href="{#$list.url#}" target="_blank">{#$list.title#}</a></li>
+					{#/foreach#}
+                </ul>          	
+            </div>
+        </div>	
+        
+        <div class="kuang company hezuo">
+            <h2 class="mb10"><i class="fa fa-suitcase"></i>合作企业</h2>
+            
+            <div class="hsnd">
+                <div id="demo" align="center">
+                <table border=0 align=center cellpadding=1 cellspacing=1 cellspace=0 >
+                    <tr>
+                        <td valign=top id=marquePic1>
+                        <table width='100%' border='0' cellspacing='0'>
+                        <tr>
+                        {#qishi_ad set="显示数目:20,调用名称:mqbigpicsmall,列表名:ad"#}
+                        {#if $ad#}
+                        {#foreach from=$ad item=list#}
+                        <td align=center><a href='{#$list.img_url#}'  title="{#$list.img_explain#}"><img src="{#$list.img_path#}" width=180 height=82 title="{#$list.img_explain#}" /></a></td>
+                        <!-- ad end -->
+                        {#/foreach#}
+                        {#/if#}
+                       
+                        </tr>
+                        </table>
+                        </td>
+                        <td id=marquePic2 valign=top></td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+            
+ <!--------------合作企业滚动-------------->             
+            
+<script type="text/javascript">
+var speed=30 
+marquePic2.innerHTML=marquePic1.innerHTML 
+function Marquee(){ 
+if(demo.scrollLeft>=marquePic1.scrollWidth){ 
+demo.scrollLeft=0 
+}else{ 
+demo.scrollLeft++ 
+} 
+} 
+var MyMar=setInterval(Marquee,speed) 
+demo.onmouseover=function() {clearInterval(MyMar)} 
+demo.onmouseout=function() {MyMar=setInterval(Marquee,speed)} 
+</script>
+        </div>
+    
+    <!--底部开始-->
+   {#include file="footer.htm"#}
+	<!--底部结束-->
+</body>
+    
+</html>

@@ -1,0 +1,513 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+<title>相约广达 浪漫七夕</title>
+<link href="/files/css/font-awesome.min.css" rel="stylesheet" >
+<link href="/files/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/all.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/header-footer.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/langmanqx.css" rel="stylesheet" type="text/css" />
+<script src="/files/js/jquery.js" type='text/javascript' language="javascript"></script>
+<script language="javascript" type="text/javascript" src="http://www.qwbm.com/yw/js/2011noteswall.js"></script>
+<!--<script src="/files/js/langmanqx.js" type='text/javascript' language="javascript"></script>-->
+<!--ffff-->
+</head>
+<body>
+<!--头部开始-->
+	{#include file="user/header.htm"#}
+<!--头部结束-->
+<!--单页开始-->
+<div class="qixi_demo">
+	<div class="qx_demo01"></div>
+    <div class="qx_demo02"></div>
+    <div class="qx_demo03">
+    	<div class="heart_infor">
+        	<div class="heart_right">
+            	<p>接过红线<br />即刻<a href="javascript:void();" title="">报名活动</a>，不再孤单过七夕！</p>
+                <p>爱情宣言<br />晒出你的<a href="#loveM" title="">爱情宣言</a>，还可参与<br />幸运大抽奖！</p>
+            </div>
+            <div class="ali_btn">
+            	<a href="javascript:;" class="baoming_btn"></a>
+                <a href="javascript:;" class="baoming_btn02"></a>
+            </div>
+        </div>
+    </div>
+    <div class="qx_demo04"></div>
+    <div class="qx_demo05"  id="loveM"></div>
+    <div class="qx_demo06">
+   		<div class="container">
+        	<div id="contmain"> 
+			<div id="mask" style="display:none;" onClick="Hide();"></div>
+            	<!--循环-->
+{#qishi_zt_langmanqx  set="分页显示:1,列表名:langmanqx,显示数目:100,排序:addtime > desc"#}
+                <div id="layer1297" name="note" class="note" style="left:0;top:0;z-index:1297;" onDblClick="Show(1297)">
+                    <div class="nt">
+                        <ul class="ntl">
+                            <li>字条编号:1297</li>
+                        </ul>
+                        <ul class="ntr">
+                            <li class="o1" onClick="closeDiv(this)" title="关闭字条">关闭</li>
+                        </ul>
+                    </div>
+                    <div class="nc">
+                        
+                        <div class="ncr">
+                        	<!--<strong>浩森</strong>--><p>我家男神！一直这么叫你，因为想一直这么叫！追你好辛苦，你走慢点以后。</p>
+                        </div>
+                    </div>
+                   
+				</div>
+                
+                 <div id="layer1297" name="note" class="note" style="left:30px;top:130px;z-index:1297;" onDblClick="Show(1297)">
+                        <div class="nt">
+                            <ul class="ntl">
+                                <li>字条编号:1296</li>
+                            </ul>
+                            <ul class="ntr">
+                                <li class="o1" onClick="closeDiv(this)" title="关闭字条">关闭</li>
+                            </ul>
+                        </div>
+                        <div class="nc">
+                            
+                            <div class="ncr"><!--<strong>s</strong>--><p>s:成世流水长,就算没爱过人渣,也该说过谎,譬如,我说你走,S,我希望你回来。</p></div></div>
+                        
+                </div>
+                <div id="layer1297" name="note" class="note" style="left:60px;top:230px;z-index:1297;" onDblClick="Show(1297)">
+                        <div class="nt">
+                            <ul class="ntl">
+                                <li>字条编号:1299</li>
+                            </ul>
+                            <ul class="ntr">
+                                <li class="o1" onClick="closeDiv(this)" title="关闭字条">关闭</li>
+                            </ul>
+                        </div>
+                        <div class="nc">
+                            
+                            <div class="ncr"><!--<strong>梁嘉人</strong>--><p>5、	老徐，世界那么大，我们一起去看看！</p></div></div>
+                        
+                </div>
+                 <div id="layer1297" name="note" class="note" style="left:90px;top:330px;z-index:1297;" onDblClick="Show(1297)">
+                        <div class="nt">
+                            <ul class="ntl">
+                                <li>字条编号:1256</li>
+                            </ul>
+                            <ul class="ntr">
+                                <li class="o1" onClick="closeDiv(this)" title="关闭字条">关闭</li>
+                            </ul>
+                        </div>
+                        <div class="nc">
+                            
+                            <div class="ncr"><!--<strong>梁嘉人</strong>--><p>爱情和婚姻是两码事吗？然后你告诉我，遇对了人就是一码事。谢谢遇见你O(∩_∩)O~</p></div></div>
+                        
+                </div>
+                <div id="layer1297" name="note" class="note" style="left:100px;top:100px;z-index:1297;" onDblClick="Show(1297)">
+                        <div class="nt">
+                            <ul class="ntl">
+                                <li>字条编号:12312</li>
+                            </ul>
+                            <ul class="ntr">
+                                <li class="o1" onClick="closeDiv(this)" title="关闭字条">关闭</li>
+                            </ul>
+                        </div>
+                        <div class="nc">
+                            
+                            <div class="ncr"><!--<strong>梁嘉人</strong>--><p>真的不想在一个人过光棍节啦，想找个人过七夕咋就这么难，╥﹏╥...</p></div></div>
+                       
+                </div>
+                 <div id="layer1297" name="note" class="note" style="left:800px;top:0px;z-index:1256;" onDblClick="Show(1297)">
+                        <div class="nt">
+                            <ul class="ntl">
+                                <li>字条编号:12569</li>
+                            </ul>
+                            <ul class="ntr">
+                                <li class="o1" onClick="closeDiv(this)" title="关闭字条">关闭</li>
+                            </ul>
+                        </div>
+                        <div class="nc">
+                            
+                            <div class="ncr"><!--<strong>梁嘉人</strong>--><p>楠楠，我爱你，不光因为你的样子，还因为，和你在一起时，我的样子。</p></div></div>
+                       
+                </div>
+                
+                 <div id="layer1297" name="note" class="note" style="left:800px;top:100px;z-index:1256;" onDblClick="Show(1297)">
+                        <div class="nt">
+                            <ul class="ntl">
+                                <li>字条编号:12511</li>
+                            </ul>
+                            <ul class="ntr">
+                                <li class="o1" onClick="closeDiv(this)" title="关闭字条">关闭</li>
+                            </ul>
+                        </div>
+                        <div class="nc">
+                            
+                            <div class="ncr"><!--<strong>梁嘉人</strong>--><p>激荡许多年，等你来赴约……</p></div></div>
+                        
+                </div>
+                
+                <div id="layer1297" name="note" class="note" style="left:700px;top:20px;z-index:1256;" onDblClick="Show(1297)">
+                        <div class="nt">
+                            <ul class="ntl">
+                                <li>字条编号:12521</li>
+                            </ul>
+                            <ul class="ntr">
+                                <li class="o1" onClick="closeDiv(this)" title="关闭字条">关闭</li>
+                            </ul>
+                        </div>
+                        <div class="nc">
+                            
+                            <div class="ncr"><!--<strong>梁嘉人</strong>--><p>Ad:不要迷恋游戏啦，多迷恋迷恋我哈，要听话哈。</p></div></div>
+                        
+                </div>
+                
+                <div id="layer1297" name="note" class="note" style="left:600px;top:20px;z-index:1256;" onDblClick="Show(1297)">
+                        <div class="nt">
+                            <ul class="ntl">
+                                <li>字条编号:12575</li>
+                            </ul>
+                            <ul class="ntr">
+                                <li class="o1" onClick="closeDiv(this)" title="关闭字条">关闭</li>
+                            </ul>
+                        </div>
+                        <div class="nc">
+                            
+                            <div class="ncr"><!--<strong>梁嘉人</strong>--><p>dong:等你回来，幸福的小日子过起来~~</p></div></div>
+                        
+                </div>
+                 <div id="layer1297" name="note" class="note" style="left:500px;top:20px;z-index:1256;" onDblClick="Show(1297)">
+                        <div class="nt">
+                            <ul class="ntl">
+                                <li>字条编号:12578</li>
+                            </ul>
+                            <ul class="ntr">
+                                <li class="o1" onClick="closeDiv(this)" title="关闭字条">关闭</li>
+                            </ul>
+                        </div>
+                        <div class="nc">
+                            
+                            <div class="ncr"><!--<strong>梁嘉人</strong>--><p>春水初生，春林初盛，春风十里，不如你！</p></div></div>
+                        
+                </div>
+                 <div id="layer1297" name="note" class="note" style="left:400px;top:100px;z-index:1256;" onDblClick="Show(1297)">
+                        <div class="nt">
+                            <ul class="ntl">
+                                <li>字条编号:12590</li>
+                            </ul>
+                            <ul class="ntr">
+                                <li class="o1" onClick="closeDiv(this)" title="关闭字条">关闭</li>
+                            </ul>
+                        </div>
+                        <div class="nc">
+                            
+                            <div class="ncr"><!--<strong>梁嘉人</strong>--><p>幸福是，牵你的手，从此两双眼睛，看一个未来。</p></div></div>
+                       
+                </div>
+            	 <div id="layer1297" name="note" class="note" style="left:300px;top:0px;z-index:1256;" onDblClick="Show(1297)">
+                        <div class="nt">
+                            <ul class="ntl">
+                                <li>字条编号:12554</li>
+                            </ul>
+                            <ul class="ntr">
+                                <li class="o1" onClick="closeDiv(this)" title="关闭字条">关闭</li>
+                            </ul>
+                        </div>
+                        <div class="nc">
+                            
+                            <div class="ncr"><!--<strong>梁嘉人</strong>--><p>这位先森，我做主把自己交给你了，从此以后，请多多指教。</p></div></div>
+                        
+                </div>
+                <div id="layer1297" name="note" class="note" style="left:300px;top:400px;z-index:1256;" onDblClick="Show(1297)">
+                        <div class="nt">
+                            <ul class="ntl">
+                                <li>字条编号:12533</li>
+                            </ul>
+                            <ul class="ntr">
+                                <li class="o1" onClick="closeDiv(this)" title="关闭字条">关闭</li>
+                            </ul>
+                        </div>
+                        <div class="nc">
+                            
+                            <div class="ncr"><!--<strong>梁嘉人</strong>--><p>那个谁，对就说你呢，20好几年了，堵车了还是迷路了，再不出现老娘削你了啊！！</p></div></div>
+                       
+                </div>
+                 <div id="layer1297" name="note" class="note" style="left:700px;top:400px;z-index:1256;" onDblClick="Show(1297)">
+                        <div class="nt">
+                            <ul class="ntl">
+                                <li>字条编号:12562</li>
+                            </ul>
+                            <ul class="ntr">
+                                <li class="o1" onClick="closeDiv(this)" title="关闭字条">关闭</li>
+                            </ul>
+                        </div>
+                        <div class="nc">
+                            
+                            <div class="ncr"><!--<strong>梁嘉人</strong>--><p>希望我爱的人身体健康个性很善良，大大手掌能包容我小小的倔强~~~</p></div></div>
+                       
+                </div>
+                <div id="layer1297" name="note" class="note" style="left:600px;top:300px;z-index:1256;" onDblClick="Show(1297)">
+                        <div class="nt">
+                            <ul class="ntl">
+                                <li>字条编号:12512</li>
+                            </ul>
+                            <ul class="ntr">
+                                <li class="o1" onClick="closeDiv(this)" title="关闭字条">关闭</li>
+                            </ul>
+                        </div>
+                        <div class="nc">
+                            
+                            <div class="ncr"><!--<strong>梁嘉人</strong>--><p>我以为无论我住在哪里，做什么工作，爱上什么人，这些都不会改变我，直到我遇见你，才发现以前太天真。</p></div></div>
+                        
+                </div>
+                <div id="layer1297" name="note" class="note" style="left:540px;top:270px;z-index:1256;" onDblClick="Show(1297)">
+                        <div class="nt">
+                            <ul class="ntl">
+                                <li>字条编号:12539</li>
+                            </ul>
+                            <ul class="ntr">
+                                <li class="o1" onClick="closeDiv(this)" title="关闭字条">关闭</li>
+                            </ul>
+                        </div>
+                        <div class="nc">
+                            
+                            <div class="ncr"><!--<strong>梁嘉人</strong>--><p>瓶子：一周年了，希望我们能顺顺利利，家人身体都健健康康，祝福大家有情人终成眷属！！</p></div></div>
+                        
+                </div>
+                <div id="layer1297" name="note" class="note" style="left:340px;top:170px;z-index:1256;" onDblClick="Show(1297)">
+                        <div class="nt">
+                            <ul class="ntl">
+                                <li>字条编号:12535</li>
+                            </ul>
+                            <ul class="ntr">
+                                <li class="o1" onClick="closeDiv(this)" title="关闭字条">关闭</li>
+                            </ul>
+                        </div>
+                        <div class="nc">
+                            
+                            <div class="ncr"><!--<strong>梁嘉人</strong>--><p>爱情，本来就是勇敢者的游戏。如果你不够勇敢，你很快就会出局.</p></div></div>
+                        
+                </div>
+           
+			</div>
+        </div> 
+    </div>
+    <script language="javascript" type="text/javascript">
+	function showstyle(stylesid){location='http://www.qwbm.com/yw/index.asp?page=&ls='+stylesid;}
+	noteDrag.init(566,442);
+	</script>
+    <div class="qx_demo07">
+    	<div class="qx_demo07_infor">
+        	<p>现在晒出爱情宣言，即可参与8月19日姻缘树幸运大抽奖活动。</p>
+            <p>获奖名单将于8月19日12:00  公布在姻缘树页面。</p>
+            <p>我们将电话通知获奖者，获奖后请于8月20日，七夕联谊会活动现场领取幸运奖。</p>
+        </div>
+    </div>
+</div>
+<!--单页结束-->
+
+<!--footer开始-->
+{#include file="footer.htm"#}
+
+<!-- 回到顶部组件 -->
+<!--<div class="back_to_top" id="back_to_top">
+	<div class="back" style="display:none;">
+		<div>回到顶部</div>
+	</div>
+	<div class="steer">
+		<div onclick="javascript:location.href='{#$QISHI.main_domain#}suggest'">我要建议</div>
+	</div>
+	<div class="sub">
+		<div onclick="javascript:location.href='{#$QISHI.main_domain#}subscribe'">我要订阅</div>
+	</div>
+</div>-->
+<script>
+	$(function(){
+		//回到顶部组件出现设置
+		$(window).scroll(function(){
+			if($(window).scrollTop()>200){
+				$(".back").fadeIn(400);
+			}else{
+				$(".back").fadeOut(400);
+			}
+		})
+
+		//回到顶部hover效果
+		$(".back_to_top .back, .steer, .sub").hover(function(){
+			$(this).find("div").css("display","block");
+		},function(){
+			$(this).find("div").css("display","none");
+		})
+
+		//设置滚回顶部方法
+		$(".back").click(function(){
+			$("body,html").animate({scrollTop:0}, 500);
+			return false;
+		})
+	});
+	$(function(){
+		$(".foot_list ul:odd li").css("width", 62);
+		$(".weixin_img:last").css("margin-right", 0);
+	})
+</script>
+
+<script>
+
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?aa1b6622cda40ea74c1ac85e4b432e3a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!--footer结束-->
+
+<!-- message aqxuanyan  -->
+<div class="alert01 winpop" id="alert01">
+	<div class="aq_xuanyan">
+    	<div class="write_pinfor write_pinfor_xuanyan" style="display:block;">
+             <form method="post" action="" id="Form1_1" name="Form1_1" > 
+            <ul>
+                <li>我的爱情宣言是：</li>
+                <li><textarea name="contents" id="contents" onFocus="if(value==defaultValue){value='';}"
+onBlur="if(!value){value=defaultValue;}">尽量写的简洁，控制在32字以内。</textarea></li>
+                <li>姓名：<input type="text" class="text_name" name="name" id="name_1" />
+                工号：<input type="text" class="text_name" name="gonghao" id="gonghao" />
+                手机号码：<input type="text" class="text_number" name="phone" id="phone_1" /></li>
+                <li class="pink">*用于现场领奖的身份核对，请填写真实资料。</li>
+                <li class="submit_center"><input type="button"  id="qx_xuanyan" value="确认提交" class="submit_xinxi" /></li>
+            </ul>
+          </form>
+        </div>
+        <div class="submit_success" id="xuanyan_success">
+        	<!--<h2>很棒的爱情宣言，已为您挂在姻缘树上！</h2>
+            <p>感谢您的参与，您已获得姻缘树幸运抽奖活动抽奖机会</p>
+            <p>获奖名单将于8月19日12:00  公布在姻缘树页面。</p>-->
+        </div>
+        <div class="close">
+    	<a href="javascript:void();" id="close" title="" onclick="hide('pop')" class="close_btn"></a>
+    </div>
+    </div>    
+</div>
+
+<!--personal  infor -->
+<div class="personal winpop" id="personal" >
+	<div class="personal_infor">
+    	<div class="write_pinfor write_pinfor_baoming"style="display:block;">
+        	<form method="post" action="" id="Form1" name="Form1" > 
+        	<ul>
+                <li><span>姓名：</span><input type="text" class="text_infor" name="name" id="name" /><span>性别：</span><input type="radio" name="sex"  value="男" id="sex"/>男&nbsp;<input type="radio" name="sex" id="sex" value="女" />女</li>
+                <li><span>身高：</span><input type="text"  class="text_infor" name="height" id="height"/><span>体重：</span><input type="text" class="text_infor" name="weight" id="weight" />&nbsp;kg</li>
+                <li><span>工号部门：</span><input type="text" class="text_infor" name="depratment" id="depratment" /><span>联系方式：</span><input type="text" class="text_infor"  name="phone" id="phone"/></li>
+                <li><span>出生年月：</span><input type="text" class="text_infor"  name="brithday" id="brithday"/><span>籍贯：</span><input type="text" class="text_infor"  name="home" id="home"/></li>
+                <li><span>兴趣爱好：</span><textarea name="hobby" id="hobby"></textarea></li>
+                <li><span>择偶标准：</span><textarea name="selected" id="selected"></textarea></li>
+                <li class="submit_center Fright"><input type="button" value="确认提交" class="submit_xinxi" id="qx_baoming" /></li>
+                <li><p>*为了活动的顺利进行，请填写真实的个人资料。一旦通过活动组审核，我们将与您联系。</p></li>
+        </ul>
+        </form>
+        </div>
+        <div class="submit_success pd">
+        	<!--<h2><i class="fa fa-smile-o"></i>报名成功！感谢您的参与！！！</h2>-->
+        </div>
+        <div class="close personal_close">
+    	<a href="javascript:void();" id="close" title="" onclick="hide('pop')" class="close_btn"></a>        
+    </div>
+    </div>
+</div>
+<script>
+jQuery(function($){
+	$(".baoming_btn").click(function(){
+		if($("#alert01").is(":visible")){
+			$("#alert01").hide();
+		}
+		var obj = $("#personal");
+		obj.fadeIn();
+	});
+	$(".baoming_btn02").click(function(){
+		if($("#personal").is(":visible")){
+			$("#personal").hide();
+		}
+		var obj = $("#alert01");
+		obj.fadeIn();
+	});
+	$(".close_btn").click(function(){
+		$(this).parents(".winpop").fadeOut();	
+	})
+});
+		//报名七夕按钮
+        $("#qx_baoming").die().live("click",function(){
+        var name=$("#name").val();//alert(name);
+		 if(name==null || name==""){
+                alert("请填写姓名");
+                return false;
+            }
+		var brithday=$("#brithday").val();
+		//----fffff
+		//var sex=$("#sex").val();
+		 var sex_cn=$('input:radio[name="sex"]:checked').val();
+            if(sex_cn==null){
+                alert("请选择性别!");
+                return false;
+            }
+            else{
+                var sex=sex_cn;
+            }
+			//alert(sex);
+		//-----fffff
+		var height=$("#height").val();
+		var weight=$("#weight").val();
+		var phone=$("#phone").val();
+		if(phone==null || phone==""){
+                alert("请填写联系方式");
+                return false;
+            }
+		var home=$("#home").val();
+		var selected=$("#selected").val();
+		var hobby=$("#hobby").val();
+		var depratment=$("#depratment").val();
+		var tsTimeStamp= new Date().getTime();
+		$.post("/plus/ajax_qx.php", { "name": name,"sex": sex,"height": height,"depratment": depratment,"selected": selected,"hobby": hobby,"phone": phone,"home": home,"weight": weight,"brithday": brithday,"time":tsTimeStamp,"act":"qx_baoming"},
+			function (data,textStatus)
+			 {	
+			 	$(".write_pinfor_baoming").hide();	
+				$(".pd").html(data);
+			 }
+		);
+        });
+		
+		//----七夕爱情宣言按钮
+        $("#qx_xuanyan").die().live("click",function(){
+		var contents=$("#contents").val();
+		if(contents==null || contents=="" || contents == "尽量写的简洁，控制在32字以内。"){
+                alert("写点爱情宣言吧");
+                return false;
+            }
+        var name_1=$("#name_1").val();//alert(name_1);
+		if(name_1==null || name_1==""){
+                alert("请填写姓名");
+                return false;
+            }
+		var gonghao=$("#gonghao").val();
+		if(gonghao==null || gonghao==""){
+                alert("请填写工号");
+                return false;
+            }
+		var phone_1=$("#phone_1").val();
+		if(phone_1==null || phone_1==""){
+                alert("请填写手机号码");
+                return false;
+            }
+		var tsTimeStamp= new Date().getTime();
+		//alert(name_1+contents+phone_1+gonghao);
+		$.post("/plus/ajax_qx.php", { "name": name_1,"contents": contents,"gonghao": gonghao,"phone": phone_1,"time":tsTimeStamp,"act":"qx_xuanyan"},
+			function (data,textStatus)
+			 {	
+			 	$(".write_pinfor_xuanyan").hide();	
+				$("#xuanyan_success").html(data);
+			 }
+		);
+        });
+</script>
+
+</body>
+</html>

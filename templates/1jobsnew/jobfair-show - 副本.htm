@@ -1,0 +1,423 @@
+{#qishi_jobfair_show set="列表名:show,招聘会ID:GET[id]"#}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head >
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta name="robots" content="noodp,noydir" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <title>招聘会 - {#$QISHI.site_name#} - 寅特尼人才网</title>
+	<meta name="keywords" content="合肥招聘会,安徽招聘会" />
+	<meta name="description" content="合肥最新招聘会时间，地址，企业，招聘岗位就在合肥招聘会网" />
+	<meta http-equiv="X-UA-Compatible" content="IE=7">
+	<meta name="author" content="寅特尼人才网" />
+    <link rel="stylesheet" type="text/css" href="/files/all.css" />
+<link href="/files/zw.css" rel="stylesheet" type="text/css" />
+	<!-- //会员登录 -->
+	<link rel="stylesheet" type="text/css" href="/files/zhaopin/zp_art.css" />
+
+	<script language="javascript" type="text/javascript" src="/files/js/jquery-1.2.6.min.js"></script>
+
+<script src="/files/js/jquery.vtip-min.js" type="text/javascript" ></script>
+
+
+<script type="text/javascript">
+//首页登录
+$.get("{#$QISHI.site_dir#}plus/ajax_user.php", {"act":"top_loginform"},
+			function (data,textStatus)
+			 {
+				$("#top_loginform").html(data);
+			 }
+	);	
+</script>
+
+</head>
+<body>
+
+<div id="top">
+	<div class="topmain">
+		<div class="topleft">
+			<h1 id="top_loginform">寅特尼人才网 - 安徽合肥寅特尼人才市场在线人才网 !</h1>
+		</div>
+		<div class="topright">
+			<span class="topnav">
+				<a href="http://www.1jobs.cn/index.php" class="lia">首页</a>
+				<a href="/wap/"  class="lia t_m">手机频道</a>
+				<a href="/help/" class="lia">帮助</a>
+				<a onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('{#$QISHI.site_domain#}');" href="javascript:">设为首页</a>
+				<a href="javascript:" onclick="window.external.addFavorite(parent.location.href,document.title);">加入收藏</a>
+				<a href="/plus/shortcut.php" style="color:#ff6600" class="lia">保存到桌面</a>
+			</span> 
+		</div>
+	</div>
+</div>
+
+<!--head begin-->
+<div class="head">
+	<div class="headCon">
+		<div class="headL">
+			<a href="/" title="寅特尼人才网" class="hbLogo"><img src="/files/image/logo.png" width="238" height="88" alt="合肥人才网LOGO" /></a>
+			
+				{#if $QISHI.subsite=="1"#}
+		<strong class="jjLogo">{#$QISHI.subsite_districtname|default:"安徽"#}</strong>{#/if#}
+			
+		</div>
+		<div class="headR">
+			<div class="schBody">
+				<form id="searcforms" name="searcforms" method="get" action="/jobs/jobs-list.php">
+					<div class="schBar">
+						<div class="schIco">
+						</div>
+
+						<div class="schInput">
+							<input type="text" value="职位名称/公司名称" onfocus="if (value =='职位名称/公司名称'){value =''}" onblur="if (value ==''){value='职位名称/公司名称'}" id="keys" name="key"
+							class="schText">
+							<!-- <div class="modSel">
+								<input type="radio" name="keyType" value="station" id="QS_jobslist"	checked="checked">
+								<label for="keyTypeStation">
+									职位
+								</label>
+								<input type="radio" name="keyType" value="company" id="QS_resumelist">
+								<label for="keyTypeCompany">
+									企业
+								</label>
+							</div> -->
+						</div>
+
+						<div class="schBtn">
+							<input type="submit" id="sbtn" name="submit" value="" class="sub" />
+						</div>
+					</div>
+				</form>
+				<div class="schLink">
+					<a href="/jobs/map-search.php?id=1" target="_blank" rel="nofollow">
+						地图搜索
+					</a>
+					|
+					<a href="/jobs/jobtag-search.php" target="_blank" rel="nofollow">
+						标签搜索
+					</a>
+				</div>
+				<div class="clear">
+				</div>
+			</div>
+			<div class="schKeyWords">
+				<b>
+					热门职位：
+				</b>
+				{#qishi_hotword set="显示数目:10,列表名:list"#}
+				{#foreach from=$list item=li#}<a href="{#"QS_jobslist,key:"|cat:$li.w_word_code|qishi_url#}" target="_blank">{#$li.w_word#}</a>{#/foreach#}
+			</div>
+		</div>
+		<div class="clear">
+		</div>
+	</div>
+</div>
+<!--head end-->
+
+<!--nav start-->
+<div class="nav">
+	<div class="navCon">
+		<ul>
+			<li><a href="/index.php">首页</a></li>
+			<li><a href="/jobs/">找工作</a></li>
+			<li><a href="/resume/">找人才</a></li>
+			<li class="hover"><a href="/jobfair/jobfair-list.php">招聘会</a></li>
+			<li><a rel="nofollow" href="http://www.ytnjob.com/">蓝领求职</a></li>
+			<li><a href="/jzzq/">家政专区</a></li>
+			<li><a href="/zhichang/">职场指南</a></li>
+			<li><a href="/company/index.php">企业黄页</a></li>
+			
+		</ul>
+	</div>
+</div>
+<!--nav end-->
+
+
+
+<div class="centercon">
+
+	
+	
+	<div class="content">
+		<div class="titleh"><h3>最新招聘会</h3></div>
+
+		
+		<div class="jobfair">
+			<div class="barleft">
+				<p class="week">{#$show.holddates|date_format:"%Y年%m月"#}&nbsp;{#$show.holddates_week#}</p>
+				<p class="date">{#$show.holddates|date_format:"%d"#}<span>日</span></p>
+			</div>
+			
+			<div class="barright">
+				<p {#if $show.predetermined_ok=="1" && $show.predetermined_web=="1"#} 
+	class="yd"
+	{#else#}
+	class="ydover"
+{#/if#}><a {#if $show.predetermined_ok=="1" && $show.predetermined_web=="1"#} href="{#"QS_user,1"|qishi_url#}company_jobfair.php?act=jobfair" title="请进入企业会员中心预定展位"{#else#}title="已停止在线预定展位" href="javascript:void(null);" {#/if#}></a></p>
+				
+				<p class="xq"><a href="#pic"></a></p>
+
+			</div>
+
+			<div class="jobfairlist">
+				<dl>
+					<dt><h1><a href="{#$list.url#}" target="_blank">{#$show.title#}</a></h1></dt>
+
+					<dd><span>举办日期：</span>{#$show.holddates|date_format:"%Y年%m月%d日"#}</dd>
+
+					<dd><span>行业主题：</span>{#$show.industry#}</dd>
+
+					<dd><span>展位数量：</span>{#$show.number#}</dd>
+
+					<dd><span>举办地址：</span>{#$show.address#}</dd>
+					<dd><span>乘车线路：</span>{#$show.bus#}</dd>
+					<dd><span>联系电话：</span>{#$show.phone#}</dd>
+
+					<dd><span>联 系 人：</span>{#$show.contact#}</dd>
+
+					<dd><span>预定状态：</span>{#if $show.predetermined_status=="1"#}可预定展位{#else#}停止预定{#/if#}</dd>
+					<dd><span>预定方式：</span>需要消耗{#$show.predetermined_point#}人才币或1次定展次数</dd>
+					<dd><span>开始预定：</span>{#if $show.predetermined_start#}{#$show.predetermined_start|date_format:"%Y年%m月%d日"#}{#else#}不限制{#/if#}</dd>
+					<dd><span>结束预定：</span>{#if $show.predetermined_end#}{#$show.predetermined_end|date_format:"%Y年%m月%d日"#}{#$show.hour#}时{#else#}不限制{#/if#}</dd>
+					<dd><span>已预订：</span>{#$yiyuding#}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>未预订：</span>{#$weiyuding#}</dd>				
+				</dl>
+			</div>
+
+		</div><!-- jobfair -->
+<div align="center">
+
+		<div style="width:860px; margin:20px auto;" >
+		{#$show.introduction#}
+		</div>
+		<!----------------->
+	<div id="pic" class="zwbox">
+		<!--没有预定的展位-->
+		{#foreach from=$all item=list#}
+		<div class="z{#$list.number#} bjm vtip" title="这个展位还没企业。预定电话:62521321" jf="{#$zhjf#}" type='{#$type#}'><span class="yc">{#$list.number#}</span></div>
+		{#/foreach#}
+		<!--预定过的展位-->
+		{#foreach from=$ok item=list#}
+		<div class="z{#$list.number#} bjy vtip" title="{#$list.title#}"><span class="yc">{#$list.number#}</span></div>
+		{#/foreach#}
+	</div>
+	<!--展位3楼-->
+	<div class="zwbox3">
+		<!--没有预定的展位-->
+		{#foreach from=$all item=list#}
+		<div class="{#$list.number#} bjm vtip" title="{#$list.number#}这个展位还没企业。预定电话:62521321" jf="{#$zhjf#}" type='{#$type#}'><span class="yc">{#$list.number#}</span></div>
+		{#/foreach#}
+		<!--预定过的展位-->
+		{#foreach from=$ok item=list#}
+		<div class="{#$list.number#} bjy vtip" title="{#$list.title#}"><span class="yc">{#$list.number#}</span></div>
+		{#/foreach#}
+	</div>
+	
+	
+<!----------------->
+
+</div>
+
+	</div><!-- content -->
+
+
+
+</div><!--  end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- foot start -->
+
+<DIV class="footer_new">
+
+	<div class="footmain">
+		
+	
+
+		<UL class="ft_main">
+			<LI>
+				<DL>
+					<DT>
+						用户帮助
+					</DT>
+					<DD>
+						<a href="/help/help-show.php?id=6" rel="nofollow" target="_blank">职位推广</a>
+					</DD>
+					<DD>
+						<a href="/help/help-show.php?id=5" rel="nofollow" target="_blank">职位发布与管理</a>
+					</DD>
+					<DD>
+						<a href="/help/help-show.php?id=4" rel="nofollow" target="_blank">资料与头像修改</a>
+					</DD>
+					<DD>
+						<a href="/help/help-show.php?id=3" rel="nofollow" target="_blank">帐户状态</a>
+					</DD>
+					<DD>
+						<a href="/help/help-show.php?id=2" rel="nofollow" target="_blank">密码找回与修改</a>
+					</DD>
+					<DD>
+						<a href="/help/help-list.php?id=16" rel="nofollow" target="_blank">简历创建与管理</a>
+					</DD>
+				</DL>
+			</LI>
+			<LI>
+				<DL>
+					<DT>
+						关注我们
+					</DT>
+					<DD>
+						<A href="javascript:void(0);" rel="nofollow" target="_blank">新浪微博</A>
+					</DD>
+					<DD>
+						<A href="javascript:void(0);" rel="nofollow" target="_blank">腾讯微博</A>
+					</DD>
+					<DD>
+						<A href="javascript:void(0);" rel="nofollow" target="_blank">RSS订阅</A>
+					</DD>
+					<DD>
+						<A href="javascript:void(0);" rel="nofollow" target="_blank"></A>
+					</DD>
+					<DD>
+						<A href="javascript:void(0);" rel="nofollow" target="_blank"></A>
+					</DD>
+				</DL>
+			</LI>
+			<LI>
+				<DL>
+					<DT>
+						手机寅特尼
+					</DT>
+					<DD>
+						<A href="javascript:void(0);" rel="nofollow" target="_blank">微信</A>
+					</DD>
+					<DD>
+						<A href="javascript:void(0);" rel="nofollow" target="_blank">手机客户端</A>
+					</DD>
+					<DD>
+						<A href="/wap/" rel="nofollow" target="_blank">手机网页版</A>
+					</DD>
+				</DL>
+			</LI>
+			<LI>
+				<DL>
+					<DT>
+						人才网相关
+					</DT>
+					<DD>
+						<A href="javascript:void(0);" rel="nofollow" target="_blank">市场合作</A>
+					</DD>
+					<DD>
+						<A href="javascript:void(0);" rel="nofollow" target="_blank">友情链接</A>
+					</DD>
+					<DD>
+						<A href="javascript:void(0);" rel="nofollow" target="_blank">合作伙伴</A>
+					</DD>
+					<DD>
+						<A href="javascript:void(0);" rel="nofollow" target="_blank">网站地图</A>
+					</DD>
+					<DD>
+						<A href="javascript:void(0);" rel="nofollow" target="_blank">联系我们</A>
+					</DD>
+				</DL>
+			</LI>
+			<LI>
+				<DL>
+					<DT>
+						申博集团旗下
+					</DT>
+					<DD>
+						<A href="http://www.ahlww.com" rel="nofollow" target="_blank">申博集团网</A>
+					</DD>
+					<DD>
+						<A href="http://www.1jobs.cn/index.php" rel="nofollow" target="_blank">寅特尼人才网</A>
+					</DD>					
+					<DD>
+						<A href="javascript:void(0);" rel="nofollow" target="_blank">寅特尼家政</A>
+					</DD>	
+					<DD>
+						<A href="#" rel="nofollow" target="_blank">寅特尼人才市场</A>
+					</DD>			
+				</DL>
+			</LI>
+			<LI class="sp">
+				<DL>
+					<DD class="sep">
+						0551-6252&nbsp;1321
+					</DD>
+					<DD>
+						<br /><!-- 周一至周六8:30-17:30 -->
+					</DD>
+						
+					<DD class="f_mobile_entry">
+						<A href="/wap/" target="_blank">
+						</A>
+					</DD>
+				</DL>
+			</LI>
+		</UL>
+
+	</div>
+
+
+    <DIV class="ft_in">
+
+	<p>寅特尼人才网是最专业的求职招聘网站，致力打造安徽人才网第一品牌！</p>
+	<p>联系地址：{#$QISHI.address#} &nbsp;&nbsp;联系电话：{#$QISHI.bootom_tel#}</p> 
+
+       
+     <p>Copyright  2012-2013 Www.1jobs.Cn  本站所有招聘信息及作品，未经书面授权不得转载！
+        <A href="http://www.miitbeian.gov.cn/" rel="nofollow">
+            皖ICP备12006327号-1
+        </A>
+		</p>
+        <p><A href="javascript:void(0);" rel=inde>
+            工商注册号340194000006515(1-1)
+        </A>
+        <A href="http://www.miibeian.gov.cn" rel="nofollow">
+            互联网经营许可证(ICP)编号：皖B2-20120051
+        </A></p>
+    </DIV>
+</DIV>
+
+<!-- foot end -->
+
+<script language="javascript">
+
+function nTabs(thisObj,Num){
+	if(thisObj.className == "active")return;
+	var tabObj = thisObj.parentNode.id;
+	var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+	for(i=0;i <tabList.length;i++){
+		if (i == Num){
+			thisObj.className = "t";
+			document.getElementById(tabObj+"_Content"+i).style.display = "block";
+		}
+		else{
+			tabList[i].className = "f";
+			document.getElementById(tabObj+"_Content"+i).style.display = "none";
+		}
+	}
+}
+</script>
+
+<div class="none">
+	<script src="http://s23.cnzz.com/stat.php?id=5464271&web_id=5464271" language="JavaScript"></script>
+<!--百度统计代码-->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F387dd47034a69ddda02ba014f6d287a8' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<script type="text/javascript">
+$(document).ready(function()
+{
+//会员中心顶部搜索职位简历切换 
+$("#usertopselectbox").hover(
+  function () {
+  $(this).find(".#selmenu").show();
+  },
+  function () {
+    $(this).find("#selmenu").hide();
+  }
+);
+$(".leftmenu .meunbox li[class!='h']").hover(
+  function () {
+      $(this).css("background-color","#F5F5F5");
+  },
+  function () {
+     $(this).css("background-color","#FFFFFF");
+  }
+);
+//会员中心顶部搜索职位简历切换 点击选择触发事件
+$("#usertopselectbox .selmenu").click(function(){
+
+		var txt=$(this).text();
+		
+		if (txt=="简历")
+		{
+		$("#topsotype").val('2');
+		$("#seltxt").text('简历');
+		$("#selmenu").text('职位');
+		$("#selmenu").hide();
+		}
+		else
+		{
+		$("#topsotype").val('1');
+		$("#seltxt").text('职位');
+		$("#selmenu").text('简历');
+		$("#selmenu").hide();
+		}
+});
+
+//所有提交按钮效果
+$("input[type='submit'],input[type='button']").hover(
+  function () {
+    $(this).addClass("hover");
+  },
+  function () {
+    $(this).removeClass("hover");
+  }
+);
+//所有多选按钮效果
+$(".input_checkbox,.input_checkbox_add").hover(
+  function () {
+    $(this).addClass("h");
+  },
+  function () {
+    $(this).removeClass("h");
+  }
+);
+//全选
+$('#chk').click(function(){$("#form1 :checkbox").attr('checked',$("#chk").attr('checked'))});
+});
+
+</script>
+<div class="meun1">
+  		<div class="meun2">
+		<div class="meunbox">
+		  <div class="tit">
+		    <div class="t c1">行业名企管理</div></div>
+		  	<div class="linktxt">
+				<ul>
+				<li {#if $smarty.get.act=="addjobs"#}class="h"{#/if#}><a href="shenhe_jobs.php?act=addjobs">发布行业名企</a></li>
+				<li {#if $smarty.get.act=="jobs" || $smarty.get.act=="edit_jobs"#}class="h"{#/if#}><a href="shenhe_jobs.php?act=jobs">管理行业名企</a></li>
+                <li><a href="shenhe_jobs.php?act=bm_hymq">管理报名行业名企</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="meunbox last">
+		  <div class="tit">
+		    <div class="t c2">企业会员管理</div></div>
+		  	<div class="linktxt">
+				<ul>
+				<li><a href="shenhe_company.php?act=shenhe_company_list&audit=">企业会员审核</a></li>
+				<li {#if $smarty.get.act=="down_resume_lsit"#}class="h"{#/if#}><a href="shenhe_company_jobs.php?act=sheneh_company_jobs">职位审核</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		<!--<div class="meunbox last">
+		  <div class="tit"><div class="t c5">账号管理</div></div>
+		  	<div class="linktxt">
+				<ul>
+				<li {#if $smarty.get.act=="shenhe_profile"#}class="h"{#/if#}><a href="shenhe_info.php?act=shenhe_profile">基本信息</a></li>
+				<li {#if $smarty.get.act=="password_edit" || $smarty.get.act=="binding" || $smarty.get.act=="login_log"#}class="h"{#/if#}><a href="shenhe_user.php?act=password_edit">安全助手</a></li>
+				<li{#if $smarty.get.act=="authenticate" || $smarty.get.act=="photo"#} class="h"{#/if#}><a href="shenhe_user.php?act=authenticate">认证管理</a></li>
+				<li><a href="{#"QS_login"|qishi_url#}?act=logout">退出登录</a></li>
+				</ul>
+			</div>
+		</div>-->
+		
+		</div>
+	</div>

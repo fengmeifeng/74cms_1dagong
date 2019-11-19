@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>测评帮助</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<meta name="description" content="{#$page.description#}">
+<meta name="keywords" content="{#$page.keywords#}">
+<link href="/files/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/font-awesome.min.css" rel="stylesheet" >
+<link href="/files/css/cep/liucheng.css" rel="stylesheet" type="text/css" />
+
+<!---->
+<link href="/files/css/header.css" rel="stylesheet" type="text/css" />
+<!---->
+
+<script src="/files/js/jquery.js" type='text/javascript' ></script>
+
+
+</head>
+<body>
+<!--头部开始-->
+	{#include file="user/header.htm"#}
+	<!--头部结束-->
+   <div class="page_location link_bk">
+当前位置：<a href="/">首页</a>&nbsp;>>&nbsp;<a href="/user/personal/personal_service.php?act=gifts">职业测评</a>
+</div>
+<div class="liucheng">
+	<div class="liucheng_left"  id="menu">
+    	<ul>
+        	<li><a href="#step1">1、礼包中心</a></li>
+            <li><a href="#step2">2、账号密码</a></li>
+            <li><a href="#step3">3、个人信息</a></li>
+            <li><a href="#step4">4、素质测评</a></li>
+            <li><a href="#step5">5、进入诊断</a></li>
+            <li><a href="#step6">6、进入测评</a></li>
+            <li><a href="#step7">7、测试方式选择</a></li>
+            <li><a href="#step8">8、测试题目选择</a></li>
+            <li><a href="#step9">9、开始答题</a></li>
+            <li><a href="#step10">10、提交答案</a></li>
+            <li><a href="#step11">11、查看报告</a></li>
+        </ul>
+    </div>
+    <div class="liucheng_right">
+   	<p id="step1">1、进入<a href="/user/personal/personal_service.php?act=gifts">礼包中心</a>，查看赠送的测评账号及密码，点击“<a href="/user/personal/personal_service.php?act=gifts">我要测评</a>”进入测评页面</p>
+
+　　<p id="step2">2、输入测评账号和密码，登陆测评中心。<br /><img src="../../../files/img/liucheng/liu_01.jpg" width="700" height="283" /></p>
+
+　　<p id="step3">3、进入测评中心，按照要求填写身份信息。(为了测评结果更准确，请填写真实的个人信息哦~)<img src="../../../files/img/liucheng/liu_02.jpg" width="700" height="505" /></p>
+
+　　<p id="step4">4、身份信息保存完毕，请点击左下方的“进入素质测评”，跳转至测评页面。<img src="../../../files/img/liucheng/liu_03.jpg" width="700" height="356" /></p>
+
+　　<p id="step5">5、在“测评环境选择”窗口，点击“诊断”，进入测评。<img src="../../../files/img/liucheng/liu_04.jpg" width="700" height="335" /></p>
+
+　　<p id="step6">6、进入测评，您将会看到壹打工网赠送的一次专业测评机会，点击“下一步”继续。<img src="../../../files/img/liucheng/liu_05.jpg" width="700" height="334" /></p>
+
+　　<p id="step7">7、测评方式选择窗口，选择“完全自助测试”。<img src="../../../files/img/liucheng/liu_06.jpg" width="700" height="418" /></p>
+
+　　<p id="step8">8、在这里，您将看到四种测评题目，对于测评内容有详细的解说，请选择自己需要的测试内容，并点击进入。<img src="../../../files/img/liucheng/liu_07.jpg" width="700" height="427" /></p>
+
+　　<p id="step9">9、选择需要的测评题目，开始做题啦!<img src="../../../files/img/liucheng/liu_08.jpg" width="700" height="502" /></p>
+
+　　<p id="step10">10、不用担心题目过多或者回答繁琐。</p>
+
+　　我们的测试题经过精心设计，主要分为“选择类”和“意向类”两种答题模式，为了避免答题过程枯燥，“选择类”答题模式，答案只有A和B两种选项，“意向类”答题模式只是通过意愿的强烈高低做选择，最大程度地简化了答题难度，节约了测试时间。<br />
+
+　　全部答题完成后，请点击“提交”。
+	<img src="../../../files/img/liucheng/liu_09.jpg" width="700" height="521" />
+
+　　<pid="step11">11、答案提交，点击“查看报告”，查看详细的测评结果。<img src="../../../files/img/liucheng/liu_10.jpg" width="700" height="504" /></p>
+
+  </div>
+</div>
+<!--页面固定-->
+<script>
+        $(function(){
+            $("#menu").data({offset:$("#menu").offset()});
+            $(window).bind("scroll",function(){
+                var menu=$("#menu");
+                var dtop=$(document).scrollTop();
+                var offset=menu.data("offset");
+                if(dtop>offset.top){
+                    if($.browser.msie&&parseInt($.browser.version)<7){//IE6
+                        menu.css({position:"absolute",top:dtop});
+                    }else{
+                        menu.css({position:"fixed",top:0});
+                    }
+                }else{
+                    menu.css({left:"",top:"",position:""});
+                }
+            });
+        });
+    </script>
+
+
+  
+<!--底部开始-->
+   {#include file="user/footer.htm"#}
+<!--底部结束-->
+
+</body>
+</html>

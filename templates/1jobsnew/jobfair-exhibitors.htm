@@ -1,0 +1,78 @@
+{#qishi_jobfair_show set="列表名:show,招聘会ID:GET[id]"#}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{#$show.title#} - 参会企业 - 招聘会 - {#$QISHI.site_name#}</title>
+<meta name="description" content="{#$show.description#}">
+<meta name="keywords" content="{#$show.keywords#}">
+<meta name="author" content="yinteni" />
+<meta name="copyright" content="1jobs.cn" />
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<link rel="shortcut icon" href="{#$QISHI.site_dir#}favicon.ico" />
+<link href="/files/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/jobfair.css" rel="stylesheet" type="text/css" />
+<script src="/files/js/jquery.js" type='text/javascript' ></script>
+<script src="/files/js/jquery.vtip-min.js" type='text/javascript' ></script>
+</head>
+<body>
+{#include file="header.htm"#}
+<div class="page_location link_bk">
+当前位置：<a href="{#$QISHI.site_dir#}">首页</a>&nbsp;>>&nbsp;<a href="{#"QS_jobfairlist"|qishi_url#}">招聘会</a>&nbsp;>>&nbsp;{#$show.title#}&nbsp;>>&nbsp;参会企业
+</div>
+<div class="exhibitors">
+  <div class="left">
+		<div class="show link_lan">
+		 {#qishi_jobfair_exhibitors_list set="列表名:list,显示数目:20,招聘会ID:GET[id],分页显示:1"#}
+		  <div class="tit"><strong>参会企业</strong>&nbsp;&nbsp;&nbsp;&nbsp;(总计:{#$total#})</div>		 
+	{#foreach from=$list item=list#}
+		{#if $list.url#}
+		  <div class="list"><a href="{#$list.url#}" target="_blank">{#$list.companyname#}</a></div>
+		  {#else#}
+		   <div class="list">{#$list.companyname#}</div>
+		  {#/if#}
+	{#/foreach#} 
+	
+	  <table border="0" align="center" cellpadding="0" cellspacing="0">
+	  <tr>
+		<td height="50" class="link_bk"><div class="page link_bk">{#$page#}</div></td>
+	  </tr>
+	</table>
+		</div>
+  </div>
+  <div class="right">
+  			<div class="listbox">
+			<div class="tit"><strong>招聘会信息</strong></div>				 
+		    <div class="txt">
+		    举办日期：{#$show.holddates|date_format:"%Y年%m月%d日"#}<br />
+		行业主题：{#$show.industry#}<br />
+		展位数量：{#$show.number#}<br />		
+		举办地址：{#$show.address#}<br />
+		乘车路线：{#$show.bus#}<br />
+		联 系 人：{#$show.contact#}<br />
+		联系电话：{#$show.phone#}<br />
+		预定状态：{#if $show.predetermined_status=="1"#}可预定展位{#else#}停止预定{#/if#}<br />
+		{#if $show.predetermined_status=="1"#}
+		在线预定：{#if $show.predetermined_web=="1"#}可预定，请登录企业会员中心预定招聘会展位{#else#}已停止在线预定{#/if#}<br />
+		电话预定：{#if $show.predetermined_tel=="1"#}可预定，请拨打联系电话预定招聘会展位{#else#}已停止电话预定{#/if#}<br />
+		开始预定日期：
+		{#if $show.predetermined_start#}
+		{#$show.predetermined_start|date_format:"%Y-%m-%d"#}
+		{#else#}
+		不限制
+		{#/if#}<br />
+		结束预定日期：
+		{#if $show.predetermined_end#}
+		{#$show.predetermined_end|date_format:"%Y-%m-%d"#}
+		{#else#}
+		不限制
+		{#/if#}<br />
+		{#/if#}
+			 </div>
+			</div>
+		</div>
+  </div>
+  <div class="clear"></div>
+</div>
+{#include file="footer.htm"#}
+</body>
+</html>

@@ -1,0 +1,1 @@
+<a target="_blank" title="[field:title/]" href="[field:arcurl/]">[field:title/]</a>[[field:pubdate function="MyDate('m-d',@me)"/]]<br /><br />

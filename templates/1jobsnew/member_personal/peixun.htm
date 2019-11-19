@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+{#qishi_pageinfo set="列表名:page,调用:QS_login"#}
+<title>{#$page.title#}</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<meta name="description" content="{#$page.description#}">
+<meta name="keywords" content="{#$page.keywords#}">
+<link href="/files/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/font-awesome.min.css" rel="stylesheet" >
+<link href="/files/css/reg.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/cep/cheping_login.css" rel="stylesheet" type="text/css" />
+
+<!---->
+<link href="/files/css/header.css" rel="stylesheet" type="text/css" />
+<!---->
+
+
+</head>
+<body>
+<!--头部开始-->
+	{#include file="user/header.htm"#}
+	<!--头部结束-->
+<div class="body">
+    <div class="body resize">        
+       <form id="loginForm" action="http://www.lgser.net/person/login.do" target="_blank" method="post" class="login form">
+       
+       	<div class="cepinglogin">登录壹打工网 职业测评系统</div>
+         
+         
+         <p><label class="lbl">登录名称：</label><input type="text" name="person.personName" value="" id="person_personName" class="txt"/><span class="red">*</span></p>
+         <p><label class="lbl">登录密码：</label><input type="password" name="person.personPassword" id="person_personPassword" class="txt"/><span class="red">*</span></p>
+         <p class="none"><label class="lbl">&nbsp;</label><input id="login_type1" type="radio" name="type" value="1" checked="checked"/><label for="login_type1"> 个人用户</label>
+         </p>      
+         <p><label class="lbl">&nbsp;</label><input type="submit" value="登录" class="btn" />
+         &nbsp;&nbsp;&nbsp;&nbsp;忘记密码：&nbsp;&nbsp;<a href="?act=ck_cep">查看帮助</a></p>
+       </form>
+       <div class="clr"></div>
+    </div>
+  </div>
+
+
+  
+<!--底部开始-->
+   {#include file="user/footer.htm"#}
+	<!--底部结束-->
+
+</body>
+</html>

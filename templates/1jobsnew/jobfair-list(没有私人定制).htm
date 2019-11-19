@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head >
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta name="robots" content="noodp,noydir" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <title>{#$QISHI.subsite_districtname|default:''#}最新招聘会|{#$QISHI.subsite_districtname|default:''#}2015招聘会|{#$QISHI.subsite_districtname|default:''#}人才市场招聘会信息 - {#$QISHI.site_name#}</title>
+	<meta name="keywords" content="{#$QISHI.subsite_districtname|default:''#}招聘，{#$QISHI.subsite_districtname|default:''#}招聘会，{#$QISHI.subsite_districtname|default:''#}现场招聘会，2015{#$QISHI.subsite_districtname|default:''#}招聘会" />
+	<meta name="description" content="{#$QISHI.subsite_districtname|default:''#}现场招聘会为您提供最新{#$QISHI.subsite_districtname|default:''#}招聘,以及上海,江苏,安徽,等地人才市场招聘会信息，2015{#$QISHI.subsite_districtname|default:''#}招聘会时间、地点等信息,为企业招聘和求职者找工作提供免费招聘信息。" />
+	<meta http-equiv="X-UA-Compatible" content="IE=7">
+	<meta name="author" content="壹打工网" />
+	<link href="/files/css/all_02.css" rel="stylesheet" type="text/css" />
+	<!-- //会员登录 -->
+	<link rel="stylesheet" type="text/css" href="/files/zhaopin/zp_index.css" />
+<link href="../files/css/font-awesome.min.css" rel="stylesheet" >
+<!--	<script language="javascript" type="text/javascript" src="/files/js/jquery-1.2.6.min.js"></script>-->
+
+<!---->
+<link href="/files/css/all.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/company.css" rel="stylesheet" type="text/css" />
+<script src="/files/js/jquery.js" type="text/javascript" language="javascript"></script>
+<link rel="stylesheet" type="text/css" href="/files/css/common.css" />
+<!---->
+</head>
+<body>
+
+{#include file="header.htm"#}
+
+
+<div class="centertop">
+		
+	</div>
+
+<div class="centercon">
+
+	{#if $subsite_id==0#}
+
+
+		<div id="zparea">
+		  <div id="side">可预订寅特尼人才市场招聘会的地区：</div>
+		  <div id="side1">
+			<a class="tooltips" href="#">2015招聘会须知
+
+					<span>
+						<P>　　<strong>2015招聘会须知</strong></P>
+						<P>　　<strong>求职者须知：</strong></P>
+						<P>　　1、求职者均可免费进入招聘会现场找工作；</P>
+						<P>　　2、求职者必须诚实守信，面试时应提供真实的个人简历并准备身份证、学历证书、资格证书、技术证书等证明材料；</P>
+						<P>　　3、人才市场内张榜招聘和现场招聘的单位均经过人才市场严格审核，应聘者可电话联系或到现场直接洽谈。任何未经资格审核的单位不得在人才市场内招聘，避免应聘者上当受骗。</P>
+						<P>　　<strong>招聘企业须知：</strong></P>
+						<P>　　1、凡在人才市场内现场招聘的单位均须按要求提供所需材料，经资格审核办理报名手续后方可进场招聘；</P>
+						<P>　　2、为遵守诚信原则，招聘单位不得发布虚假招聘信息；不得拒收与已发布招聘信息适应的应聘人员的求职资料；</P>
+						<P>　　3、企业招聘人才，不得以任何形式向求职者收取报名费、招聘费、培训费、保证金等任何费用，不得扣押求职者的身份证、学历证明等证件；</P>
+						<P>　　4、为维护求职者的个人权益及信息安全，企业必须妥善保管与使用求职者的相关资料，不得随意将求职者联系电话、住址等转告他人；</P>
+						<P>　　5、招聘单位须在指定的展位开展工作，不得在展位外发放任何招聘宣传资料。</P>
+					</span>
+
+				</a>
+			</div>
+			<div id="main">
+				<ul>
+					<li><a href="?dqid=1" >安徽合肥</a></li>
+					<li><a href="?dqid=5" >上海</a></li>
+					<li><a href="?dqid=8" >苏州</a></li>
+				</ul>
+
+			</div>
+		</div>
+
+	{#/if#}
+
+
+	
+	
+	<div class="contents">
+		<div class="titleh"><h3>最新招聘会</h3></div>
+		{#qishi_jobfair_list set="列表名:jobfair,显示数目:10,标题长度:35,分页显示:1,标题长度:35,填补字符:..."#}
+		{#foreach from=$jobfair item=list#}  
+		<div class="jobfair">
+			<div class="barleft">
+				<p class="week">{#$list.holddates|date_format:"%Y年%m月"#}</p>
+				<p class="date">{#$list.holddates|date_format:"%d"#}<span>日</span></p>
+				<p class="wbottom">{#$list.holddates_week#}</p>
+			</div>
+
+			<div class="barright">
+				<p {#if $list.predetermined_ok=="1" && $list.predetermined_web=="1"#} 
+	class="yd"
+	{#else#}
+	class="ydover"
+{#/if#}><a {#if $list.predetermined_ok=="1" && $list.predetermined_web=="1"#} href="{#"QS_user,1"|qishi_url#}company_jobfair.php?act=jobfair" title="请进入企业会员中心预定展位"{#else#}title="已停止在线预定展位" href="javascript:void(null);" {#/if#}></a></p>
+
+				<p class="xq"><a href="{#$list.url#}&dqid={#$dqid#}" target="_blank"></a></p>
+
+			</div>
+
+			<div class="jobfairlist">
+				<dl>
+					<dt><h2><a href="{#$list.url#}&dqid={#$dqid#}" target="_blank">{#$list.title#}</a></h2></dt>
+					<dd><span>行业主题：</span>{#$list.industry#}</dd>
+					<dd><span>会场地址：</span>{#$list.address#}</dd>
+					<dd><span>乘车线路：</span>{#$list.bus#}</dd>
+					<dd><span>举办日期：</span>{#$list.holddates|date_format:"%Y年%m月%d日"#}</dd>
+					<dd><span>报名电话：</span>{#$list.phone#}</dd>
+					{#if $list.subsite_id!=8#}
+					<dd><span>已&nbsp;预&nbsp;订：</span>{#$list.yiyuding#}个展位<span style="margin-left:30px;">未预订：</span>{#$list.weiyuding#}个展位</dd>
+					{#else#}
+					<dd style="font-size:18px;"><span>已预订企业：</span>{#$list.yiyuding#}个<span></dd>
+					{#/if#}
+				</dl>
+
+			</div>
+		</div><!-- jobfair -->
+		{#/foreach#}
+
+		
+
+		
+
+	</div><!-- content -->
+	
+	<br />
+	<style>
+	.link_bk a{
+		padding:14px 18px;
+		margin :2px;
+		border: 1px solid #eee;
+		background :#eee;
+		font-size:16px;
+	}
+	.link_bk a.dqy{
+		padding:15px 18px;
+		margin :2px;
+		border: 1px solid #eee;
+		background :red;
+		font-size:16px;
+	}
+	</style>
+	<!--<div align="center">{#if $page#}<div class="page link_bk">{#$page#}</div>{#/if#}</div>-->
+	<table border="0" align="center" cellpadding="0" cellspacing="0" class="link_bk">
+          <tr>
+                        <td>{#if $page#}<div class="page link_bk">{#$page#}</div>{#/if#}</td>
+                    </tr>
+      </table> 
+	<br/><br/>
+	
+</div><!--  end -->
+<script language="javascript">
+
+function nTabs(thisObj,Num){
+	if(thisObj.className == "active")return;
+	var tabObj = thisObj.parentNode.id;
+	var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+	for(i=0;i <tabList.length;i++){
+		if (i == Num){
+			thisObj.className = "t";
+			document.getElementById(tabObj+"_Content"+i).style.display = "block";
+		}
+		else{
+			tabList[i].className = "f";
+			document.getElementById(tabObj+"_Content"+i).style.display = "none";
+		}
+	}
+}
+</script>
+
+{#include file="footer.htm"#}
+
+
+
+
+</body>
+</html>

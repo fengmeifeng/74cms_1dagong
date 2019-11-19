@@ -1,0 +1,1 @@
+<a rel="nofollow" href="http://www.ytnjob.com/index.php?m=IndexJob&a=jobView&job_id=2" target=_blank><img src="/files/index/lanling.jpg" width="980" height="60" alt="联宝招聘专区" /></a>

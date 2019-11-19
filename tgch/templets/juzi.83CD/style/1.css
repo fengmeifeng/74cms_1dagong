@@ -1,0 +1,29 @@
+/* CSS Document */
+.linkbox{
+	padding:6px 8px;
+	border-bottom:1px solid #EEE;
+}
+.linkbox h3,.linkbox h3 a{
+	font-size:14px;
+	color:#693;
+}
+.f6{/* 链接横排自适应列表 */
+	width:100%;
+	overflow:hidden;
+	clear:both;
+	padding-bottom:10px;
+}
+.f6 li{
+	float:left;
+	line-height:14px;
+	padding:4px 10px 0px;
+	white-space:nowrap;
+}
+.f6 li a{
+	color:#666666;
+	float:left;
+}
+.list3{ width:99%;padding:8px 0px 8px 5px; solid #CBCBCB;clear:both;}
+.list3 ul{width:99%;}
+.list3 ul li{font-size:14px; width:49%;height:26px; line-height:22px;float:left; list-style-type:none;overflow:hidden;}
+.list3 ul li a.item-color{ color:#c33e00;}

@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<title>{#$title#}</title>
+<link rel="shortcut icon" href="{#$QISHI.main_domain#}favicon.ico" />
+<meta name="author" content="骑士CMS" />
+<meta name="copyright" content="74cms.com" />
+<link href="{#$QISHI.site_template#}css/user_common.css" rel="stylesheet" type="text/css" />
+<link href="{#$QISHI.site_template#}css/user_company.css" rel="stylesheet" type="text/css" />
+<script src="{#$QISHI.site_template#}js/jquery.js" type="text/javascript" language="javascript"></script>
+</head>
+<body>
+{#include file="user/header.htm"#}
+<div class="page_location link_bk">当前位置：<a href="{#$QISHI.main_domain#}">首页</a> > <a href="{#$userindexurl#}">会员中心</a> > 充值订单</div>
+
+<div class="usermain">
+  <div class="leftmenu  com link_bk">
+  	  {#include file="member_company/left.htm"#}		
+  </div>
+  <div class="rightmain">
+  
+ 	<div class="bbox1 link_bk my_account intrgration" style="padding-top:0;">
+		<div class="topnav">
+			<div class="titleH1">
+				<div class="h1-title">充值/订单</div>
+			</div>
+
+			<div class="navs">
+		        {#if $QISHI.operation_mode=="3"#}
+				<a href="?act=order_add">积分充值</a>
+				{#/if#}
+		        <a href="?act=setmeal_list" class="se">申请服务</a>
+		        <a href="?act=order_list">我的订单</a>
+		        {#if $QISHI.operation_mode=="1" || $QISHI.operation_mode=="3"#}
+		        <a href="?act=gifts">礼品卡</a>
+		        {#/if#}
+				<div class="clear"></div>
+			</div>
+		</div>
+		 <div class="balance margin-common">
+  			<div class="bal_text">我的套餐：<span> {#$user_setmeal.setmeal_name#} </span>，{#if $setmeal_endtime#}{#if $setmeal_endtime=="无限期"#}无限期{#else#}还有<span> {#$setmeal_endtime#} </span>到期{#/if#}{#else#}已经到期{#/if#}<span class="small"> (开通时间{#$user_setmeal.starttime|date_format:"%Y-%m-%d"#}，结束时间{#$user_setmeal.endtime|date_format:"%Y-%m-%d"#})</span>&nbsp;&nbsp;&nbsp;<a target="_blank" href="?act=account">[套餐明细]</a></div>
+  		</div>
+  		<!-- 套餐明细 -->
+		<table border="1" bordercolor="#ccc" cellpadding="0" cellspacing="0" width="720" class="package_tab">
+			<tbody>
+				<tr height="45" bgcolor="#0180CF">
+					<th>套餐名称</th>
+					<th>{#$setmeal.0.setmeal_name#}</th>
+					<th>{#$setmeal.1.setmeal_name#}</th>
+					<th>{#$setmeal.2.setmeal_name#}</th>
+					<th>{#$setmeal.3.setmeal_name#}</th>
+					<th>{#$setmeal.4.setmeal_name#}</th>
+				</tr>
+				<tr align="center" height="45">
+					<td>发布招聘职位</td>
+					<td>{#$setmeal.0.jobs_ordinary#}</td>
+					<td>{#$setmeal.1.jobs_ordinary#}</td>
+					<td>{#$setmeal.2.jobs_ordinary#}</td>
+					<td>{#$setmeal.3.jobs_ordinary#}</td>
+					<td>{#$setmeal.4.jobs_ordinary#}</td>
+				</tr>
+				<tr align="center" height="45">
+					<td>下载普通简历</td>
+					<td>{#$setmeal.0.download_resume_ordinary#}</td>
+					<td>{#$setmeal.1.download_resume_ordinary#}</td>
+					<td>{#$setmeal.2.download_resume_ordinary#}</td>
+					<td>{#$setmeal.3.download_resume_ordinary#}</td>
+					<td>{#$setmeal.4.download_resume_ordinary#}</td>
+				</tr>
+				<tr align="center" height="45">
+					<td>下载高级简历</td>
+					<td>{#$setmeal.0.download_resume_senior#}</td>
+					<td>{#$setmeal.1.download_resume_senior#}</td>
+					<td>{#$setmeal.2.download_resume_senior#}</td>
+					<td>{#$setmeal.3.download_resume_senior#}</td>
+					<td>{#$setmeal.4.download_resume_senior#}</td>
+				</tr>
+				<tr align="center" height="45">
+					<td>邀请普通人才面试</td>
+					<td>{#$setmeal.0.interview_ordinary#}</td>
+					<td>{#$setmeal.1.interview_ordinary#}</td>
+					<td>{#$setmeal.2.interview_ordinary#}</td>
+					<td>{#$setmeal.3.interview_ordinary#}</td>
+					<td>{#$setmeal.4.interview_ordinary#}</td>
+				</tr>
+				<tr align="center" height="45">
+					<td>邀请高级人才面试</td>
+					<td>{#$setmeal.0.interview_senior#}</td>
+					<td>{#$setmeal.1.interview_senior#}</td>
+					<td>{#$setmeal.2.interview_senior#}</td>
+					<td>{#$setmeal.3.interview_senior#}</td>
+					<td>{#$setmeal.4.interview_senior#}</td>
+				</tr>
+				<tr align="center" height="45">
+					<td>简历收藏夹容量</td>
+					<td>{#$setmeal.0.talent_pool#}</td>
+					<td>{#$setmeal.1.talent_pool#}</td>
+					<td>{#$setmeal.2.talent_pool#}</td>
+					<td>{#$setmeal.3.talent_pool#}</td>
+					<td>{#$setmeal.4.talent_pool#}</td>
+				</tr>
+				<tr align="center" height="45">
+					<td>职位推广-推荐</td>
+					<td>{#$setmeal.0.recommend_num#}（{#$setmeal.0.recommend_days#}天）</td>
+					<td>{#$setmeal.1.recommend_num#}（{#$setmeal.1.recommend_days#}天）</td>
+					<td>{#$setmeal.2.recommend_num#}（{#$setmeal.2.recommend_days#}天）</td>
+					<td>{#$setmeal.3.recommend_num#}（{#$setmeal.3.recommend_days#}天）</td>
+					<td>{#$setmeal.4.recommend_num#}（{#$setmeal.4.recommend_days#}天）</td>
+				</tr>
+				<tr align="center" height="45">
+					<td>职位推广-置顶</td>
+					<td>{#$setmeal.0.stick_num#}（{#$setmeal.0.stick_days#}天）</td>
+					<td>{#$setmeal.1.stick_num#}（{#$setmeal.1.stick_days#}天）</td>
+					<td>{#$setmeal.2.stick_num#}（{#$setmeal.2.stick_days#}天）</td>
+					<td>{#$setmeal.3.stick_num#}（{#$setmeal.3.stick_days#}天）</td>
+					<td>{#$setmeal.4.stick_num#}（{#$setmeal.4.stick_days#}天）</td>
+				</tr>
+				<tr align="center" height="45">
+					<td>职位推广-紧急</td>
+					<td>{#$setmeal.0.emergency_num#}（{#$setmeal.0.emergency_days#}天）</td>
+					<td>{#$setmeal.1.emergency_num#}（{#$setmeal.1.emergency_days#}天）</td>
+					<td>{#$setmeal.2.emergency_num#}（{#$setmeal.2.emergency_days#}天）</td>
+					<td>{#$setmeal.3.emergency_num#}（{#$setmeal.3.emergency_days#}天）</td>
+					<td>{#$setmeal.4.emergency_num#}（{#$setmeal.4.emergency_days#}天）</td>
+				</tr>
+				<tr align="center" height="45">
+					<td>职位推广-变色</td>
+					<td>{#$setmeal.0.highlight_num#}（{#$setmeal.0.highlight_days#}天）</td>
+					<td>{#$setmeal.1.highlight_num#}（{#$setmeal.1.highlight_days#}天）</td>
+					<td>{#$setmeal.2.highlight_num#}（{#$setmeal.2.highlight_days#}天）</td>
+					<td>{#$setmeal.3.highlight_num#}（{#$setmeal.3.highlight_days#}天）</td>
+					<td>{#$setmeal.4.highlight_num#}（{#$setmeal.4.highlight_days#}天）</td>
+				</tr>
+				<tr align="center" height="45">
+					<td>参加招聘会场次</td>
+					<td>{#$setmeal.0.jobsfair_num#}</td>
+					<td>{#$setmeal.1.jobsfair_num#}</td>
+					<td>{#$setmeal.2.jobsfair_num#}</td>
+					<td>{#$setmeal.3.jobsfair_num#}</td>
+					<td>{#$setmeal.4.jobsfair_num#}</td>
+				</tr>
+				<tr align="center" height="45">
+					<td>开通电子地图</td>
+					<td>{#if $setmeal.0.map_open=="1"#}允许{#else#}不允许{#/if#}</td>
+					<td>{#if $setmeal.1.map_open=="1"#}允许{#else#}不允许{#/if#}</td>
+					<td>{#if $setmeal.2.map_open=="1"#}允许{#else#}不允许{#/if#}</td>
+					<td>{#if $setmeal.3.map_open=="1"#}允许{#else#}不允许{#/if#}</td>
+					<td>{#if $setmeal.4.map_open=="1"#}允许{#else#}不允许{#/if#}</td>
+				</tr>
+				<tr align="center" height="45">
+					<td>自由切换模板</td>
+					<td>{#if $setmeal.0.change_templates=="1"#}允许{#else#}不允许{#/if#}</td>
+					<td>{#if $setmeal.1.change_templates=="1"#}允许{#else#}不允许{#/if#}</td>
+					<td>{#if $setmeal.2.change_templates=="1"#}允许{#else#}不允许{#/if#}</td>
+					<td>{#if $setmeal.3.change_templates=="1"#}允许{#else#}不允许{#/if#}</td>
+					<td>{#if $setmeal.4.change_templates=="1"#}允许{#else#}不允许{#/if#}</td>
+				</tr>
+				<tr align="center" height="45">
+					<td>其他</td>
+					<td>{#if $setmeal.0.added#}{#$setmeal.0.added#}{#else#}无{#/if#}</td>
+					<td>{#if $setmeal.1.added#}{#$setmeal.1.added#}{#else#}无{#/if#}</td>
+					<td>{#if $setmeal.2.added#}{#$setmeal.2.added#}{#else#}无{#/if#}</td>
+					<td>{#if $setmeal.3.added#}{#$setmeal.3.added#}{#else#}无{#/if#}</td>
+					<td>{#if $setmeal.4.added#}{#$setmeal.4.added#}{#else#}无{#/if#}</td>
+				</tr>
+				<tr align="center" height="45">
+					<td>服务期</td>
+					<td>{#if $setmeal.0.days=="0"#}不限制{#else#}{#$setmeal.0.days#}天{#/if#}</td>
+					<td>{#if $setmeal.1.days=="0"#}不限制{#else#}{#$setmeal.1.days#}天{#/if#}</td>
+					<td>{#if $setmeal.2.days=="0"#}不限制{#else#}{#$setmeal.2.days#}天{#/if#}</td>
+					<td>{#if $setmeal.3.days=="0"#}不限制{#else#}{#$setmeal.3.days#}天{#/if#}</td>
+					<td>{#if $setmeal.4.days=="0"#}不限制{#else#}{#$setmeal.4.days#}天{#/if#}</td>
+				</tr>
+				<tr align="center" height="45">
+					<td>原价</td>
+					<td>{#if $setmeal.0.original_price=="0"#}免费{#else#}{#$setmeal.0.original_price#}{#/if#}</td>
+					<td>{#if $setmeal.1.original_price=="0"#}免费{#else#}{#$setmeal.1.original_price#}{#/if#}</td>
+					<td>{#if $setmeal.2.original_price=="0"#}免费{#else#}{#$setmeal.2.original_price#}{#/if#}</td>
+					<td>{#if $setmeal.3.original_price=="0"#}免费{#else#}{#$setmeal.3.original_price#}{#/if#}</td>
+					<td>{#if $setmeal.4.original_price=="0"#}免费{#else#}{#$setmeal.4.original_price#}{#/if#}</td>
+				</tr>
+				<tr align="center" height="45">
+					<td><span>折扣价</span></td>
+					<td>{#if $setmeal.0.expense=="0"#}免费{#else#}{#$setmeal.0.expense#}{#/if#}</td>
+					<td>{#if $setmeal.1.expense=="0"#}免费{#else#}{#$setmeal.1.expense#}{#/if#}</td>
+					<td>{#if $setmeal.2.expense=="0"#}免费{#else#}{#$setmeal.2.expense#}{#/if#}</td>
+					<td>{#if $setmeal.3.expense=="0"#}免费{#else#}{#$setmeal.3.expense#}{#/if#}</td>
+					<td>{#if $setmeal.4.expense=="0"#}免费{#else#}{#$setmeal.4.expense#}{#/if#}</td>
+				</tr>
+				<tr align="center" height="45">
+					<td>选择购买</td>
+					<td>
+						{#if $setmeal.0.apply=="0"#}
+						<span style="color: #FF0000">(此服务已经停止申请)</span> 
+						{#else#}
+						<div class="but95lan" onclick="window.location='?act=setmeal_order_add&setmealid={#$setmeal.0.id#}'">立即购买</div>
+						{#/if#}
+					</td>
+					<td>
+						{#if $setmeal.1.apply=="0"#}
+						<span style="color: #FF0000">(此服务已经停止申请)</span> 
+						{#else#}
+						<div class="but95lan" onclick="window.location='?act=setmeal_order_add&setmealid={#$setmeal.1.id#}'">立即购买</div>
+						{#/if#}
+					</td>
+					<td>
+						{#if $setmeal.2.apply=="0"#}
+						<span style="color: #FF0000">(此服务已经停止申请)</span> 
+						{#else#}
+						<div class="but95lan" onclick="window.location='?act=setmeal_order_add&setmealid={#$setmeal.2.id#}'">立即购买</div>
+						{#/if#}
+					</td>
+					<td>
+						{#if $setmeal.3.apply=="0"#}
+						<span style="color: #FF0000">(此服务已经停止申请)</span> 
+						{#else#}
+						<div class="but95lan" onclick="window.location='?act=setmeal_order_add&setmealid={#$setmeal.3.id#}'">立即购买</div>
+						{#/if#}
+					</td>
+					<td>
+						{#if $setmeal.4.apply=="0"#}
+						<span style="color: #FF0000">(此服务已经停止申请)</span> 
+						{#else#}
+						<div class="but95lan" onclick="window.location='?act=setmeal_order_add&setmealid={#$setmeal.4.id#}'">立即购买</div>
+						{#/if#}
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+
+  	</div>
+  </div>
+  <div class="clear"></div>
+</div>
+{#include file="user/footer.htm"#}
+</body>
+</html>

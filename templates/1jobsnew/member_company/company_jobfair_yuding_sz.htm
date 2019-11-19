@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{#$title#}</title>
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<link rel="shortcut icon" href="/favicon.ico" />
+<meta name="author" content="骑士CMS" />
+<meta name="copyright" content="74cms.com" />
+<link href="/files/css/user_common.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/user_company.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/user.css" rel="stylesheet" type="text/css" />
+<script src="/files/js/jquery.js" type='text/javascript' language="javascript"></script>
+<script src="/files/js/jquery.idTabs.min.js" type='text/javascript' language="javascript"></script>
+<script src="/files/js/jquery.vtip-min.js" type='text/javascript' ></script>
+<script type="text/javascript"> 
+$(document).ready(function()
+{
+	$(".jobfair_list").hover(
+  function () {
+    $(this).css("background-color","#FFFCE8");
+	 $(this).css("border-color","#FF9900");
+  },
+  function () {
+    $(this).css("background-color","");
+	$(this).css("border-color","#FFE8DA");
+  }
+);
+});
+</script>
+</head>
+<body>
+{#include file="user/header.htm"#}
+<div class="page_location link_bk">
+
+当前位置：<a href="/">首页</a>&nbsp;>>&nbsp;<a href="{#$userindexurl#}">会员中心</a>&nbsp;>>&nbsp;招聘会
+</div>
+<table width="985" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:8px;" >
+  <tr>
+    <td width="173" valign="top" class="link_bk">
+	{#include file="member_company/left.htm"#}
+	</td>
+    <td valign="top">
+	<div class="user_right_box" style=" border-bottom:0px;">
+		<div class="user_right_top_tit_bg">		
+		  <h1>选择展位号</h1>
+		</div>
+	  </div>
+	  <script>
+	  //点击弹出展位号
+	  $(function(){
+			$(".bjy").click(function(){
+				//var a=$(this).text();
+				//alert(a+"展位号已经被预定!");
+				//$("#number").val(a);
+			})
+			$(".bjm").click(function(){
+				var type=$(this).attr("type");
+				var jf=$(this).attr("jf");
+				var a=$(this).text();
+				var jobsid=$(this).attr("jobsid");
+				if(jobsid){
+					//套餐用户
+					if(type==1){
+						$("#number").val(a);
+						if (confirm('预定展位将消费1次预定机会，确定预定《 '+a+' 》号展位吗？')){
+							$("#sub").click();
+						}
+					}
+					//积分用户
+					if(type==2){
+						$("#number").val(a);
+						if (confirm('预定展位将消费'+jf+'积分，确定预定《 '+a+' 》号展位吗？')){
+							$("#sub").click();
+						}
+					}
+				}else
+				{
+					alert("预定失败！您还没有发布职位，请发布职位再预定！");
+				}
+			})
+		})
+	  </script>
+	  <div><!---展会信息--->
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF"  style="margin-top:6px; line-height:180%; border:1px solid #FFE8DA">
+            <tr> 
+              <td width="130" valign="top" >
+			  <div class="jobfairdates">				
+				<div class="week">{#$jobfair.holddates|date_format:"星期%a"|replace:"Sat":"六"|replace:"Sun":"日"|replace:"Mon":"一"|replace:"Tue":"二"|replace:"Wed":"三"|replace:"Thu":"四"|replace:"Fri":"五"#}</div>
+				<div class="day">{#$jobfair.holddates|date_format:"%d"#}</div>
+				<div class="date">{#$jobfair.holddates|date_format:"%Y年%m月"#}</div>	
+			  </div>					
+			  </td>
+              <td  class="link_bk">
+			  <strong><span target="_blank">{#$jobfair.title#}</span></strong><br />
+				行业主题：{#$jobfair.industry#} <br />
+				会场地址：{#$jobfair.address#} <br />
+				举办日期：{#$jobfair.holddates|date_format:"%Y年%m月%d日"#}<br />
+				报名电话：{#$jobfair.phone#}
+			  </td>
+              <td width="150" valign="top"  >
+			  </td>
+            </tr>
+      </table>
+	  </div><!---展会信息--->
+	  <div class="zwbox">
+		<!--没有预定的展位-->
+		{#foreach from=$all1 item=list#}
+		<div class="a{#$list.number#} bjm vtip" title="{#$list.number#}这个展位还没被预定。" jobsid="{#$jobsid#}" jf="{#$zhjf#}" type='{#$type#}'><span class="yc">{#$list.number#}</span></div>
+		{#/foreach#}
+		<!--预定过的展位-->
+		{#foreach from=$ok item=list#}
+		<div class="a{#$list.number#} bjy vtip" title="这个展位被{#$list.title#}预定了，请下次再来吧!"><span class="yc">{#$list.number#}</span></div>
+		{#/foreach#}
+		 </div>
+	</div>
+	  <div class="">
+		<form action="?act=yvding" method="post">
+		<input type="hidden" name="yhtype" value="{#$type#}">
+		<input type="hidden" name="zhjf" value="{#$zhjf#}">
+		<input type="hidden" name="zid" value="{#$zid#}">
+		<input type="hidden" name="qid" value="{#$qid#}">
+		<input type="hidden" id="number" name="number">
+		<input type="submit" id="sub" value="预定" style="display:none;">
+		</form>
+	  </div>
+    </td>
+  </tr>
+</table>
+{#include file="footer.htm"#}
+</body>
+</html>

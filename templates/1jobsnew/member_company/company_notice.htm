@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{#$title#}</title>
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<link rel="shortcut icon" href="/favicon.ico" />
+<meta name="author" content="yinteni" />
+<meta name="copyright" content="1jobs.cn" />
+<link href="/files/css/user.css" rel="stylesheet" type="text/css" />
+<script src="/files/js/jquery.js" type='text/javascript' language="javascript"></script>
+<script src="/files/js/jquery.idTabs.min.js" type='text/javascript' language="javascript"></script>
+</head>
+<body>
+{#include file="member_company/header.htm"#}
+<table width="960" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:8px;" >
+  <tr>
+    <td width="173" valign="top" class="link_bk">
+	{#include file="member_company/left.htm"#}
+	</td>
+    <td valign="top"  >
+	<div class="user_right_box" style="padding-bottom:15px;">
+		<div class="user_right_top_tit_bg">		
+		  <h1>公告</h1>
+		</div>
+		  <table width="97%" border="0" align="center" cellpadding="0" cellspacing="0"  class="link_lan" id="list" style=" margin-top:15px;">
+              <tr>
+                <td height="23"  class="us_list_title">公告标题</td>
+                <td width="120" align="center"  class="us_list_title">添加日期</td>
+            </tr>
+				 {#foreach from=$notice item=list#}
+                <tr >
+            <td   height="32"   class="us_list">
+			<a href="{#$list.url#}" target="_blank">{#$list.title#}</a>	</td>
+                  <td align="center"  class="us_list">
+				  {#$list.addtime|date_format:"%Y-%m-%d"#}				  </td>
+                </tr>
+{#/foreach#}
+            </table>
+			  {#if $notice#}
+              <table border="0" align="center" cellpadding="0" cellspacing="0" class="link_bk">
+                <tr>
+                  <td height="50" align="center"> <div class="page link_bk">{#$page#}</div></td>
+                </tr>
+            </table>
+			{#else#}
+			<div class="us_list_no_content">没有您要找的信息</div>
+			{#/if#}
+	</div>
+	</td>
+  </tr>
+</table>
+{#include file="footer.htm"#}
+</body>
+</html>

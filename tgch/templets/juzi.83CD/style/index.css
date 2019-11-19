@@ -1,0 +1,83 @@
+                              body {PADDING-TOP: 60px; background-color:#F5F5F5;font-family:microsoft yahei,arial;background-color:#F5F5F5; }
+/* special */
+.special { width:673px; overflow:hidden;}
+.special #myFocus { width:440px; height:270px;clear:both;}
+.special #myFocus img { width:440px; height:270px;}
+.special .content { width:205px; overflow:hidden; float:right; padding-top:10px; padding-right:5px;}
+.special .content h3 { background:url(../images/dai.png) no-repeat 0px 2px; height:30px; line-height:30px; font-weight:100; color:#fff; text-indent:1em; }
+.special .content ul { clear:both; padding-top:5px;}
+.special .content ul li { line-height:26px; height:26px; border-bottom:1px dotted #f5f5f5;}
+.special .content .clear { padding-top:10px;}
+.special .content small { background-color:#ccc; padding:0px 4px;color:#fff; }
+/* box */
+.box { overflow:hidden;}
+	/* left */
+.box-left { width:675px; overflow:hidden;}
+	/* hot */
+.index-hot { padding:20px 0px; width:673px;}
+.index-hot .toutiao { width:92%; margin:0 auto; height:100px;}
+.index-hot .toutiao dl { clear:both; }
+.index-hot .toutiao dl dt {  height:42px;background:url(../images/hot.gif) no-repeat 0px 5px; text-indent:5em; }
+.index-hot .toutiao dl dt a { font-size:22px; color:#333;}
+.index-hot .toutiao dl dt font { font-size:22px;}
+.index-hot .toutiao dl dd { color:#8B8B8B; line-height:22px;}
+.index-hot .toutiao dl dd a { color:#fff; background-color:#FABD8B; padding:0px 4px; }
+.index-hot .toutiao dl dd a:hover { background-color:#EE9146;}
+.index-hot .t { width:96%; margin:0 auto; overflow:hidden; padding:5px 0px;background-color:#fafafa;}
+.index-hot .t ul { clear:both;}
+.index-hot .t ul li { width:320px;float:left; text-indent:1em; line-height:25px; }
+.index-hot .t ul li a { color:#0192B5;}
+.index-hot .t ul li span { padding-right:5px;}
+.index-hot .t ul li span a { color:#333;}
+
+	/* tuwen */
+.tuwen { background-color:#fff; border:1px solid #dadada; padding:15px 0px;overflow:hidden; }
+.xh { width:100%; margin:0 auto; overflow:hidden;}
+.xh_t { height:60px; line-height:40px; text-indent:1.5em; }
+.xh ul { clear:both;}
+.xh ul li { float:left; width:80px; height:190px; padding-left:27px; display:inline;}
+.xh ul li img { width:80px; height:80px;}
+.xh ul li span { padding-top:5px; line-height:25px;display:block; }
+
+	/* right */
+.box-right { width:270px; overflow:hidden;}
+.share { height:60px;}	
+
+	/* fenzu */
+.fenzu { padding:20px 0px; width:958px; clear:both;background:url(../images/bgcs.gif) repeat-x; background-color:#fff;}
+.fenzu .mod { width:905px; margin:0 auto; clear:both;}
+.mod-t { border-bottom:1px solid #EFECE8; height:40px; }
+.mod-t h3 {height:40px;  width:180px; font-size:16px; font-weight:100; float:left;}
+.mod-t .tabs { height:40px; line-height:25px;}
+.mod-t .tabs a { padding:0px 5px; color:#0192B5;}
+.mod-c { padding:20px 0px; width:300px; overflow:hidden; border-bottom:1px solid #EFECE8; float:left; display:inline }
+.mod-c .pic { width:90px; overflow:hidden;}
+.mod-c .pic img { width:85px; height:85px; border:1px solid #ECECEC; padding:1px;}
+.mod-c .info { width:210px;overflow:hidden;}
+.mod-c .d1 { width:210px;overflow:hidden;}
+.mod-c .d1 h3 { float:left; font-weight:100; padding-right:10px; }
+.mod-c .d1 h3 a { font-size:16px;  color:#1D80AA;}
+.mod-c .d1 span { font-size:12px; color:#999; line-height:22px; }
+.mod-c .d2 { clear:both;overflow:hidden; margin-top:5px;}
+.mod-c .d2 a { margin-right:5px; margin-top:5px; display:block; float:left;white-space:nowrap; padding:0px 2px; display:inline; color:#333; }
+.mod-c .d2 .r { background-color:#D10000; color:#fff;}
+.mod-c .d2 .b { background-color:#666; color:#fff;}
+.mod-c .d3 { width:100%; overflow:hidden; clear:both; padding-top:15px; }
+.mod-c .d3 a { font-size:14px;}
+	/* tjlm */
+.t-lm {padding:20px 0px;}
+.wks { width:94%; margin:0 auto;}
+.wks .mod-t .tabs { float:left; } 
+.wks h3 {height:40px; width:175px; font-size:16px; font-weight:100; float:left; border-bottom:1px dashed #ddd;}
+.wks h3 a {font-size:16px;}
+.wks .content { width:100%; padding-top:10px;}
+.t-lm .wks .content a { line-height:28px; padding-right:10px;}
+.wks .contents { width:100%; padding-top:10px;}
+.wks .contents ul { clear:both;}
+.wks .contents ul li { line-height:30px; height:30px; border-bottom:1px dashed #ddd; width:450px; float:left;}
+.wks .contents ul li span { color:#1D80AA;}
+.wks .contents ul li span a {color:#1D80AA; }
+	/* link */
+.link {padding:20px 0px;}
+.link .wks .content a { line-height:25px; height:25px; padding-right:5px;}
+.bc li {background:url(../images/ico_list.png) no-repeat 10px 11px; text-indent:2em; }

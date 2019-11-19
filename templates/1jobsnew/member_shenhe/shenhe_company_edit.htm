@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{#$title#}</title>
+<link rel="shortcut icon" href="{#$QISHI.site_dir#}favicon.ico" />
+<meta name="author" content="骑士CMS" />
+<meta name="copyright" content="74cms.com" />
+<link href="/files/css/user_common.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/user_company.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/user.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/jobs.css" rel="stylesheet" type="text/css" />
+<script src="/files/js/jquery.js" type="text/javascript" language="javascript"></script>
+<script src="/files/js/jquery.dialog.js" type="text/javascript" language="javascript"></script>
+<script src="/data/cache_classify.js" type="text/javascript" charset="utf-8"></script>
+<script src="/files/js/jquery.company.selectlayer.js" type='text/javascript' language="javascript"></script>
+<script src="/files/js/jquery.hoverDelay.js" type='text/javascript'></script>
+<script type="text/javascript">
+$(document).ready(function()
+{	
+	allaround('{#$QISHI.site_dir#}');
+	// 显示行业
+	$("#jobsTrad").hoverDelay({
+		    hoverEvent: function(){
+		        $("#divTradCate").show();
+		    },
+		    outEvent: function(){
+                $("#divTradCate").hide();
+            }
+		});
+	// 显示地区
+	$("#jobsCity").hoverDelay({
+		    hoverEvent: function(){
+		        $("#divCityCate").show();
+		        var dx = $("#divCityCate").offset().left; // 获取弹出框的x坐标
+		        var dwidth = $("#divCityCate").outerWidth(true); // 获取弹出框的宽度
+		        var lastx = dx + dwidth; // 加上弹出框的宽度获取弹出框最右边的x坐标
+	 			$("#divCityCate li").each(function(index, el) {
+	 				var that = $(this);
+	 				var sx = that.offset().left; // 获取当前li的x坐标
+	 				that.hoverDelay({
+					    hoverEvent: function(){
+					        if(that.find('.subcate').length > 0) {
+			 					that.addClass('selected');
+			 					var tharsub = that.find('.subcate');
+			 					var thap = that.find('p');
+			 					thap.css("border-bottom","0px");
+			 					var swidth = tharsub.outerWidth(true); // 获取三级弹出框的宽度
+			 					if((lastx - sx) < swidth) { // 判断li与弹出框最右边的距离是否大于三级弹出框的宽度
+			 						tharsub.css("left",-265); // 如果小于就改变三级弹出框x方向的位置
+			 					}
+			 					tharsub.show();
+			 				} else {
+			 					that.find('a').css("color","#f77d40");
+			 				}
+					    },
+					    outEvent: function(){
+			                if(that.find('.subcate').length > 0) {
+				 				that.removeClass('selected');
+				 				that.find('.subcate').hide();
+			 				} else {
+			 					that.find('a').css("color","#0180cf");
+			 				}    
+			            }
+					});
+	 			});
+		    },
+		    outEvent: function(){
+                $("#divCityCate").hide(); 
+            }
+		});
+	//范例展开
+	$("#model").click(function(){	$("#cp").toggle()});
+	menuDown("#nature_menu","#nature","#nature_cn","#menu1","218px");
+	menuDown("#scale_menu","#scale","#scale_cn","#menu2","218px");
+	menuDown("#currency_menu","","#currency","#menu3","78px");
+	function menuDown(menuId,input,input_cn,menuList,width){
+		$(menuId).click(function(){
+			$(menuList).css("width",width);
+			$(menuList).slideDown('fast');
+			//生成背景
+			$(menuId).parent("div").before("<div class=\"menu_bg_layer\"></div>");
+			$(".menu_bg_layer").height($(document).height());
+			$(".menu_bg_layer").css({ width: $(document).width(), position: "absolute", left: "0", top: "0" , "z-index": "0", "background-color": "#ffffff"});
+			$(".menu_bg_layer").css("opacity","0");
+			$(".menu_bg_layer").click(function(){
+				$(".menu_bg_layer").remove();
+				$(menuList).slideUp("fast");
+				$(menuId).parent("div").css("position","");
+			});
+		});
+
+		$(menuList+" li").click(function(){
+			var id = $(this).attr("id");
+			var title = $(this).attr("title");
+			$(input).val(id);
+			$(input_cn).val(title);
+			$(menuId).html(title);
+			$(menuList).slideUp('fast');
+			$(".menu_bg_layer").remove();
+		});
+	}
+	$("#save_profile").click(function(){
+		  var companyname = $('input[name="companyname"]').val();
+		  var nature=$('input[name=nature]').val();
+		  var uid=$('input[name=uid]').val();
+		  var id=$('input[name=id]').val();
+		  var nature_cn=$('input[name=nature_cn]').val();
+		  var trade=$('input[name=trade]').val();
+		  var trade_cn=$('input[name=trade_cn]').val();
+		  var scale=$('input[name=scale]').val();
+		  var scale_cn=$('input[name=scale_cn]').val();
+		  var registered=$('input[name=registered]').val();
+		  var currency=$('input[name=currency]').val();
+		  var district=$('input[name=district]').val();
+		  var sdistrict=$('input[name=sdistrict]').val();
+		  var district_cn=$('input[name=district_cn]').val();
+		  var street=$('input[name=street]').val();
+		  var street_cn=$('input[name=street_cn]').val();
+		  var contact=$('input[name=contact]').val();
+		  var contact_show=$('input:checkbox[name=contact_show][checked]').val();
+		  var telephone=$('input[name=telephone]').val();
+		  var telephone_show=$('input:checkbox[name=telephone_show][checked]').val();
+		  var email=$('input[name=email]').val();
+		  var email_show=$('input:checkbox[name=email_show][checked]').val();
+		  var website=$('input[name=website]').val();
+		  var address=$('input[name=address]').val();
+		  var address_show=$('input:checkbox[name=address_show][checked]').val();
+		  var contents=$("#contents").val();
+		  var yellowpages=$('input:checkbox[name=yellowpages][checked]').val();
+		  $.post("?act=shenhe_company_profile_save",{companyname:companyname,nature:nature,uid:uid,id:id,nature_cn:nature_cn,trade:trade,trade_cn:trade_cn,scale:scale,scale_cn:scale_cn,registered:registered,currency:currency,district:district,sdistrict:sdistrict,district_cn:district_cn,street:street,street_cn:street_cn,contact:contact,contact_show:contact_show,telephone:telephone,telephone_show:telephone_show,email:email,email_show:email_show,website:website,address:address,address_show:address_show,contents:contents,yellowpages:yellowpages},function(result){
+			    if(result=="1"){
+			    	dialog("企业资料","url:shenhe_ajax.php?act=company_profile_save_succeed","685px","auto","","");
+			    }else{
+			    	alert_dialog("fail:"+result,"","","","");
+			    	return false;
+			    }
+		  });
+	});
+});
+</script>
+</head>
+
+<body>
+{#include file="user/header.htm"#}
+
+<div class="page_location link_bk">当前位置：<a href="{#$QISHI.main_domain#}">首页</a> > <a href="{#$userindexurl#}">会员中心</a> > 企业资料</div>
+
+<div class="usermain">
+  <div class="leftmenu link_bk">
+   {#include file="member_shenhe/left.htm"#}	
+  </div>
+  <div class="rightmain">
+	<div class="bbox1">	
+	  <div class="addjob link_bk">
+	    <div class="topnav">
+			<div class="titleH1" style="+padding-top:0;margin-top:0;">
+				<div class="h1-title">企业资料</div>
+			</div>
+			<div class="navs">
+				<a href="?act=edit_company" class="se">基本资料</a>
+				<!--<a href="?act=company_logo">企业Logo</a>
+				<a href="?act=company_news">企业动态</a>
+				<a href="?act=company_img">企业风采</a>
+				<a href="?act=company_map_open">地图标注</a>-->
+				<div class="clear"></div>
+			</div>
+		</div>
+		
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableall" style="margin-top:50px;">
+		  <tr>
+			<td width="125" align="right"><span class="nec">企业名称</span>：</td>
+			<td width="230"><input name="companyname" type="text" class="input_text_200" id="companyname" maxlength="80"   value="{#$company_profile.companyname#}"/></td>
+			<td>&nbsp;</td>
+		  </tr>
+		  <tr>
+			<td width="125" align="right"><span class="nec">企业性质</span>：</td>
+			<td width="230">
+				<div class="relat">
+             	 	<div id="nature_menu" class="input_text_200_bg">{#$company_profile.nature_cn|default:"请选择"#}</div>	
+             	 	<div class="menu" id="menu1">
+	              		<ul>
+	              			{#qishi_get_classify set="列表名:c_nature,类型:QS_company_type"#}
+	              			{#foreach from=$c_nature item=list#}
+	              			<li id="{#$list.id#}" title="{#$list.categoryname#}">{#$list.categoryname#}</li>
+	              			{#/foreach#}
+	              		</ul>
+	              	</div>
+	            </div>
+                <input name="id" type="hidden" id="id" value="{#$company_profile.id#}" />
+                <input name="uid" type="hidden" id="uid" value="{#$company_profile.uid#}" />				
+             	 <input name="nature" type="hidden" id="nature" value="{#$company_profile.nature#}" />
+             	 <input name="nature_cn" type="hidden" id="nature_cn" value="{#$company_profile.nature_cn#}" />
+			</td>
+			<td>&nbsp;</td>
+		  </tr>
+		  <tr class="jobmain">
+			<td align="right"><span class="nec">所属行业</span>：</td>
+			<td id="jobsTrad" style="position:relative;z-index:1;">
+				<div class="input_text_200_bg" id="tradText">{#$company_profile.trade_cn|default:"请选择"#}</div>
+				<div id="divTradCate" class="infoList divIndCate" style="display:none;left:1px;top:46px;">
+					<ul class="indcatelist" id="tradList"></ul>
+				</div>
+				<input type="hidden" id="trade" name="trade" value="{#$company_profile.trade#}">
+				<input type="hidden" id="trade_cn" name="trade_cn" value="{#$company_profile.trade_cn#}">
+			</td>
+			<td>&nbsp;</td>
+		  </tr>
+		   <tr>
+			<td align="right"><span class="nec">企业规模</span>：</td>
+			<td>
+				<div class="relat">
+             	 	<div id="scale_menu" class="input_text_200_bg">{#$company_profile.scale_cn|default:"请选择"#}</div>	
+             	 	<div class="menu" id="menu2">
+	              		<ul>
+	              			{#qishi_get_classify set="列表名:c_scale,类型:QS_scale"#}
+	              			{#foreach from=$c_scale item=list#}
+	              			<li id="{#$list.id#}" title="{#$list.categoryname#}">{#$list.categoryname#}</li>
+	              			{#/foreach#}
+	              		</ul>
+	              	</div>
+	            </div>				
+             	 <input name="scale" type="hidden" id="scale" value="{#$company_profile.scale#}" />
+             	 <input name="scale_cn" type="hidden" id="scale_cn" value="{#$company_profile.scale_cn#}" />
+			</td>
+			<td>&nbsp;</td>
+		  </tr>
+		   <tr>
+			<td align="right">注册资金：</td>
+			<td colspan="2">
+			  <table border="0" cellpadding="0" cellspacing="0" >
+	              <tr>
+	                <td width="80" style="padding:0px"><input name="registered" type="text" class="input_text_100" id="registered" maxlength="20"   value="{#$company_profile.registered#}"/></td>
+	                <td width="20" align="center" style="padding:0px">万</td>
+	                <td width="80"  style="padding:0px">
+                    
+	                	<div class="relat">
+		             	 	<div id="currency_menu" class="input_text_60_bg">{#$company_profile.currency|default:"人民币"#}</div>	
+		             	 	<div class="menu" id="menu3">
+			              		<ul>
+			              			<li title="人民币">人民币</li>
+			              			<li title="美元">美元</li>
+			              		</ul>
+			              	</div>
+			            </div>				
+		             	 <input name="currency" type="hidden" id="currency" value="{#$company_profile.currency|default:"人民币"#}" />
+	                </td>
+	              </tr>
+	            </table>
+			</td>
+		  </tr>
+		  <tr class="jobmain">
+			<td width="125" align="right"><span class="nec">所在地区</span>：</td>
+			<td width="230" id="jobsCity" style="position:relative;">
+				<div class="input_text_200_bg" id="cityText">{#$company_profile.district_cn#}</div>
+				<div style="display:none;left:1px;top:46px;" id="divCityCate" class="divJobCate">
+					<table class="jobcatebox citycatebox"><tbody></tbody></table>
+				</div>
+				<input id="district" type="hidden" value="{#$company_profile.district#}" name="district">
+	            <input id="sdistrict" type="hidden" value="{#$company_profile.sdistrict#}" name="sdistrict">
+	            <input id="districtID" type="hidden" value="">
+	            <input name="district_cn" id="district_cn" type="hidden" value="{#$company_profile.district_cn#}" />
+			</td>
+			<td>&nbsp;</td>
+		  </tr>
+		  <tr>
+			<td width="125" align="right">所在街道：</td>
+			<td width="230">
+				<div class="input_text_200_bg" id="intentionStreetAdd">{#$company_profile.street_cn|default:"未标注街道"#}</div>
+				<input type="hidden" id="street" name="street" value="{#$company_profile.street#}">
+				<input type="hidden" id="street_cn" name="street_cn" value="{#$company_profile.street_cn#}">
+			</td>
+			<td>&nbsp;</td> 
+		  </tr>
+		  <tr>
+			<td width="125" align="right"><span class="nec">联系人</span>：</td>
+			<td width="230"><input name="contact" type="text" class="input_text_200" id="contact" maxlength="80"   value="{#$company_profile.contact#}"/></td>
+			<td><label><input name="contact_show" type="checkbox" value="1" {#if $company_profile.contact_show<>"0"#}checked="checked"{#/if#}/>&nbsp;联系人在企业介绍页显示</label></td>
+		  </tr>
+		  <tr>
+			<td width="125" align="right"><span class="nec">联系电话</span>：</td>
+			<td width="230"><input name="telephone" type="text" class="input_text_200" id="telephone" maxlength="80"   value="{#$company_profile.telephone#}"/></td>
+			<td><label><input name="telephone_show" type="checkbox" value="1" {#if $company_profile.telephone_show<>"0"#}checked="checked"{#/if#}/>&nbsp;联系电话在企业介绍中显示</label></td>
+		  </tr>
+		  <tr>
+			<td width="125" align="right"><span class="nec">联系邮箱</span>：</td>
+			<td width="230"><input name="email" type="text" class="input_text_200" id="email" maxlength="80"   value="{#$company_profile.email#}"/></td>
+			<td><label><input name="email_show" type="checkbox" value="1" {#if $company_profile.email_show<>"0"#}checked="checked"{#/if#}/>&nbsp;联系邮箱在企业介绍中显示</label></td>
+		  </tr>
+		   <tr>
+			<td width="125" align="right">公司网址：</td>
+			<td width="230"><input name="website" type="text" class="input_text_200" id="website" maxlength="80" value="{#$company_profile.website#}"/></td>
+			<td>&nbsp;</td>
+		  </tr>
+	    </table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableall">
+		  <tr>
+			<td width="125" align="right"><span class="nec">详细地址</span>：</td>
+			<td width="500"><input name="address" type="text" class="input_text_500" id="address" maxlength="80"   value="{#$company_profile.address#}"/></td>
+			<td>&nbsp;</td>
+		  </tr>
+		  <!--<tr>
+			<td width="125" align="right"></td>
+			<td><label><input name="address_show" type="checkbox" value="1" {#if $company_profile.address_show<>"0"#}checked="checked"{#/if#}/>详细地址在企业详细页中显示</label></td>
+			<td>&nbsp;</td>
+		  </tr>-->
+		  <tr>
+			<td width="125" align="right" valign="top"><span class="nec">公司简介</span>：</td>
+			<td width="500"><textarea name="contents" id="contents" cols="30" rows="10" class="input_textarea_500">{#$company_profile.contents#}</textarea></td>
+			<td>&nbsp;</td>
+		  </tr>
+		  <tr>
+			<td width="125" align="right" valign="top">&nbsp;</td>
+			<td width="500" align="right"><a href="javascript:void(0);" id="model" style="display:inline-block;margin-top:-30px;_margin-top:-15px;color:#0180CF;*margin-top:5px;">[范例]</a></td>
+			<td>&nbsp;</td>
+		  </tr>
+	    </table>
+		  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableall s" style="margin-top:5px;display:none" id="cp">
+		  <tr>
+			<td width="125" align="right" valign="top">公司简介范例：</td>
+			<td width="500" bgcolor="#F5F5F5" style="line-height:22px;padding-left:10px;padding-right:10px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XXX技术有限公司成立于2000年,是XXX投资有限公司与美国XXX公司合资兴建的中外合资企业,引进美国海XXX专利技术,专业从事XX研究开发和生产应用.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;公司2002年被XX认定为高新技术企业,是目前国内唯一的一家既生产XXX又生产X的生产厂家,主要产品有各XX,XX列产品XXX等.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;目前,XX公司拥有总资产X亿元,生产加工基地占地XX余亩,具有一次性XX万余吨的XX储存能力,具有自营进出口权,是目前国内最具实力XX生产供应商之一.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用先进,成熟,适用的技术服务XX事业 ,是X公司的企业宗旨,公司在引进新技术的同时,不断根据XXX实际情况在应用方面进行研究与推广立足XXX,面向全国,走向世界是XX公司的发展目标,目前XXX公司的产品除在X大量使用外,已经打入了江苏,浙江,河南,安徽,湖南,江西,四川,湖北,广东等十余个省份,同时公司生产的XXX已经返销美国,并在俄罗斯,哈萨克斯坦开始应用,已成功进入国际市场.</td>
+			<td>&nbsp;</td>
+		  </tr>
+		  </table>
+		  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableall stab">
+		  <tr>
+			<td align="right" width="125">&nbsp;</td>
+			<td width="230"><label style="color:#FF9900;"><input name="yellowpages" type="checkbox" value="1" {#if $company_profile.yellowpages<>'0'#}checked="checked"{#/if#}/>公司信息在网站黄页中显示</label></td>
+			<td>&nbsp;</td>
+		  </tr>
+		  </table>
+		  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableall">
+		  <tr>
+			<td align="right" width="125">&nbsp;</td>
+			<td width="130"><input type="button" value="保存" id="save_profile" class="but100lan" /></td>
+			<td>&nbsp;</td>
+		  </tr>
+		  </table>
+	
+	  </div>
+	</div>
+  </div>
+  <div class="clear"></div>
+</div>
+ {#include file="user/footer.htm"#}
+<!-- 所在街道选择框 -->
+<div id="intentionStreetBox" class="alert-window" style="display:none;width: 810px; height: 450px; left: 50%; top: 400px; margin-left: -405px; position: absolute; z-index: 100001;">
+	<div style="width: 810px;" class="resume-tc">
+        <div class="resume-tc-head">
+            <h3><i class="icon-loc"></i> 请选择所在街道</h3>
+            <a class="close wd_close cm_closeMsg" href="javascript:;"></a> 
+        </div>
+        <div class="sx-yx">
+        	<span class="clr-grn fnt-b">已选：</span>
+        	<span id="box_checkedStreet"></span>
+        </div>
+        <div id="showStreetType" style="width:810px; height:180px; overflow: auto; overflow-x: hidden; overflow-y: auto; position: relative;">
+        	<div class="sx-cnt sx-cnt2">
+        		<div class="sx-nomal" style="padding-bottom: 0px;">
+        			<ul class="cf" style="width: 760px;">
+			        	{#qishi_get_classify set="类型:QS_street,列表名:list,显示数目:20"#}{#foreach from=$list item=list#}
+						<li style="border-top-width: 0px; padding: 0px 0px 3px 20px; width: 230px; text-align: left;"><label><input type="checkbox" class="cls_child" title="{#$list.categoryname#}" value="{#$list.c_id#}">{#$list.categoryname#}</label></li>
+						{#/foreach#}
+			        </ul>
+        		</div>
+        	</div>
+		</div>
+    </div>
+</div>
+<!-- 所在街道选择框 end-->
+<script type="text/javascript">  
+	// 所在街道
+	showStreetBox("#intentionStreetAdd","#intentionStreetBox","#showStreetType","#box_checkedStreet","#btn_streetsave","#street_cn","#street","#trade_checkbox");
+</script>
+</body>
+</html>

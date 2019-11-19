@@ -1,0 +1,1 @@
+<a href='/plus/view.php?aid=[field:id/]' target='_blank'>[field:title/]</a>

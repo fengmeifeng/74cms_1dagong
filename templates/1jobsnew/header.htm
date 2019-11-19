@@ -1,0 +1,131 @@
+<script>
+	$(function(){
+		// 点击事件
+		$(".local_station").live("click",function(){
+			if($(".sub_station").attr('data') == "hide") {
+				$(this).blur();
+				$(this).parent().parent().before("<div class=\"menu_bg_layer\"></div>");
+				$(".menu_bg_layer").height($(document).height());
+				$(".menu_bg_layer").css({ width: $(document).width(), position: "absolute",left:"0", top:"0","z-index":"77","background-color":"#000000"});
+				$(".menu_bg_layer").css("opacity",0);
+				$(".sub_station").show();
+				$(".sub_station").attr('data',"show");
+				$(".menu_bg_layer, .station_close").click(function() {
+					$(".sub_station").hide();
+					$(".sub_station").attr('data',"hide");
+					$(".menu_bg_layer").remove();
+				});
+			} else {
+				$(".sub_station").hide();
+				$(".sub_station").attr('data',"hide");
+			}
+		});
+		//单数行变色
+		$(".local_station>p").hover(function(){
+			$(this).addClass("hover");
+		},function(){
+			$(this).removeClass("hover");
+		});
+		$(".sub_st_content li:last").css({
+			"border-bottom":"0"
+		}).find("div").css({"padding-bottom":"0"});
+	});
+//顶部部登录
+$.get("/plus/ajax_user.php", {"act":"top_loginform"},
+function (data,textStatus)
+{			
+$(".top_nav").html(data);
+}
+);
+</script>
+<!--顶部-->
+<!--<div class="user_top_nav" >
+	<div class="main">
+	    <div class="ltit"><span id="top_loginform"></span></div>	
+	    <div class="rlink link_lan">
+	    	{#include file="top-nav.htm"#}
+	    </div>	
+	    <div class="clear"></div>
+    </div>
+</div>-->
+<!--头部开始-->
+	<div class="header">
+    	<div class="kuang">
+            <div class="logo fl">
+            <a class="fl" href="/"><img src="/files/img/logo.png" alt="" title="壹打工网" ></a>
+            
+            <!--骑士上的地区切换开始zzzzzz-->
+		
+				{#if $QISHI.subsite=="1"#}
+				  <div class="sub_station_bbox">
+            <div class="local_station didian">
+                <h3>{#$QISHI.subsite_districtname|default:"总站"#}</h3>
+                <a>切换站点</a>
+            </div>
+
+	  {#qishi_allsite set="列表名:list"#}
+	  {#if $list#}
+        
+            <div class="sub_station" style="display:none;" data="hide">
+                <div class="triangle"></div>
+                <span href="" class="station_close"></span>
+                <div class="sub_st_box">
+                    <div class="sub_st_tit">
+                        <h3>{#$QISHI.site_name#}站群 · <a href="http://www.1dagong.com/index.html">总站</a></h3>
+                    </div>
+                    <div class="sub_st_content">
+                        <ul>
+                            
+                            {#foreach from=$list item=ln#}
+                                <li>
+                                        <span>{#$ln.key|rtrim:' - '#}</span>
+                                            <div class="city_list">
+                                            {#foreach from=$ln.city item=ci#}
+                                            <a href="{#$ci.url#}">{#$ci.name#}</a>
+                                            {#/foreach#}
+                                                <div class="clear"></div>
+                                            <div>
+                                </li>	
+                            {#/foreach#}
+                        </ul>
+                    </div>
+                </div>
+            </div>	
+        </div>
+{#/if#}
+	{#/if#}
+				<!--骑士上的地区切换结束-->
+            
+            </div>
+            	<!--<div class="didian fl">
+                	<p>合肥</p>
+                	<a href="#">切换城市</a>
+                </div>-->
+                
+				
+
+            <div class="nav fl">
+            	<ul>
+				<!--导航菜单切换的样式定位开始 By Z-->
+				<!--
+					<li><a class="yes" href="/">首页</a></li>
+                    <li><a href="/jobs/jobs-list2.php">找工作</a></li>
+                    <li><a href="/resume/resume-list.php">找人才</a></li>
+                    <li><a href="/hymq/">行业名企</a></li>
+                    <li><a href="/jobfair/jobfair-list.php">招聘会</a></li>
+                    <li><a href="/xiaoyuan/">校园招聘</a></li>
+				-->
+				{#qishi_nav set="调用名称:QS_top,列表名:list"#}
+				{#foreach from=$list item=list#}
+					<li><a href="{#$list.url#}" target="{#$list.target#}" {#if $list.tag==$page_select && $list.tag!=""#}class="yes"{#/if#}>{#$list.title#}</a></li>
+				{#/foreach#}
+				<!--导航菜单切换的样式定位结束 By Z-->
+                </ul>
+            </div>
+            
+            <div class="top_nav">
+            </div>
+            
+        </div>
+    </div>
+    <!--头部结束-->

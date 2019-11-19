@@ -1,0 +1,1 @@
+<li><a href="[field:redirecturl/]" target=_blank><img src="[field:litpic/]" width="485" height="60" alt="[field:title/]" /></a></li>

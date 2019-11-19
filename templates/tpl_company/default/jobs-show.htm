@@ -1,0 +1,270 @@
+{#qishi_jobs_show set="列表名:show,职位ID:GET[id]"#}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{#$show.jobs_name#}招聘-{#$show.companyname#}最新招聘信息－{#$QISHI.subsite_districtname|default:''#}壹打工网</title>
+<meta name="description" content="{#$show.description#}">
+<meta name="keywords" content="{#$show.category_cn#}招聘,{#$show.companyname#}招聘,{#$show.jobs_name#}招聘">
+<meta name="author" content="壹打工网" />
+<meta name="copyright" content="1dagong.com" />
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<link rel="shortcut icon" href="favicon.ico" />
+
+<link href="/files/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/jobs.css" rel="stylesheet" type="text/css" />
+
+<link href="../templates/tpl_company/default/css/css.css" rel="stylesheet" type="text/css" />
+<link href="../files/css/all.css" rel="stylesheet" type="text/css" />
+<link href="../files/css/font-awesome.min.css" rel="stylesheet" >
+
+
+<script src="/files/js/jquery.js" type='text/javascript' ></script>
+<!--<script src="/files/js/jquery.dialog.js" type='text/javascript' ></script>-->
+<script src="/files/js/jquery.dialog-jobsshow.js" type='text/javascript' ></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var id="{#$show.id#}";
+	var company_id="{#$show.company_id#}";
+	var tsTimeStamp= new Date().getTime();
+	$.get("/plus/ajax_click.php", { "id": id,"time":tsTimeStamp,"act":"jobs_click"},
+		function (data,textStatus)
+		 {			
+			$(".click").html(data);
+		 }
+	);
+	//申请职位
+	$(".app_jobs").click(function(){
+	dialog("申请职位","url:/user/user_apply_jobs.php?id="+id+"&act=app","500px","auto","","");
+	});	
+	//浏览过的职位--申请职位
+	$(".app_view_jobs").click(function(){
+	dialog("申请职位","url:/user/user_apply_jobs.php?id="+$(this).attr('id')+"&act=app","500px","auto","","");
+	});	
+	//单个添加收藏
+	$(".add_favorites").click(function(){
+	dialog("加入收藏","url:/user/user_favorites_job.php?id="+id+"&act=add","500px","auto","","");
+	});
+	//举报信息
+	$(".report_button").click(function(){
+		var jobs_id = $(this).attr("jobs_id");
+		var jobs_name = $(this).attr("jobs_name");
+		var jobs_addtime = $(this).attr("jobs_addtime");
+		dialog("举报信息","url:/user/user_report.php?act=report&jobs_id="+jobs_id+"&jobs_name="+jobs_name+"&jobs_addtime="+jobs_addtime,"500px","auto","","");
+	});
+	$(".check_full_map").click(function(){
+		var map_x = $(this).attr("map_x");
+		var map_y = $(this).attr("map_y"); 
+		var map_zoom = $(this).attr("map_zoom"); 
+		var companyname = $(this).attr("companyname"); 
+		var address = $(this).attr("address"); 
+		dialog("完整地图","url:/plus/ajax_com_map.php?act=company_map&map_x="+map_x+"&map_y="+map_y+"&map_zoom="+map_zoom+"&companyname="+companyname+"&address="+address,"660px","auto","","");
+	});
+	$.get("/plus/ajax_contact.php", { "id": id,"time":tsTimeStamp,"act":"jobs_contact"},
+		function (data,textStatus)
+		 {			
+			$("#jobs_contact").html(data);
+		 }
+	);
+	//---fffff我浏览过的职位
+	//alert(tsTimeStamp);
+	$.get("/plus/ajax_view.php", { "jobsid": id,"t":tsTimeStamp,"act":"view_jobs"},
+		function (data,textStatus)
+		 {			
+			//$(".click").html(data);
+		 }
+	);
+	//---fffff
+});
+$(function(){
+	$("input[type='button']").hover(function(){
+		$(this).addClass("hover");
+	},function(){
+		$(this).removeClass("hover");
+	});
+	$(".claim").find("span:eq(0)").css("margin-left",0);
+	$(".watch_job li").hover(function(){
+		$(this).find("input").css("display", "block");
+	},function(){
+		$(this).find("input").css("display", "none");
+	})
+})
+</script>
+</head>
+<body>
+{#include file="header.htm"#}
+<!--<img title="企业未认证" src="/files/images/noyan.jpg" border="0" />
+-->	<!-- 当前位置 -->
+	<div class="page_location link_bk mbot">
+		当前位置：<a href="/">首页</a>><a href="{#"QS_jobs"|qishi_url#}">招聘信息</a>><a href="{#$show.company_url#}">{#$show.companyname#}</a>&nbsp;>>&nbsp;{#$show.jobs_name#}
+	</div>
+        
+	<!-- 主体内容 -->
+
+    <div class="kunag">
+    	<div class="left_list hdsn" style="margin-top:0px;"> 
+             <div class="show_xx">
+                 <div class="bit tsye">
+                 	<h1>{#$show.jobs_name#}</h1>
+                    <p>
+                    	<a href="{#$show.company_url#}">{#$show.companyname#}</a>
+                    </p>
+                    <div class="apply_job fr">
+                    <a class="add_favorites" href="javascript:void(0);"><i class="fa fa-heart"></i>收藏</a>
+                    
+                    </div>
+                    
+                 </div>
+<!--                    <div class="shenqing">
+                    	<a href="#">申请职位</a>
+                    </div>	
+-->    
+                <div class="h1_box">
+                    <div class="info psid">
+                        <span class="data">更新时间: {#$show.refreshtime|date_format:"%Y-%m-%d"#}</span>
+                        <span class="watch">浏览：<em class="times click"></em>次</span>
+                        <span class="delivery"><em class="times">{#$show.countresume#}</em>人投递简历</span>
+                    </div>
+                </div>
+
+                <div class="detail_info">
+                	<ul>
+                        <li>
+                            <font color="#999">工资待遇：</font><span>{#$show.wage_cn#}</span>
+                        </li>
+                        <li>
+                            <div><font color="#999">招聘人数：</font>{#$show.amount#}人</div>
+                            <div><font color="#999">职位类别：</font>{#$show.nature_cn#}</div>
+                            <div><font color="#999">性别要求：</font>{#$show.sex_cn#}</div>
+                        </li>
+                        <li>
+                        	<!--<div><font color="#999">年龄要求：</font>22</div>-->
+                            <div><font color="#999">学历要求：</font>{#$show.education_cn#}</div>
+                            <div><font color="#999">工作经验：</font>{#$show.experience_cn#}</div>
+                            <div><font color="#999">所属行业：</font><a href="{#"QS_jobslist,trade:"|cat:$show.trade|qishi_url#}" target="_blank">{#$show.trade_cn#}</a></div>
+                        </li>
+                        <li>
+                            <font color="#999">工作地址：</font>  <a href="{#"QS_jobslist,district:"|cat:$show.district|cat:"-sdistrict:"|cat:$show.sdistrict|qishi_url#}" target="_blank">{#$show.district_cn#}</a> &nbsp;&nbsp;
+                        </li>
+                    </ul>
+                    
+                    <div class="delivery mt45 fr"> <a href="#" class="app_jobs">投递简历</a><!--<a class="fabu" href="{#"QS_user,1"|qishi_url#}company_jobs.php?act=addjobs')">发布职位</a>--></div>
+                    	
+                </div>	
+
+
+          
+              <div class="d_led">
+                  <div class="topg" style="margin-left:10px;"><i class="fa fa-backward"></i><h4>职位描述</h4></div>
+                  <p class="multiline">
+                   <!-- 岗位职责： -->
+                    {#$show.contents|nl2br#}
+                 </p>
+
+			  </div>
+                <div class="write">
+                    <div class="fl resume">在壹打工网<a href="/user/personal/personal_resume.php?act=make1">完善简历</a>，即有机会被企业和猎头推荐应聘</div>
+                    <div class="delivery fr"> <a href="#" class="app_jobs">投递简历</a></div>
+                </div>
+                
+            </div>
+              
+                    
+           </div>   
+
+        
+        <div class="right_list">
+        	
+            <div class="lndk">
+            	<div class="disnn">
+            		<a href="{#"QS_companyshow,id:"|cat:$show.company.id|qishi_url#}"><img class="bord2" src="{#$show.company.logo#}" title="{#$show.company.companyname#}" width="190px" height="100px" /></a>
+                    <div class="fl mizi"><a href="{#"QS_companyshow,id:"|cat:$show.company.id|qishi_url#}">{#$show.companyname#}</a></div>
+                    {#if $show.company.audit=="1"#}
+  					<img class="fl imgto" title="营业执照已认证" src="/files/images/yesyan.jpg" border="0" />
+					{#else#}
+					<img class="fl imgto" title="营业执照未认证" src="/files/images/noyan.jpg" border="0" />
+					{#/if#}
+                    <!--<img class="fl imgto" title="企业已认证" src="/files/images/yesyan.jpg" border="0" />-->
+                </div>
+                    <div class="over"></div>
+                      <h4>企业名片</h4>
+                      
+                    <ul>
+                        <li><span>地点：</span><span><a href="{#"QS_jobslist,district:"|cat:$show.company.district|cat:"-sdistrict:"|cat:$show.company.sdistrict|qishi_url#}" target="_blank">{#$show.company.district_cn#}</a></span></li>
+                        <li><span>性质：</span><span>{#$show.company.nature_cn#}</span></li>
+                        <li><span>领域：</span><span><a href="{#"QS_jobslist,trade:"|cat:$show.company.trade|qishi_url#}" target="_blank">{#$show.company.trade_cn#}</a></span></li>
+                        <li><span>规模：</span><span><a href="{#"QS_jobslist,scale:"|cat:$show.company.scale|qishi_url#}" target="_blank">{#$show.company.scale_cn#}</a></span></li>
+                    </ul>
+                    
+                    <div class="carousel slide" >  
+                    </div>
+                    
+                      <h4>公司地址</h4>
+                      <P><a href="{#"QS_jobslist,district:"|cat:$show.district|cat:"-sdistrict:"|cat:$show.sdistrict|qishi_url#}" target="_blank">{#$show.district_cn#}</a>{#if $show.street_cn#}&nbsp;&nbsp;<a href="{#"QS_street,streetid:"|cat:$show.street|qishi_url#}" target="_blank">{#$show.street_cn#}</a>{#/if#}{#if $show.officebuilding_cn#}&nbsp;&nbsp;<a href="{#"QS_officebuilding,officebuildingid:"|cat:$show.officebuilding|qishi_url#}" target="_blank">{#$show.officebuilding_cn#}</a>{#/if#}</P> 
+                      <!--<img src="../files/img/map.jpg" />地图开始-->
+                      {#if $show.company.map_open=="1" && $show.company.map_x && $show.company.map_y#}
+		   				<script src="http://api.map.baidu.com/api?v=1.2" type="text/javascript"></script>
+                      	<div style="width:100%;height:200px ; border:1px #CCCCCC solid; margin:0 auto; margin-top:6px;" id="map"></div>
+						<script type="text/javascript">
+                        var map = new BMap.Map("map");   
+                        var point = new BMap.Point({#$show.company.map_x#}, {#$show.company.map_y#});   
+                        map.centerAndZoom(point, {#$show.company.map_zoom#});
+                        var opts = {type: BMAP_NAVIGATION_CONTROL_SMALL,anchor: BMAP_ANCHOR_TOP_RIGHT}   
+                        map.addControl(new BMap.NavigationControl(opts));		
+                        var qs_marker = new BMap.Marker(point);           
+                        map.addOverlay(qs_marker); 
+                        // 创建标注 
+                        // 打开信息窗口 
+                        var opts = {   
+                          width : 150,     // 信息窗口宽度   
+                          height: 50,     // 信息窗口高度   
+                          title : "{#$show.company.companyname#}"  // 信息窗口标题   
+                        }   
+                        var infoWindow = new BMap.InfoWindow("{#$show.company.address#}", opts);  // 创建信息窗口对象   
+                        map.openInfoWindow(infoWindow, point);
+                        // 打开信息窗口  			
+						</script>
+                        {#else#}
+                        <div>该公司没有标注具体位置。 </div>	  
+		  			{#/if#}
+                      <!--地图结束-->
+					  <h4>公司联系方式</h4>
+					  {#if $show.company.telephone_show=="1"#}
+					  <p style="color:#8F03C7;">{#$show.company.telephone#}</p>
+					  {#else#}
+					  <p style="color:#8F03C7;">&nbsp;&nbsp;公司未公布联系方式</p>
+					  {#/if#}
+                      <div class="rzhao">
+                        <h2>您可能感兴趣的职位</h2>
+                        
+                        <ul class="rzlist">
+                        {#qishi_jobs_list set="列表名:jobs,显示数目:5,填补字符:...,职位名长度:14,排序:rtime>desc,行业:"|cat:$show.trade#}
+						{#foreach from=$jobs item=list#}
+                            <li>
+                                <h3><a href="{#$list.jobs_url#}">{#$list.jobs_name#}</a></h3>
+                                <p>{#$list.companyname#}</p>
+                                <font>学历要求：{#$list.education_cn|default:"不限"#}</font><br />
+                                <font>招聘人数：{#$list.amount#}人</font><br />
+                                <font>月薪范围：{#$list.wage_cn#}</font>
+                            </li>
+                        {#/foreach#}
+                        </ul>
+        			</div>
+                   <!---->   
+                </div>
+        </div>
+    
+    </div>
+
+
+	<!-- 主体内容 结束 -->
+<script src="/files/js/swipe.js"></script>
+<script>
+	window.mySwipe = Swipe(document.getElementById('slider'), {
+		auto:3000,
+		speed:400,
+		continuous: true
+	});
+</script>
+{#include file="footer.htm"#}
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>会员注册</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<meta name="author" content="骑士CMS" />
+<meta name="copyright" content="74cms.com" />
+<!--<link href="/files/css/user_common.css" rel="stylesheet" type="text/css" />
+-->
+<link href="/files/css/font-awesome.min.css" rel="stylesheet" >
+<link href="/files/css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/wap_login.css" rel="stylesheet" type="text/css" />
+<!---->
+
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/user.css" rel="stylesheet" type="text/css" />
+<!---->
+<script src="/files/js/jquery.js" type='text/javascript' language="javascript"></script>
+<script src="/files/js/jquery.validate.min.js" type='text/javascript' language="javascript"></script>
+
+
+<script src="/data/cache_classify.js" type="text/javascript" charset="utf-8"></script>
+<script src="/files/js/jquery.reg.selectlayer.js" type='text/javascript' language="javascript"></script>
+<!--<script src="/files/js/jquery.hoverDelay.js" type='text/javascript'></script>-->
+<!--添加-->
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.common_zhuce.js" type='text/javascript' ></script>
+
+
+
+
+<script type="text/javascript">
+//验证--
+$(document).ready(function() {
+	
+	//-----地区显示----企业会员注册
+	OpenCity_zhuce("#district_input","#district_cn","#district","#sdistrict","请选择地区","#district_cns");
+	//
+	//-----地区显示结束
+
+//
+$(".but-reg").hover(function(){$(this).addClass("but-reg-hover")},function(){$(this).removeClass("but-reg-hover")});
+$(".but-reg-login").hover(function(){$(this).addClass("but-reg-login-hover")},function(){$(this).removeClass("but-reg-login-hover")});
+//-------企业注册提交结束
+
+//-------个人注册提交
+// 显示地区
+ 		OpenCity_zhuce("#district_input_1","#district_cn_1","#district_1","#sdistrict_1","请选择地区","#district_cns_1");
+		
+		//---显示年份
+		showyearbox(".date_input","#birthday");
+function showyearbox(divname,inputname)
+{
+	$(divname).click(function(){
+		var inputdiv=$(this);
+		$(inputdiv).parent("div").before("<div class=\"menu_bg_layer\"></div>");
+		$(".menu_bg_layer").height($(document).height());
+		$(".menu_bg_layer").css({ width: $(document).width(), position: "absolute", left: "0", top: "0" , "z-index": "0"});
+		$(inputdiv).parent("div").css("position","relative");
+		
+		var myDate = new Date();
+		var y=myDate.getFullYear();
+			 y=y-16;
+		var ymin=y-35;
+		htm="<div class=\"showyearbox yearlist\">";		
+		htm+="<ul>";
+		for (i=y;i>=ymin;i--)
+		{
+		htm+="<li title=\""+i+"\">"+i+"年</li>";
+		}
+		htm+="<div class=\"clear\"></div>";
+		htm+="</ul>";
+		htm+="</div>";
+		$(inputdiv).blur();
+		if ($(inputdiv).parent("div").find(".showyearbox").html())
+		{
+			$(inputdiv).parent("div").children(".showyearbox.yearlist").slideToggle("fast");
+		}
+		else
+		{
+			$(inputdiv).parent("div").append(htm);
+			$(inputdiv).parent("div").children(".showyearbox.yearlist").slideToggle("fast");
+		}
+		//
+		$(inputdiv).parent("div").children(".yearlist").find("li").unbind("click").click(function()
+		{
+			$(inputname).val($(this).attr("title"));
+			$(inputdiv).html($(this).attr("title"));
+			$(inputdiv).parent("div").children(".yearlist").hide();
+			$(".menu_bg_layer").remove();
+		});	
+		//
+		$(".showyearbox>ul>li").hover(
+		function()
+		{
+		$(this).css("background-color","#DAECF5");
+		$(this).css("color","#ff0000");
+		},
+		function()
+		{
+		$(this).css("background-color","");
+		$(this).css("color","");
+		}
+		);
+		//
+		$(".menu_bg_layer").click(function(){
+					$(".menu_bg_layer").hide();
+					$(inputdiv).parent("div").css("position","");
+					$(inputdiv).parent("div").find(".showyearbox").hide();
+					
+		});
+	});
+}
+		
+//----显示年份结束
+//性别单选
+$("#sex_radio .input_radio").click(function(){
+		$("#sex").val($(this).attr('id'));
+		$("#sex_cn").val($(this).text());
+		$("#sex_radio .input_radio").removeClass("select");
+		$(this).addClass("select");
+});
+
+//----性别单选结束
+
+
+});
+
+
+</script>
+</head>
+<body>
+<div class="sub_bodybg"></div>
+<div class="sub_head_top">
+	<div class="title">注册会员类型</div>
+	<div class="back" id="pageback"><img src="images/18.jpg" alt="#"   border="0"/></div>  
+	<div class="menu" id="topmenu_sub"><a href="#"><img src="images/2.jpg"  border="0"/></a></div>
+</div>
+
+
+<!--快捷按钮 -->
+{#include file="top-menu.html"#}
+<!--快捷按钮 -->
+<div class="kua">
+        <div class="left_list">
+        
+            
+                <script type="text/javascript"> 
+            function setTab(name,m,n){ 
+            for( var i=1;i<=n;i++){ 
+            var menu = document.getElementById(name+i); 
+            var showDiv = document.getElementById("cont_"+name+"_"+i); 
+            menu.className = i==m ?"on":""; 
+            showDiv.style.display = i==m?"block":"none"; 
+            } 
+            } 
+            </script> 
+            
+            <div class="tab"> 
+                <ul> 
+                    <li id="one1" class="on" onmouseover='setTab("one",1,5)'>个人会员注册</li> 
+                    <li id="one2" onmouseover='setTab("one",2,5)'>企业会员注册</li> 
+                </ul> 
+            </div> 
+            <div class="tabList ergao"> 
+                <div id="cont_one_1" class="the01 one block"> 
+                    <form id="Form1_1" name="Form1" method="post" action="/wap/wap_user_reg.php?act=do_reg" class="form-horizontal home-form">
+					<input name="utype" type="hidden" id="member_type_1" value="2" />	
+                                <div class="form-group">
+										<h2>个人会员注册<span class=""><font color="#ff0000">*</font>&nbsp;为必填项，谢谢合作。</span></h2>
+								</div>
+						<div class="form-group">
+							<label class=" fl control-label-register"><font color="#ff0000">*</font>手机号：</label>
+							<div class="fl right_input">
+								<input type="text" name="username" id="username_1" class="sign_up_input_name form-control" placeholder="请输入手机号码" maxlength="11" />
+							</div>
+                            <div class="item-tip_1">
+                            	
+                            </div>
+							<div class="clear"></div>
+						</div>
+
+						<div class="form-group">
+							<label class="fl control-label-register"><font color="#ff0000">*</font>性别：</label>
+							<div class="fl right_input">
+								<div id="sex_radio">
+                                    <input name="sex" id="sex" type="hidden" value="1" />
+                                    <input name="sex_cn" id="sex_cn" type="hidden" value="男" />
+                                      <div class="input_radio{#if $userprofile.sex==1||$userprofile.sex==""#} select{#/if#}" id="1">男</div>
+                                      <div class="input_radio{#if $userprofile.sex==2#} select{#/if#}" id="2">女</div>			  
+                                      <div class="clear"></div>
+			  					</div>
+                                <div class="item-tip_1"></div>
+								<div class="clear"></div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="fl control-label-register"><font color="#ff0000">*</font>您的姓名：</label>
+							<div class="fl right_input">
+                                <input name="realname" type="text" class="input_text_200 form-control" id="realname" maxlength="6"   value="" />
+							</div>
+                            <div class="item-tip_1"></div>
+							<div class="clear"></div>
+						</div>
+
+						<div class="form-group">
+							<label class="fl control-label-register"><font color="#ff0000">*</font>您的出生年份：</label>
+							<div class="fl right_input">
+								<div><!--style="z-index:10; float:left"-->
+                                 <div class="input_text_wc0_bg date_input">{#if $userprofile.birthday#}{#$userprofile.birthday#}{#else#}请选择{#/if#}</div>
+                                  <input name="birthday" id="birthday" type="hidden" value="" />
+                                </div>
+								<div class="item-tip_1"></div>
+							<div class="clear"></div>
+							</div>
+						</div>
+
+						<div class="form-group idng" id="jobsCity_1" style="position:relative;z-index:0">
+							<label class="fl control-label-register"><font color="#ff0000">*</font>目前居住地区：</label>
+							<div class="fl right_input">
+								
+                                <div class="d3" id="district_input_1" style="width:90%; margin:10px 0px;">
+							  <div class="input"  id="district_cn_1">请选择地区</div>
+								<input name="residence_cn" id="district_cns_1" type="hidden" value="" />
+								<input name="district" id="district_1" type="hidden" value="" />
+								<input name="sdistrict" id="sdistrict_1" type="hidden" value="" />
+							  <div class="more"><img src="images/8.jpg"  border="0"/></div>
+							</div>
+
+							</div>
+                            <div class="item-tip_1"></div>
+							<div class="clear"></div>
+						</div>
+                        
+                        {#if $verify_userreg=="1"#}
+                        <div class="form-group">
+                            <label class="fl control-label-register"><font color="#ff0000">*</font>验证码：</label>
+                            
+                            <div class="fl right_input" >
+                                <input  class="sign_up_input_varcode form-control" name="postcaptcha" id="postcaptcha_1" type="text" value="点击获取验证码" style="color:#999999;width:110px;"/>
+                            </div><div id="imgdiv_1" class="fl item-tip"></div>
+                        </div>
+						{#/if#}
+                        <div class="clear"></div>
+                        
+                        <div class="form-group">
+                        	<label class="fl control-label-register">&nbsp;</label>
+							<div class="col-sm-offset-3">
+								<div class="checkbox">
+									<label style="line-height:24px;">
+										<input type="checkbox" class="heif" name="agreement" id="agreement_1" value="1" checked="checked"/> 我已阅读并同意遵
+                               			<a href="/agreement/">《{#$QISHI.site_name#}用户服务协议》</a>
+									</label>
+								</div>
+							</div>
+						</div>
+                        <div class="user_reg_box error" {#if !$err#}style="display:none"{#/if#}>
+						{#$err#}
+						</div>
+                         <div class="form-group">
+                            <div class="fl item-input-box waiting" id="waiting_1" style="display:none">
+                              正在注册中,请等待... 
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+							<label class="fl control-label-register">&nbsp;</label>
+                            <div class="fl right_input">
+                                <button class="btn btn-lg btn-primary btn-block" name="signup" type="submit">提交注册</button>
+                            </div>
+                        </div>
+						
+					</form>
+                </div> 
+                <div id="cont_one_2" class="the01 the02 one sign_form"> 
+                <form id="Form1" name="Form1" method="post" action="/wap/wap_user_reg.php?act=do_reg" class="form-horizontal home-form">
+                 <input name="utype" type="hidden" id="member_type" value="1" />
+						<div class="form-group">
+								<h2>企业会员注册<span class=""><font color="#ff0000">*</font>&nbsp;为必填项，谢谢合作。</span></h2>
+						</div>
+
+						<div class="form-group">
+							<label class=" fl control-label-register"><font color="#ff0000">*</font>用户名：</label>
+							<div class="fl input_box right_input">
+								<input type="text" name="username" id="username" class="sign_up_input_name form-control error" placeholder="请输入用户名" maxlength="25" />
+							</div>
+                            <div class="item-tip"></div>
+						</div>
+
+						<div class="form-group">
+							<label class="fl control-label-register"><font color="#ff0000">*</font>密码：</label>
+							<div class="fl input_box right_input">
+								<input type="password" name="password" id="password" class="sign_up_input_pwd form-control" placeholder="请输入登录密码" maxlength="18" />
+							</div>
+                            <div class="item-tip"></div>
+                            <div class="clear"></div>
+						</div>
+
+						<div class="form-group">
+							<label class="fl control-label-register"><font color="#ff0000">*</font>确认密码：</label>
+							<div class="fl input_box right_input">
+								<input type="password" name="password2" id="password2" class="sign_up_input_pwd form-control" placeholder="请确认登录密码" maxlength="18"/>
+							</div>
+                            <div class="item-tip"></div>
+							<div class="clear"></div>
+						</div>
+						
+                        <div class="form-group">
+							<label class="fl control-label-register"><font color="#ff0000">*</font>公司名称：</label>
+							<div class="fl input_box right_input">
+                            	<input type="text" name="companyname" id="companyname" class="form-control sign_up_input_company" placeholder="请输入公司名称" maxlength="60" />
+							</div>
+                            <div class="item-tip"></div>
+							<div class="clear"></div>
+						</div>
+                        
+						<div class="form-group">
+							<label class="fl control-label-register"><font color="#ff0000">*</font>电子邮箱：</label>
+							<div class="fl input_box right_input">
+                            	<input type="text" name="email" id="email" class="sign_up_input_mail form-control" placeholder="请输入您的常用邮箱" maxlength="60" />
+							</div>
+                            <div class="item-tip"></div>
+							<div class="clear"></div>
+						</div>
+                        
+                        <div class="form-group jobmain idng">
+							<label class="fl control-label-register"><font color="#ff0000">*</font>所在地区：</label>
+							<div class="fl right_input">
+								<div class="d3" id="district_input" style="width:90%; margin:10px 0px;">
+								  <div class="input"  id="district_cn">请选择地区</div>
+									<input name="district_cn" id="district_cns" type="hidden" value=""/>
+									<input name="district" id="district" type="hidden" value="" />
+									<input name="sdistrict" id="sdistrict" type="hidden" value="" />
+								  <div class="more"><img src="images/8.jpg"  border="0"/></div>
+								</div>
+							</div>
+						</div>
+
+						<!--<div class="form-group">
+							<label class="fl control-label">备用手机号：</label>
+							<div class="fl">
+								<input type="text" class="form-control" placeholder=""  name="sphone2" maxlength="11" />
+
+							</div>
+						</div>-->
+                        
+						<div class="form-group">
+							<label class="fl control-label-register">客户经理：</label>
+							<div class="fl right_input">
+								<input type="text" class="form-control sign_up_input_pwd" name="xs_user" id="xs_user">
+							</div>
+						</div>						
+                        {#if $verify_userreg=="1"#}
+                        <div class="form-group">
+                            <label class="fl control-label-register">验证码：</label>
+                            
+                            <div class="fl right_input" >
+                                <input  class="sign_up_input_varcode form-control" name="postcaptcha" id="postcaptcha" type="text" value="点击获取验证码" style="color:#999999;width:110px;"/>
+                            </div><div id="imgdiv" class="fl item-tip"></div>
+                        </div>
+                        {#/if#}
+                        <div class="clear"></div>
+						 <div class="form-group">
+                         	<label class="fl control-label-register"> &nbsp;</label>
+							<div class="col-sm-offset-3">
+								<div class="checkbox">
+									<label style="line-height:24px;">
+										<input type="checkbox" class="heif" name="agreement" id="agreement" value="1" checked="checked"/> 我已阅读并同意遵
+                               			<a href="/agreement/">《{#$QISHI.site_name#}用户服务协议》</a>
+									</label>
+								</div>
+							</div>
+						</div>
+                        <div class="user_reg_box error" {#if !$err_1#}style="display:none"{#/if#}>
+						{#$err_1#}
+						</div>
+                        <!-- <div class="form-group">
+                            <div class="item-input-box waiting" id="waiting" style="display:none">
+                              正在注册中,请等待... 
+                            </div>
+                        </div>-->
+						
+						<div class="form-group">
+								<label class="fl control-label-register"> &nbsp;</label>
+							<div class="fl right_input">
+								<button class="btn btn-lg btn-primary btn-block" name="signup" type="submit">提交注册</button>
+							</div>
+						</div>
+
+						<!--  -->
+                        
+                    </form>
+                </div> 
+            </div>  
+        </div>
+</div>
+
+<!--底部开始-->
+   {#include file="wap/footer.htm"#}
+	<!--底部结束-->
+</body>
+</html>

@@ -1,0 +1,31 @@
+	<script>
+	$(function(){
+		$(".bjm").click(function(){
+				var zwh=$(".zwbox").attr("zwh"); 
+				var a=$(this).text();
+				$("#number").val(a);
+				if (confirm('您,确定将展位《 '+zwh+' 》更换为《 '+a+' 》号展位吗？')){
+					$("#sub").click();
+				}
+			})
+		});
+	</script>
+	<div id="pic" class="zwbox" zwh="{#$zwh#}">
+		<!--没有预定的展位-->
+		{#foreach from=$all item=list#}
+		<div class="z{#$list.number#} bjm vtip" title="这个展位还没企业。"><span class="yc">{#$list.number#}</span></div>
+		{#/foreach#}
+		<!--预定过的展位-->
+		{#foreach from=$ok item=list#}
+		<div class="z{#$list.number#} bjy vtip" title="{#$list.title#}"><span class="yc">{#$list.number#}</span></div>
+		{#/foreach#}
+	</div>
+	
+	<form action="?act=gaizwdm" method="post">
+		<input type="hidden" name="zid" value="{#$zid#}">
+		<input type="hidden" name="qid" value="{#$qid#}">
+		<input type="hidden" name="id" value="{#$id#}">
+		<input type="hidden" id="number" name="number">
+		<input type="submit" id="sub" value="预定" style="display:none;">
+	</form>
+	

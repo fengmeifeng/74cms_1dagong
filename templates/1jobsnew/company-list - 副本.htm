@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<title>{#if $smarty.get.trade#}{#"QS_trade,"|cat:$smarty.get.trade|qishi_categoryname#} - {#/if#}黄页  - {#$QISHI.site_name#}</title>
+<meta name="description" content="{#if $smarty.get.trade#}{#"QS_trade,"|cat:$smarty.get.trade|qishi_categoryname#}，{#/if#}{#$QISHI.site_name#} - 黄页">
+<meta name="keywords" content="{#$QISHI.site_name#},黄页">
+<meta name="author" content="骑士CMS" />
+<meta name="copyright" content="74cms.com" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link href="/files/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/company.css" rel="stylesheet" type="text/css" />
+<script src="/files/js/jquery.js" type="text/javascript" language="javascript"></script>
+</head>
+<body>
+{#include file="header.htm"#}
+<!-- 当前位置 -->
+<div class="page_location link_bk">
+	当前位置：<a href="/">首页</a>>黄页
+</div>
+	<!-- 主体内容 -->
+	<div class="container link_bk">
+		<div class="yellow_top">
+			<div class="bleft" >按行业：</div>
+			<div class="bright">
+				<ul>
+				 {#qishi_get_classify set="列表名:c_jobs,类型:QS_trade,显示数目:100"#}
+				 {#foreach from=$c_jobs item=li#}				
+					<li><a href="{#"QS_companylist,trade:"|cat:$li.id|qishi_url#}" >{#$li.categoryname#}</a></li>
+				 {#/foreach#}
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</div>
+		{#if $smarty.get.trade#}
+	  	<div class="myselbox" style="display:block;">
+			  <div class="left">已选条件：</div>
+			  <div class="optcentet">
+			  <a href="{#"QS_companylist"|qishi_url#}"  title="点击取消"><u>行业:</u>{#"QS_trade,"|cat:$smarty.get.trade|qishi_categoryname#}</a>
+			  <div class="clear"></div>
+			  </div>
+			  <!--<div class="right"><div class="clearoptall"><a  href="{#"QS_companylist"|qishi_url#}" class="clearall">清除所有</a></div></div>-->
+			  <div class="clear"></div>
+	  	</div>
+	  	{#/if#}
+		<!-- 左边内容 -->
+		<div class="left_area">
+			<div class="left_tit_box">
+				<h5>符合条件的企业</h5>
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					
+					$(".showjobs").click(function(){
+						var y_job_list = $(this).parents(".com_box").find(".y_job_list");
+						$(".y_comment_list").hide();
+						$(".showcomment").removeClass("select");
+						if(y_job_list.css("display")=='none'){
+							$(".showjobs").removeClass("select");
+							$(".y_job_list").hide();
+							$(this).addClass("select");
+							y_job_list.show();
+							$.get("/plus/ajax_yellowpage.php?act=get_companyjobslist&company_id="+$(this).attr("company_id"),function(result){
+								y_job_list.children("ul").html(result);
+							});
+						}else{
+							$(this).removeClass("select");
+							$(".y_job_list").hide();
+						}
+					});
+					$(".showcomment").click(function(){
+						var y_comment_list = $(this).parents(".com_box").find(".y_comment_list");
+						$(".y_job_list").hide();
+						$(".showjobs").removeClass("select");
+						if(y_comment_list.css("display")=='none'){
+							$(".showcomment").removeClass("select");
+							$(".y_comment_list").hide();
+							$(this).addClass("select");
+							y_comment_list.show();
+							$.get("/plus/ajax_yellowpage.php?act=get_companycommentlist&company_id="+$(this).attr("company_id"),function(result){
+								y_comment_list.children("ul").html(result);
+							});
+						}else{
+							$(this).removeClass("select");
+							$(".y_comment_list").hide();
+						}
+					});
+				});
+			</script>
+			<div class="company_list">
+				<ul>
+					{#qishi_company_list  set="分页显示:1,列表名:company,显示数目:GET[inforow],填补字符:...,企业名长度:30,描述长度:50,行业:GET[trade],黄页:1,排序:id>desc"#}
+					{#foreach from=$company item=list#}
+					<li class="com_box active">
+						<div class="logo_box"><img src="{#$list.logo#}" width="250" height="85" /></div>
+						<div class="com_info">
+							<h6><a href="{#$list.url#}" target="_blank">{#$list.companyname_#}</a></h6>
+							{#if $list.audit=="1"#}<span class="yan"></span>{#/if#}
+							<div class="clear"></div>
+							<p class="w150">行业：{#$list.trade_cn#}</p>
+							<p class="w150">地区：{#$list.district_cn#}</p>
+							<p class="com_i_last">性质：{#$list.nature_cn#}</p>
+							<div class="clear"></div>
+							<ul>
+								<li>
+									<a company_id="{#$list.id#}" href="javascript:void(0);" {#if $list.jobs_num>0#}class="showjobs"{#/if#}>职位（{#$list.jobs_num#}）</a>
+								</li>
+								<li><a company_id="{#$list.id#}" href="javascript:void(0);" {#if $list.comment_num>0#}class="showcomment"{#/if#}>评论（{#$list.comment_num#}）</a></li>
+							</ul>
+						</div>
+						<div class="clear"></div>
+						<div class="y_job_list" style="display:none;">
+							<ul></ul>
+						</div>
+						<!-- 评论 -->
+						<div class="y_comment_list comments" style="display:none;">
+							<ul></ul>
+						</div>
+					</li>
+					{#/foreach#}
+				</ul>
+				<table border="0" align="center" cellpadding="0" cellspacing="0" class="link_bk">
+		              <tr>
+		                <td height="50" align="center"> <div class="page link_bk">{#$page#}</div></td>
+		              </tr>
+		          </table>
+			</div>
+		</div>
+		<!-- 右边内容 -->
+		<div class="right_area">
+			
+			<div class="right_box">
+				<div class="title_box">
+					<h5>热门企业</h5>
+				</div>
+				<div class="list">
+					<ul>
+						{#qishi_ad set="显示数目:8,调用名称:QS_yellowpage,列表名:ad,文字长度:12"#}
+						{#foreach from=$ad item=list#}
+						<li><a target="_blank" href="{#$ad[list].img_url#}"><img src="{#$list.img_path#}" alt="{#$list.img_explain#}" width="210" height="100" /></a></li>
+						{#/foreach#}
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<!-- 主体内容 结束 -->
+{#include file="footer.htm"#}
+
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{#$QISHI.subsite_districtname|default:""#}最新招聘信息-{#$QISHI.subsite_districtname|default:""#}招聘网-{#$QISHI.site_name#}</title>
+<meta name="description" content="{#$QISHI.site_name#}找工作频道，为求职者找工作提供2015最新各类职位招聘信息，精准求职，锁定好工作。{#$QISHI.subsite_districtname|default:""#}找工作，找兼职，就上{#$QISHI.site_name#}。">
+<meta name="keywords" content="{#$QISHI.subsite_districtname|default:""#}招聘,{#$QISHI.subsite_districtname|default:""#}招聘网,{#$QISHI.subsite_districtname|default:""#}找工作">
+<meta name="author" content="壹打工网" />
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<link rel="shortcut icon" href="favicon.ico" />
+<link href="/files/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/jobs.css" rel="stylesheet" type="text/css" />
+<link href="../files/css/all.css" rel="stylesheet" type="text/css" />
+<link href="../files/css/font-awesome.min.css" rel="stylesheet" >
+<script src="/files/js/jquery.js" type='text/javascript' ></script>
+<script src="/files/js/jquery.dialog.js" type='text/javascript' ></script>
+<script src="/files/js/jquery.company-search.js" type='text/javascript'></script>
+<script src="/data/cache_classify.js" type='text/javascript' charset="utf-8"></script>
+<script src="/files/js/jquery.hoverDelay.js" type='text/javascript'></script>
+<script src="/files/js/jquery.vtip-min.js" type='text/javascript'></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		// 传过来的搜索条件
+		var getstr = new Array();
+		getstr[0] = '{#$smarty.get.trade#}';
+		getstr[1] = '{#$smarty.get.jobcategory#}';
+		getstr[2] = '{#$smarty.get.citycategory#}';
+		getstr[3] = '{#$smarty.get.wage#}';
+		getstr[4] = '{#$smarty.get.education#}';
+		getstr[5] = '{#$smarty.get.experience#}';
+		getstr[6] = '{#$smarty.get.nature#}';
+		getstr[7] = '{#$smarty.get.settr#}';
+		allaround('/',getstr);
+		// 显示行业
+		$("#jobsTrad").hoverDelay({
+		    hoverEvent: function(){
+		        $("#divTradCate").show();
+		    },
+		    outEvent: function(){
+                $("#divTradCate").hide();
+            }
+		});
+ 		// 显示职位
+ 		$("#jobsSort").hoverDelay({
+		    hoverEvent: function(){
+		        $("#divJobCate").show();
+		        var dx = $("#divJobCate").offset().left; // 获取弹出框的x坐标
+		        var dy = $("#divJobCate").offset().top; // 获取弹出框的y坐标
+		        var dwidth = $("#divJobCate").outerWidth(true); // 获取弹出框的宽度
+		        var dheight = $("#divJobCate").outerHeight(true); // 获取弹出框的高度
+		        var lastx = dx + dwidth; // 加上弹出框的宽度获取弹出框最右边的x坐标
+		        var lasty = dy + dheight; // 加上弹出框的高度获取弹出框最下边的y坐标
+	 			$("#divJobCate li").each(function(index, el) {
+	 				var that = $(this);
+	 				var sx = that.offset().left; // 获取当前li的x坐标
+	 				var sy = that.offset().top; // 获取当前li的y坐标
+	 				that.hoverDelay({
+					    hoverEvent: function(){
+					        if(that.find('.subcate').length > 0) {
+			 					that.addClass('selected');
+			 					var tharsub = that.find('.subcate');
+			 					var thap = that.find('p');
+			 					var swidth = tharsub.outerWidth(true); // 获取三级弹出框的宽度
+			 					var sheight = tharsub.outerHeight(true); // 获取三级弹出框的高度
+			 					if((lastx - sx) < swidth && (lasty - sy) > sheight) { 
+			 						thap.css("border-bottom",0);
+			 						tharsub.css("left",-265);
+			 					}
+			 					if((lastx - sx) > swidth && (lasty - sy) > sheight) { 
+			 						thap.css("border-bottom",0);
+			 						tharsub.css("left",0); 
+			 					}
+			 					if((lastx - sx) < swidth && (lasty - sy) < sheight) { 
+				 					thap.css({
+				 						"border-top": '0px',
+				 						"border-bottom": ''
+				 					});
+			 						tharsub.css("left",-265); 
+				 					tharsub.css("top",-(sheight - 2));
+			 					}
+			 					if((lastx - sx) > swidth && (lasty - sy) < sheight) { 
+				 					thap.css({
+				 						"border-top": '0px',
+				 						"border-bottom": ''
+				 					});
+			 						tharsub.css("left",0); 
+				 					tharsub.css("top",-(sheight - 2));
+			 					}
+			 					tharsub.show();
+			 				} else {
+			 					that.find('a').css("color","#f77d40");
+			 				}
+					    },
+					    outEvent: function(){
+			                if(that.find('.subcate').length > 0) {
+				 				that.removeClass('selected');
+				 				that.find('.subcate').hide();
+			 				} else {
+			 					that.find('a').css("color","#0180cf");
+			 				}    
+			            }
+					});
+	 			});
+		    },
+		    outEvent: function(){
+                $("#divJobCate").hide(); 
+            }
+		});
+ 		// 显示地区
+ 		$("#jobsCity").hoverDelay({
+		    hoverEvent: function(){
+		        $("#divCityCate").show();
+		        var dx = $("#divCityCate").offset().left; // 获取弹出框的x坐标
+		        var dwidth = $("#divCityCate").outerWidth(true); // 获取弹出框的宽度
+		        var lastx = dx + dwidth; // 加上弹出框的宽度获取弹出框最右边的x坐标
+	 			$("#divCityCate li").each(function(index, el) {
+	 				var that = $(this);
+	 				var sx = that.offset().left; // 获取当前li的x坐标
+	 				that.hoverDelay({
+					    hoverEvent: function(){
+					        if(that.find('.subcate').length > 0) {
+			 					that.addClass('selected');
+			 					var tharsub = that.find('.subcate');
+			 					var thap = that.find('p');
+			 					thap.css("border-bottom","0px");
+			 					var swidth = tharsub.outerWidth(true); // 获取三级弹出框的宽度
+			 					if((lastx - sx) < swidth) { // 判断li与弹出框最右边的距离是否大于三级弹出框的宽度
+			 						tharsub.css("left",-265); // 如果小于就改变三级弹出框x方向的位置
+			 					}
+			 					tharsub.show();
+			 				} else {
+			 					that.find('a').css("color","#f77d40");
+			 				}
+					    },
+					    outEvent: function(){
+			                if(that.find('.subcate').length > 0) {
+				 				that.removeClass('selected');
+				 				that.find('.subcate').hide();
+			 				} else {
+			 					that.find('a').css("color","#0180cf");
+			 				}    
+			            }
+					});
+	 			});
+		    },
+		    outEvent: function(){
+                $("#divCityCate").hide(); 
+            }
+		});
+
+ 		$("#infolists .list:last").css("border-bottom","none");
+		apply_jobs("/");
+		favorites("/");
+	});
+</script>
+</head>
+<body>
+
+<SCRIPT> 
+function baoming(){ 
+document.getElementById("mianfei").style.display="none"; 
+} 
+</SCRIPT> 
+<!--<div id="mianfei"> 
+    <div class="fei01">
+    <span>没有找到合适的工作？</span>
+    <a class="baoming" href="#">1分钟留下信息 <i class="fa fa-arrow-circle-right"></i></a>
+    <span>我们会将你推荐给优秀企业！坐等好工作来找你！</span>
+    <a class="guanbi" onClick=baoming() >X</a>
+    </div>
+    
+</div>
+-->	
+
+	<!--头部开始-->
+	{#include file="header.htm"#}
+<!--头部结束-->
+
+
+<!--<div class="page_location link_bk">
+当前位置：<a href="/">首页</a>&nbsp;>>&nbsp;<a href="{#"QS_jobs"|qishi_url#}">招聘信息</a>
+</div>
+-->
+<script type="text/javascript">
+	var getstr="{#$smarty.get.category#},{#$smarty.get.subclass#},{#$smarty.get.district#},{#$smarty.get.sdistrict#},{#$smarty.get.mdistrict#},{#$smarty.get.settr#},{#$smarty.get.trade#},{#$smarty.get.wage#},{#$smarty.get.nature#},{#$smarty.get.scale#},{#$smarty.get.inforow#}";
+	var defaultkey="请输入职位名称、公司名称{#if $QISHI.jobsearch_type=='1'#}、技能特长、学校等{#/if#}关键字...";
+	var getkey="{#$smarty.get.key#}";
+	if (getkey=='')
+	{
+	getkey=defaultkey;
+	}
+	allaround('/files/','{#$QISHI.site_dir#}','{#"qs_company_search"|qishi_url#}',getkey,getstr);
+</script>     
+<div class="jobsearch">
+<!--	 <div class="jobnav">
+	 	<a href="{#"QS_jobslist"|qishi_url#}" class="select">全能搜索</a>
+		<a href="{#"QS_jobtag"|qishi_url#}" >标签搜索</a>
+	 </div>
+-->     
+	 <div class="jobmain" id="searckeybox">
+     	<div class="fl gjc" style="margin:0px;">关  键  词</div>
+	 	<div class="keybox">
+	 		<input type="text" id="searckey" name="key" data="{#$smarty.get.key#}" value="{#$smarty.get.key|default:"请输入关键字"#}" />
+	 		<input type="hidden" value="{#$smarty.get.wage#}" name="wage">
+	 		<input type="hidden" value="{#$smarty.get.education#}" name="education">
+	 		<input type="hidden" value="{#$smarty.get.experience#}" name="experience">
+	 		<input type="hidden" value="{#$smarty.get.nature#}" name="nature">
+	 		<input type="hidden" value="{#$smarty.get.settr#}" name="settr">
+	 		<input type="hidden" value="" name="sort">
+	 		<input type="hidden" value="1" name="page">
+	 	</div>
+   	   <div class="over"></div>
+        <div class="fl gjc">地&nbsp;&nbsp;&nbsp;&nbsp;区</div>
+	 	<div class="box" id="jobsCity">
+	 		<div class="itemT">
+	 			<span id="cityText">&nbsp;</span><i class="fa fa-plus-square"></i>
+	 		</div>
+	 		<div style="display:none;left:0px;" id="divCityCate" class="divJobCate">
+	 			<table class="jobcatebox citycatebox">
+	 				<div class="acquired">
+		 				<div class="l">已选</div>
+		 				<div class="c" id="cityAcq"></div>
+		 				<div class="r">
+		 					<div class="empty" id="cityEmpty"></div>
+		 					<div class="sure" id="citySure">确定</div>
+		 					<div class="container" id="citydropcontent">
+								<div class="content">您的选择已达上限（5项）<br>请点击“确定”，或移除部分选项</div>
+								<s><e></e></s>
+							</div>
+		 				</div>
+		 			</div>
+	 				<tbody></tbody>
+	 			</table>
+	 		</div>
+            <input id="district_id" type="hidden" value="{#$smarty.get.citycategory#}" name="district_id">
+            <input id="district_cn" type="hidden" value="" name="district_cn"/>
+	 	</div>
+       <div class="fl gjc">行&nbsp;&nbsp;&nbsp;&nbsp;业</div>
+	 	<div class="box" id="jobsTrad">
+	 		<div class="itemT">
+	 			<span id="tradText">&nbsp;</span><i class="fa fa-plus-square"></i>
+	 		</div>
+	 		<div id="divTradCate" class="infoList divIndCate" style="display:none">
+	 			<div class="acquired">
+	 				<div class="l">已选</div>
+	 				<div class="c" id="tradAcq"></div>
+	 				<div class="r">
+	 					<div class="empty" id="tradEmpty"></div>
+	 					<div class="sure" id="tradSure">确定</div>
+	 					<div class="container" id="tradropcontent">
+							<div class="content">您的选择已达上限（5项）<br>请点击“确定”，或移除部分选项</div>
+							<s><e></e></s>
+						</div>
+	 				</div>
+	 			</div>
+	 			<ul class="indcatelist" id="tradList"></ul>
+	 		</div>
+	 		<input name="trade_cn" id="trade_cn" type="hidden" value="" />
+			<input name="trade_id" id="trade_id" type="hidden" value="{#$smarty.get.trade#}" />
+	 	</div>
+   	   <div class="over"></div>
+            
+	 	<div style="width: 520px;height: 35px;margin-bottom: 15px;line-height: 38px;font-size: 14px;color: #ACACAC;position: relative;float: left;margin-right: 15px;"></div>
+        <div class="hdns"></div>
+        <div class="sousuo">
+
+            <div class="btnsearch" id="btnsearch" ty="qs_company_search">搜 索</div>
+            <a class="more" id="showmoreoption" href="javascript:;"><span>更多条件</span><i></i></a>
+  </div>
+        
+	 </div>
+</div>
+<div class="jobselected" id="jobselected">
+  <div class="tit" style="margin-top:12px;">已选条件：</div>
+	<div class="showselected" id="showselected"></div>
+	<div class="clearjobs" id="clearallopt">清空所选项</div>
+	<div class="clear"></div>
+</div>
+<!-- 职位列表 -->
+
+
+<div class="kuang over">
+{#qishi_company_search  set="分页显示:1,列表名:companysearchlist,显示数目:GET[inforow],填补字符:...,职位名长度:22,企业名长度:31,描述长度:135,关键字:GET[key],职位分类:GET[jobcategory],职位大类:GET[category],职位小类:GET[subclass],地区分类:GET[citycategory],地区大类:GET[district],地区小类:GET[sdistrict],地区:GET[mdistrict],道路:GET[streetid],写字楼:GET[officebuildingid],行业:GET[trade],日期范围:GET[settr],公司规模:GET[scale],排序:GET[sort]"#}
+	<div class="left_list" style="width:100%;">
+        <div class="fine">	
+            <span class="fl">共为您找到 <strong>{#$total#}</strong> 个公司 </span>
+            <div class="hehe fr">
+            </div> 
+        </div> 
+               
+        <ul class="l_list">
+		
+			{#foreach from=$companysearchlist item=list#}
+            <li style="height:145px;">
+                <a href="{#$list.company_url#}" >
+                    <h3 style="color:#096;font-size:16px; float:left;">{#$list.companyname#}<font style="color:#333;font-size:14px;">{#$list.nature_cn#}</font></h3><img src="/files/images/yan.gif"  style="float:left; margin:6px 0px 0px 4px;"/>
+                    <div style=" clear:both;"></div>
+                    <dl>
+                        <dt style="width:200px;">所属行业：{#$list.trade_cn#}</dt>
+                        <dd class="ls01" style="width:160px;">所在地区：{#$list.district_cn#}</dd>
+                        <dd class="ls02" style="width:130px;">添加时间：{#$list.refreshtime_cn#}</dd>
+                        <dd class="ls03" style="width:180px;">公司规模：<font>{#$list.scale_cn#}</font></dd>
+                        <dd style="width:730px;color:#333; margin:5px 0px;">公司简介:{#$list.contents#}</dd>
+                    </dl>        
+                </a>
+                <div class="fr hidns" id="infolists">
+                    <a href="{#$list.company_url#}"><img src="{#$list.logo#}" width="250" height="85" /></a>
+                </div>
+            </li>
+			{#/foreach#}
+        </ul>
+        
+<table border="0" align="center" cellpadding="0" cellspacing="0" class="link_bk">
+          <tr>
+                        <td>{#if $page#}<div class="page link_bk">{#$page#}</div>{#/if#}</td>
+                    </tr>
+      </table>    </div>
+    
+    
+</div>
+
+
+
+<script src="/files/js/jquery.jobs-list.js" type='text/javascript' ></script>
+
+    
+<!--底部开始-->
+	{#include file="footer.htm"#}
+<!--底部结束-->
+
+</body>
+</html>

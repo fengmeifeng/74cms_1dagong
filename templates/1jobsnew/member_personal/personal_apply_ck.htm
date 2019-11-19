@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{#$title#}</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<meta name="author" content="骑士CMS" />
+<meta name="copyright" content="74cms.com" />
+<link href="/files/css/user_personal.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/user_common.css" rel="stylesheet" type="text/css" />
+<script src="/files/js/jquery.js" type="text/javascript" language="javascript"></script>
+<script src="/files/js/jquery.vtip-min.js" type="text/javascript" language="javascript"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+	$(".nolook").click(function(){
+	var tsTimeStamp= new Date().getTime();
+	var id=$(this).attr("id");
+	//alert("id:"+id);
+	$.get("/plus/ajax_member.php", { "id": $(this).attr("id"),"time":tsTimeStamp,"act":"edit_look"},
+	 function (data,textStatus)
+	  {
+	  if (data=="ok")
+	  {
+	  $("#"+id+" td:first span").html("[已看]");
+	  $("#"+id+" td:first span").css("color","#999999");
+	  //$(".us_list_tip").hide();
+	  }
+	  })
+	});
+	//--ff
+	$(".noapply").click(function(){
+	if(confirm('确定通过吗?')){
+	var tsTimeStamp= new Date().getTime();
+	var id=$(this).attr("id");
+	//alert("id:"+id);
+	$.get("/plus/ajax_member.php", { "id": $(this).attr("id"),"time":tsTimeStamp,"act":"edit_apply_ck"},
+	 function (data,textStatus)
+	  {
+	  if (data=="ok")
+	  {
+		alert("设置成功！");
+		history.go(0);
+	  //$("#"+id+" td:first span").html("[已通过]");
+	 // $("#"+id+" td:first span").css("color","#999999");
+	  //$(".us_list_tip").hide();
+	  }
+	  })
+	}});
+	//--ff
+	
+	
+	$('#resumeselect').change(function(){ 
+	var p1=$(this).children('option:selected').val();
+	window.location.href="?act={#$act#}&resume_id="+p1;
+	});
+	
+});
+</script>
+</head>
+
+<body>
+{#include file="user/header.htm"#}
+<div class="page_location link_bk">当前位置：<a href="/">首页</a> > <a href="{#$userindexurl#}">会员中心</a> > 企业申请联系方式</div>
+
+<div class="usermain">
+  <div class="leftmenu link_bk">
+   {#include file="member_personal/left.htm"#}
+  </div>
+<div class="rightmain">
+	<div class="bbox1">
+	  <div class="interview link_bk">
+ 	    <div class="topnav">
+		 	<div class="titleH1">
+			  <div class="h1-title">收到的企业申请联系方式</div>
+			</div>
+			<div class="navs">
+				<a href="?act={#$act#}&look="{#if $smarty.get.look==""#} class="se"{#/if#}>所有<span{#if $smarty.get.look==""#} class="h"{#/if#}>({#$count.2#})</span></a>
+				  <a href="?act={#$act#}&look=1"{#if $smarty.get.look=="1"#} class="se"{#/if#}>未查看<span{#if $smarty.get.look=="1"#} class="h"{#/if#}>({#$count.0#})</span></a>
+				  <a href="?act={#$act#}&look=2"{#if $smarty.get.look=="2"#} class="se"{#/if#}>已查看<span{#if $smarty.get.look=="2"#} class="h"{#/if#}>({#$count.1#})</span></a>
+				<div class="clear"></div>
+			</div>
+	  	</div> 
+	  		<div class="toptitle">
+			    <div class="t1">申请时间</div>
+				<!--<div class="t2">是否通过</div>-->
+				<div class="t3">公司名称</div>
+				<div class="t4">所属简历</div>
+				<div class="t5">是否通过</div>
+				<div class="clear"></div>
+			</div>
+			{#if $interview#}
+			{#foreach from=$interview item=list#}
+			{#if $interview#}
+			<div class="ilist userliststyle">
+			    <div class="t1">{#$list.interview_addtime|date_format:"%Y-%m-%d"#}</div>
+<!--				<div class="t2" style="width:90px;">{# if $list.company_apply =='0'#}<font style=" color:#900"><a  href="javascript:if(confirm('确定通过吗?'))location='/plus/ajax_member.php?act=edit_apply_ck&id={#$list.did#}'"class="noapply" id="{#$list.did#}">未通过</a></font>{#else#}<font style="color:#060">已通过</font>{#/if#}</div>
+-->				<div class="t3"><a target="_blank" href="{#$list.company_url#}" {#if $list.personal_look=="1"#}class="nolook"{#/if#}  id="{#$list.did#}">{#$list.companyname#}</a>{#if $list.personal_look=="2"#}<span style="color: #999999">[已查看]</span>{#else#}<span style="color: #FF6600">[未查看]</span>{#/if#}</div>
+				<div class="t4">{#$list.resume_name#}</div>
+				<div class="t5" style="width:60px;">{# if $list.company_apply =='0'#}<font style=" color:#900"><a href="#" class="noapply" id="{#$list.did#}">未通过</a></font>{#else#}<font style="color:#060">已通过</font>{#/if#}</div>
+				<div class="clear"></div>
+			</div>
+			{#else#}
+			<div class="ilist userliststyle">
+			    <div class="t1" style="width:450px;">该职位可能已经被删除。</div>	
+				<div class="clear"></div>
+			</div>
+			{#/if#}
+			{#/foreach#}
+           
+			{#if $page#}
+				<table border="0" align="center" cellpadding="0" cellspacing="0" class="link_bk">
+		          <tr>
+		            <td height="50" align="center"> <div class="page link_bk">{#$page#}</div></td>
+		          </tr>
+		      </table>
+		      {#/if#}
+              	
+			{#else#}
+			<div class="emptytip" style="margin:0 15px;">对不起！没有找到您要的信息！</div>
+			{#/if#}
+			
+	  </div>
+	</div>
+</div>
+</div>
+<div class="clear"></div>
+ {#include file="user/footer.htm"#}
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<script type="text/javascript" src="/files/yuyue/js/jquery-1.9.0.min_v20150602185253.js"></script>
+<script type="text/javascript" src="/files/yuyue/js/jquery-ui.min_v20150602185253.js"></script> 
+<script type="text/javascript" src="/files/yuyue/js/reserve_v20150611144846.js" charset="gbk"></script>
+<link href="/files/css/login.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/files/yuyue/css/jquery-ui.min_v20150602214557.css"/>
+<link rel="stylesheet" type="text/css" href="/files/yuyue/css/jquery-ui.theme.min_v20150623172441.css"/>
+<link type="text/css" rel="stylesheet" href="/files/yuyue/css/base_v20150424140418.css" media="all"/>
+<link type="text/css" rel="stylesheet" href="/files/yuyue/css/hyliststyle_v20150715104141.css" media="all"/>
+</head>
+<body>
+<div class="login_pop_box">
+	<h2 id="h2">免费预约</h2>
+	<div class="hkcon">清华大学继续教育学院<br/><span>雅思高分培训 清华大学雅思全封闭高分培训</span>&nbsp;&nbsp;&nbsp;&nbsp;<i>4</i>人预约</div>
+	<form id="order_form" method="post" action="/user/">
+                <input name="ms_js" id="ms_js" type="hidden" value="2064"/>
+                <input name="ms_java" id="ms_java" type="hidden" value="70314404"/>
+		        <!-- &#x9884;&#x7EA6;&#x9632;&#x5237; -->		        
+
+				<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tk">
+				  <tr>
+				    <td>&nbsp;</td>
+				    <td style="color:#a1a1a1; font-size:14px;">性别</td>
+				    <td valign="middle" class="servicetime"><a id="man" class="xzl" onclick="sel_sex(this); clickLog('from=Huangye_detail_yuyue_male_popup&amp;cateid=104&amp;cityid=1')">&#x5148;&#x751F;</a> <a id="women" class="xzr" onclick="sel_sex(this); clickLog('from=Huangye_detail_yuyue_female_popup&amp;cateid=104&amp;cityid=1')">&#x5973;&#x58EB;</a>
+				      <input id="sex" type="hidden" name="contactGender" value="0" /></td>
+				    <td>&nbsp;</td>
+			      </tr>
+					<tr>
+						<td width="38"><i class="bg_tk1"></i></td>
+					    <td width="60" style="color:#a1a1a1; font-size:14px;">&#x65E5;&nbsp;&nbsp;&nbsp;&nbsp;&#x671F;</td>
+					    <td width="196" valign="middle" class="servicetime">
+					    	<input id="datepicker" type="text" class="phoinp tkinput grayfont" readonly="readonly" value="&#x8BF7;&#x8F93;&#x5165;&#x9884;&#x7EA6;&#x670D;&#x52A1;&#x65E5;&#x671F;" onfocus="$(this).removeClass('grayfont'); if(this.value=='&#x8BF7;&#x8F93;&#x5165;&#x9884;&#x7EA6;&#x670D;&#x52A1;&#x65E5;&#x671F;'){this.value='';}" autocomplete="false">
+					    	<i id="vr_date" class="cwtx" style="display:none;">&#x8BF7;&#x9009;&#x62E9;&#x9884;&#x7EA6;&#x670D;&#x52A1;&#x65E5;&#x671F;</i>
+					    	<span id="selecttime"></span></td>
+					    <td width="284">&nbsp;</td>
+					</tr>
+					<tr>
+						<td><i class="bg_tk2"></i></td>
+						<td width="60" style="color:#a1a1a1; font-size:14px;">&#x65F6;&nbsp;&nbsp;&nbsp;&nbsp;&#x95F4;</td>
+				    	<td width="196" valign="middle" class="servicetime zdex10">
+				    		<input id="time1" type="text" class="phoinp tkinput grayfont" readonly="readonly" value="&#x8BF7;&#x8F93;&#x5165;&#x9884;&#x7EA6;&#x670D;&#x52A1;&#x65F6;&#x95F4;" onclick="sel_time()" onfocus="$(this).removeClass('grayfont'); if(this.value=='&#x8BF7;&#x8F93;&#x5165;&#x9884;&#x7EA6;&#x670D;&#x52A1;&#x65F6;&#x95F4;'){this.value='';}" autocomplete="false">
+				    		<i id="vr_time" class="cwtx" style="display:none;">&#x8BF7;&#x9009;&#x62E9;&#x9884;&#x7EA6;&#x670D;&#x52A1;&#x65F6;&#x95F4;</i>
+				    		<span id="selecttime" onclick="sel_time()"></span>
+							<div class="timeaf none">
+								<div class="time_up"><i></i>
+									<ul>
+										<li class="nobo">08:00</li>
+										<li class="nobo">09:00</li>
+										<li class="nobo">10:00</li>
+										<li class="nobo">11:00</li>
+										<li calss="nobo">12:00</li>
+										<li class="nobo">13:00</li>
+										<li class="nobo">14:00</li>
+										<li class="nobo">15:00</li>
+										<li class="nobo">16:00</li>
+										<li class="nobo"> </li>
+									</ul>
+								</div>
+								<div class="time_up bot0"><i></i>
+									<ul>
+								        <li>17:00</li>
+								        <li>18:00</li>
+								        <li>19:00</li>
+								        <li>20:00</li>
+								        <li>21:00</li>
+								        <li class="nobo">22:00</li>
+								        <li class="nobo">23:00</li>
+								        <li class="nobo">24:00</li>
+								        <li class="nobo"> </li>
+								        <li class="nobo"> </li>
+								    </ul>
+								</div>
+							</div>
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td><i class="bg_tk3"></i></td>
+						<td width="60" style="color:#a1a1a1; font-size:14px;">&#x8054;&nbsp;&#x7CFB;&nbsp;&#x4EBA;</td>
+						<td width="196" valign="middle" class="servicetime">
+							<input id="contacts" type="text" name="contactName" class="phoinp tkinput grayfont" value="&#x8BF7;&#x8F93;&#x5165;&#x8054;&#x7CFB;&#x4EBA;&#x59D3;&#x540D;" onkeyup="valContacts()" onfocus="$(this).removeClass('grayfont'); if(this.value=='&#x8BF7;&#x8F93;&#x5165;&#x8054;&#x7CFB;&#x4EBA;&#x59D3;&#x540D;'){this.value='';}" onblur="valContacts()">
+							<i id="con_wrong" class="cwtx" style="display:none;">&#x8BF7;&#x8F93;&#x5165;&#x6B63;&#x786E;&#x8054;&#x7CFB;&#x4EBA;&#x59D3;&#x540D;</i>
+							<span id="selecttime_t" style="display:none;"></span>
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td><i class="bg_tk4"></i></td>
+						<td width="60" style="color:#a1a1a1; font-size:14px;">&#x624B;&nbsp;&#x673A;&nbsp;&#x53F7;</td>
+						<td width="196" valign="middle" class="servicetime">
+							<input id="phone" type="text" name="phone" class="phoinp tkinput grayfont"  value="&#x8BF7;&#x8F93;&#x5165;&#x8054;&#x7CFB;&#x4EBA;&#x624B;&#x673A;&#x53F7;"  onfocus="$(this).removeClass('grayfont'); if(this.value=='&#x8BF7;&#x8F93;&#x5165;&#x8054;&#x7CFB;&#x4EBA;&#x624B;&#x673A;&#x53F7;'){this.value='';}" onkeyup="valPhone()" oninput="valPhone();" onblur="valPhone()">
+							<i id="cwtx" class="cwtx" style="display:none;">&#x8BF7;&#x8F93;&#x5165;&#x6B63;&#x786E;&#x624B;&#x673A;&#x53F7;&#x7801;</i>
+							<span id="selecttime_t" style="display:none;"></span>
+						</td>
+						<td><input id="reset" type="button" class="codel_t none" title="60&#x79D2;&#x540E;&#x91CD;&#x65B0;&#x83B7;&#x53D6;" value="60&#x79D2;&#x540E;&#x91CD;&#x65B0;&#x83B7;&#x53D6;"/>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td><a  style="float:left;"href="javascript:;" class="queren" onclick="var ele = $(this);if(ele.hasClass('queren_h')){return;}else{beforFree();submitOrder()}">&#x786E;&#x8BA4;</a><a  style=""href="javascript:;" class="out" onclick="window.parent.closebtn('iframe_id')">&#x53D6;&#x6D88;</a></td>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+			</form>
+</div>
+<script>
+var sendvalidCode1 = function(){
+	var infoid = window.parent.____json4fe.infoid;
+	var phone = $("#phone").val();
+	$.ajax({
+		type:"POST",
+		cache:false,
+		url:"/plus/ajax_yuding.php",
+		data:{
+			infoid:infoid,
+			phone:phone
+		},
+		error:function(){
+			alert("服务器出错，请稍后重试！！！");	
+		},
+		success: function(data){
+			eval("var obj = "+data)
+			if(obj.statu=="success"){
+				alert(obj.phone);
+				//alert("111")
+			}else{
+				//alert(__);
+			}
+		}
+	})	
+}
+</script>
+<script type="text/javascript">
+function beforFree(){
+    try{
+	    	    	clickLog('from=Yuyue_Order_list_free_popup&cateid=104&cityid=1&isPopup=1'); 
+	    	    return true;
+    }catch(e){}
+
+    return true;
+}
+</script>
+<script type="text/javascript">
+var _trackURL = "{'cate':'92,14255', 'area':'1','pagetype':'order', 'page':'regYuyue','shopid':'64544523443403839', 'GA_pageview':'/bj/jiaoyu/liuxue/order/regYuyue/'}";
+</script>
+<script src="http://tracklog.58.com/referrer4.js"></script>
+<script type="text/javascript" src="/files/yuyue/js/jquery-1.9.0.min_v20150602185253.js"></script>
+<script type="text/javascript" src="/files/yuyue/js/jquery-ui.min_v20150602185253.js"></script> 
+<script type="text/javascript" src="/files/yuyue/js/reserve_v20150611144846.js" charset="gbk"></script>
+</body>
+</html>

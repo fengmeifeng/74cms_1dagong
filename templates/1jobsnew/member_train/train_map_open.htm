@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{#$title#}</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<meta name="author" content="骑士CMS" />
+<meta name="copyright" content="74cms.com" />
+<link href="/files/css/user_common.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/user_train.css" rel="stylesheet" type="text/css" />
+<script src="/files/js/jquery.js" type="text/javascript" language="javascript"></script>
+<script src="http://api.map.baidu.com/api?v=1.1" type="text/javascript"></script>
+</head>
+
+<body onbeforeunload="RunOnBeforeUnload()">
+{#include file="user/header.htm"#}
+
+<div class="page_location link_bk">当前位置：<a href="/">首页</a> > <a href="{#$userindexurl#}">会员中心</a> > 地图标注</div>
+
+<div class="usermain">
+  <div class="leftmenu train link_bk">
+   {#include file="member_train/left.htm"#}	
+  </div>
+  <div class="rightmain">
+	<div class="bbox1">	
+	  <div class="addjob link_bk">
+	    <div class="topnav">
+		  <div class="titleH1">
+				<div class="h1-title">开通地图</div>
+			</div>
+	    </div>
+        <div>
+        	<form action="?act=train_map_open" method="post" > 
+      <table width="100%" border="0" cellpadding="4" cellspacing="0" bgcolor="#FFFFFF"  style=" margin-bottom:100px;">
+		
+		  <tr>
+          <td height="30" bgcolor="#FFFFFF"  class="link_lan">&nbsp;</td>
+        </tr>
+		<tr>
+          <td height="50" align="center" bgcolor="#FFFFFF"><input type="submit" name="Submit" value="立即开通"  style="height:50px; width:240px; display:block;line-height:50px; background:#099; color:#FFF; border-radius: 8px; border:0px;" class="user_submit" /></td>
+        </tr>
+      </table></form>
+        </div>
+	
+	  </div>
+	</div>
+  </div>
+  <div class="clear"></div>
+</div>
+ {#include file="user/footer.htm"#}
+</body>
+</html>

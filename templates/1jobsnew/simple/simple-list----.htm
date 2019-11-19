@@ -1,0 +1,299 @@
+{#qishi_jobs_show set="列表名:show,职位ID:GET[id]"#}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+{#qishi_pageinfo set="列表名:page,调用:QS_simplelist"#}
+<title>{#$page.title#}</title>
+<meta name="description" content="{#$page.description#}">
+<meta name="keywords" content="{#$page.keywords#}">
+<meta name="author" content="骑士CMS" />
+<meta name="copyright" content="74cms.com" />
+
+<link rel="shortcut icon" href="{#$QISHI.site_dir#}favicon.ico" />
+<link href="/files/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/css.css" rel="stylesheet" type="text/css" />
+
+<script src="/files/js/jquery.js" type='text/javascript' ></script>
+<script src="/files/js/jquery.dialog.js" type="text/javascript" language="javascript"></script>
+<script src="/data/cache_classify.js" type='text/javascript' charset="utf-8"></script>
+<script src="/files/js/jquery.validate.min.js" type='text/javascript'></script>
+<script src="/files/js/jquery.simple.js" type='text/javascript'></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var getstr = "{#$smarty.get.citycategory#}";
+	allaround('{#$QISHI.site_dir#}',getstr);
+	// 显示地区
+	$("#jobsCity").hover(function() {
+		$("#divCityCate").show();
+		$("#divCityCate li").hover(function() {
+			if($(this).find('.subcate').length > 0) {
+				$(this).addClass('selected');
+				$(this).find('.subcate').show();
+			} else {
+				$(this).find('a').css("color","#f77d40");
+			}
+		}, function() {
+			if($(this).find('.subcate').length > 0) {
+				$(this).removeClass('selected');
+				$(this).find('.subcate').hide();
+			} else {
+				$(this).find('a').css("color","#0180cf");
+			}
+		});
+	}, function() {
+		$("#divCityCate").hide();
+	});
+	$(".delsimple").click(function(){
+	var url="/plus/ajax_simple.php?act=delsimple&id="+$(this).attr("id");
+	dialog("删除信息","url:"+url,"500px","auto","","");				
+	});
+	$(".refreshsimple").click(function(){
+	var url="/plus/ajax_simple.php?act=refreshsimple&id="+$(this).attr("id");
+	dialog("刷新信息","url:"+url,"500px","auto","","");				
+	});	
+	$(".editsimple").click(function(){
+	var url="/plus/ajax_simple.php?act=editsimple&id="+$(this).attr("id");
+	dialog("编辑信息","url:"+url,"600px","auto","","");				
+	});	
+	$("#add").click(function(){
+	var url="/plus/ajax_simple.php?act=add";
+	dialog("发布微招聘","url:"+url,"600px","auto","","");				
+	});	
+	$(".show_tel").click(function(){
+		var tel=$(this);
+		$.get("/plus/ajax_simple.php?act=get_simple_tel&id="+$(this).attr("id"),function(result){
+			tel.parent("li").html(result);
+		});
+	});
+	$(".show_detailed").live("click",function(){
+		var detailed=$(this);
+		$.get("/plus/ajax_simple.php?act=get_simple_detailed&id="+$(this).attr("id"),function(result){
+			detailed.parent("p").html(result);
+		});
+	});
+	$(".hidden_detailed").live("click",function(){
+		var detailed=$(this);
+		$.get("/plus/ajax_simple.php?act=hidden_simple_detailed&id="+$(this).attr("id"),function(result){
+			detailed.parent("p").html(result);
+		});
+	});
+	$("#simple_form_search .simpleso").click(function()
+	{
+	simple_search_location(2);
+	});
+	function simple_search_location(keytype)
+	{
+		$("body").append('<div id="pageloadingbox">页面加载中....</div><div id="pageloadingbg"></div>');
+		$("#pageloadingbg").css("opacity", 0.5);
+		$.get("/plus/ajax_search_location.php", {"act":"QS_simplelist","key":$("#simple_form_search #searckey").val(),"keytype":keytype,"citycategory":$("#district_id").val()},
+				function (data,textStatus)
+				 {
+					 window.location.href=data;
+				 }
+			);
+	}
+});
+$(function(){
+	$("input[type='button']").hover(function(){
+		$(this).addClass("hover");
+	},function(){
+		$(this).removeClass("hover");
+	})
+})
+</script>
+</head>
+<body>
+<div class="header">
+    	<div class="kuang">
+            <div class="logo fl"><a class="fl" href="#"><img src="../files/img/logo.png" alt="" title="壹打工网" ></a>
+            	<div class="didian fl">
+                	<p>合肥</p>
+                	<a href="#">切换城市</a>
+                </div>
+            </div>
+
+            <div class="nav fl">
+            	<ul>
+                	<li><a class="yes" href="#">首页</a></li>
+                    <li><a href="#">找工作</a></li>
+                    <li><a href="#">找兼职</a></li>
+                    <li><a href="#">行业名企</a></li>
+                    <li><a href="#">招聘会</a></li>
+                    <li><a href="#">校园招聘</a></li>
+                    <li><a href="#">蓝领指南</a></li>
+                </ul>
+            </div>
+            
+            <div class="login fr">
+            	<ul>
+                	<li><a href="#">登录</a></li>
+                    <li><a href="#">注册</a></li>
+                    <li class="mobile"><a href="#"><i class="fa fa-mobile"></i>手机壹打工</a>
+                    	<div class="app">
+                        	<i class="fa fa-sort-asc"></i>
+                        	<img src="../files/img/app.jpg" alt="" title="壹打工网客户端" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+<!--<img title="企业未认证" src="{#$QISHI.site_template#}images/noyan.jpg" border="0" />
+-->	<!-- 当前位置 -->
+	<div class="page_location link_bk mbot">
+		当前位置：<a href="/">首页</a>><a href="{#"QS_jobs"|qishi_url#}">招聘信息</a>>{#$company.companyname#}
+	</div>
+        
+	<!-- 主体内容 -->
+
+    <div class="kunag">
+    	<div class="left_list hdsn"> 
+             <div class="show_xx">
+                 <div class="bit">
+                 	<i class="fa fa-backward hdn"></i>
+                    <div class="over"></div>
+                 	<h1>广达上海制造城上海达丰电脑<img style="padding:2px; margin-left:12px; background:#ffbc90; border-radius:2px;" title="企业已认证" src="{#$QISHI.site_template#}images/yesyan.jpg" border="0" />                    <ul>
+</h1>
+                    <p>
+                        <a href="#">无试用期</a>
+                        <a href="#">无试用期</a>
+                        <a href="#">无试用期</a>
+                        <a href="#">无试用期</a>
+                    </p>
+                    <div class="apply_job fr">
+                    <a class="add_favorites" href="javascript:void(0);"><i class="fa fa-heart"></i>收藏</a>
+                    
+                    </div>
+                    <div class="delivery fr topde"> <a href="#">投递简历</a></div>
+                 </div>
+<!--                    <div class="shenqing">
+                    	<a href="#">申请职位</a>
+                    </div>	
+-->    
+
+                <div class="detail_info">
+                	<ul>
+                        <li>
+                            <font color="#999">工资待遇：</font><span>3000~5000元/月</span>
+                        </li>
+                        <li>
+                            <div class="w218"><font color="#999">招聘人数：</font>2人</div>
+                            <div class="w278"><font color="#999">职位类别：</font>销售人员/销售工程师</div>
+                            <div><font color="#999">性别要求：</font>女</div>
+                        </li>
+                        <li>
+                            <div class="w218"><font color="#999">年龄要求：</font>岁</div>
+                            <div class="w278"><font color="#999">学历要求：</font>大专</div>
+                            <div><font color="#999">工作经验：</font>5-10年</div>
+                        </li>
+                        <li>
+                            <font color="#999">工作地址：</font>  ( 重庆市 - 渝中区 ) &nbsp;&nbsp;
+                        </li>
+                    </ul>
+                </div>	
+                <div class="d_fine over">
+                        <span style="float:left;">在线咨询：</span>
+                        <a href="http://wpa.qq.com/msgrd?v=3&uin=2967555605&site=qq&menu=yes" target="_blank" style="float:left; padding:0px; padding-right:3px;">
+                        <img border="0" title="QQ在线咨询" alt="QQ在线咨询" src="http://wpa.qq.com/pa?p=2:2967555605:51" data-bd-imgshare-binded="1">
+                        </a>
+                        <a href="http://wpa.qq.com/msgrd?v=3&uin=1905131809&site=qq&menu=yes" target="_blank" style="float:left; padding:0px;">
+                        <img border="0" title="QQ在线咨询" alt="QQ在线咨询" src="http://wpa.qq.com/pa?p=2:1905131809:51" data-bd-imgshare-binded="1">
+                        </a>
+                  </div>
+
+                <div class="info">
+                    <span class="data">更新时间：2015-03-23 16:19</span>
+                    <span class="watch">浏览：<em class="times click"></em>次</span>
+                    <span class="delivery"><em class="times">5</em>人投递简历</span>
+                </div>
+          
+              <div class="d_led">
+                  <div class="topg" style="margin-left:10px;"><i class="fa fa-backward"></i><h4>职位描述</h4></div>
+                  <p class="multiline">
+                    岗位职责： 
+                    <br />负责对时光网电影衍生品的照片进行裁剪、精修、抠图、调色等工作 
+                    <br />
+                    <br />任职要求： 
+                    <br />1.精通Photoshop 
+                    <br />2.平面设计、工业设计或美术等相关专业毕业 
+                    <br />3.有美术功底，具备一定的艺术修养及审美眼光 
+                    <br />4.熟练掌握商业图片的精修、抠图、调色、及合成的各种手法 
+                    <br />5.有商业摄影公司、广告杂志或专业修图公司相关工作经验优先 
+                    <br />6.责任心强，做事积极主动，具备团队合作精神            
+                 </p>
+
+			  </div>
+                <div class="write">
+                    <div class="fl resume">在壹打工网<a href="/home/pt_jianli.php">完善简历</a>，即有机会被企业和猎头推荐应聘</div>
+                    <div class="delivery fr"> <a href="#">投递简历</a></div>
+                </div>
+                
+            </div>
+              
+                    
+           </div>   
+
+        
+        <div class="right_list">
+        	
+            <div class="lndk">
+                    <div class="over"></div>
+                      <h4>企业名片</h4>
+                      
+                    <ul>
+                        <li><span>地点：</span><span>四川省 - 巴中巴中市</span></li>
+                        <li><span>性质：</span><span>民营</span></li>
+                        <li><span>领域：</span><span>保密</span></li>
+                        <li><span>规模：</span><span>保密</span></li>
+                    </ul>
+                    
+                    <div class="carousel slide" >  
+                    </div>
+                    
+                      <h4>公司地址</h4>
+                      <P>巴中市巴州区张思训街江南帝都（巴中二中附近）30楼1号</P> 
+                      <img src="../files/img/map.jpg" />
+                </div>
+        </div>
+    
+    </div>
+
+
+	<!-- 主体内容 结束 -->
+<script src="/files/js/swipe.js"></script>
+<script>
+	window.mySwipe = Swipe(document.getElementById('slider'), {
+		auto:3000,
+		speed:400,
+		continuous: true
+	});
+</script>
+<div class="footer over">
+    	<div class="footer-con kuang">
+        	<div class="fl">
+            	<a href="#"><img src="../files/img/footer_logo.jpg" title="壹打工网" /></a>
+            </div>
+            <div class="fr appewm"><img src="../files/img/app.jpg" height="100" width="100" alt="" title="壹打工网客户端" /></div> 
+            <div class="fr copy">
+            	<div class="footer-nav">
+                    <a href="#">友情链接</a>
+                	<a href="#">用户帮助</a>
+                    <a href="#">手机客户端</a>
+                    <a href="#">关于我们</a>
+                </div>
+                <div class="over"></div>
+                <div class="icp">
+                	 &copy;2013-2015 Www.1dagong.Com &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp; 国家工业和信息化部备案号：皖ICP备13015030号-3
+                </div>
+                <div class="over"></div>
+                <div class="zuic">
+                	最专业的求职招聘网站，致力打造人才网第一品牌！
+                </div>
+            </div>
+            
+        </div>    
+    </div>
+</body>
+</html>

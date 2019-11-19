@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<title>{#$title#}</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<meta name="author" content="骑士CMS" />
+<meta name="copyright" content="74cms.com" />
+<link href="/files/css/user_common.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/user_shenhe.css" rel="stylesheet" type="text/css" />
+<script src="/files/js/jquery.js" type="text/javascript" language="javascript"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	//更多操作
+ $(".publicity").hover(
+  function () {
+     $(this).children(".selbox").slideDown('fast');
+  },
+  function () {
+     $(this).children(".selbox").hide();
+  }
+);
+//更多操作-菜单效果
+$(".publicity .selbox li").hover(
+  function () {
+     $(this).css("background-color","#F6F6F6");
+  },
+  function () {
+     $(this).css("background-color","#FFFFFF");
+  }
+);
+{#if $QISHI.operation_shenhe_mode=="1" && $points_rule.shenhe_shenheshenhe_shenhejobs_refresh.value>"0"#}
+		$("#refresh").click(function(){
+			var length=$("#form1 :checkbox[checked]").length;
+			var refresh_point="{#$points_rule.shenhe_shenheshenhe_shenhejobs_refresh.value#}";
+			var total_point=length*refresh_point;
+			alert("刷新职位可提高职位排名，每条职位消耗{#$points_rule.shenhe_shenheshenhe_shenhejobs_refresh.value#}{#$QISHI.shenhe_points_quantifier#}{#$QISHI.shenhe_points_byname#}，您选择了"+length+"条职位，总共需要消耗"+total_point+"{#$QISHI.shenhe_points_quantifier#}{#$QISHI.shenhe_points_byname#}，确定刷新吗？")
+		});
+	{#/if#}
+});
+
+</script>
+</head>
+<body>
+{#include file="user/header.htm"#}
+
+<div class="page_location link_bk">当前位置：<a href="{#$QISHI.main_domain#}">首页</a> > <a href="/user/shenhe/shenhe_index.php">会员中心</a> > 报名行业名企管理</div>
+<div class="usermain">
+  <div class="leftmenu  hunter link_bk">
+  	 {#include file="member_shenhe/left.htm"#}
+  </div>
+  <div class="rightmain">
+  
+ 	<div class="bbox1 link_bk">
+		<div class="topnav">
+			<div class="titleH1">
+				<div class="h1-title">管理行业名企</div>
+			</div>
+		
+			<div class="navs">
+				<a href="javascript:void(0);" class="se">所有报名职位</a>
+					
+				<div class="clear"></div>
+			</div>
+		
+		</div>
+		<form id="form1" name="form1" method="post" action="?act=jobs_perform">
+		<!-- 所有职位 -->
+		
+		<div class="new_shenhe_job data resume">
+			<table class="n_shenhe_table" cellspacing="0">
+				<tr class="tophdn" bgcolor="F5F5F5">
+				  <th class="n_shenhe_first" align="left" width="80"><!--<input type="checkbox" id="chk" name="chkAll" />-->
+			      姓名</th>
+				  <th class="n_shenhe_first" align="left" width="108">电话</th>
+				  <th class="n_shenhe_first" align="left" width="30">性别</th>
+				  <th class="n_shenhe_first" align="left" width="108">地区</th>
+					<th class="n_shenhe_first" align="left" width="190">投递企业</th>
+					<th width="100" align="center">报名时间</th>
+					<th width="34" align="center">操作</th>
+				</tr>
+				{#if $bm_jobs#}
+				{#foreach from=$bm_jobs item=li#}
+				<tr class="cenbm">
+				  <td class="n_shenhe_first" align="left"><input name="y_id[]" type="checkbox" id="y_id"  value="{#$li.id#}"/>
+			      <a href="/resume/resume-show.php?id={#$li.resume_id#}" target="_blank">{#$li.fullname#}</a></td>
+					<td align="center">{#$li.telephone#}</td>
+					<td align="center" width="20px">{#$li.sex_cn#}</td>
+					<td align="center">{#$li.district_cn#}</td>
+                    <td class="n_shenhe_first" align="left"><a href="/hymq/hymq-jobs-show.php?id={#$li.aid#}" target="_blank">{#$li.companyname#}</a>
+				  </td>
+					<td align="center">{#$li.addtime|date_format:"%Y-%m-%d"#}</td>
+					<td align="center">
+						<a href="?act=jobs_perform&delete=1&y_id={#$li.id#}" class="but_a">删除</a>
+					</td>
+				</tr>
+				{#/foreach#}
+				
+				{#if $page#}
+				<table border="0" align="center" cellpadding="0" cellspacing="0" class="link_bk">
+		          		<tr>
+		            			<td height="50" align="center"> <div class="page link_bk">{#$page#}</div></td>
+		          		</tr>
+		      		</table>
+		      		{#/if#}
+				{#else#}
+				<tr><td colspan="10" style="border:0"><div class="emptytip">没有相关报名信息！</div></td></tr>
+				{#/if#}
+			</table>
+		</div>
+		</form>
+
+  	</div>
+  </div>
+  <div class="clear"></div>
+</div>
+{#include file="user/footer.htm"#}
+</body>
+</html>

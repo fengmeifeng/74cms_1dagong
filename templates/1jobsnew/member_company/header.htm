@@ -1,0 +1,136 @@
+<script type="text/javascript">
+$(document).ready(function()
+{
+	$("#{#$leftmenu#}box").css("display","block");
+	
+	$(".user_submit").hover(function()	{$(this).addClass("user_submit_on")},function(){$(this).removeClass("user_submit_on")});
+	$(".user_long_submit").hover(function(){$(this).addClass("user_long_submit_on")},function(){$(this).removeClass("user_long_submit_on")});
+	$('#chkAll').click(function(){$("#form1 :checkbox").attr('checked',$("#chk").attr('checked'))});
+	$("#list tr:gt(0)").hover(
+		function()
+			{
+			$(this).css("background-color","#F5FCFE");
+			},
+			function()
+			{
+			$(this).css("background-color","");
+			}
+		);
+	$("input[type='text']").focus(function(){
+	$(this).css("border-color","#0066CC #9DCEFF #9DCEFF #0066CC");
+	});
+	$("input[type='text']").blur(function(){
+	$(this).css("border-color","");
+	});
+});
+</script>
+
+{#if $handsel_userlogin#}
+<script src="/files/js/jquery.dialog.js" type='text/javascript' ></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+		dialog("系统提示","text:今天是您第一次登录，{#$QISHI.points_byname#} <strong style=\"color:#FF0000\">{#$handsel_userlogin#}</strong>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"company_service.php?act=points_report\">[{#$QISHI.points_byname#}消费明细]</a>&nbsp;&nbsp;&nbsp;<a href=\"company_service.php?act=points_rule\" >[{#$QISHI.points_byname#}消费规则]","400px","auto","");
+});
+</script>
+{#/if#}
+<div class="head_top" >
+<div class="head_top_box">
+<div class="head_top_box_left link_lan"><span id="top_loginform"></span></div>
+<div class="head_top_box_right link_bk">
+{#include file="top_nav.htm"#}
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="head">
+<div class="head_logo"><a href="/"><img src="{#$QISHI.upfiles_dir#}{#$QISHI.web_logo#}" alt="{#$QISHI.site_name#}" border="0" align="absmiddle" /></a>
+</div>
+<div class="head_logo_right">
+</div>
+<div class="clear"></div>
+</div>
+<!--导航 -->
+<div class="nav_outer">
+	<div class="left"></div>
+	<div class="center">
+		<div class="nav">
+			<ul>
+				<li {#if $leftmenu=="index"#}class="selected"{#/if#}><A  href="company_index.php?act=" >中心首页</A></li>
+				<li {#if $leftmenu=="jobs"#}class="selected"{#/if#}><A  href="company_jobs.php?act=jobs" >职位管理</A></li>
+				<li {#if $leftmenu=="promotion"#}class="selected"{#/if#}><A  href="company_promotion.php?act=tpl" >企业推广</A></li>
+				<li {#if $leftmenu=="recruitment"#}class="selected"{#/if#}><A href="company_recruitment.php?act=apply_jobs" >招聘管理</A></li>
+				<li {#if $leftmenu=="jobfair"#}class="selected"{#/if#}><A href="company_jobfair.php?act=jobfair" >招聘会</A></li>
+				<li {#if $leftmenu=="service"#}class="selected"{#/if#}><A  href="company_service.php?act=points_report" >服务中心</A></li>
+				<li {#if $leftmenu=="info"#}class="selected"{#/if#}><A href="company_info.php?act=company_profile" >公司资料</A></li>
+				<li {#if $leftmenu=="user"#}class="selected"{#/if#}><A href="company_user.php?act=userprofile" >账户管理</A></li><div class="clear"></div>
+			</ul>			
+		</div>
+
+		<div class="nav_bottom">
+		  <!--下拉菜单 -->
+				<div style="display:none; padding-left:8px;" id="indexbox">
+				<span style="color:#FFFFFF">欢迎您登录会员中心</span>
+				</div>
+				<div  style="display:none;padding-left:75px;" id="jobsbox">
+				<a href="company_jobs.php?act=addjobs">发布职位</a>
+				<a href="company_jobs.php?act=jobs">职位管理</a>
+				</div>
+				<div  style="display:none;padding-left:75px;" id="promotionbox">
+				<a href="company_promotion.php?act=tpl">企业模版</a>
+					{#foreach from=$promotion_category item=list#}
+					<a href="company_promotion.php?act=promotion&promotionid={#$list.cat_id#}">{#$list.cat_name#}</a>
+					{#/foreach#}
+				</div>
+				
+				
+				<div  style="display:none;padding-left:450px;" id="jobfairbox">
+				<a href="company_jobfair.php?act=jobfair">在线预定展位</a>
+				 <a href="company_jobfair.php?act=mybooth">我预定的展位</a>
+				</div>
+				
+			 
+				
+				
+				<div   style="display:none; padding-left:40px;" id="recruitmentbox">
+				<a href="{#"QS_resumelist"|qishi_url#}"  target="_blank">搜索人才</a>
+				<a href="company_recruitment.php?act=down_resume_lsit">我下载的简历</a>
+				<a href="company_recruitment.php?act=apply_jobs">收到的职位申请</a>
+				<a href="company_recruitment.php?act=interview_lsit">我发起的面试邀请</a>
+				<a href="company_recruitment.php?act=favorites_list">企业人才库</a>
+				</div>
+				<div   style="display:none; text-align:right" id="servicebox" >
+				<a href="company_service.php?act=order_add">{#$QISHI.points_byname#}充值</a>
+				{#if $QISHI.operation_mode=="2"#}
+				<a href="company_service.php?act=setmeal_list">申请服务</a>		
+				{#/if#}	
+				<a href="company_service.php?act=order_list">订单管理</a>
+				<a href="company_service.php?act=points_report">{#$QISHI.points_byname#}消费明细</a>
+				<a href="company_service.php?act=points_rule">{#$QISHI.points_byname#}消费规则</a>
+				{#if $QISHI.operation_mode=="2"#}
+				<a href="company_service.php?act=setmeal_report">服务消费明细</a>
+				{#/if#}
+				<a href="company_service.php?act=gifts">礼品卡</a>
+				<a href="company_service.php?act=feedback">意见建议</a>
+				</div>
+				<div style="display:none; text-align:right" id="infobox">
+				<a href="company_info.php?act=company_profile">基本资料</a>
+				<a href="company_info.php?act=company_auth">营业执照</a>
+				<a href="company_info.php?act=company_logo">企业Logo</a>
+				<a href="company_info.php?act=company_map">电子地图</a>
+				</div>
+				<div style="display:none; text-align:right" id="userbox">
+				<a href="?act=userprofile">个人资料</a>
+				<a href="?act=user_email">邮箱认证</a>
+				{#if $sms.open=="1"#}
+				<a href="company_user.php?act=user_mobile">手机认证</a>
+				{#/if#}
+				<a href="company_user.php?act=user_status">账户状态</a>
+				<a href="company_user.php?act=password_edit">密码修改</a>
+				<a href="{#"QS_login"|qishi_url#}?act=logout">安全退出</a>
+				</div>
+		</div>	
+	</div>
+	<div class="right"></div>
+	<div class="clear"></div>
+</div>

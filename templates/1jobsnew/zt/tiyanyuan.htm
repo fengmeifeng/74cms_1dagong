@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="gb2312">
+	<title>网站体验员-报名</title>
+    <!--fffff-->
+     <link href="/files/css/common.css" rel="stylesheet" type="text/css" />
+    <!--ffff-->
+	<link rel="stylesheet" href="/files/tiyanyuan/style.css">
+	<script type="text/javascript" src="/files/tiyanyuan/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript">
+	function FileChange(Value){flag=false;document.all.uploadimage.width=10;document.all.uploadimage.height=10;document.all.uploadimage.alt="";document.all.uploadimage.src=Value;};
+	</script>
+</head>
+<body>
+{#include file="user/header.htm"#}
+	<div class="header1">
+		<a href="javascript:void(0);" class="baoming" title="点击立即报名"><img src="/files/tiyanyuan/images/baoming.png" alt="点击立即报名"></a>
+	</div>
+	
+	<div class="box1">
+		<ul class="main">
+			<li class="zhaor1">
+				<img src="/files/tiyanyuan/images/zhaor1.png" alt="">
+				<a href="" title="企业管理者">企业管理者？</a>
+			</li>
+			<li class="zhaor2">
+				<img src="/files/tiyanyuan/images/zhaor2.png" alt="">
+				<a href="" title="HR精英">HR精英？</a>
+			</li>
+			<li class="zhaor3">
+				<img src="/files/tiyanyuan/images/you.png" alt="">
+				<a href="" title="找的就是你">找的就是你</a>
+			</li>
+			<li class="zhaor2">
+				<img src="/files/tiyanyuan/images/zhaor3.png" alt="">
+				<a href="" title="打工一族">打工一族？</a>
+			</li>
+			<li class="zhaor1">
+				<img src="/files/tiyanyuan/images/zhaor4.png" alt="">
+				<a href="" title="在校学生">在校学生？</a>
+			</li>
+		</ul>
+	</div>
+	
+	<div class="box2">
+		<div class="main">
+		
+			<div class="liuc">
+				<div class="left">
+					<div class="tit">第一步</div>
+					<div class="con">注册成为网站会员</div>
+					<hr />
+					<div class="tit">第二步</div>
+					<div class="con">详细查找记录 网站问题并截图</div>
+					<hr />
+					<div class="tit">第三步</div>
+					<div class="con">写图文形式网站体验报告，并提交给我们</div>
+					<hr />
+					<div class="tit">第四步</div>
+					<div class="con">报告采纳，领取平板电脑！</div>
+					<hr />
+				</div>
+				<div class="right">
+					<p>报名成为<span>&ldquo;壹专家&rdquo;</span>体验员后</p>
+					<p>只要注册成为壹打工网会员（企业体验员需注册企业会员）</p>
+					<p>尽可能详细地体验网站各项功能，认真填写报告；</p>
+					<p><span>被采纳</span>后即可<span>获得平板电脑一部</span>。</p>
+				</div>
+			</div>
+		
+			<div class="tequan">
+				报名成为<span>&ldquo;壹专家&rdquo;</span>体验员，并且体验报告被采纳后，即可获得&ldquo;壹专家&rdquo;<span>土豪勋章</span>，并成为壹打工网<span>专属活动成员</span>，在以后的活动中享有<span>优先参与权</span>哦！
+				<div class="main">
+					<div class="down">
+						<a href="javascript:void(0);" class="down_a" title="下载《壹专家体验报告》">下载《壹专家体验报告》</a>
+					</div>
+					<div class="chuanru">
+						<div class="file_con">
+							<input class="sub" type="submit" value="提交体验报告" />  
+						</div>
+					</div>
+				</div>
+            </div>
+		
+			<div class="baom">
+				<ul class="left">
+                	{#foreach from=$tiyan_type item=list#}
+					<li>
+						
+						{#if $list.num == 0  #}
+                        <span style="color: #999;opacity: 0.8;filter:alpha(opacity=80); ">{#$list.typename#}</span>
+                        <a  style="background:#666;border-bottom: #333 2px solid">报名结束</a>
+                        <em><font style="color:#F00;">（剩余名额&nbsp;{#$list.num#}人）</font></em>
+                        {#else#}
+                        <span>{#$list.typename#}</span>
+                        <a href="javascript:void(0);" selectid="{#$list.id#}" title="{#$list.typename#}" class="bm_button">立即报名</a>
+                        <em>（剩余名额{#$list.num#}人）</em>
+                        {#/if#}
+					</li>
+                    {#if $list.i == 2#}
+                    </ul>
+					<ul class="right">
+                    {#/if#}
+                    
+                    {#/foreach#}
+					
+				</ul>
+			</div>
+			
+		</div>
+	</div>
+	<!--<div class="chuanru">
+		<div class="file_con">
+        	<form method="post" action="/zt/tiyanyuan/index.php?act=shangchuan" enctype="multipart/form-data"> 
+			<input type="file" class="file" onchange="javascript:FileChange(this.value);" name="upfile[0]" size="17" bottom"="" repeat-x="" /zt/tiyanyuan/index.php?act=shangchuan?i="dots")" >
+			<input class="sub" type="submit" value="上传《壹专家体验报告》" />  
+            </form>
+            <input class="sub" type="submit" value="上传《壹专家体验报告》" /> 
+		</div>
+	</div>-->
+    
+	
+	<!--以下是弹窗内容-->
+
+  <!--上传弹窗-->
+  <div class="schuan" style="display:none;">
+    <div class="cons">
+       <div class="bg">
+         <span>我们非常重视您的每一个想法，填写完的体验报告，请发送至 <b style="color:#ffff00;">tyy@1dagong.com</b> 邮箱，报告被采纳后，客服人员会立即与您联系。为了您及时收到奖励信息，请确保联系方式真实有效。
+         </span>
+       </div>
+       <a href="javascript:void(0);" class="close" title="关闭"></a>
+    </div>
+    <div class="zhezhao"></div>
+  </div>
+<!--以下是弹窗内容-->
+	
+	<!--壹专家体验指南-->
+	<div class="zhinan" style="display:none;">
+		<div class="cons">
+			<div class="bg">
+				<h1>壹专家体验指南</h1>
+				<p>1、在活动页面报名希望体验的项目，填写简单的资料。请务必填写真实资料，以便获奖后我们与您联系。</p>
+				<p>2、下载《壹专家体验报告》，并仔细了解体验项目。</p>
+				<p>3、登陆壹打工网（如无账号，请先注册），开启体验之旅。详尽体验申报项目的各项服务功能，体验越细致，报告越优质。</p>
+				<span class="zhushi">
+					<a>*注：如您不需要求职/招聘，为了网站正常运转，请在注册时注意标注</a>
+					<a>求职者注册时请在姓名前加上“（体验员）”字样。</a>
+					<a>企业注册时请在公司名称前加上“（体验员）”字样。</a>
+					<a>体验员发布的相关信息将不会显示在网站上。</a>
+				</span>
+				<p>4、真实详细地填写体验报告，并回到活动页面提交。</p>
+				<p>5、我们会在报告提交后3-5个工作日内对报告进行评定，一旦评为优质报告，客服人员将与您联系，为您寄送奖品。</p>
+				<hr>
+				<div>
+					<a href="/files/tiyanyuan/doc/geren.docx" title="个人版《壹专家体验报告》">个人版《壹专家体验报告》</a>
+					<a href="/files/tiyanyuan/doc/qiye.docx" title="企业版《壹专家体验报告》">企业版《壹专家体验报告》</a>
+				</div>
+				<hr>
+				<h1>写出优质体验报告的小窍门</h1>
+				<p>发现问题可截图。图片配合文字会让报告更生动，更容易吸引评审员的目光哦。</p>
+				<p>提出自己的建议。除了报告列出的项目明细外，每个版块都有建议栏，提出自己的改进意见，或者建议网站开发的更多功能，会大大提升报告品质。</p>
+				
+				<a href="javascript:void(0);" class="close" title="关闭"></a>
+				
+			</div>
+		</div>
+		<div class="zhezhao"></div>
+	</div>
+	<!--个人/企业提交-->
+	<!--<div class="tc1" style="display:none;">
+		<div class="cons">
+			<div class="bg">
+            	<input type="hidden" name="typeid" id="typeid_1" value="">
+				<p><span>您的姓名：</span><input type="text" name="name" id="name_1"></p>
+				<p><span>您的年龄：</span><input type="text" name="age" id="age_1"></p>
+				<p><span>您的手机号：</span><input type="text" name="phone" id="phone_1"></p>
+				<p>是否有体验员的工作经验（如有请详细填写）：</p>
+				<textarea name="work" id="work_1" cols="30" rows="10"></textarea>
+				<a href="javascript:void(0);" class="tijiao" title="">提交</a>
+				<a href="javascript:void(0);" class="close" title="关闭"></a>
+			</div>
+		</div>
+		<div class="zhezhao"></div>
+	</div>-->
+    
+	<!--顶部报名提交弹窗-->
+	<div class="tc1" style="display:none;">
+		<div class="cons">
+			<div class="bg">
+				<p class="leixing">
+					<span>报名类型：</span>
+					<select  id="typeid_select">
+                    	{#foreach from=$tiyan_type1 item=list1#}
+                        {#if $list1.num != 0 #}
+						<option value="{#$list1.id#}" selectid='{#$list1.id#}'>{#$list1.typename#}</option>
+                        {#/if#}
+                        {#/foreach#}
+					</select>
+                    <input type="hidden" value="6" name="typeid" id="typeid">
+				</p>
+                <input type="hidden" value="{#$uid#}" name="uid" id="uid">
+				<p><span>您的姓名：</span><input type="text" name="name" id="name" value="{#$data.name#}"></p>
+				<p><span>您的年龄：</span><input type="text" name="age" id="age" value="{#$data.age#}"></p>
+				<p><span>您的手机号：</span><input type="text" name="phone" id="phone" value="{#$data.phone#}"></p>
+				<p>是否有体验员的工作经验（如有请详细填写）：</p>
+				<textarea name="work" id="work" cols="30" rows="10"></textarea>
+				<a href="javascript:void(0);" class="tijiao" id="topbm" title="">提交</a>
+				<a href="javascript:void(0);" class="close" title="关闭"></a>
+			</div>
+		</div>
+		<div class="zhezhao"></div>
+	</div>
+
+	<!--报名成功-->
+	<div class="tc2" style="display:none;">
+		<div class="cons">
+			<div class="bg">
+				<div class="bmcg">
+					<p>您申请<span><b>&ldquo;壹专家&rdquo;网站体验员 报名成功！</b></span></p>
+					<p>感谢您对壹打工网的支持，我们会认真阅读您的申报资料。</p>
+					<p>审核通过后，通知短信会发送至您的手机，客服人员也会与您联系。</p>
+				</div>
+				
+				<!--分享朋友圈-->
+				<div class="bdsharebuttonbox" style="display:none;">
+					<a href="#" class="bds_more" data-cmd="more"></a>
+					<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+					<a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+					<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+					<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+					<a href="#" class="bds_mail" data-cmd="mail" title="分享到邮件分享"></a>
+					<a href="#" class="bds_tqf" data-cmd="tqf" title="分享到腾讯朋友"></a>
+				</div>
+				
+				<div class="ann">
+					<a href="javascript:void(0);" class="zhidao" title="">知道了</a>
+					<a href="javascript:void(0);" class="xuanyao" title="">炫耀一下</a>
+				</div>
+				<a href="javascript:void(0);" class="close" title="关闭"></a>
+			</div>
+		</div>
+		
+		
+		<script>
+			window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"“壹专家”网站体验员，上网也能当专家，逛网站还有平板拿！我都报名了，你还不来看看？","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+		</script>
+		
+		<div class="zhezhao"></div>
+	</div>
+	
+	
+	
+{#include file="user/footer.htm"#}	
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		//体验指南弹窗
+		$(".down_a").click(function(){
+			$(".zhinan").show(300);
+		});
+		$(".close").click(function(){
+	  		$(".zhinan").hide(300);
+	  	});
+	//弹窗1效果
+	  $(".close").click(function(){
+	  	$(".tc1").hide(300);
+	  });
+	  $(".bm_button").click(function(){///---分类报名
+	  	$(".tc1").show(300);
+		//alert($(this).attr('selectid'));//-----获取分类id----
+		$('.bg input[name=typeid]').val($(this).attr('selectid'));
+		
+	  	$(".leixing").hide();
+	  });
+	  $(".baoming").click(function(){//------顶部报名-----
+	  	$(".tc1").show(300);
+		$(".leixing").show();
+	  });
+	  //---------------------------------------------------------------------------------
+	  //报名体验员
+	  ///-----
+	   $("#typeid_select").change(function(){//code...});   //为Select添加事件，当选择其中一项时触发
+		 //var typeid=$("#typeid_select").val();  //获取Select选择的Value
+		$('.leixing input[name=typeid]').val($("#typeid_select").val());
+		});
+	  ///--------------提交按钮
+        $("#topbm").die().live("click",function(){
+		var typeid=$("#typeid").val();//alert(typeid);
+        var name=$("#name").val();//alert(name);
+		 if(name==null || name=="")
+		 {
+			alert("请填写姓名");
+			return false;
+         }
+		var age=$("#age").val();
+		var phone=$("#phone").val();
+		if(phone==null || phone=="")
+		{
+			alert("请填写手机号");
+			return false;
+        }
+		var work=$("#work").val();
+		if(work==null || work=="")
+		{
+			//alert("写点工作经验吧");
+			//return false;
+			work='无';
+        }
+		var uid=$("#uid").val();
+		var tsTimeStamp= new Date().getTime();
+		$.post("/plus/ajax_qx.php", { "name": name,"age": age,"phone": phone,"work": work,"typeid": typeid,"uid":uid,"time":tsTimeStamp,"act":"bm_tiyan"},
+			function (data,textStatus)
+			 {	
+			 	//$(".write_pinfor_baoming").hide();
+				$(".tc2").show(100);
+				$(".bmcg").html(data);
+				$(".tc1").hide();	
+			 }
+		);
+        });
+	  //---------------------------------------------------------------------------------
+	  //----------搜索num-------------------------------------------------------------------------------------------------------//
+	 /* var typeid=$("#typeid_1").val();
+	  $.get("/plus/ajax_qx.php", { "typeid": typeid,"act":"tiyan_num"},
+			function (data,textStatus)
+			 {			
+				$("#num").html(data);
+			 }
+		);*/
+	  //----------------------------------------------------------------------------------------------------------------------------//
+	  
+	//弹窗2效果	
+	  $(".close").click(function(){
+	  $(".tc2").hide(300);
+	  });
+	 /* $(".tijiao").click(function(){
+	  $(".tc2").show(100);
+	  $(".tc1").hide();
+	  });*/
+	  $(".zhidao").click(function(){
+	  $(".tc2").hide(300);
+	  });
+	//炫耀弹窗效果	
+	  $(".xuanyao").click(function(){
+	  $(".bdsharebuttonbox").show(100);
+	  $(".bmcg").hide();
+	  $(".zhidao").hide();
+	  $(".xuanyao").hide();
+	  });
+	   //上传弹窗	
+	  $(".sub").click(function(){
+	   $(".schuan").show();
+	  });
+    $(".close").click(function(){
+	  	$(".schuan").hide();
+	  });
+	});
+</script>
+</body>
+</html>

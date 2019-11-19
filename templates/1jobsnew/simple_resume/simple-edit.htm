@@ -1,0 +1,368 @@
+<script src="/files/js/jquery.js" type='text/javascript' language="javascript"></script>
+<script src="/files/js/jquery.idTabs.min.js" type='text/javascript' language="javascript"></script>
+<script src="/files/js/jquery.validate.min.js" type='text/javascript' language="javascript"></script>
+<script src="/data/cache_classify.js" type="text/javascript" charset="utf-8"></script>
+<script src="/files/js/jquery.dialog.js" type='text/javascript' language="javascript"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+function imgcaptcha(inputID,imgdiv)
+{
+  $(inputID).focus(function(){
+    if ($(inputID).val()=="点击获取验证码")
+    {
+    $(inputID).val("");
+    $(inputID).css("color","#333333");
+    }
+    $(inputID).parent("div").css("position","relative");
+    //设置验证码DIV
+    $(imgdiv).css({ position: "absolute", left:  $(inputID).width(), "bottom": "0px" , "z-index": "10", "background-color": "#FFFFFF", "border": "1px #A3C8DC solid","display": "none","margin-left": "15px"});
+    $(imgdiv).show();
+    if ($(imgdiv).html()=='')
+    {
+    $(imgdiv).append("<img src=\"{#$QISHI.main_domain#}include/imagecaptcha.php?t={#$random#}\" id=\"getcode\" align=\"absmiddle\"  style=\"cursor:pointer; margin:3px;\" title=\"看不请验证码？点击更换一张\"  border=\"0\"/>");
+    }
+    $(imgdiv+" img").click(function()
+    {
+      $(imgdiv+" img").attr("src",$(imgdiv+" img").attr("src")+"1");    
+    });
+    $(document).click(function(event)
+    {
+      var clickid=$(event.target).attr("id");
+      if (clickid!="getcode" &&  clickid!="postcaptcha")
+      {
+      $(imgdiv).hide();
+      $(inputID).parent("div").css("position","");
+      }     
+    });
+  });
+}
+{#if $verify_simple=="1"#}
+imgcaptcha("#postcaptcha","#imgdiv");
+{#/if#}
+});
+//
+$(document).ready(function() {
+var myDate = new Date();
+var y=myDate.getFullYear();
+$("#form_simple_edit").validate({
+ //debug: true,
+// onsubmit:false,
+//onfocusout :true,
+   rules:{
+   uname:{
+    required: true,
+  minlength:2,
+    maxlength:30
+   },
+   detailed:{
+    required: true,
+  minlength:10,
+    maxlength:300
+   },
+   age: {
+    required: true,
+  range:[15,80]
+   },
+   district: "required",
+   category: "required",
+   experience: "required",
+   tel:{
+   required: true,
+   digits:true, 
+  minlength:7
+  {#if $QISHI.simple_tel_repeat=="0"#}
+  ,
+  remote:{     
+    url:"/plus/ajax_simple_resume.php",     
+    type:"get",    
+    data:{"tel":function (){return $("#tel").val()},"act":"check_tel","time":function (){return new Date().getTime()}}     
+    }
+  {#/if#}
+   },
+   email: {
+     email:true
+     },
+   
+  pwd:{
+   required: true,
+   minlength:6,
+   remote:{     
+    url:"/plus/ajax_simple_resume.php",     
+    type:"get",    
+    data:{"pwd":function (){return $("#pwd").val()},"id":function (){return $("#id").val()},"act":"check_pwd","time":function (){return new Date().getTime()}}     
+    }
+   }
+   ,
+  
+  {#if $verify_simple=="1"#}
+  
+    postcaptcha:{
+    IScaptchastr: true,
+    required: true,
+    remote:{     
+    url:"{#$QISHI.main_domain#}include/imagecaptcha.php",     
+    type:"post",    
+    data:{"postcaptcha":function (){return $("#postcaptcha").val()},"act":"verify","time":function (){return new Date().getTime()}}     
+    }
+     }
+     {#/if#}     
+},
+    messages: {
+    uname: {
+    required: jQuery.format("请输入姓名"),
+    minlength: jQuery.format("姓名不能小于{0}个字符"),
+  maxlength: jQuery.format("姓名不能大于{0}个字符")
+   },
+   detailed: {
+    required: jQuery.format("请输入个人简介"),
+    minlength: jQuery.format("个人简介不能小于{0}个字符"),
+  maxlength: jQuery.format("个人简介不能大于{0}个字符")
+   },
+   age: {
+     required: "请输入年龄",
+    range: jQuery.format("请输入一个介于 {0} 和 {1} 之间的值")
+   },
+   
+   district: {
+    required: jQuery.format("请输入地区")
+   },
+  
+category: {
+    required: jQuery.format("请输入工种")
+   },
+   
+   experience: {
+    required: jQuery.format("请选择工作经验")
+   },
+   
+   tel: {
+    required: jQuery.format("请输入联系电话"),
+  digits: jQuery.format("联系电话必须是数字"),
+    minlength: jQuery.format("电话不能<{0}位数")
+  {#if $QISHI.simple_tel_repeat=="0"#}
+  ,
+  remote: jQuery.format("此号码已存在,请更换") 
+  {#/if#}
+   },
+   email: {
+  email: jQuery.format("请正确填写电子邮箱")
+   },
+    
+   pwd: {
+    required: jQuery.format("请输入管理密码"),
+  minlength: jQuery.format("密码不能小于{0}个字符"),
+  remote: jQuery.format("密码错误") 
+   },
+   
+   {#if $verify_simple=="1"#}
+  
+    postcaptcha: {
+    required: jQuery.format("请填写验证码"),
+  remote: jQuery.format("验证码错误")  
+   }
+   {#/if#}
+  },
+  errorPlacement: function(error, element) {
+    if ( element.is(":radio") )
+        error.appendTo( element.parent().next().next() );
+    else if ( element.is(":checkbox") )
+        error.appendTo ( element.next());
+  else if ( element.is("textarea") )
+        error.appendTo ( $("#textareaerr"));
+    else
+        error.appendTo(element.parent());
+  }
+    });
+   
+  jQuery.validator.addMethod("IScaptchastr", function(value, element) {
+  var str="点击获取验证码";
+  var flag=true;
+  if (str==value)
+  {
+  flag=false;
+  }
+  return  flag || this.optional(element) ;
+  }, "请填写验证码");
+
+  /////验证码部分
+menuDown("#district_menu","#district","#district_cnz","#menu1","118px","#sdistrict_menu","#menu2");
+menuDown("#sdistrict_menu","#sdistrict","#sdistrict_cn","#menu2","118px","#tdistrict_menu","#menu3");
+menuDown("#experience_menu","#experience","#experience_cn","#menu4","118px","","");
+function menuDown(menuId,input,input_cn,menuList,width,next_div,next_menu){
+  $(menuId).click(function(){
+    $(menuList).css("width",width);
+    $(menuList).slideDown('fast');
+    //生成背景
+    $(menuId).parent("div").before("<div class=\"menu_bg_layer\"></div>");
+    $(".menu_bg_layer").height($(document).height());
+    $(".menu_bg_layer").css({ width: $(document).width(), position: "absolute", left: "0", top: "0" , "z-index": "0", "background-color": "#ffffff"});
+    $(".menu_bg_layer").css("opacity","0");
+    $(".menu_bg_layer").click(function(){
+      $(".menu_bg_layer").remove();
+      $(menuList).slideUp("fast");
+      $(menuId).parent("div").css("position","");
+    });
+  });
+
+  $(menuList+" li").live("click",function(){
+    var id = $(this).attr("id");
+    var title = $(this).attr("title");
+    $(input).val(id);
+    $(input_cn).val(title);
+    $(menuId).html(title);
+    $(menuList).slideUp('fast');
+    $(".menu_bg_layer").remove();
+
+     if(next_div=="#sdistrict_menu"){
+      $("#sdistrict_menu").html("请选择");
+      $("#sdistrict").val("");
+      $("#sdistrict_cn").val("");
+	  $.get("/plus/ajax_simple_resume.php?act=get_sdistrict&id="+id,function(result){
+      $(next_menu).children("ul").html(result);
+    });
+    }
+    
+  });
+}
+});
+</script>
+<form id="form_simple_edit" name="form_simple_edit" class="form_simple_edit" method="post" action="/plus/ajax_simple_resume.php?act=editsave">
+<div class="content link_lan wei_job_dialog">
+        <table>
+          <tbody>
+            <tr>
+              <td>姓名：</td>
+              <td><input type="text" class="input_text_300" name="uname" id="uname" maxlength="20" value="{#$info.uname#}" /></td>
+            </tr>
+            <tr>
+              <td>年龄：</td>
+              <td><input type="text" class="input_text_155" name="age" id="age" maxlength="3" value="{#$info.age#}"/> 岁</td>
+            </tr>
+            <tr>
+              <td>性别：</td>
+              <td>
+                <label><input type="radio" name="sex" {#if $info.sex=="1"#}checked{#/if#} value="1"/><span class="valid">男</span></label>
+                <label><input type="radio" name="sex" {#if $info.sex=="2"#}checked{#/if#} value="2"/><span class="valid">女</span></label>
+              </td>
+            </tr>
+            <tr>
+              <td>工种：</td>
+              <td><input type="text" class="input_text_155" name="category" id="category" maxlength="25"   value="{#$info.category#}"/>
+              </td>
+            </tr>
+            <tr>
+              <td>工作经验：</td>
+              <td>
+                <div style="position:relateve;">
+                <div id="experience_menu" class="input_text_100_bg">{#$info.experience_cn|default:"请选择"#}</div>  
+                  <div class="menu" id="menu4">
+                    <ul>
+                      {#qishi_get_classify  set="类型:QS_experience,列表名:c_experience"#}
+                      {#foreach from=$c_experience item=list#}
+                      <li id="{#$list.id#}" title="{#$list.categoryname#}">{#$list.categoryname#}</li>
+                      {#/foreach#}
+                    </ul>
+                  </div>
+                </div>
+                <input name="experience" type="hidden" id="experience" value="{#$info.experience#}"/>
+               <input name="experience_cn" type="hidden" id="experience_cn" value="{#$info.experience_cn#}" />
+              </td>
+            </tr>
+            <tr>
+              <td>工作地区：</td>
+              <td>
+                <div style="position:relateve;float:left;">
+                <div id="district_menu" class="input_text_100_bg">{#$info.district_cn|default:"请选择"#}</div>  
+                <div class="menu" id="menu1">
+                    <ul>
+                      {#qishi_get_classify  set="类型:QS_district,id:0,列表名:c_distrcit"#}
+                      {#foreach from=$c_distrcit item=list#}
+                      <li id="{#$list.id#}" title="{#$list.categoryname#}">{#$list.categoryname#}</li>
+                      {#/foreach#}
+                    </ul>
+                  </div>
+                </div>        
+               <input name="district" type="hidden" id="district" value="{#$info.district#}" />
+               <input name="district_cn" type="hidden" id="district_cnz" value="{#$info.district_cn#}" />
+
+                <div style="position:relateve;float:left;margin-left:10px;">
+                <div id="sdistrict_menu" class="input_text_100_bg">{#$info.sdistrict_cn|default:"请选择"#}</div>  
+                  <div class="menu" id="menu2">
+                    <ul>
+                    </ul>
+                  </div>
+                </div>
+                <input name="sdistrict" type="hidden" id="sdistrict" value="{#$info.sdistrict#}" />
+               <input name="sdistrict_cn" type="hidden" id="sdistrict_cn" value="{#$info.sdistrict_cn#}" />
+
+              </td>
+            </tr>
+            <tr>
+              <td>联系电话：</td>
+              <td>
+                {#if $QISHI.simple_tel_edit=="0"#}
+                {#$info.tel#}<span>(不可修改，您可以删除本条信息再次发布)</span>  
+                {#else#}
+                <input type="text" class="input_text_155" name="tel" id="tel" maxlength="25"  value="{#$info.tel#}"/>
+                {#/if#}
+              </td>
+            </tr>
+            <tr>
+              <td>有效期截至：</td>
+              <td>
+                {#if $info.deadline=="0"#}
+                长期有效
+                {#else#}
+                {#$info.deadline|date_format:"%Y-%m-%d"#} 
+                <span>到期后系统将自动删除</span>
+                {#/if#}
+              </td>
+            </tr>
+             {#if $info.deadline!="0"#}
+            <tr>
+              <td>延长有效期：</td>
+              <td>
+                <input name="days" type="text" class="input_text_155" id="days" maxlength="3" value="0">天
+                <span>0为不延长</span>
+              </td>
+            </tr>
+            {#/if#}
+            <tr>
+              <td valign="top">个人简介：</td>
+              <td><textarea name="detailed" id="detailed" class="simpleinput400" style="height:60px;" >{#$info.detailed#}</textarea></td>
+            </tr>
+            <tr>
+              <td>管理密码：</td>
+              <td><input type="text" class="input_text_155" name="pwd" id="pwd" maxlength="25"/>
+              </td>
+            </tr>
+            {#if $verify_simple=="1"#}
+            <tr>
+              <td>验 证 码：</td>
+              <td>
+                <div>
+                <div id="imgdiv"></div>
+                  <input  class="input_text_155" name="postcaptcha" id="postcaptcha" type="text" value="点击获取验证码" style="color:#999999;width:100px;"/>
+                </div>    
+              </td>
+            </tr>
+            {#/if#}
+             <tr>
+              <td></td>
+              <td>
+                <div>   
+                <input name="id" type="hidden"  id="id" value="{#$info.id#}" /> 
+                <input type="submit" value="修改" class="but95_35lan" id="addsimple" />
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <div class="wei_jobs_tip">
+        <p>1.您当前的IP是：{#$ip#}，请不要发布虚假、违法信息！   </p>
+        <p>2.请妥善保存管理密码，管理密码可用于修改/删除信息！</p>
+      </div>
+</form>
+</div>

@@ -1,0 +1,195 @@
+{#qishi_hymq_jobs_show set="列表名:show,职位ID:GET[id]"#}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{#if $show.seo_title != '' #}{#$show.seo_title#}{#else#}{#$show.companyname#} - {#$QISHI.site_name#}{#/if#}</title>
+<meta name="description" content="{#if $show.seo_description != '' #}{#$show.seo_description#}{#else#}{#$show.companyname#}招聘,{#$show.company_desc#}{#/if#}">
+<meta name="keywords" content="{#if $show.seo_keywords != '' #}{#$show.seo_keywords#}{#else#}{#$show.shortitle#}，{#$show.companyname#}{#/if#}">
+<meta name="author" content="壹打工网" />
+<meta name="copyright" content="1dagong.com" />
+<link rel="shortcut icon" href="favicon.ico" />
+
+<link href="/files/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/jobs.css" rel="stylesheet" type="text/css" />
+<link href="/files/tpl_company/css/css.css" rel="stylesheet" type="text/css" />
+<link href="../files/css/all.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/font-awesome.min.css" rel="stylesheet" >
+
+<script src="/files/js/jquery.js" type='text/javascript' ></script>
+<!--<script src="/files/js/jquery.dialog.js" type='text/javascript' ></script>-->
+<script src="/files/js/jquery.dialog-jobsshow.js" type='text/javascript' ></script>
+<script type="text/javascript">
+$(document).ready(function()
+{		
+	
+		var id="{#$show.id#}";
+		var tsTimeStamp= new Date().getTime();
+		var uid="{#$show.uid#}";
+		$.get("/plus/ajax_click.php", { "id": id,"time":tsTimeStamp,"act":"shenhejobs_click"},
+			function (data,textStatus)
+			 {			
+				$(".click").html(data);
+			 }
+		);
+		//报名行业名企
+		$(".app_jobs").click(function(){
+		dialog("报名行业名企","url:/user/user_apply_hymq.php?id="+id+"&act=app&uid="+uid+"","500px","auto","","");
+		});	
+		$.get("{#$QISHI.site_dir#}plus/ajax_contact.php", { "id": id,"time":tsTimeStamp,"act":"shenhejobs_contact"},
+			function (data,textStatus)
+			 {			
+				$(".jobs_contact").html(data);
+			 }
+		);
+});
+$(function(){
+	$("input[type='button']").hover(function(){
+		$(this).addClass("hover");
+	},function(){
+		$(this).removeClass("hover");
+	})
+})
+</script>
+</head>
+<body>
+{#include file="header.htm"#}
+	
+<!--<img title="企业未认证" src="/files/images/noyan.jpg" border="0" />
+-->	<!-- 当前位置 -->
+	<div class="page_location link_bk mbot">
+		当前位置：<a href="/">首页</a>>><a href="/hymq/">行业名企</a>>{#$show.companyname#}
+</div>
+        
+<!-- 主体内容 -->
+
+    <div class="kunag">
+    	<div class="left_list hdsn"> 
+             <div class="show_xx">
+                 <div class="bit">
+                 	<i class="fa fa-backward hdn"></i>
+                    <div class="over"></div>
+                 	<h1>{#$show.companyname#}<img style="padding:2px; margin-left:12px; background:#ffbc90; border-radius:2px;" title="企业已认证" src="/files/images/yesyan.jpg" border="0" />                    <ul>
+</h1>
+                    <p>
+                    {#foreach from=$show.tag item=tagli#}
+            			<a href="{#"QS_hymq,jobtag:"|cat:$tagli.0|qishi_url#}">{#$tagli.1#}</a>{#foreachelse#} 无
+					{#/foreach#}
+                    </p>
+                    <div class="apply_job fr">
+                    <!--<a class="add_favorites" href="javascript:void(0);"><i class="fa fa-heart"></i>收藏</a>-->
+                    </div>
+                    <div class="delivery fr topde"> <a href="#" class="app_jobs">投递简历</a></div>
+                 </div>
+<!--                    <div class="shenqing">
+                    	<a href="#">申请职位</a>
+                    </div>	
+-->    
+
+                <div class="detail_info">
+                	<ul>
+                        <li>
+                            <font color="#999">工资待遇：</font><span>{#$show.wage_cn#}</span>
+                        </li>
+                        <li>
+                            <div class="w218"><font color="#999">招聘人数：</font>{#$show.zprenshu#}人</div>
+                            <div class="w278"><font color="#999">职位类别：</font>{#$show.category_cn#}</div>
+                            <div><font color="#999">性别要求：</font>{#$show.sex_cn#}</div>
+                        </li>
+                        <li>
+                            <div class="w218"><font color="#999">年龄要求：</font>{#$show.age_cn#}</div>
+                            <div class="w278"><font color="#999">学历要求：</font>{#$show.education_cn#}</div>
+                            <div><font color="#999">工作经验：</font>{#$show.experience_cn#}</div>
+                        </li>
+                        <li>
+                            <font color="#999">工作地址：</font>  ( {#$show.district_cn#} ) &nbsp;&nbsp;
+                        </li>
+                    </ul>
+                </div>	
+                <div class="d_fine over">
+                        <span style="float:left;">在线咨询：</span>
+                        <a href="http://wpa.qq.com/msgrd?v=3&uin=2967555605&site=qq&menu=yes" target="_blank" style="float:left; padding:0px; padding-right:3px;" rel="nofollow">
+                        <img border="0" title="QQ在线咨询" alt="QQ在线咨询" src="http://wpa.qq.com/pa?p=2:2967555605:51" data-bd-imgshare-binded="1">
+                        </a>
+                        <a href="http://wpa.qq.com/msgrd?v=3&uin=1905131809&site=qq&menu=yes" target="_blank" style="float:left; padding:0px;" rel="nofollow">
+                        <img border="0" title="QQ在线咨询" alt="QQ在线咨询" src="http://wpa.qq.com/pa?p=2:1905131809:51" data-bd-imgshare-binded="1">
+                        </a>
+</div>
+
+                <div class="info">
+                    <span class="data">更新时间：<!--{#$show.refreshtime|date_format:"%Y-%m-%d"#}-->{#$show.refreshtime_cn#}</span>
+                    <span class="watch">浏览：<em class="times click"></em>次</span>
+                    <span class="delivery"><em class="times">{#$show.bmrenshu#}</em>人报名</span>
+                </div>
+          
+              <div class="d_led">
+                  <div class="topg" style="margin-left:10px;"><i class="fa fa-backward"></i><h4>职位描述</h4></div>
+                  <p class="multiline">
+                    {#$show.contents|nl2br#}      
+                 </p>
+
+			  </div>
+                <div class="write">
+                    <div class="fl resume">在壹打工网<a href="{#"QS_user,2"|qishi_url#}personal_resume.php?act=resume_list')">完善简历</a>，即有机会被企业和猎头推荐应聘</div>
+                    <div class="delivery fr"> <a href="#" class="app_jobs">投递简历</a></div>
+                </div>
+                
+            </div>
+              
+                    
+           </div>   
+
+        
+        <div class="right_list">
+        	
+            <div class="lndk">
+                    <div class="over"></div>
+                      <h4>企业名片</h4>
+                      
+                    <ul>
+                        <li><span>地点：</span><span>{#$show.gs_district_cn#}</span></li>
+                        <li><span>性质：</span><span>{#$show.nature_cn#}</span></li>
+                        <li><span>领域：</span><span>{#$show.trade_cn#}</span></li>
+                        <li><span>规模：</span><span>{#$show.scale_cn#}</span></li>
+                    </ul>
+                    
+                    <div class="carousel slide" >  
+                    </div>
+                    
+                      <h4>公司地址</h4>
+                      <P>{#$show.address#}</P> 
+                     <!-- <img src="../files/img/map.jpg" />-->
+          </div>
+        </div>
+    	<!--<div class="rzhao">
+        	<h2>相关招聘企业</h2>
+            
+            <ul class="rzlist">
+            	{#qishi_hymq_jobs_list set="列表名:jobs1,显示数目:5,填补字符:...,职位名长度:14,排序:id,行业:"|cat:$show.trade#}
+				{#foreach from=$jobs1 item=list#}
+            	<li>
+                	<h3><a href="{#$list.jobs_url#}">{#$list.companyname#}</a></h3>
+                    <p>{#$list.shortitle#}</p>
+                    <font>月薪范围：{#$list.wage_cn#}</font>
+                </li>
+                {#/foreach#}
+                
+            </ul>
+        </div>-->
+        
+    </div>
+
+
+	<!-- 主体内容 结束 -->
+<script src="/files/js/swipe.js"></script>
+<script>
+	window.mySwipe = Swipe(document.getElementById('slider'), {
+		auto:3000,
+		speed:400,
+		continuous: true
+	});
+</script>
+
+<!-- 主体内容 结束 -->
+	{#include file="footer.htm"#}
+</body>
+</html>

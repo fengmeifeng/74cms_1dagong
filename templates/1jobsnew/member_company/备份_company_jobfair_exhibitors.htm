@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{#$title#}</title>
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<link rel="shortcut icon" href="/favicon.ico" />
+<meta name="author" content="骑士CMS" />
+<meta name="copyright" content="74cms.com" />
+<link href="/files/css/user.css" rel="stylesheet" type="text/css" />
+<script src="/files/js/jquery.js" type='text/javascript' language="javascript"></script>
+<script src="/files/js/jquery.idTabs.min.js" type='text/javascript' language="javascript"></script>
+<script src="/files/js/jquery.vtip-min.js" type='text/javascript' ></script>
+</head>
+<body>
+{#include file="header.htm"#}
+<div class="page_location link_bk">
+
+当前位置：<a href="/">首页</a>&nbsp;>>&nbsp;<a href="{#$userindexurl#}">会员中心</a>&nbsp;>>&nbsp;招聘会&nbsp;>>&nbsp;我预定的展位
+</div>
+<table width="985" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:8px;" >
+  <tr>
+    <td width="173" valign="top" class="link_bk">
+	{#include file="member_company/left.htm"#}
+	</td>
+    <td valign="top"> 
+	<div class="user_right_box">
+		<div class="user_right_top_tit_bg">		
+		  <h1>我预定的展位</h1>
+		</div>
+		
+		<div class="us_tab">
+			<a href="?act=mybooth&settr=" {#if $smarty.get.settr==""#}class="select"{#/if#}>所有的</a>
+              <a href="?act=mybooth&settr=3" {#if $smarty.get.settr=="3"#}class="select"{#/if#}>最近3天</a>
+              <a href="?act=mybooth&settr=7" {#if $smarty.get.settr=="7"#}class="select"{#/if#}>最近7天</a>
+			  <a href="?act=mybooth&settr=30" {#if $smarty.get.settr=="30"#}class="select"{#/if#}>最近1月</a>
+			  <a href="?act=mybooth&settr=90" {#if $smarty.get.settr=="90"#}class="select"{#/if#}>最近3月</a>
+			  <div class="clear"></div>
+			  </div>
+			  
+			     <table width="97%" border="0" cellpadding="0" cellspacing="0" align="center" id="list" class="link_lan" >
+              <tr>
+			  <td width="120" class="us_list_title"  >&nbsp; 添加时间</td>
+                <td  height="26" class="us_list_title">招聘会标题</td>
+                <td width="100"   class="us_list_title">举办日期</td>
+				<td width="100"  class="us_list_title">预定方式</td>
+				<td width="100"  class="us_list_title">状态</td>
+              </tr>
+			   {#foreach from=$list item=li#}
+              <tr>
+			    <td   height="32" class="us_list">
+				&nbsp;{#$li.eaddtime|date_format:"%Y-%m-%d"#}
+				
+				</td>
+      <td   class="us_list">
+	    <a href="{#$li.url#}" target="_blank">{#$li.title#}</a>	  </td>
+      <td class="us_list">
+	 {#$li.holddates|date_format:"%Y-%m-%d"#}
+	  </td>
+	  <td   class="us_list">
+	  
+	  {#if $li.etypr=="1"#}
+	  在线预定
+	  {#/if#}
+	  {#if $li.etypr=="2"#}
+	  电话预定
+	  {#/if#}
+	  {#if $li.etypr=="3"#}
+	  其他方式
+	  {#/if#}
+	  </td>
+	    <td   class="us_list">	  
+	  {#if $li.audit=="0"#}
+	  <span style="color:#FF3300" class="vtip"  title="请耐心等待管理员确认...">等待确认</span>
+	  {#/if#}
+	  {#if $li.audit=="1"#}
+	  <span style="color:#009900" >预定成功</span>
+	  {#/if#}
+	  </td>
+           
+              </tr>
+              {#/foreach#}
+            </table>
+			{#if $list#}
+            <table border="0" align="center" cellpadding="0" cellspacing="0" class="link_bk">
+              <tr>
+                <td height="60" align="center"> <div class="page link_bk">{#$page#}</div></td>
+              </tr>
+            </table>
+			{#else#}
+			<div class="us_list_no_content">没有您要找的信息</div><br />
+			{#/if#}
+			 </div>
+    </td>
+  </tr>
+</table>
+{#include file="footer.htm"#}
+</body>
+</html>

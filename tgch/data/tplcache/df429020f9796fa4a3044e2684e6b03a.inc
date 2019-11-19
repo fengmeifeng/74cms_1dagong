@@ -1,0 +1,1 @@
+<a rel="nofollow" href="[field:redirecturl/]" target=_blank><img src="[field:litpic/]" width="980" height="60" alt="[field:title/]" /></a>
