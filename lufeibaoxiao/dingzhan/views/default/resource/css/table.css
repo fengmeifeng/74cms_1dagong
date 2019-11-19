@@ -1,0 +1,136 @@
+.addtab{
+	border: 1px #b8d1e2 solid;
+	font-size: 9pt;
+	border-collapse: collapse;
+	text-align: center;
+}
+.tabhead{
+	font-weight: bold;
+	color: #476074;
+	line-height: 23px;
+	padding: 0px;
+	background: #EFF7FF;
+}
+td{
+	border: 1px #b8d1e2 solid;
+}
+.addtab td{
+	height: 29px;
+	line-height: 29px;
+}
+.addtab .cdm{
+	padding: 0px 3px 0px 5px;
+	color: #000000;
+}
+.Tabhead1{
+	background: url("img/list_hd_bg.png");
+	border: 1px #b8d1e2 solid;
+	font-weight: bold;
+	color: #476074;
+	line-height: 23px;
+	padding: 0px;
+}
+.addtab .sub{
+	width: 50px;
+	height: 21px;
+	color: #FFFFFF;
+	background: url("img/btn_a.png") no-repeat;
+	border: 0px;
+	cursor: pointer;
+	margin-left: 5px;
+}
+.sub{
+	width: 50px;
+	height: 21px;
+	color: #FFFFFF;
+	background: url("img/btn_a.png") no-repeat;
+	border: 0px;
+	cursor: pointer;
+	margin-left: 5px;
+}
+.subc{
+	width: 105px;
+	height: 21px;
+	color: #FFFFFF;
+	background: url("img/btn_c.png") no-repeat;
+	border: 0px;
+	cursor: pointer;
+}
+.subtj{
+	width: 90px;
+	height: 21px;
+	color: #FFFFFF;
+	background: url("img/btn_ab.png") no-repeat;
+	border: 0px;
+	cursor: pointer;
+	margin-left: 5px;
+}
+/*---------*/
+.biaoti{
+	background: url("img/list_hd_bg.png");
+	border: 1px #b8d1e2 solid;
+	font-weight: bold;
+	color: #476074;
+	height: 23px;
+	line-height: 23px;
+	padding: 0px;
+}
+.bodycolor{
+	width: 100%;
+	height: 100%;
+ 	background: #ffffff url(img/table-bg.jpg) top repeat-x;
+}
+
+input.SmallInput, textarea.SmallInput {
+	font-size: 9pt;
+	padding: 1px 5px;
+	border: 1px solid #C0BBB4;
+	background: white url('img/bg_input_text.png') top left repeat-x;
+}
+input.SmallInput:hover, textarea.SmallInput:hover {
+	font-size: 9pt;
+	padding: 1px 5px;
+	border: 1px solid #99CC00;
+	background: white url('img/bg_input_text_hover.png') top left repeat-x;
+}
+
+select.SmallSelect {
+	color: #000066;
+	border: 1px solid #C0BBB4;
+	background: white url('img/bg_input_text.png') top left repeat-x;
+	border-bottom: 1px double;
+	font-size: 9pt;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	height: 18px;
+	line-height: normal;
+}
+/*-----------*/
+.jinzhi{
+	font-size: 9pt;
+	padding: 1px 5px;
+	border: 1px solid #C0BBB4;
+	background: #E0E0E0;
+}
+
+a.orgAdd:link, a.orgAdd:visited {
+	color: #207BD6;
+	padding-left: 12px;
+	background: url("img/org_select.png") no-repeat;
+	background-position: 0px 0px;
+}
+
+textarea.BigInput {
+	margin-top:5px; 
+	font-size: 10pt;
+	padding: 1px 5px;
+	border: 1px solid #C0BBB4;
+	background: white url('img/bg_input_text.png') top left repeat-x;
+}
+.khbox td{
+	padding:0px 5px;
+}
+.tiaoshuo td{
+	padding-left: 5px;
+}

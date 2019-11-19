@@ -1,0 +1,1 @@
+<?php {"pri":"id","0":"mid","1":"xingming","2":"dianhua","3":"nameid","4":"gongshiming","5":"yinhangming","6":"yinghaohao","7":"rztime","8":"addtime","9":"lz","10":"audit","11":"dff","12":"grants","13":"text","14":"shenheren","15":"fafangren","16":"jine","17":"baoming_time"}yes

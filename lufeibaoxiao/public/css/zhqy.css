@@ -1,0 +1,54 @@
+.tj{
+	cursor:pointer;
+
+
+}
+.box{
+	width: 645px;
+	height: 450px;
+	border: 1px #ccc solid;
+	position: absolute;
+	top:100px;
+	left:190px;
+	background: #fff;
+	display: none;
+	z-index: 9999
+}
+.ock{
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background:url(gb.png) no-repeat left top;
+	float: right;
+	margin: 3px;
+}
+.box .myd{
+	margin-left: 20px;
+	width: 280px;
+	height: 185px;
+	float: left;
+	padding: 5px;
+}
+
+.box .yyd{
+	margin-left: 22px;
+	width: 279px;
+	height: 185px;
+	float: left;
+	padding: 5px;
+}
+
+.z{
+	cursor:pointer;
+	width: 25px;
+	height: 18px;
+	text-align: center;
+	border: 1px #ccc solid;
+	background: #fff;
+	float: left;
+	margin: 2px 2px;
+}
+
+.sub{
+	margin-left:20px; 
+}

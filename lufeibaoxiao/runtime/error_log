@@ -1,0 +1,459 @@
+[17-Apr-2014 15:17:58] PHP Notice:  Undefined index:  nr1 in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\lufeiaction.class.php on line 36
+[17-Apr-2014 15:17:58] PHP Notice:  Undefined index:  nr2 in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\lufeiaction.class.php on line 36
+[17-Apr-2014 15:17:58] PHP Notice:  Undefined index:  nr3 in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\lufeiaction.class.php on line 36
+[17-Apr-2014 15:17:58] PHP Notice:  Undefined index:  nr4 in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\lufeiaction.class.php on line 36
+[17-Apr-2014 15:29:33] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[17-Apr-2014 15:29:33] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[17-Apr-2014 15:29:58] PHP Notice:  Undefined offset:  1 in D:\kunkunhaobang\lufeibaoxiao\brophp\bases\prourl.class.php on line 32
+[17-Apr-2014 15:29:58] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[17-Apr-2014 15:29:58] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[17-Apr-2014 15:30:14] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 127
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:31:20] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:40:36] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[17-Apr-2014 15:40:36] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[17-Apr-2014 15:40:47] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[17-Apr-2014 15:40:47] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[17-Apr-2014 15:41:08] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[17-Apr-2014 15:41:08] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[17-Apr-2014 15:41:21] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[17-Apr-2014 15:41:21] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 15:57:58] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 16:00:51] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[17-Apr-2014 16:14:37] PHP Notice:  Undefined index:  dqname in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\loginaction.class.php on line 34
+[17-Apr-2014 16:16:21] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[17-Apr-2014 16:16:21] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[21-Apr-2014 09:11:09] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[21-Apr-2014 09:11:09] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[21-Apr-2014 09:11:29] PHP Notice:  Undefined offset:  1 in D:\kunkunhaobang\lufeibaoxiao\brophp\bases\prourl.class.php on line 32
+[21-Apr-2014 09:11:29] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[21-Apr-2014 09:11:29] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[21-Apr-2014 09:11:39] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 127
+[21-Apr-2014 09:12:00] PHP Notice:  Undefined index:  nr1 in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\lufeiaction.class.php on line 36
+[21-Apr-2014 09:12:00] PHP Notice:  Undefined index:  nr2 in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\lufeiaction.class.php on line 36
+[21-Apr-2014 09:12:00] PHP Notice:  Undefined index:  nr4 in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\lufeiaction.class.php on line 36
+[21-Apr-2014 09:12:00] PHP Notice:  Undefined index:  nr5 in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\lufeiaction.class.php on line 36
+[21-Apr-2014 09:12:10] PHP Notice:  Undefined index:  nr1 in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\lufeiaction.class.php on line 36
+[21-Apr-2014 09:12:10] PHP Notice:  Undefined index:  nr2 in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\lufeiaction.class.php on line 36
+[21-Apr-2014 09:12:10] PHP Notice:  Undefined index:  nr4 in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\lufeiaction.class.php on line 36
+[21-Apr-2014 09:12:10] PHP Notice:  Undefined index:  nr5 in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\lufeiaction.class.php on line 36
+[21-Apr-2014 09:16:55] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[21-Apr-2014 09:16:55] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[21-Apr-2014 09:17:09] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[21-Apr-2014 09:17:09] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[21-Apr-2014 09:51:34] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[21-Apr-2014 09:51:34] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:52:02] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[21-Apr-2014 09:58:13] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 11:12:36] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[28-Apr-2014 11:12:36] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[28-Apr-2014 11:13:05] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 127
+[28-Apr-2014 11:15:29] PHP Notice:  Undefined index:  nr1 in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\lufeiaction.class.php on line 36
+[28-Apr-2014 11:15:29] PHP Notice:  Undefined index:  nr4 in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\lufeiaction.class.php on line 36
+[28-Apr-2014 11:15:29] PHP Notice:  Undefined index:  nr5 in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\lufeiaction.class.php on line 36
+[28-Apr-2014 11:18:14] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[28-Apr-2014 11:18:14] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[28-Apr-2014 11:18:28] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[28-Apr-2014 11:18:28] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[28-Apr-2014 11:18:34] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 127
+[28-Apr-2014 11:18:41] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[28-Apr-2014 11:18:41] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[28-Apr-2014 11:24:21] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[28-Apr-2014 11:24:21] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[28-Apr-2014 11:24:41] PHP Notice:  Undefined offset:  1 in D:\kunkunhaobang\lufeibaoxiao\brophp\bases\prourl.class.php on line 32
+[28-Apr-2014 11:24:42] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[28-Apr-2014 11:24:42] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[28-Apr-2014 11:24:58] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 127
+[28-Apr-2014 11:27:25] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[28-Apr-2014 11:27:25] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[28-Apr-2014 11:27:35] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[28-Apr-2014 11:27:35] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[28-Apr-2014 11:32:02] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[28-Apr-2014 11:32:03] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[28-Apr-2014 11:33:28] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[28-Apr-2014 11:33:29] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[28-Apr-2014 11:33:49] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[28-Apr-2014 11:33:49] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[28-Apr-2014 11:34:23] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[28-Apr-2014 11:34:23] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[28-Apr-2014 11:34:46] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[28-Apr-2014 11:34:46] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[28-Apr-2014 11:35:11] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[28-Apr-2014 11:35:11] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[28-Apr-2014 11:44:48] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 127
+[28-Apr-2014 11:52:58] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 127
+[28-Apr-2014 12:01:53] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 127
+[28-Apr-2014 12:06:33] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 127
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:15:14] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:15:31] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[28-Apr-2014 12:15:31] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:26:49] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:27:32] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:27:32] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:27:32] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:27:32] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[28-Apr-2014 12:27:32] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:27:32] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:27:32] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:27:32] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:27:32] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:27:32] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 99
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:27:33] PHP Notice:  Undefined index:  quanxian in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 115
+[28-Apr-2014 12:28:14] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[28-Apr-2014 12:28:14] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[28-Apr-2014 13:54:51] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[28-Apr-2014 13:54:51] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[28-Apr-2014 13:55:09] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[28-Apr-2014 13:55:10] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[28-Apr-2014 14:14:59] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[28-Apr-2014 14:14:59] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[28-Apr-2014 14:15:04] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[28-Apr-2014 14:15:04] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[28-Apr-2014 16:46:06] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[28-Apr-2014 16:46:06] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[29-Apr-2014 12:54:34] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[29-Apr-2014 12:54:34] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[29-Apr-2014 12:54:46] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[29-Apr-2014 12:54:46] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 139
+[30-Apr-2014 15:56:06] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[30-Apr-2014 15:56:06] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[30-Apr-2014 15:56:28] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[30-Apr-2014 15:56:28] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[30-Apr-2014 15:57:43] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[30-Apr-2014 15:57:43] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[30-Apr-2014 16:05:44] PHP Notice:  Undefined offset:  1 in D:\kunkunhaobang\lufeibaoxiao\brophp\bases\prourl.class.php on line 32
+[30-Apr-2014 16:05:44] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[30-Apr-2014 16:05:44] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[30-Apr-2014 16:05:53] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 127
+[30-Apr-2014 17:25:39] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[30-Apr-2014 17:25:39] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[30-Apr-2014 17:26:38] PHP Notice:  Undefined offset:  1 in D:\kunkunhaobang\lufeibaoxiao\brophp\bases\prourl.class.php on line 32
+[30-Apr-2014 17:26:38] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[30-Apr-2014 17:26:38] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[30-Apr-2014 17:26:39] PHP Notice:  Undefined offset:  1 in D:\kunkunhaobang\lufeibaoxiao\brophp\bases\prourl.class.php on line 32
+[30-Apr-2014 17:26:39] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[30-Apr-2014 17:26:39] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[30-Apr-2014 17:26:40] PHP Notice:  Undefined offset:  1 in D:\kunkunhaobang\lufeibaoxiao\brophp\bases\prourl.class.php on line 32
+[30-Apr-2014 17:26:40] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[30-Apr-2014 17:26:40] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[30-Apr-2014 17:26:42] PHP Notice:  Undefined offset:  1 in D:\kunkunhaobang\lufeibaoxiao\brophp\bases\prourl.class.php on line 32
+[30-Apr-2014 17:26:42] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[30-Apr-2014 17:26:42] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[30-Apr-2014 17:26:43] PHP Notice:  Undefined offset:  1 in D:\kunkunhaobang\lufeibaoxiao\brophp\bases\prourl.class.php on line 32
+[30-Apr-2014 17:26:43] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[30-Apr-2014 17:26:43] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[30-Apr-2014 17:27:04] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 127
+[09-May-2014 10:29:16] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[09-May-2014 10:29:16] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[09-May-2014 10:29:44] PHP Notice:  Undefined offset:  1 in D:\kunkunhaobang\lufeibaoxiao\brophp\bases\prourl.class.php on line 32
+[09-May-2014 10:29:44] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[09-May-2014 10:29:44] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[09-May-2014 10:29:45] PHP Notice:  Undefined offset:  1 in D:\kunkunhaobang\lufeibaoxiao\brophp\bases\prourl.class.php on line 32
+[09-May-2014 10:29:45] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[09-May-2014 10:29:45] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[09-May-2014 10:29:55] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 127
+[09-May-2014 11:34:37] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[09-May-2014 11:34:37] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[09-May-2014 11:35:02] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[09-May-2014 11:35:02] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[09-May-2014 11:35:23] PHP Notice:  Undefined offset:  1 in D:\kunkunhaobang\lufeibaoxiao\brophp\bases\prourl.class.php on line 32
+[09-May-2014 11:35:24] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[09-May-2014 11:35:24] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[09-May-2014 11:35:25] PHP Notice:  Undefined offset:  1 in D:\kunkunhaobang\lufeibaoxiao\brophp\bases\prourl.class.php on line 32
+[09-May-2014 11:35:25] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[09-May-2014 11:35:25] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[09-May-2014 11:35:33] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 127
+[19-May-2014 10:20:49] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[19-May-2014 10:20:49] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[19-May-2014 10:21:12] PHP Notice:  Undefined offset:  1 in D:\kunkunhaobang\lufeibaoxiao\brophp\bases\prourl.class.php on line 32
+[19-May-2014 10:21:12] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[19-May-2014 10:21:12] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[19-May-2014 10:21:13] PHP Notice:  Undefined offset:  1 in D:\kunkunhaobang\lufeibaoxiao\brophp\bases\prourl.class.php on line 32
+[19-May-2014 10:21:13] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[19-May-2014 10:21:13] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[19-May-2014 10:21:14] PHP Notice:  Undefined offset:  1 in D:\kunkunhaobang\lufeibaoxiao\brophp\bases\prourl.class.php on line 32
+[19-May-2014 10:21:14] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[19-May-2014 10:21:14] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[19-May-2014 10:21:26] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 127
+[23-May-2014 13:57:26] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[23-May-2014 13:57:26] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[23-May-2014 13:58:24] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[23-May-2014 13:58:24] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[23-May-2014 13:59:19] PHP Notice:  Undefined offset:  1 in D:\kunkunhaobang\lufeibaoxiao\brophp\bases\prourl.class.php on line 32
+[23-May-2014 13:59:19] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[23-May-2014 13:59:19] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[23-May-2014 13:59:23] PHP Notice:  Undefined offset:  1 in D:\kunkunhaobang\lufeibaoxiao\brophp\bases\prourl.class.php on line 32
+[23-May-2014 13:59:23] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[23-May-2014 13:59:23] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[23-May-2014 13:59:36] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[23-May-2014 13:59:36] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[23-May-2014 14:00:19] PHP Notice:  Undefined variable: url in D:\kunkunhaobang\lufeibaoxiao\runtime\controls\lufeibaoxiao_index_php\indexaction.class.php on line 127
+[13-Aug-2014 16:21:55] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[13-Aug-2014 16:21:55] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[13-Aug-2014 16:21:58] PHP Notice:  Undefined offset:  1 in D:\kunkunhaobang\lufeibaoxiao\brophp\bases\prourl.class.php on line 32
+[13-Aug-2014 16:21:58] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[13-Aug-2014 16:21:58] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[13-Aug-2014 16:22:01] PHP Notice:  Undefined variable: ascii in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 74
+[13-Aug-2014 16:22:01] PHP Notice:  Uninitialized string offset: 4 in D:\kunkunhaobang\lufeibaoxiao\brophp\classes\vcode.class.php on line 100
+[13-Aug-2014 16:22:39] PHP Fatal error:  Call to a member function prepare() on a non-object in D:\kunkunhaobang\lufeibaoxiao\brophp\bases\dpdo.class.php on line 75

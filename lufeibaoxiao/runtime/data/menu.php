@@ -1,0 +1,1 @@
+<?php {"pri":"id","0":"name","1":"pid","2":"path","3":"operating","4":"ico"}yes

@@ -1,0 +1,20 @@
+body {margin:0px;padding:0px;font-size:12px; color: #003366;}
+
+.content{width:100%;}
+.content .left{
+    float:left;
+    width:50%;
+    border:0px solid #0066CC;
+    margin:0px;
+}
+.content .right{float:left;border:0px solid #0066CC;margin:0px;width:49%;}
+
+.mo{height:auto;border:1px solid #CCC;margin:5px;background:#FFF}
+.mo h1{background:#ECF9FF;height:18px;padding:3px;cursor:move}
+.closediv{cursor:default;}
+.minusspan{cursor:default;}
+.mo .nr{height:120px;border:0px solid #F3F3F3;margin:2px}
+h1{margin:0px;padding:0px;text-align:left;font-size:12px; font-weight: 600;}
+.dragging {
+    FILTER: progid:DXImageTransform.Microsoft.Alpha(opacity=60); opacity: 0.6; moz-opacity: 0.6
+}

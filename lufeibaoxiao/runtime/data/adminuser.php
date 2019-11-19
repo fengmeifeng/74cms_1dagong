@@ -1,0 +1,1 @@
+<?php {"pri":"id","0":"dq_id","1":"dqname","2":"user","3":"mima","4":"quanxian"}yes

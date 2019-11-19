@@ -1,0 +1,107 @@
+/* CSS Document */
+body{
+	 font-family:"Microsoft YaHei","微软雅黑","宋体",Verdana,Geneva,sans-serif;
+}
+ul li{
+	list-style:none;
+}
+a:hover{
+	text-decoration:none;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.w100{
+	width:100%;
+	padding:0px;
+}
+.middle{
+	text-align:center;
+	margin:0 auto;
+}
+.main{ 
+	width:100%;
+}
+.head,.footer{
+	margin:0px;
+	height:47px;
+	width:100%;
+	padding:0 2%;
+	background:#660066;
+}
+.back_home{
+	padding-top:12px;
+}
+.logo{
+	padding-top:8px;
+}
+.list_none{
+	padding-top:17px;
+}
+.tel{
+	height:40px;
+	line-height:40px;
+}
+.tel img,.namer img{
+	margin-right:8px;
+}
+.tel strong{
+	color:#666;
+	letter-spacing:1px;
+}
+.tel span{
+	font-family:Arial, Helvetica, sans-serif;
+}
+.list_block{
+	margin-left:0;
+	margin-right:0;
+	margin-bottom:8%;
+}
+.list_block ul{
+	overflow:hidden;
+	padding:0px;
+	margin:0px;
+}
+.list_block li{
+	margin-top:8%;
+}
+.list_block li p{
+	color:#660066;
+	margin-top:10%;
+	font-weight:bold;
+}
+.namer{
+	border-bottom:4px solid #606;
+	background:#860186;
+	height:100%;
+	line-height:46px;
+	height:46px;
+	padding:0;
+	border-radius:6px 6px 0 0;
+}
+.namer a{
+	color:#fff;
+	font-weight:bold;
+	display:block;
+}
+.bonone_1{
+	border:none;
+	margin:0px;
+}
+.bonone_2{
+	border:none;
+	margin:0px;
+	padding:10px;
+}
+.backse{
+	background:#D9EDF7 ;
+	border:1px solid #BCE8F1;
+}
+.footer{
+	height:46px;
+	background:#ccc;
+	padding:0 10px;
+}
