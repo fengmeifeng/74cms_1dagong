@@ -1,0 +1,449 @@
+﻿*{margin: 0;padding: 0;border: 0;border: none;}
+a{text-decoration: none;color: #fff;font-family: "microsoft yahei";}
+li{list-style: none;}
+input{outline: none;}
+
+body{background: #000a36;font-family: "microsoft yahei";}
+
+.main{width: 1100px;margin: 0 auto;}
+.left{float: left;}
+.right{float: right;}
+hr{width: 100%;height: 1px;background: none;clear: both;}
+
+.header1{
+	background: url(./images/top_bg.jpg) no-repeat center top;
+	position: relative;
+	width: 100%;
+	height: 654px;
+}
+
+.header1 .baoming{
+	position: absolute;
+	left: 50%;
+	margin-left: -216px;
+	top: 43%;
+}
+
+
+.box1{
+	background: url(./images/body_bg_1.png) no-repeat center top;
+	width: 100%;
+	height: 239px;
+}
+
+.box1 .main{
+	position: relative;
+	width: 1100px;
+	margin: 0 auto;
+}
+
+.box1 li{
+	float: left;
+	width: 120px;
+	margin:0 50px;
+	text-align: center;
+}
+
+.box1 li a{
+	position: relative;
+	display: inline-block;
+	top: -31px;
+	width: 120px;
+	height: 30px;
+	text-align: center;
+	border-radius: 15px;
+	color: #666;
+	font-size: 16px;
+}
+
+.box1 li.zhaor1{
+	margin-top: -20px;
+}
+
+.box1 li.zhaor2{
+	margin-top: 15px;
+}
+
+.box1 li.zhaor3{
+	margin-top: 50px;
+}
+
+.box1 li.zhaor3 a{
+	width: 155px;
+	text-align: center;
+	left: -10px;
+	top: 10px;
+	color: #f8ec3e;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+
+.box2{
+	background: url(./images/body_bg_2.png) no-repeat center top;
+	width: 100%;
+	height: 836px;
+}
+
+.box2 .liuc .left{width: 420px;margin-top: 12px;}
+
+.box2 .liuc .tit{
+	position: relative;
+	left: 110px;
+	float: left;
+	color: #fff;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 66px;
+}
+
+.box2 .liuc .con{
+	position: relative;
+	left: 170px;
+	float: left;
+	color: #e34908;
+	font-size: 14px;
+	line-height: 68px;
+}
+
+.box2 .liuc .right{
+	color: #fff;
+	font-size: 18px;
+	line-height: 70px;
+	margin-top: 14px;
+	margin-right: 70px;
+}
+
+.box2 .liuc .right span,.box2 .tequan span,.tc2 .cons .bg span{
+	color: #f8ec3e;
+}
+
+.box2 .tequan{
+	position: relative;
+	top: 140px;
+	width: 880px;
+	line-height: 40px;
+	margin: 0 auto;
+	color: #fff;
+	font-size: 24px;
+	font-weight: bold;
+	font-style: italic;
+	clear: both;
+}
+
+.box2 .baom{
+	position: relative;
+	top: 240px;
+	padding-bottom: 30px;
+	overflow: hidden;
+	zoom: 1;
+}
+
+.box2 .baom ul{padding: 0 20px;}
+
+.box2 .baom li{margin: 30px 0;overflow: hidden;zoom: 1;}
+
+.box2 .baom span{
+	display: inline-block;
+	float: left;
+	width: 220px;
+	height: 38px;
+	background: #fff;
+	color: #e34c0d;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	text-align: center;
+	line-height: 38px;
+}
+
+.box2 .baom a{
+	display: inline-block;
+	float: left;
+	margin-left: 10px;
+	background: #ff3c00;
+	width: 106px;
+	height: 36px;
+	text-align: center;
+	line-height: 36px;
+	border-bottom: #ad3300 2px solid;
+}
+
+.box2 .baom em{
+	color: #fff;
+	font-style: normal;
+	line-height: 38px;
+	margin-left: 5px;
+}
+
+
+/*以下是弹窗样式*/
+.tc1{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 99;
+}
+
+.tc1 .cons{
+	background: url(./images/tc_bg.png) repeat;
+	position: relative;
+	top: 20%;
+	width: 460px;
+	padding: 10px;
+	margin: 0 auto;
+	color: #fff;
+	z-index: 10;
+}
+
+.tc1 .cons p{clear: both;margin: 10px 0;overflow: hidden;zoom: 1;}
+
+.tc1 .cons span{display: inline-block;text-align: right;float: left;line-height: 40px;width: 100px;}
+
+.tc1 .cons input{
+	width: 250px;
+	height: 37px;
+	background: none;
+	color: #fff;
+	font-size: 14px;
+	padding: 0 5px;
+	font-family: "微软雅黑";
+	border: #2d4480 1px solid;
+	float: left;
+}
+
+.tc1 .cons textarea{width: 354px;height: 50px;/*resize: none;*/background: none;border: #2d4480 1px solid;outline: none;color: #fff;padding: 5px;font-family: "微软雅黑";}
+
+.tc1 .cons select{
+	width: 260px;
+	height: 37px;
+	outline: none;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	border: #2d4480 1px solid;
+}
+
+.tc1 .cons .bg{
+	background: #0d1640;
+	padding: 20px;
+	padding-left: 50px;
+}
+
+.tc1 .cons .bg .tijiao{
+	position: relative;
+	left: 50%;
+	margin-left: -80px;
+	top: 10px;
+	display: block;
+	width: 160px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #f53544;
+	background: #d0c63f;
+	text-align: center;
+	border-bottom: #7f600b 5px solid;
+}
+
+.tc1 .cons .bg .close{
+	background: url(./images/close.png) no-repeat;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 35px;
+	height: 35px;
+}
+
+.tc1 .zhezhao{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0.6;
+	z-index: 9;
+}
+
+
+
+.tc2{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 99;
+}
+
+.tc2{
+-webkit-animation:bounceInDown 1s .2s ease both;
+-moz-animation:bounceInDown 1s .2s ease both;}
+@-webkit-keyframes bounceInDown{
+0%{opacity:0;
+-webkit-transform:translateY(-2000px)}
+60%{opacity:1;
+-webkit-transform:translateY(30px)}
+80%{-webkit-transform:translateY(-10px)}
+100%{-webkit-transform:translateY(0)}
+}
+@-moz-keyframes bounceInDown{
+0%{opacity:0;
+-moz-transform:translateY(-2000px)}
+60%{opacity:1;
+-moz-transform:translateY(30px)}
+80%{-moz-transform:translateY(-10px)}
+100%{-moz-transform:translateY(0)}
+}
+
+.tc2 .cons{
+	background: url(./images/tc_bg.png) repeat;
+	position: relative;
+	top: 30%;
+	width: 600px;
+	padding: 10px;
+	margin: 0 auto;
+	color: #fff;
+	z-index: 1;
+}
+
+.tc2 .cons .bg{
+	background: #0d1640;
+	padding: 20px;
+	padding-bottom: 40px;
+	padding-left: 50px;
+	overflow: hidden;
+	zoom: 1;
+}
+
+.tc2 .cons .bg div{text-align: center;line-height: 30px;}
+
+.tc2 .cons .bg .ann a{
+	position: relative;
+	float: left;
+	margin: 0 50px;
+	top: 20px;
+	display: block;
+	width: 160px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #f53544;
+	background: #d0c63f;
+	text-align: center;
+	border-bottom: #7f600b 5px solid;
+}
+
+.tc2 .cons .bg .close{
+	background: url(./images/close.png) no-repeat;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 35px;
+	height: 35px;
+}
+
+.tc2 .zhezhao,.zhinan .zhezhao{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0.6;
+	z-index: 0;
+}
+
+.bdsharebuttonbox{
+	position: relative;
+	left: 50%;
+	margin-left: -130px;
+	margin-top: 30px;
+	z-index:999;
+}
+
+
+
+.liuc .right p {
+  font-size: 18px;
+  line-height: 70px;
+}
+
+.down{width: 216px;height: 36px;margin: 0 auto;margin-top: 30px;padding: 0;}
+.down a{display: inline-block;width: 216px;height: 36px;font-style: normal;font-size: 16px;text-align: center;line-height: 36px;font-weight: normal;background: #ff3c00;border-bottom: #ad3300 2px solid;margin: 0 10px;}
+
+.zhinan{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 99;
+}
+
+.zhinan h1{
+	display: inline-block;
+	width: 500px;
+	text-align: center;
+	margin: 10px auto;
+	font-size: 18px;
+	clear: both;
+}
+.zhinan p{
+	width: 520px;
+	font-size: 14px;
+	line-height: 24px;
+	display: block;
+	margin: 10px auto;
+	margin-left: -10px;
+}
+
+.zhinan .cons{
+	background: url(./images/tc_bg.png) repeat;
+	position: relative;
+	top: 4%;
+	width: 600px;
+	padding: 10px;
+	margin: 0 auto;
+	color: #fff;
+	z-index: 1;
+}
+
+.zhinan .cons .bg{
+	background: #0d1640;
+	padding: 20px;
+	padding-bottom: 40px;
+	padding-left: 50px;
+	overflow: hidden;
+	zoom: 1;
+}
+
+.zhinan .cons .close{
+	background: url(./images/close.png) no-repeat;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 35px;
+	height: 35px;
+}
+
+.zhinan .cons .bg div>a{display: inline-block;width: 216px;height: 36px;font-style: normal;font-size: 16px;text-align: center;line-height: 36px;font-weight: normal;background: #f8ec3e;border-bottom: #aaa11a 2px solid;margin: 0 22px;color: #ff3c00;}
+
+.zhinan .cons .bg hr{width: 100%;height: 1px;border-top: #242f61 1px dashed;margin: 20px 0;}
+
+.zhinan .cons .zhushi a{
+	font-size: 12px;
+	color: #ff3c00;
+	line-height: 20px;
+	display: block;
+}
+
+
+/* 上传体验报告样式 */
+.chuanru{position: relative;top: 40px;padding: 10px 0;width: 100%;background: #0D1640;}
+.chuanru .file_con{width: 470px;height: 36px;margin:20px auto;}
+.chuanru .file_con .file{background: #fff;width: 220px;height: 36px;line-height: 36px;padding-left: 10px;float: left;}
+.chuanru .file_con .sub{float: left;width: 216px;height: 36px;font-style: normal;font-size: 16px;text-align: center;line-height: 36px;font-weight: normal;background: #ff3c00;border-bottom: #ad3300 2px solid;margin: 0 10px;color: #fff;cursor: pointer;font-family: "microsoft yahei";}

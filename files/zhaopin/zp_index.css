@@ -1,0 +1,324 @@
+.centercon{
+	
+	overflow:auto; height:auto;
+	margin-top:20px;
+
+}
+.centertop{
+	background: url(/files/zhaopin/topbg.jpg) no-repeat center top ;
+	height:307px;
+
+}
+
+
+
+#zparea { width:960px; margin:0 auto;padding-bottom:20px;background: #ffe6cc; padding:5px 10px;
+margin-bottom:20px;}
+#side { height: 40px; width: 240px; float: left; margin-top:8px}
+#side1 { height: 40px; width: 120px; float: right;margin-top:8px}
+#main { height: 40px; margin:0 120px;}
+
+#main ul li{
+	float:left;
+	padding:5px 20px;
+	background: #ff6600;
+	margin-right:20px;
+	margin-top:2px;
+	font-size:16px;
+}
+#main ul li:hover{
+	background: #ff3300;
+}
+#main ul li a{
+	color:#fff;
+}
+
+#main ul li a:hover{
+	color:#fff;
+}
+
+.contents{
+	width:960px;
+	clear:both;
+	overflow:hidden; 
+	height:auto;
+	margin:0 auto;
+	border:10px solid #e6e6e6;
+	margin-bottom:10px;
+	background: url(/files/zhaopin/contentbg.png) repeat-y center 46px;
+
+}
+
+.tooltips{
+			position:relative;
+			z-index:2;
+			color:#525252;
+		}
+		.tooltips:hover{
+			z-index:3;
+			background:none;
+		}
+		.tooltips span{
+			display: none;
+		}
+		.tooltips:hover span{
+			display:block;
+			position:absolute;
+			top:21px;
+			right:0px;
+			width:50em;
+			border:10px solid #d0d0d0;
+			background-color:#eeeeee;
+			padding: 10px;
+			color:#000000;
+		}
+		.tooltips:hover span p{
+			line-height:30px;
+
+		}
+		.tooltips:hover span p strong{
+			font-weight:bold;
+
+		}
+
+
+.titleh{
+	width:960px;
+	height:45px;
+	border-bottom:1px solid #D4D4D4;
+	background: #ffffff;
+}
+
+.titleh h3{
+	width:300px;
+	height:45px;
+	line-height:45px;
+	font-size:16px;
+	float:left;
+	text-align:left;
+	margin-left:20px;
+	font-weight:bold;
+	color:#cc0000;
+
+}
+
+
+
+
+.jobfair {margin:0 auto; width:900px;}
+.barleft { float:left; width:200px; height:200px;}
+.barleft p.date {
+	color:#ffffff;
+	width:130px;
+	height:80px;
+	line-height:80px;
+	margin:-5px 0 0 30px;
+	text-align:center;
+	font-size:70px;
+	font-family:"Microsoft YaHei","΢���ź�","Microsoft JhengHei",sans-serif,Verdana, Geneva, "����",;
+	font-weight:bold;
+	z-index:1000;
+
+}
+.barleft p.week{
+	color:#ffffff;
+	width:130px;
+	margin:49px 0 0 30px;
+	text-align:center;
+	font-size:14px;
+}
+.barleft p.wbottom{
+	color:#ffffff;
+	width:130px;
+	margin:-13px 0 0 30px;
+	text-align:center;
+	font-size:14px;
+}
+.barleft p.date span{	
+	font-size:16px;
+	font-family:"Microsoft YaHei","΢���ź�","Microsoft JhengHei",sans-serif,Verdana, Geneva, "����",;
+
+}
+
+
+
+.barright { float:right; width:200px; height:200px;margin-right:-20px;}
+
+.barright p.yd{margin-left:20px;}
+.barright p.yd a{
+	display:inline-block;
+	float:left;
+	width:80px;
+	height:38px;
+	line-height:38px;
+	margin:47px 5px 10px 5px;
+	text-align:center;
+	background: url(/files/zhaopin/abg.png) no-repeat 0 0;
+	
+}
+
+.barright p.yd .yyue_button{
+	display:inline-block;
+	float:left;
+	width:80px;
+	height:38px;
+	line-height:38px;
+	margin:47px 5px 10px 5px;
+	text-align:center;
+	background: url(/files/zhaopin/abg.png) no-repeat -90px 0;
+	cursor:pointer;
+}
+
+.barright p.yd a.left{float:left}
+.barright p.yd a.right{float:right}
+
+.barright p.ydover a{
+	display:block;
+	width:170px;
+	height:38px;
+	line-height:38px;
+	margin:47px 0 0 24px;
+	text-align:center;
+	background: url(/files/zhaopin/abg.png) no-repeat 0 -98px;
+	
+}
+.barright p.xq{clear:both;}
+.barright p.xq a{
+	display:block;
+	width:170px;
+	height:38px;
+	line-height:38px;
+	margin:22px 0 0 26px;
+	text-align:center;
+	background: url(/files/zhaopin/abg.png) no-repeat 0 -49px;
+	
+}
+
+/* ��ά�뵯������ʽSTART */
+
+.QRcode{
+	position:fixed;
+	width:250px;
+	height:270px;
+	border-radius:5px;
+	top:50%;
+	left:50%;
+	margin-top:-125px;
+	margin-left:-130px;
+	z-index:10;
+}
+
+.QRcode iframe{
+  background: #fff;
+  position: fixed;
+  width: 180px;
+  height: 180px;
+  text-align: center;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  margin-top: -65px;
+  margin-left: -95px;
+  z-index: 10;
+}
+
+.QRcode .QRcode_main{
+	background:#fff;
+	position:fixed;
+	width:250px;
+	height:270px;
+	text-align:center;
+	border-radius:5px;
+	top:50%;
+	left:50%;
+	margin-top:-125px;
+	margin-left:-130px;
+	z-index:10;
+}
+.QRcode .QRcode_main h3{
+	font-size:14px;
+	line-height: 30px;
+	margin-top: 20px;
+	margin-bottom: 6px;
+	color: #939393;
+	font-family: "Microsoft YaHei";
+	font-weight: bolder;
+}
+
+.QRcode .QRcode_main .weixin{
+	background:url(/files/zhaopin/weixin.png) no-repeat;
+	display:inline-block;
+	padding-left:30px;
+	width:30px;
+	height:30px;
+	color:#89bd28;
+}
+
+.QRcode .QRcode_main  img{
+	width:180px;
+	height:180px;
+	margin:0 auto;
+	clear:both;
+}
+
+.QRcode .yyue_close{
+	background: url(/files/zhaopin/close.png) no-repeat;
+	position:absolute;
+	top:-16px;
+	right:-16px;
+	width:40px;
+	height:40px;
+	z-index:99;
+	cursor:pointer;
+}
+
+
+
+
+.QRcode .QRcode_zhe{
+	background:#000;
+	position:fixed;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	opacity:0.8;
+	z-index:8;
+}
+
+
+
+
+
+.jobfairlist { margin:0 155px 0 205px !important; margin:0 152px 0 202px; height:200px;}
+
+.jobfairlist dl{
+	padding:10px;
+	font-size:14px;
+}
+
+.jobfairlist dl dt h2,.jobfairlist dl dt h2 a{
+	font-size:14px;
+	padding-bottom:10px;
+	color:#000;
+}
+.jobfairlist dl dd{
+	line-height:21px;
+	color:#000000;
+	/*margin-left:75px;*/
+	border-bottom:1px dashed #e0e0e0;
+	
+	display:block;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+.jobfairlist dl dd span{
+	width:75px;
+	color:#808080;
+	/*margin-left:-70px;*/
+
+}
+.jobfairlist dl{
+	
+}

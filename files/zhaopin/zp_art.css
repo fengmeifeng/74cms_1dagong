@@ -1,0 +1,138 @@
+.centercon{
+	
+	overflow:auto; height:auto;
+
+}
+
+.content{
+	width:960px;
+	overflow:auto; height:auto;
+	margin:10px auto;
+	border:10px solid #e6e6e6;
+	margin-bottom:10px;
+	background: url(/files/zhaopin/showbg.png) no-repeat center 46px;
+
+}
+.titleh{
+	width:960px;
+	height:45px;
+	border-bottom:1px solid #D4D4D4;
+}
+
+.titleh h3{
+	width:300px;
+	height:45px;
+	line-height:45px;
+	font-size:16px;
+	float:left;
+	text-align:left;
+	margin-left:20px;
+	font-weight:bold;
+	color:#cc0000;
+
+}
+
+
+
+.jobfair {margin:0 auto; width:900px;
+	overflow:auto; height:auto;
+}
+.barleft { float:left; width:200px;
+	
+}
+.barleft p.week{
+	color:#ffffff;
+	width:130px;
+	margin:42px 0 0 30px;
+	text-align:center;
+	font-size:14px;
+}
+
+.barleft p.date {
+	color:#ffffff;
+	width:130px;
+	height:80px;
+	margin:22px 0 0 30px;
+	text-align:center;
+	font-size:76px;
+	font-family:"Microsoft YaHei","Î¢ÈíÑÅºÚ","Microsoft JhengHei",sans-serif,Verdana, Geneva, "ËÎÌå",;
+	font-weight:bold;
+
+}
+.barleft p.date span{	
+	font-size:16px;
+	font-family:"Microsoft YaHei","Î¢ÈíÑÅºÚ","Microsoft JhengHei",sans-serif,Verdana, Geneva, "ËÎÌå",;
+
+}
+
+
+
+.barright { float:right; width:150px; height:200px;}
+
+
+.barright p.yd a{
+	display:block;
+	width:87px;
+	height:39px;
+	line-height:39px;
+	margin:47px 0 0 33px;
+	text-align:center;
+	background: url(/files/zhaopin/abg.gif) no-repeat 0 0;
+	
+}
+.barright p.ydover a{
+	display:block;
+	width:87px;
+	height:39px;
+	line-height:39px;
+	margin:47px 0 0 33px;
+	text-align:center;
+	background: url(/files/zhaopin/abg.gif) no-repeat 0 -50px;
+	
+}
+.barright p.xq a{
+	display:block;
+	width:87px;
+	height:39px;
+	line-height:39px;
+	margin:22px 0 0 33px;
+	text-align:center;
+	background: url(/files/zhaopin/abg.gif) no-repeat -100px 0;
+	
+}
+
+.barright {
+	
+}
+.jobfairlist { margin:0 155px 0 205px !important; margin:0 152px 0 202px; }
+
+.jobfairlist dl{
+	padding:10px;
+	font-size:14px;
+}
+
+.jobfairlist dl dt h1,.jobfairlist dl dt h1 a{
+	font-size:16px;
+	font-weight:bold;
+	padding-bottom:10px;
+	color:#ff6600;
+}
+.jobfairlist dl dd{
+	line-height:25px;
+	color:#000000;
+	margin-left:75px;
+	border-bottom:1px dashed #e0e0e0;
+}
+.jobfairlist dl dd span{
+	width:75px;
+	color:#808080;
+	margin-left:-70px;
+
+}
+
+#pic{
+	width:794px;
+	height:595px;
+	margin:20px auto;
+	border: 15px solid #f3f3f3;
+}

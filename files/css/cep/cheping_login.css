@@ -1,0 +1,87 @@
+@charset "utf-8";
+/* CSS Document */
+.body {
+padding-bottom: 10px;
+margin: 0 auto;
+padding: 0 0 8px 0;
+width: 710px;
+border: 0;
+}
+.resize {
+margin: 0 auto;
+padding-top:60px;
+border: 0;
+}
+.login {
+width: 508px;
+margin:0 auto;
+text-align:center;
+}
+.body p {
+color: #333;
+line-height: 40px;
+padding:10px 5px;
+margin: 0;
+}
+.form .lbl {
+width: 110px;
+display: inline-block;
+color: #333;
+font-size: 14px;
+text-align: right;
+padding-right: 20px;
+float:left;
+}
+.form .txt {
+width: 280px;
+border: 1px solid #bbb;
+padding: 5px;
+background: #f8f8f8;
+font-size: 18px;
+font-weight:bold;
+}
+.form label.error, .form .red {
+padding-left: 10px;
+}
+.form .error, .form .red {
+color: #F00;
+}
+body, button, input, select, textarea {
+font: 12px/1.5 Arial, Helvetica, "宋体", san-serif;
+}
+.body p {
+color: #333;
+line-height: 20px;
+}
+a:link.btn, a:visited.btn, .twitter .btn, .form .btn, .survey .btn {
+cursor: pointer;
+background: #d82ed8;
+color: #ffffff;
+border: 2px solid #fdaf35;
+border-right-color: #af700e;
+border-bottom-color: #af700e;
+}
+.form .btn {
+width:120px;
+height:36px;
+font-weight: bold;
+font-size: 14px;
+padding: 3px 30px;
+border: 0;
+}
+.body a:link, .body a:visited, .body a:hover, .body a:active {
+font-weight: bold;
+color: #660066;
+}
+.clr {
+clear: both;
+background: none;
+}
+.cepinglogin{
+	font-size:20px;
+	color:#606;
+	font-weight:bold;
+	margin-bottom: 20px;
+}
+.C_help{ display:block;}
+

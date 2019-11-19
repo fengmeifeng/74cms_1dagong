@@ -1,0 +1,33 @@
+@charset "gb2312";
+/* CSS Document */
+.app_box{ }
+.app01{ width:100%; height:802px; background:url(/files/app/app01.jpg) no-repeat center top;}
+.app01_content{ width:80%; margin:0 auto;}
+.app01_content a{ display:block; width:277px; height:70px;}
+.app01_content_download{ padding-top:481px; margin-left:72%;}
+.app_title h2{ text-align:center; font-size:30px;padding-top:40px; display:block;}
+.app_title span{ color:#b8b8b8; display:block; font-size:12px; margin-top:5px; text-align:center;}
+.app_icons{ width:121px; height:121px; background:url(/files/app/app_icons.png) no-repeat center top; margin:40px auto;}
+.app02_kehuduan{ overflow:hidden; background-color:#e7e7e7;}
+.yihanL{ width:31px; height:25px; background:url(/files/app/yinhao.png) no-repeat 0 0; float:left; margin-left:20px; margin-top:20px;}
+.yihanR{ background-position:-32px 0; float:right;margin-right:20px; margin-bottom:20px; margin-left:0; margin-top:0;}
+.kehuduan_infor{ padding:0 70px; float:left;}
+.kehuduan_infor p{ font-size:18px; color:#333; margin-bottom:20px; line-height:40px; text-align:center;}
+.app03{ width:100%; height:482px; background:url(/files/app/app03.jpg) no-repeat center top; margin-top:80px;}
+
+.app_ts{ overflow:hidden; width:80%; margin:0 auto;}
+.app_tsleft{ width:50%; float:right; margin-top:80px;}
+.app_tsright{ width:43%; float:left; background:url(/files/app/phone.png) no-repeat top left; height:604px; margin-top:40px;}
+.app_tsleft dt{ font-size:24px; margin-bottom:20px;overflow:hidden; height:25px; line-height:25px;}
+.app_tsleft dt h3{ float:left; }
+.app_tsleft dt span{ font-size:14px; color:#999; display:inline-block; margin-left:10px;float:left;}
+.app_tsleft dd{ color:#666; font-size:16px; margin-top:5px;}
+.app_tsleft dl{ padding-left:120px;}
+.appts01{ background:url(/files/app/app_ts01.png) no-repeat left top; min-height:102px; margin-top:40px;}
+.appts02{ background:url(/files/app/app_ts02.png) no-repeat left top; min-height:102px; margin-top:40px;}
+.appts03{ background:url(/files/app/app_ts03.png) no-repeat left top; min-height:102px; margin-top:40px;}
+.app05{ width:100%; height:689px; background:url(/files/app/app05.jpg) no-repeat center top; margin-top:50px;}
+.app05_content{ width:960px; margin:0 auto; padding-left:80px; padding-top:215px;}
+.app05_content p{ line-height:50px; font-size:18px; color:#ffffff;}
+.app05_content p b{ color:#ffff00; font-weight:500;}
+

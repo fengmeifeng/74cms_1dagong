@@ -1,0 +1,95 @@
+*{font-style:normal;}
+
+body{
+  background: url(./img/android_bg.jpg) repeat top;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+header{
+  background: #606;
+  height: 60px;
+  width: 100%;
+  line-height: 60px;
+  color: #fff;
+}
+
+header .home{
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  color: #fff;
+  font-size: 22px;
+  /*border: #fff 1px solid;*/
+}
+
+
+
+.app_down img{
+  margin: 50px 0;
+}
+
+.app_down .info{
+  width: 140px;
+  margin: 0 auto;
+  text-align: left;
+  color: #333;
+  font-family: Microsoft YaHei,tahoma,arial;
+}
+
+.submit{
+  display: inline-block;
+  text-decoration: none;
+  width: 80%;
+  margin: 10px 0;
+  background-color: #f60;
+  border: none;
+  line-height: 50px;
+  cursor: pointer;
+  font-size: 22px;
+  font-family: Microsoft YaHei,tahoma,arial;
+  font-weight: normal;
+  letter-spacing: 0.075em;
+  color: #fff;
+}
+.submit:hover{
+  color: #fff;
+}
+
+.weixin{
+  background: url(/files/android/img/weixin.png) no-repeat left;
+  padding: 0px 0px 0px 50px;
+  font-size: 14px;
+  font-family: Microsoft YaHei,tahoma,arial;
+  color: #999;
+  text-align: center;
+  width: 220px;
+  word-break: break-all;
+  overflow: hidden;
+  margin: 0 auto;
+  font-style:normal;
+}
+
+.android_ico{
+	background:url(/files/android/img/android_ico.png) no-repeat;
+	position: relative;
+	display:inline-block;
+	top: 8px;
+	width:30px;
+	height:30px;
+	margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+

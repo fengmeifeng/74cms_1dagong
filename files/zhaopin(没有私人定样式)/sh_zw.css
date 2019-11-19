@@ -1,0 +1,503 @@
+
+/*-----jquery tip--------*/
+#vtip { display: none; position: absolute; padding: 10px; left: 5px; font-size:12px; background-color: #FFFFCC; border: 3px solid #FF9900; -moz-border-radius: 5px; -webkit-border-radius: 5px; z-index: 9999; line-height:170% }
+
+.shbox{
+	width:794px;
+	height:600px;
+	margin-left:8px;
+	background:url(/files/zhaopin/bgmap_sh.png) no-repeat left top;
+	position:relative;
+	left:0;
+	top:0;
+}
+
+#pic{
+	background: url(/files/zhaopin/bgmap_sh.png);
+}
+
+.bjy{
+	background:red;
+	cursor:pointer;
+	overflow:hidden;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter:alpha(opacity=70);
+	opacity:0.7;
+}
+.bjm{
+	background:#FC9;
+	cursor:pointer;
+	overflow:hidden;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=25)"; /* ie8  */
+    filter:alpha(opacity=25);    /* ie5-7  */
+	opacity:0.25;
+}
+
+.yc{
+	display:none;
+}
+
+.VIP{
+	width:81px;
+	height:101px;
+	position:absolute;
+	top:316px;
+	left:701px;	
+}
+
+.yyd1{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:191px;
+	left:163px;	
+}
+.yyd2{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:191px;
+	left:496px;	
+}
+
+.A01{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:513px;
+	left:591px;	
+}
+.A02{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:513px;
+	left:554px;	
+}
+.A03{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:513px;
+	left:517px;	
+}
+.A05{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:513px;
+	left:442px;	
+}
+.A06{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:513px;
+	left:405px;	
+}
+.A07{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:513px;
+	left:368px;	
+}
+.A08{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:513px;
+	left:296px;	
+}
+.A09{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:513px;
+	left:259px;	
+}
+.A10{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:513px;
+	left:222px;	
+}
+.A11{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:513px;
+	left:155px;	
+}
+.A12{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:513px;
+	left:118px;	
+}
+.A13{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:513px;
+	left:81px;	
+}
+.A15{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:513px;
+	left:44px;	
+}
+.A16{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:395px;
+	left:497px;	
+}
+.A17{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:395px;
+	left:460px;	
+}
+.A18{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:395px;
+	left:350px;	
+}
+.A19{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:395px;
+	left:313px;	
+}
+.A20{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:395px;
+	left:201px;	
+}
+.A21{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:395px;
+	left:164px;	
+}
+.B01{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:328px;
+	left:505px;	
+}
+.B02{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:289px;
+	left:505px;	
+}
+.B03{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:250px;
+	left:505px;	
+}
+.B05{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:328px;
+	left:454px;	
+}
+.B06{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:289px;
+	left:454px;	
+}
+.B07{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:250px;
+	left:454px;	
+}
+.B08{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:328px;
+	left:359px;	
+}
+.B09{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:289px;
+	left:359px;	
+}
+.B10{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:250px;
+	left:359px;	
+}
+.B11{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:328px;
+	left:307px;	
+}
+.B12{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:289px;
+	left:307px;	
+}
+.B13{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:250px;
+	left:307px;	
+}
+.B15{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:328px;
+	left:211px;	
+}
+.B16{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:289px;
+	left:211px;	
+}
+.B17{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:250px;
+	left:211px;	
+}
+.B18{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:328px;
+	left:160px;	
+}
+.B19{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:289px;
+	left:160px;	
+}
+.B20{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:250px;
+	left:160px;	
+}
+.B21{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:275px;
+	left:629px;	
+}
+.B22{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:236px;
+	left:629px;	
+}
+.B23{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:197px;
+	left:629px;	
+}
+.B25{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:158px;
+	left:629px;	
+}
+.B26{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:106px;
+	left:591px;	
+}
+.C01{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:106px;
+	left:554px;	
+}
+.C02{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:106px;
+	left:517px;	
+}
+.C03{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:106px;
+	left:442px;	
+}
+.C05{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:106px;
+	left:405px;	
+}
+.C06{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:106px;
+	left:368px;	
+}
+.C07{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:106px;
+	left:296px;	
+}
+.C08{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:106px;
+	left:259px;	
+}
+.C09{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:106px;
+	left:222px;	
+}
+.C10{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:106px;
+	left:156px;	
+}
+.C11{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:106px;
+	left:119px;	
+}
+.C12{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:106px;
+	left:82px;	
+}
+.C13{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:106px;
+	left:45px;	
+}
+.C15{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:180px;
+	left:43px;	
+}
+.C16{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:219px;
+	left:43px;	
+}
+.C17{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:291px;
+	left:43px;	
+}
+.C18{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:330px;
+	left:43px;	
+}
+.C19{
+	width:30px;
+	height:38px;
+	position:absolute;
+	top:369px;
+	left:43px;	
+}
+.C20{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:192px;
+	left:201px;	
+}
+.C21{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:192px;
+	left:313px;	
+}
+.C22{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:192px;
+	left:350px;	
+}
+.C23{
+	width:36px;
+	height:21px;
+	position:absolute;
+	top:192px;
+	left:460px;	
+}

@@ -1,0 +1,97 @@
+*{margin: 0;padding: 0;border: 0;border: none;}
+a{text-decoration: none;color: inherit;font-family: "microsoft yahei";}
+input{outline: none;background: none;}
+
+html,body{width: 100%;height: 100%;overflow-x:hidden;}
+
+body{
+	
+	width:100%;
+	font: 16px/24px "Microsoft YaHei";
+	/*overflow: hidden;*/
+	zoom: 1;
+}
+
+.top{position: relative;height: 40px;width: 100%;background: #660066;text-align: center;}
+.top a{position: absolute;float: left;left: 0px;}
+.top span{
+	display: inline-block;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 40px;color: #fff;
+}
+
+.main{
+	/*position: absolute;*/
+	position:relative;
+	/*bottom: 10px;*/
+	top:30%;
+	left: 2.5%;
+	background: #fff;
+	width: 85%;
+	opacity: 0.9;
+	padding:10px 5%;
+	overflow: hidden;
+  	zoom: 1;
+}
+
+.shoujian{
+	color: #ccc;
+	background: url(images/2015qixito-from.png) no-repeat left top;
+	border-bottom: #ccc 1px solid;
+	width: 36%;
+	padding-left: 50px;
+	margin-bottom: 10px;
+}
+
+.shoujian input{line-height: 30px;margin-top: -10px;font-size:14px;}
+
+textarea{
+	width: 100%;
+	max-height: 100px;
+	line-height: 30px;
+	color: #ab9dd0;
+	font-size:14px;
+	text-indent: 50px;
+	background: url(images/qixi-line.png) repeat;
+	resize: none;
+	outline: none;
+}
+
+.fajian{
+	float: right;
+	margin-top: 10px;
+	color: #ccc;
+	background: url(images/2015qixito-from.png) no-repeat left bottom;
+	border-bottom: #ccc 1px solid;
+	width: 36%;
+	padding-left: 70px;
+}
+
+.fajian input{line-height: 30px;font-size:14px;}
+
+.time{float: right;line-height: 30px;color: #606;font-size: 14px;clear: both;margin-bottom: 10px;}
+
+
+.yanz{
+	width: 100%;
+	height: 40px;
+	border-top: #ccc 1px dashed;
+	text-align: center;
+	overflow: hidden;
+	zoom: 1;
+}
+
+.yanz button{height: 30px;width: 100%;background: #ff67ad;margin-top: 5px;color: #fff;border-radius: 4px;}
+
+.footer{color: #666;font-size: 12px;line-height: 30px;color: #666;text-align: center;border-top: #ccc 1px dashed;}
+
+
+
+
+
+
+
+
+

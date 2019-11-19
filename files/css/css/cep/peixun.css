@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+
+.peixun{ width:1010px; margin:0 auto;}
+.peixun03{ width:1010px; background:url(../../img/peixun/peixun03.jpg) no-repeat center top;}
+.click{ margin-left:718px; overflow:hidden;}
+.click_free{ margin-top:30px;}
+.click_free a{ font-size:35px; color:#606;}
+.click_help{ margin-left:140px; margin-top:18px;}
+.click_help a{ font-size:17px; color:#cc3366; font-weight:bold;}
+.get_chance{ padding-top:295px; padding-bottom:180px;}
+.go_register a{ width:306px; height:62px; display:block; margin:0 auto;}
+.go_clickIn a{ width:280px; height:62px; margin:0 auto; display:block; margin-top:38px;}
+.go_help a{ display:block; width:142px; height:90px; margin-top:202px; margin-left:843px;}

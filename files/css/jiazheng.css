@@ -1,0 +1,36 @@
+@charset "gb2312";
+/* CSS Document */
+.jiazheng_01{ width:100%; height:519px; background:url(../images/jiazheng/banner01.jpg) no-repeat center top;}
+.jiazheng_02{ width:100%; height:617px; background:url(../images/jiazheng/banner02.jpg) no-repeat center top #f7f4e4;}
+.jiazheng_02_content{ width:950px; margin:0 auto; padding-top:160px;}
+.jiazheng_02_content h1{ font-size:50px; color:#767776; font-weight:700; display:block; margin-bottom:30px;}
+.jiazheng_02_content h2{ font-size:24px;color:#767776;}
+.title02{ color:#fe7903; font-size:26px; margin-bottom:50px;}
+.title03{ color:#f6483b;}
+.title04{ color:#e24788;}
+.title05{ color:#3bb47f;}
+.title06{ color:#1fa5a5;}
+.title07{ color:#219bdf;}
+.title02 span{ color:#767776; font-size:30px; font-weight:700; display:inline-block; margin-right:15px;}
+.jiazheng02_price{ font-size:60px; color:#fe7903; font-weight:700; margin:20px 0 60px;}
+.jiazheng03_price{color:#f6483b;}
+.jiazheng04_price{color:#e24788;}
+.jiazheng05_price{color:#3bb47f;}
+.jiazheng06_price{color:#1fa5a5;}
+.jiazheng07_price{color:#219bdf;}
+.jiazheng_02_content a.click_btn03{ background-color:#f6483b;}
+.jiazheng_02_content a.click_btn04{ background-color:#e24788;}
+.jiazheng_02_content a.click_btn05{ background-color:#3bb47f;}
+.jiazheng_02_content a.click_btn06{ background-color:#1fa5a5;}
+.jiazheng_02_content a.click_btn07{ background-color:#219bdf;}
+.jiazheng_02_content a{ display:block; width:240px; height:60px; line-height:60px; text-align:center; background-color:#fe7903; border-radius:5px; color:#ffffff; font-size:30px; margin-top:50px;}
+
+.jiazheng02_price_title{ font-size:24px; margin-top:25px; color:#767776;}
+
+.jiazheng_03{ width:100%; height:620px; background:url(../images/jiazheng/banner03.jpg) no-repeat center top #f5e7e4;}
+.jiazheng_03_content{ padding-left:450px; width:550px;}
+.jiazheng_04{ width:100%; height:619px; background:url(../images/jiazheng/banner04.jpg) no-repeat center center #efeaf7;}
+.jiazheng_05{ width:100%; height:621px; background:url(../images/jiazheng/banner05.jpg) no-repeat center top #e9f7f0;}
+.jiazheng_06{ width:100%; height:620px; background:url(../images/jiazheng/banner06.jpg) no-repeat center top #dafcfc;}
+.jiazheng_07{ width:100%; height:621px; background:url(../images/jiazheng/banner07.jpg) no-repeat center top #ddeff9;}
+
