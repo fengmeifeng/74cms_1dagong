@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>细数java的缺点 - 职场指南 - 壹打工网</title>
+<meta name="keywords" content="细数java的缺点" />
+<meta name="description" content="我仍然认为Java一门伟大的（程序）语言。相对于C++和Smalltack，Java已经有了很大的改进；但现在，即使是Java，也已经开始感觉到了其15年的积重。" />
+<link href="/zhichang/files/style.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+
+<body>
+<div class="home">
+<h1><a href="http://www.1dagong.com" class="logo">壹打工网</a></h1>
+<div class="hf"><img src="/zhichang/files/head.jpg" width="600" height="70" alt="壹打工网顶部" /></div>
+<div class="sc">
+<ul>
+<li><a href=""onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://localhost/zhichang');">设为首页</a></li>
+<li><a href="javascript:window.external.AddFavorite('http://localhost/zhichang','')">加入收藏</a></li>
+<li><a href="#">网站地图</a></li>
+</ul>
+</div>
+<div class="dh">
+<ul>
+<li><a href='/'>网站首页</a> </li>
+
+<li><a href='/zhichang/qiuzhi/'>求职指导</a> </li>
+
+<li><a href='/zhichang/jianli/'>简历手册</a> </li>
+
+<li><a href='/zhichang/mianshi/'>面试指南</a> </li>
+
+<li><a href='/zhichang/zhiwei/'>职位说明书</a> </li>
+
+<li><a href='/zhichang/fangpian/'>防骗指南</a> </li>
+
+<li><a href='/zhichang/pingjia/'>自我评价</a> </li>
+
+<li><a href='/zhichang/zongjie/'>工作总结</a> </li>
+
+<li><a href='/zhichang/ceping/'>职业测评</a> </li>
+
+</ul>
+</div>
+<div class="fdh">
+<div class="rmc">
+<p>
+<span>热门搜索:</span> </p>
+</div>
+<div class="ss">
+<ul class="soso">
+<form class="sou" method="post" name="search" action="#">
+<input type="text" id="kuang" value="" name="keyword"class="swap_value" /> 
+<input type="image"  src="/zhichang/files/so.gif" width="33" height="24" class="go" alt="搜素" title="搜索">
+</form>
+</ul>
+</div>
+</div>
+<div class="dangq">
+<ul>
+  <li>当前位置：<a href='http://localhost/zhichang/'></a> > <a href='/zhichang/ceping/'>职业测评</a> > </li></ul>
+</div>
+<div class="artz">
+<h2>细数java的缺点</h2>
+<p class="fbsj">时间：2015-07-21 15:48</p>
+<div class="arnr">
+<p>　　<font size="1">　　<span style="font-size: small"><span><span>别误解，其实在我的职业生涯中，我已经编写了无数的<span>Java</span>代码；而且，我仍然认为<span>Java</span>一门伟大的（程序）语言。相对于<span>C++</span>和<span>Smalltack</span>，<span>Java</span>已经有了很大的改进；但现在，即使是<span>Java</span>，也已经开始感觉到了其<span>15</span>年的积重。</span></span></span></font></p>
+<p>　　<font size="1">　　<span style="font-size: small"><span><span>事实上，在我的经历中，我总是不得不面对<span>Java</span>的设计和规范上的一些错误、缺陷和不足，这些东西，让我的<span>Java</span>程序员生活少有乐趣可言。现在全世界的<span>Java</span>程序员有数百万之众，<span>Java</span>写就的代码更达数亿行，要是我说<span>Java</span>在不久的将来死去，这还有些远。不管怎样，随着一些兼容<span>JVM</span>的语言出现（我最钟意<span>Scala</span>）后，这些问题变得越发不能容忍了，我开始想，是时候慢慢离开<span>Java</span>了（但并不脱离<span>JVM</span>）。具体说来，我认为<span>Java</span>语言的<span>10</span>大问题是：</span></span></span></font></p>
+<p>　　<font size="1">　　<span style="font-size: small"><span><span>1</span><span>、缺少闭包（<span>closure</span>）：我想这个不需要解释了。函数式编程已经存在几十年了，但最近几年，它们获得了越来越多的关注，最主要的原因，是它可以自然地编写并行程序。我部分的同意<span>Joshua Bloch</span>强调在<span>Java</span>中引入闭包的问题需要再想一想（<span>BGGA</span>提议的方式真的很糟），至少闭包的缺失，使得在<span>Java</span>中做任何真正的函数式编程都是不可能的。</span></span></span></font></p>
+<p>　　<font size="1">　　<span style="font-size: small"><span><span>2</span><span>、缺少一等函数：这个问题与前一个有些关联，但我认为它更糟糕。在<span>Java</span>里，要达到类似效果的唯一方式，是使用著名的、丑陋悲惨的单方法匿名内部类，但这看上去的确是一个拙劣的方法。甚至在<span>C#</span>中，也通过代理机制，提供了一个更好的实现。</span></span></span></font></p>
+<p>　　<font size="1">　　<span style="font-size: small"><span><span>3</span><span>、原生类型（<span>Primitive types</span>）：如果在<span>Java</span>中一切皆对象，那是多么完美啊，但他们偏偏不这样设计。因而，这一点导致了一些问题，比如，不能把一个<span>int</span>放到集合（<span>Collection</span>）里，这个在<span>Java5</span>中通过自动装箱特性得到了解决（下面会提到）。它也造成了传值与传引用上的困扰，原生类型数据是通过值传给方法的（复制一份拷贝，然后传给函数），而真正的对象是通过传递（译注：其实是复制对象地址再传递，因此应该也是传值方式，只是由于函数内部可通过这个对象地址访问对象，因此效果上类似传引用）。</span></span></span></font></p>
+<p>　　<font size="1">　　<span style="font-size: small"><span><span>4</span><span>、自动装箱（<span>Autoboxing</span>）和自动拆箱（<span>autounboxing</span>）：这个特性是为了解决因原生类型的存在所导致的问题，在<span>Java5</span>引入的。它允许静默地转换原生类型到相应的对象，但这常常导致其它的问题。比如<span>Integer</span>可以为<span>null</span>，但<span>int</span>不能，因此这时<span>JVM</span>只能抛出一个难以调试的空指针异常（<span>NullPointerException</span>）。此外，它还可能导致其它奇怪的行为，就像下面的例子，我们就很难理解，变量<span>test</span>为什么是<span>false</span>：</span></span></span></font></p>
+<p>　　<font size="1">　　<span><span style="font-size: small"><span>Intger a = new Integer(1024);</span></span></span></font></p>
+<p>　　<font size="1">　　<span><span style="font-size: small"><span>Intger b = new Integer(1024);</span></span></span></font></p>
+<p>　　<font size="1">　　<span><span style="font-size: small"><span>boolean test = a &lt; b || a == b || a &gt; b;</span></span></span></font></p>
+<p>　　<font size="1">　　<span style="font-size: small"><span><span>5</span><span>、缺少范型具类化：范型是<span>Java5</span>引入的一个很酷的特征，但是为了保持与旧版本<span>Java</span>的兼容性，导致缺失某些重要的特性，尤其是不能在运行时反省范型的类型。例如，你有一个方法，接受<span>List</span>参数，如果传进来一个<span>List<string></string></span>，你却不能知道运行里该范型的确切类型。同理，你也不能创建范型数组。这意味着，尽管下面的代码看起来很自然，但却不编译不了：</span></span></span></font></p>
+<p>　　<font size="1">　　<span><span style="font-size: small"><span>List<string></string>[] listsOfStrings = new List<string></string>[3];</span></span></span></font></p>
+<p>　　<font size="1">　　<span style="font-size: small"><span><span>6</span><span>、不可避免的范型警告：你有发现过自己陷入不可能去掉的关于范型的警告么？如果你像我一样大量使用范型，我打赌你碰到过。事实上，是这个问题的规模化症状，让他们认为需要引入一个特定的注解<span>(@SuppressWarnings(&quot;unchecked&quot;))</span>来处理这种情况，我觉得，范型应该可能被设计的更好。</span></span></span></font></p>
+<p>　　<font size="1">　　<span style="font-size: small"><span><span>7</span><span>、不能传<span>void</span>给方法调用：我得承认，这种给方法传递<span>void</span>的需求，乍一看有些怪异。我喜欢<span>DSL</span>，当我实现自己的<span>DSL</span>库（<span>lambdaj</span>）的一个特定特性时，我不得不需要一个方法声明成这样的签名：<span>void doSomething(Object parameter)</span>，这里为这个方法传进来的参数<span>parameter</span>，是另一个方法调用的结果，它唯一的目的，是注册调用（的对象）自身，以可以在以后执行它。让我吃惊的是，即使<span>println</span>方法返回<span>void</span>，看上去也并没有一个好理由，不允许我把代码写成这样，：</span></span></span></font></p>
+<p>　　<font size="1">　　<span><span style="font-size: small"><span>doSomething(System.out.println(&quot;test&quot;));</span></span></span></font></p>
+<p>　　<font size="1">　　<span style="font-size: small"><span><span>8</span><span>、没有原生的代理机制：代理是一种非常有效和应用广泛的模式，但<span>Java</span>提供的代理机制，只针对接口，而不是具体类。这是为什么象<span>cblib</span>这样提供这种机制的库，被如此多的主流框架，如<span>Spring</span>和<span>Hibernate</span>，采用的原因。此外，由于<span>cglib</span>通过运行时创建被代理类的子类来实现的，因此这些种方式有一个众所周知的限制&mdash;&mdash;不能代理<span>final</span>类，比如<span>String</span>。</span></span></span></font></p>
+<p>　　<font size="1">　　<span style="font-size: small"><span><span>9</span><span>、差劲的<span>Switch...case</span>语句：<span>Java</span>规定，<span>switch...case</span>只能选择<span>int</span>和<span>enum</span>（<span>Java5</span>开始）。这一点如果跟更现代的语言如<span>Scala</span>相比，看起来简直太弱了。</span></span></span></font></p>
+<p>　　<font size="1">　　<span style="font-size: small"><span><span>10</span><span>、受检查异常（<span>Checked exception</span>）：类似原生类型，受检查异常也已经成为<span>Java</span>的一个罪孽之源。它迫使程序员必须做下面两件极其糟糕讨厌的事情中的一个：让你的代码里充斥大量的、糟糕难读的、容易出错的<span>try...catch</span>语句，而这样做的最大意义，只是将捕获的异常，包装成运行时异常，然后再重新抛出；或者是让大量的抛出声明子句污染你的<span>API</span>，让接口缺少灵活性和可扩展性。</span></span></span></font></p>
+<p>　　<font size="1">　　<span style="font-size: small"><span><span>真正的问题是，这里我提到的这几大主要问题，唯一的解决办法，是要做一个痛苦的决择，定义一套新的语言规范，放下当前版本的向后兼容性。我猜他们永远也不会这么做，虽然我相信，如果编写一个能够自动转换旧<span>Java</span>源码的程序，让它们与假设的新版本兼容，并不是很困难。最后，这就是我决定开始寻找一个更好的<span>JVM</span>兼容语言的原因。</span></span></span></font></p>
+                  </div>
+                  <div class="black10"></div>
+</div>
+<div class="arfy"><ul class="jogger2"></ul></div>
+<div class="arfx"><!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+<span class="bds_more">分享到：</span>
+<a class="bds_tsina">新浪微博</a>
+<a class="bds_qzone">QQ空间</a>
+<a class="bds_tqq">腾讯微博</a>
+<a class="bds_renren">人人网</a>
+<a class="bds_diandian">点点网</a>
+<a class="bds_copy">复制网址</a>
+<a class="bds_print">打印</a>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&uid=14477" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>
+<!-- Baidu Button END --></div>
+<div class="arxg">
+<p>相关内容</p>
+<ul>
+
+</ul>
+</div>
+</div>
+<div class="listy">
+<div class="tjnr">
+<p>随机阅读</p>
+<ul style="border-top:1px solid #8fbf00; padding-top:10px">
+<li><a href="/zhichang/ceping/2015/0721/45077.html">人才的本质——以人为本的内涵</a></li>
+<li><a href="/zhichang/ceping/2015/0721/45329.html">职场8大“傻瓜”行为 菜鸟别犯</a></li>
+<li><a href="/zhichang/ceping/2015/0721/45637.html">决定你职场人际关系的18项EQ</a></li>
+<li><a href="/zhichang/ceping/2015/0721/45311.html">人才测评中的“七多”原则</a></li>
+<li><a href="/zhichang/ceping/2015/0721/45362.html">用人单位你可以拒绝我但请尊重我</a></li>
+<li><a href="/zhichang/ceping/2015/0721/44832.html">职业测试：你属于哪种领导风格-</a></li>
+<li><a href="/zhichang/ceping/2015/0721/44833.html">测测你的人际关系怎么样-人才评</a></li>
+<li><a href="/zhichang/ceping/2015/0721/44820.html">测试适合你的工作方式-人才评测</a></li>
+<li><a href="/zhichang/ceping/2015/0721/45780.html">25岁前应有的10种竞争力</a></li>
+<li><a href="/zhichang/ceping/2015/0721/44969.html">人才测评：年底了，你有职业倦怠</a></li>
+<li><a href="/zhichang/ceping/2015/0721/45564.html">90后登场求职 为何如此“嚣张”</a></li>
+<li><a href="/zhichang/ceping/2015/0721/45056.html">人才测评的未来发展趋势--人力资</a></li>
+<li><a href="/zhichang/ceping/2015/0721/45022.html">都市白领不想结婚的三大理由</a></li>
+<li><a href="/zhichang/ceping/2015/0721/45475.html">决定你职场人际的18项EQ</a></li>
+
+</ul>
+</div>
+
+<div class="nrmk1">
+<img src="/zhichang/files/1.jpg" width="250" height="400" />
+</div>
+<p class="nrbt">热门排行</p>
+<div class="nrmk3">
+<ul>
+<li><a href="/zhichang/ceping/2015/0715/35044.html">你是职场中不合群的白领吗？</a></li>
+<li><a href="/zhichang/ceping/2015/0721/44798.html">职业测评：教师职业心理测试-人</a></li>
+<li><a href="/zhichang/ceping/2015/0721/44799.html">职场测评：你的职场幼稚程度是多</a></li>
+<li><a href="/zhichang/ceping/2015/0721/44800.html">职场人际敏感度测试，你是哪一类</a></li>
+<li><a href="/zhichang/ceping/2015/0721/44801.html">职场个性特质测量表 -人才评测</a></li>
+<li><a href="/zhichang/ceping/2015/0721/44802.html">如何利用好职业能力测试？-人才</a></li>
+<li><a href="/zhichang/ceping/2015/0721/44803.html">你的职场品牌是什么？-人才评测</a></li>
+<li><a href="/zhichang/ceping/2015/0721/44804.html">职员创新能力测评-人才评测</a></li>
+<li><a href="/zhichang/ceping/2015/0721/44805.html">职场人际交往能力测评-人才评测</a></li>
+<li><a href="/zhichang/ceping/2015/0721/44806.html">测试职场中你的致命缺点-人才评</a></li>
+
+</ul>
+</div>
+</div>
+</div>
+<div class="foot">
+<ul>
+<li><a href="http://www.1dagong.com/zhaopin/index.html" target="_self" >找工作</a><a href="http://www.1dagong.com/jianli.html" target="_self" >找人才</a><a href="http://www.1dagong.com/hymq/index.php" target="_self" >行业名企</a><a href="http://www.1dagong.com/jobfair/jobfair-list.php" target="_self" >人才市场</a><a href="http://www.1dagong.com/xiaoyuan/" target="_self" >校园招聘</a></li>
+
+<li>部分内容收集于互联网如有侵犯您的权利请联系我们及时删除</li>
+<li>www.1dagong.com 版权所有</li>
+</ul>
+</div>
+
+<div class="none">
+	<div class="date_up">2015-07-17 Friday 11:53:06 AM</div>
+
+		<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?aa1b6622cda40ea74c1ac85e4b432e3a";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+		</script>
+</div>
+
+</body>
+</html>
