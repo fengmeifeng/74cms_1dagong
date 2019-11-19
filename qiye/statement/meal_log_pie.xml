@@ -1,0 +1,4 @@
+<chart ShowAboutMenuItem="0"  numberPrefix=" "  exportEnabled="1" exportShowMenuItem="1" exportAtClient="1" exportHandler="fcExporter1" baseFont="ËÎÌו"  baseFontSize="14" bgColor="#FFFFFF" shadowAlpha="100" canvasBgColor="#FFFFFF"  >\n<set name='2014/12' value='5600' /> 
+<set name='2015/01' value='4000' /> 
+<set name='2015/03' value='51447' /> 
+</chart>

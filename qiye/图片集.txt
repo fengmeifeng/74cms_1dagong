@@ -1,0 +1,177 @@
+html
+
+<!---图片集-===================================================================start-->
+<script>
+//删除图片
+function delimg(id){	
+	if(id!=""){
+		$.post("uploadbing/uploadify.php", {del:"d",id:id},
+		function(data){
+			if(data=='0'){
+				alert("删除图片失败！");
+			}else{
+				$("#albold"+id).remove();
+			}
+		});
+	}
+}
+//更新图片
+function genxin(id){
+	var title=$("#albold"+id).find("#title").val();
+	if(title!=""){
+		$.post("uploadbing/uploadify.php", {gx:"g",id:id,title:title},
+		function(data){
+			if(data=='0'){
+				alert("更新标题失败！");
+			}else{
+				alert("更新标题成功！");
+			}
+		});
+	}else{
+		alert("请输入标题");
+	}
+}
+//选择图片类别
+function dqForm(data){
+	var value=data.value;
+	$(".tp").empty();
+	//当改变图片类别的时候在调用下图片上传
+	var id='<?php echo $aid; ?>';
+	if(value!=""){
+		$.post("uploadbing/uploadify.php", {tp:"t",id:id,sort:value},
+		function(data){
+			if(data==0){
+				$("#thumbnailsEdit").empty();
+				$("#thumbnailsEdit").append("没有找到此类别的图片");
+			}else{
+				if(typeof data == 'object'){
+					$("#thumbnailsEdit").empty();
+					var l=data.length;
+					for(var i=0; i<l; i++){
+						var html="<div class='albCt albEdit' id='albold"+data[i].id+"'><a href='javascript:void(0)' onclick=\"delimg(\'"+data[i].id+"\')\">[删除]</a><img src='swfupload.php?dopost=ddimg&img="+data[i].imgurl+"' width='150' /><input type='text' name='review' id='title' value='"+data[i].imgtitle+"'/> <a href='javascript:void(0)' onclick=\"genxin(\'"+data[i].id+"\')\" >[更新]</a></div>"
+						$("#thumbnailsEdit").append(html);
+					}
+				}else{
+					$("#thumbnailsEdit").empty();
+					$("#thumbnailsEdit").append("没有找到此类别的图片");
+				}
+			}
+		},"json");
+	}
+	//重新调用图片上传函数
+	shangchutp(value);
+}
+/*************************************/
+$(function(){
+	//加载完成调用上传图片函数
+	shangchutp(1);
+	//加载这个文章的所有图片
+	var id='<?php echo $aid; ?>';
+	if(id!=""){
+		$.post("uploadbing/uploadify.php", {tp:"t",id:id},
+		function(data){
+			if(data==0){
+				$("#thumbnailsEdit").empty();
+				$("#thumbnailsEdit").append("没有找到此文章的图片");
+			}else{
+				if(typeof data == 'object'){
+					var l=data.length;
+					for(var i=0; i<l; i++){
+						var html="<div class='albCt albEdit' id='albold"+data[i].id+"'><a href='javascript:void(0)' onclick=\"delimg(\'"+data[i].id+"\')\">[删除]</a><img src='swfupload.php?dopost=ddimg&img="+data[i].imgurl+"' width='150' /><input type='text' name='review' id='title' value='"+data[i].imgtitle+"'/> <a href='javascript:void(0)' onclick=\"genxin(\'"+data[i].id+"\')\" >[更新]</a></div>"	
+						$("#thumbnailsEdit").append(html);
+					}
+				}
+			}
+		},"json");
+	}
+	
+});
+
+//上传图片函数
+function shangchutp(a){
+	$("#tppic").uploadify({
+		'swf'		: 'uploadbing/uploadify.swf',
+		'uploader'	: 'uploadbing/uploadify.php',
+		'cancelImage': 'uploadbing/uploadify-cancel.png',
+		'buttonText': '上传图片',
+		'fileObjName':'Filedata',
+		'formData': {
+			'sc' : 's',
+			'uid' : '<?php echo $aid; ?>',
+			'sort': a
+		},
+		//回调函数
+		'onUploadSuccess': function(file,data,response){
+			if(data!="0"){
+				var img="<div class='albCt albEdit' id='albold"+data.split("|")[1]+"'><a href='javascript:void(0)' onclick=\"delimg(\'"+data.split("|")[1]+"\')\">[删除]</a><img src='swfupload.php?dopost=ddimg&img="+data.split("|")[0]+"' width='150' /><input type='text' name='review' id='title' /> <input type='hidden' name='id' value='"+data.split("|")[1]+"'><a href='javascript:void(0)' onclick=\"genxin(\'"+data.split("|")[1]+"\')\" >[更新]</a></div>"
+				$(".tp").append(img);
+			}else if(data=="0"){
+				alert("图片删除失败！");
+			}else{
+				alert(data);
+			}
+		}
+	});
+}
+</script>
+  <table width="98%"  border="0" align="center" cellpadding="2" cellspacing="2" id="adset1" style="border:1px solid #cfcfcf;background:#ffffff;display:none">
+    <tr>
+	  <td height="24" colspan="4" class="bline" style="background:#F9FCEF;"><table width="800" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="90">&nbsp;<b>原有图片：</b></td>
+            <td></td>
+          </tr>
+        </table>
+	  </td>
+	</tr>
+	
+	<tr>
+		<td height="24" colspan="4" class="bline">
+			<table width='100%'>
+				<tr><td>
+					<div id="thumbnailsEdit">
+					</div>
+				</td></tr>
+			</table>
+		</td>
+	</tr>
+	
+	<tr>
+	  <td height="24" colspan="4" class="bline" style="background:#F9FCEF;"><table width="800" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="90">&nbsp;<b>属于类别：</b></td>
+            <td>
+				<select id="typeid" style="width:200px" onchange="dqForm(this)">
+					<option value="">请选择类别...</option>
+					<option value="1" selected="selected">保送接站</option>
+					<option value="2" class="option3">工作环境</option>
+					<option value="3" class="option3">入职现场</option>
+					<option value="4" class="option3">生活娱乐</option>
+				</select>
+			</td>
+          </tr>
+        </table>
+	  </td>
+	</tr>
+	<tr>
+      <td height="24" colspan="4" class="bline" style="background:#F9FCEF;"><table width="800" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="90">&nbsp;<b>增加新图片：</b></td>
+            <td>  <input type="file" id="tppic" />  <input type="hidden" id="sort" value="1"/>  </td>
+          </tr>
+        </table>
+	  </td>
+    </tr>
+    <tr>
+      <td colspan="4" style="background:#fff url(images/albviewbg.gif) 0 20px no-repeat;"><table width='100%' height='160' style="margin:0 0 20px 0">
+          <tr>
+            <td><div id="divFileProgressContainer" style="height:75px;"><div class="tp"> </div></div>
+              <div id="thumbnails"></div></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+<!---图片集-======================================end====================-->
+
+
+
