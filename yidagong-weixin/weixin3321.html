@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="/files/favicon.ico"/>
+		<meta http-equiv="Cache-Control" content="no-transform" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<title>壹打工网微信 / 微信订阅号 - 壹打工网-让工作来找你</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<!-- Bootstrap core CSS -->
+		<link href="/files/css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="/files/css/all.css" rel="stylesheet">
+
+		<link href="/files/css/ie7.css" rel="stylesheet">
+        <link href="/files/css/zt/zhengwen.css" rel="stylesheet" />  <!--------1打工征文页面-------->        
+		 <link href="/files/css/carousel.css" rel="stylesheet"><!-- 仅首页 -->		 
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+    
+
+		 <script language="javascript" type="text/javascript" src="/include/login.js"></script>
+
+		<script language="javascript" type="text/javascript">
+		<!--
+			
+			function CheckLogin(){
+			  var taget_obj = document.getElementById('headlogin');
+			  myajax = new DedeAjax(taget_obj,false,false,'','','');
+			  myajax.SendGet2("/home/headlogin.php");
+			  DedeXHTTP = null;
+			}
+		-->
+		</script>
+
+
+	<div class="top">
+		<div class="container">
+			<div class="row">
+				
+				<ul class="nav footer-nav pull-left">
+					<li>					
+						<a href="http://www.1dagong.com" target="_blank">首页</a>
+						<a class="hidden-xs" href="/home/baoming.php" target="_blank">手机报名</a>
+						<a class="hidden-xs" href="/help/" target="_blank">帮助</a>
+						<a class="hidden-xs" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.1dagong.com');" href="javascript:">设为首页</a>
+						<a class="hidden-xs" href="javascript:" onclick="window.external.addFavorite(parent.location.href,document.title);">加入收藏</a>
+						<a class="hidden-xs" href="/plus/shortcut.php" style="color:#ff6600" class="lia">保存到桌面</a>
+					</li>
+				</ul>
+
+				<div id="headlogin" class="nav footer-nav pull-right">
+					<a href="/home/baoming.php" target="_blank"><font color="#ff6600">[免费注册报名]</font></a><a href="/home/index.php" target="_blank">[会员登录]</a>
+				</div>
+				<script language="javascript" type="text/javascript">CheckLogin();</script>
+			</div>
+		</div>
+		<!-- /container -->
+	</div>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3 hidden-xs">
+				<a href="http://www.1dagong.com"><img src="/files/img/logo.png" alt="壹打工网" /></a>
+			</div>
+			<div class="col-sm-6 visible-xs">
+				<a href="http://www.1dagong.com"><img src="/files/img/logo-phone.jpg" class="img-responsive" alt="壹打工网" /></a>
+			</div>
+			<div class="col-sm-6 imgintro">
+				<a href="/neijian/" target="_blank"><img src="/files/image/headban.jpg" class="img-responsive" alt="一份工作  两份收入" /></a>
+			</div>
+			<div class="col-sm-3 hidden-xs">
+				<img src="/files/image/phone.png" class="img-responsive" alt="全国免费求职热线" />
+			</div>
+		</div>
+	</div>
+		
+	
+	
+	<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div>
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+         		  <a class="navbar-logo visible-xs" href="http://www.1dagong.com">400-118-5188</a>
+		  </ul>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="http://www.1dagong.com">首页</a></li>
+            <li><a href="/gongzuo">企业库</a></li>
+            <li><a href="/home/baoming.php">报名直通车</a></li>
+					
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">帮助<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/home/index.php">登录</a></li>
+				<li><a href="/help/shijian.html">客服工作时间</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">我们的优势</li>
+                <li><a href="/help/aboutus.html">关于我们</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/home/tuijian.php" style="color:#FFff00;">我要推荐</a></li>
+            <li><a href="/weiping/">微 评</a></li>
+			<li><a href="/zhengwen/">征文大赛</a></li>
+			<li class="hidden-sm"><a href="/home/index.php">会员中心</a></li>	
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+    <div class="container">
+        <ol class="breadcrumb">
+            <li>
+                <a href="http://www.1dagong.com">网站首页</a>
+            </li>
+            <li>
+                <a href="/yidagong-weixin/">壹打工微信</a>
+            </li>
+            <li class="active">微信列表</li>
+        </ol>
+    </div>
+
+    <div class="container">
+        <div class="row">
+        
+                
+            <div class="col-md-9 acon">
+                 <ul class="media-list tags">
+					<li class="mar mtop-03">
+                    	<div class="row">
+                    	<div class="fl col-sm-3 col-xs-12">
+                            <a class="pull-left" href="/yidagong-weixin/0Z33922014.html">
+                                <img class="img-responsive" alt="性格内向如何在工厂工作？" src="/file/allimg/1409/1-140Z31F0440-L.jpg">
+                            </a>
+                        </div>
+                        <div class="media-body full-left col-sm-9 col-xs-12">
+                            <h4 class="media-heading zw-title">
+                                <a href="/yidagong-weixin/0Z33922014.html">性格内向如何在工厂工作？</a>
+                            </h4>
+                            <div class="pad">发布时间: <b>2014年09月03日</b>
+								
+								<div class="newdigg37" id="newdigg37" style="display:inline">
+									<div class="btn-group btn-group-xs">
+									  <a type="button" class="btn btn-purple" onclick="javascript:postDigg('good',37)">关注微信号：</a>
+									  <a type="button" class="btn btn-default"><strong>yidagongwang</strong></a>
+									</div>
+								</div>
+								
+								<script language="javascript" type="text/javascript">getDigg(37);</script>
+                            
+                             </div>
+                            <div class="zw-pco">
+								<p>每个人的性格都不一样，有的人天生外向，有的人性格内向。那 性格内向的人又应该如何在工厂打拼呢? 一、主动争取适合内向人做的工作 一般来说，每个</p>
+							</div>
+                             <p class="pull-right mtop-02"><a href="/yidagong-weixin/0Z33922014.html" class="secai">阅读全文&gt;&gt;</a></p> 
+                		<div class="clear"></div>
+                        
+                   	</div>
+					</div>
+                    </li><li class="mar mtop-03">
+                    	<div class="row">
+                    	<div class="fl col-sm-3 col-xs-12">
+                            <a class="pull-left" href="/yidagong-weixin/0Z33912014.html">
+                                <img class="img-responsive" alt="少问别人为什么，多问自己凭什么" src="/file/allimg/1409/1-140Z31F0170-L.jpg">
+                            </a>
+                        </div>
+                        <div class="media-body full-left col-sm-9 col-xs-12">
+                            <h4 class="media-heading zw-title">
+                                <a href="/yidagong-weixin/0Z33912014.html">少问别人为什么，多问自己凭什么</a>
+                            </h4>
+                            <div class="pad">发布时间: <b>2014年09月03日</b>
+								
+								<div class="newdigg37" id="newdigg37" style="display:inline">
+									<div class="btn-group btn-group-xs">
+									  <a type="button" class="btn btn-purple" onclick="javascript:postDigg('good',37)">关注微信号：</a>
+									  <a type="button" class="btn btn-default"><strong>yidagongwang</strong></a>
+									</div>
+								</div>
+								
+								<script language="javascript" type="text/javascript">getDigg(37);</script>
+                            
+                             </div>
+                            <div class="zw-pco">
+								<p>□不是所有事情都能如愿以偿，但是任何事情都值得尝试。 □突然发现生命中好多不可或缺的人，走着走着就散了。 □人生是一场一个人的旅程，无人可</p>
+							</div>
+                             <p class="pull-right mtop-02"><a href="/yidagong-weixin/0Z33912014.html" class="secai">阅读全文&gt;&gt;</a></p> 
+                		<div class="clear"></div>
+                        
+                   	</div>
+					</div>
+                    </li><li class="mar mtop-03">
+                    	<div class="row">
+                    	<div class="fl col-sm-3 col-xs-12">
+                            <a class="pull-left" href="/yidagong-weixin/0S03Z2014.html">
+                                <img class="img-responsive" alt="如果我可以早些知道这些事情" src="/file/allimg/1408/1-140S01521080-L.jpg">
+                            </a>
+                        </div>
+                        <div class="media-body full-left col-sm-9 col-xs-12">
+                            <h4 class="media-heading zw-title">
+                                <a href="/yidagong-weixin/0S03Z2014.html">如果我可以早些知道这些事情</a>
+                            </h4>
+                            <div class="pad">发布时间: <b>2014年08月30日</b>
+								
+								<div class="newdigg37" id="newdigg37" style="display:inline">
+									<div class="btn-group btn-group-xs">
+									  <a type="button" class="btn btn-purple" onclick="javascript:postDigg('good',37)">关注微信号：</a>
+									  <a type="button" class="btn btn-default"><strong>yidagongwang</strong></a>
+									</div>
+								</div>
+								
+								<script language="javascript" type="text/javascript">getDigg(37);</script>
+                            
+                             </div>
+                            <div class="zw-pco">
+								<p>很多事情其实无关紧要 许多令我激动、担忧或殚精竭虑的事情，到最后都变得不值一文。只有很少的事情确实关乎我们一生的快乐。我多么希望早点知道这</p>
+							</div>
+                             <p class="pull-right mtop-02"><a href="/yidagong-weixin/0S03Z2014.html" class="secai">阅读全文&gt;&gt;</a></p> 
+                		<div class="clear"></div>
+                        
+                   	</div>
+					</div>
+                    </li><li class="mar mtop-03">
+                    	<div class="row">
+                    	<div class="fl col-sm-3 col-xs-12">
+                            <a class="pull-left" href="/yidagong-weixin/0S03Y2014.html">
+                                <img class="img-responsive" alt="文章很短，道理很深" src="/file/allimg/1408/1-140S01520490-L.jpg">
+                            </a>
+                        </div>
+                        <div class="media-body full-left col-sm-9 col-xs-12">
+                            <h4 class="media-heading zw-title">
+                                <a href="/yidagong-weixin/0S03Y2014.html">文章很短，道理很深</a>
+                            </h4>
+                            <div class="pad">发布时间: <b>2014年08月30日</b>
+								
+								<div class="newdigg37" id="newdigg37" style="display:inline">
+									<div class="btn-group btn-group-xs">
+									  <a type="button" class="btn btn-purple" onclick="javascript:postDigg('good',37)">关注微信号：</a>
+									  <a type="button" class="btn btn-default"><strong>yidagongwang</strong></a>
+									</div>
+								</div>
+								
+								<script language="javascript" type="text/javascript">getDigg(37);</script>
+                            
+                             </div>
+                            <div class="zw-pco">
+								<p>1.猫和猪是好朋友。一天猫掉进大坑，猪拿来绳子，猫叫猪把绳子扔下来，结果它整捆扔了下去。猫很郁闷的说：这样扔下来，怎么拉我上去?猪说：不然怎</p>
+							</div>
+                             <p class="pull-right mtop-02"><a href="/yidagong-weixin/0S03Y2014.html" class="secai">阅读全文&gt;&gt;</a></p> 
+                		<div class="clear"></div>
+                        
+                   	</div>
+					</div>
+                    </li><li class="mar mtop-03">
+                    	<div class="row">
+                    	<div class="fl col-sm-3 col-xs-12">
+                            <a class="pull-left" href="/yidagong-weixin/0S03X2014.html">
+                                <img class="img-responsive" alt="每天读一遍这7句话，让你更加自信！" src="/file/allimg/1408/1-140S01520030-L.jpg">
+                            </a>
+                        </div>
+                        <div class="media-body full-left col-sm-9 col-xs-12">
+                            <h4 class="media-heading zw-title">
+                                <a href="/yidagong-weixin/0S03X2014.html">每天读一遍这7句话，让你更加自信！</a>
+                            </h4>
+                            <div class="pad">发布时间: <b>2014年08月30日</b>
+								
+								<div class="newdigg37" id="newdigg37" style="display:inline">
+									<div class="btn-group btn-group-xs">
+									  <a type="button" class="btn btn-purple" onclick="javascript:postDigg('good',37)">关注微信号：</a>
+									  <a type="button" class="btn btn-default"><strong>yidagongwang</strong></a>
+									</div>
+								</div>
+								
+								<script language="javascript" type="text/javascript">getDigg(37);</script>
+                            
+                             </div>
+                            <div class="zw-pco">
+								<p>1、永远不要向任何人解释你自己。因为喜欢你的人不需要，而不喜欢你的人不会相信。 2、别让某人成为你生命中的优先，当你只是他们生命中的一个选择</p>
+							</div>
+                             <p class="pull-right mtop-02"><a href="/yidagong-weixin/0S03X2014.html" class="secai">阅读全文&gt;&gt;</a></p> 
+                		<div class="clear"></div>
+                        
+                   	</div>
+					</div>
+                    </li><li class="mar mtop-03">
+                    	<div class="row">
+                    	<div class="fl col-sm-3 col-xs-12">
+                            <a class="pull-left" href="/yidagong-weixin/0PSR2014.html">
+                                <img class="img-responsive" alt="如何扩大你的社交圈子" src="/file/allimg/1408/1-140PQ63F20-L.jpg">
+                            </a>
+                        </div>
+                        <div class="media-body full-left col-sm-9 col-xs-12">
+                            <h4 class="media-heading zw-title">
+                                <a href="/yidagong-weixin/0PSR2014.html">如何扩大你的社交圈子</a>
+                            </h4>
+                            <div class="pad">发布时间: <b>2014年08月08日</b>
+								
+								<div class="newdigg37" id="newdigg37" style="display:inline">
+									<div class="btn-group btn-group-xs">
+									  <a type="button" class="btn btn-purple" onclick="javascript:postDigg('good',37)">关注微信号：</a>
+									  <a type="button" class="btn btn-default"><strong>yidagongwang</strong></a>
+									</div>
+								</div>
+								
+								<script language="javascript" type="text/javascript">getDigg(37);</script>
+                            
+                             </div>
+                            <div class="zw-pco">
+								<p>你可能有非常亲密的朋友，在他们面前倾吐心事。还有一些普通朋友陪你吃喝玩乐。 有些人喜欢广交多种多样的网络朋友，有人则喜欢在小圈子里交朋友。</p>
+							</div>
+                             <p class="pull-right mtop-02"><a href="/yidagong-weixin/0PSR2014.html" class="secai">阅读全文&gt;&gt;</a></p> 
+                		<div class="clear"></div>
+                        
+                   	</div>
+					</div>
+                    </li>
+                 </ul>
+
+
+				 <ul class="pagination pagination-lg">
+							<li><a href='weixin121.html'>&laquo;</a></li>
+<li><a href='weixin3221.html'>上一页</a></li>
+<li><a href='weixin2821.html'>28</a></li>
+<li><a href='weixin2921.html'>29</a></li>
+<li><a href='weixin3021.html'>30</a></li>
+<li><a href='weixin3121.html'>31</a></li>
+<li><a href='weixin3221.html'>32</a></li>
+<li class="active"><a href="javascript:void(0);">33</a></li>
+<li><a href='weixin3421.html'>34</a></li>
+<li><a href='weixin3521.html'>35</a></li>
+<li><a href='weixin3621.html'>36</a></li>
+<li><a href='weixin3721.html'>37</a></li>
+<li><a href='weixin3821.html'>38</a></li>
+<li><a href='weixin3421.html'>下一页</a></li>
+<li><a href='weixin6321.html'>&raquo;</a></li>
+
+					</ul>
+                              
+            </div>
+                
+            <div class="col-md-3 acon">
+            	<div class="mbott"><a href="/neijian"><img src="/files/image/nei_12.jpg" class="img-responsive" title="1+2内荐" /></a></div>
+
+                <form id="regUser" class="form-signin form-edge" action="baoming.php" method="post" role="form">
+                  <input type="hidden" name="dopost" value="regbase">
+                  <input type="hidden" name="step" value="1">
+                  <input type="hidden" name="mtype" value="个人">
+                  <h1 class="form-signin-heading in-toph-lzw">免费报名进厂 </h1>
+                  <span class="help-block">填写您的手机号码：</span>
+                  <input class="form-control" type="text" maxlength="13" name="userid" required placeholder="手机号码">
+                  <label class="checkbox"> 仅仅只需一步，让工作来找你。 </label>
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+                </form>
+            
+                <div class="panel panel-info toma"><!--    列表一上背景   ---->
+                    <div class="panel-heading">
+                      <h4 class="panel-title">微信一览</h4>
+                    </div>
+                    <div class="list-group">
+                    <a class="list-group-item" href="/plus/view.php?aid=6003">壹线牵</a></a>
+<a class="list-group-item" href="/yidagong-weixin/01056002015.html">七招教你睡前健康玩手机</a></a>
+<a class="list-group-item" href="/yidagong-weixin/01055c2015.html">2015年送自己一封信</a></a>
+<a class="list-group-item" href="/yidagong-weixin/01045b2015.html">年关“放过”自己，轻松迎接新年！</a></a>
+<a class="list-group-item" href="/yidagong-weixin/01045a2015.html">要被臭晕了!6个简单小窍门除鞋臭!</a></a>
+<a class="list-group-item" href="/yidagong-weixin/01045962015.html">一组图打开你已经生锈的思维!</a></a>
+<a class="list-group-item" href="/yidagong-weixin/122K942014.html">冬天绝不能做的9件事！尤其是第4件！</a></a>
+<a class="list-group-item" href="/yidagong-weixin/122K932014.html">改掉谈话中四个坏毛病</a></a>
+<a class="list-group-item" href="/yidagong-weixin/122K922014.html">无论你在哪里工作，请牢记＂六不要＂法</a></a>
+<a class="list-group-item" href="/yidagong-weixin/122A912014.html">揭秘肉类不能吃的八个部位</a></a>
+
+                    </div>
+                </div>
+				
+				<div class="panel panel-info toma bse">
+                    <img class="img-responsive" alt="" src="/files/zt/weixin/weixin.jpg">
+                </div>
+            </div>
+	</div>
+	<!-- /container -->
+</div>
+
+
+		<div class="extra">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 col-sm-3">
+				<h5>
+					用户帮助
+				</h5>
+				<ul class="icons-list">
+					
+					<li>
+						<i class="icon-li fa fa-angle-double-right">
+						</i>
+						<a href="#">
+							帐户状态
+						</a>
+					</li>
+					<li>
+						<i class="icon-li fa fa-angle-double-right">
+						</i>
+						<a href="#">
+							密码找回与修改
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /span3 -->
+			<div class="col-xs-6 col-sm-3">
+				<h5>
+					关注我们
+				</h5>
+				<ul class="icons-list">
+					<li>
+						<i class="icon-li fa fa-angle-double-right">
+						</i>
+						<a href="/home/weixin_x.php">
+							微信
+						</a>
+					</li>
+					<li>
+						<i class="icon-li fa fa-angle-double-right">
+						</i>
+						<a href="http://www.1dagong.com/m/index.html">
+							手机客户端
+						</a>
+					</li>
+					<li>
+						<i class="icon-li fa fa-angle-double-right">
+						</i>
+						<a href="http://www.1dagong.com/">
+							手机网页版
+						</a>
+					</li>
+					<li>
+						<i class="icon-li fa fa-angle-double-right">
+						</i>
+						<a href="#">
+							新浪微博
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /span3 -->
+			<div class="col-xs-12 col-sm-3">
+				<h5>
+					壹打工网相关
+				</h5>
+				<ul class="icons-list">
+					<li>
+						<i class="icon-li fa fa-twitter">
+						</i>
+						<a href="#" target="_blank">
+							友情链接
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /span3 -->
+			<div class="col-xs-12 col-sm-3">
+				<h5>
+					免费报名
+				</h5>
+				<p>
+					仅需留下您的手机或电话，我们专业的求职顾问便会迅速为您量身定制合适的职位。
+				</p>
+				<div id="mc_embed_signup">
+					<form class="form-signin" role="form" method="post" action="/home/baoming.php" id="regUser">
+						<input type="hidden" value="regbase" name="dopost"/>
+						<input type="hidden" value="1" name="step"/>
+						<input type="hidden" value="个人" name="mtype"/>
+
+						<div class="mc-field-group form-group">
+							<input type="text" class="required email form-control" placeholder="手机号码" type="tel" required name="userid" id="userid" maxlength="13">
+							<datalist id="userid">
+    <option value="0551-12345678">
+    <option value="13912345678">
+    <option value="055112345678">
+</datalist>
+
+						</div>
+						
+						<div class="clear">
+							<button class="btn btn-primary btn-block" type="submit">免费报名</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- /row -->
+	</div>
+	<!-- /container -->
+</div>
+
+<div class="footer">
+	<div class="container">
+		<ul class="nav footer-nav pull-left">
+			<li>
+				© 2013-2014 Www.1dagong.Com 本站所有招聘信息及作品，未经书面授权不得转载！<br />
+				<a href="/help/aboutus.html">关于我们</a>
+			</li>
+		</ul>
+		<ul class="nav footer-nav pull-right">
+			<li>
+				最专业的求职招聘网站，致力打造人才网第一品牌！
+				<i class="fa fa-heart text-primary">
+				</i>
+				&amp;
+				<a href="http://www.1dagong.com" target="_blank">
+					壹打工网.
+				</a><br />
+				国家工业和信息化部备案号：<a href="http://www.miibeian.gov.cn/">皖ICP备13015030号-3</a>
+			</li>
+		</ul>
+	</div>
+	<!-- /container -->
+</div>
+
+<div class="none">
+	<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb41da31689d0e576af45aaeafc3be8d8' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>
+
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+		<!-- <script src="/files/js/modernizr.custom.81775">
+		</script> -->
+
+	</body>
+
+</html>
