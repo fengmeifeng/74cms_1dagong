@@ -1,0 +1,27 @@
+<?php
+$data = array (
+  'set_applyjobs' => '{sitename}提醒您:{personalfullname}申请了您发布的职位{jobsname}，请登录{sitedomain}查看',
+  'set_invite' => '{sitename}提醒您：{companyname}对您发起了面试邀请，请登录{sitedomain}查看',
+  'set_order' => '{sitename}提醒您：订单{oid}已经添加成功，付款方式为：{paymenttpye}，应付金额{amount}。请登录{sitedomain}查看',
+  'set_payment' => '{sitename}提醒您：充值成功，系统已为您开通服务，请登录{sitedomain}查看',
+  'set_editpwd' => '{sitename}提醒您：您的密码修改成功，新密码为：{newpassword}',
+  'set_jobsallow' => '{sitename}提醒您：职位({jobsname})已经通过审核！请登录{sitedomain}查看',
+  'set_jobsnotallow' => '{sitename}提醒您：职位({jobsname})未通过审核，请修改后再次提交审核！请登录{sitedomain}查看',
+  'set_licenseallow' => '{sitename}提醒您：您的企业资料已认证通过！请登录{sitedomain}查看',
+  'set_licensenotallow' => '{sitename}提醒您：你的企业认证未通过，请重新上传营业执照！请登录{sitedomain}查看',
+  'set_addrecommend' => '{sitename}提醒您：您的职位已经成功推荐，请登录{sitedomain}查看',
+  'set_addmap' => '{sitename}提醒您：您已成功开通企业电子地图！请登录{sitedomain}查看',
+  'set_resumeallow' => '{sitename}提醒您：您的简历已通过审核！请登录{sitedomain}查看',
+  'set_resumenotallow' => '{sitename}提醒您：您的简历未通过审核，请修改后再次提交审核！请登录{sitedomain}查看',
+  'set_teaallow' => '{sitename}提醒您：您的讲师({teachername})已通过审核！请登录{sitedomain}查看',
+  'set_teanotallow' => '{sitename}提醒您：您的讲师({teachername})未通过审核，请修改后再次提交审核！请登录{sitedomain}查看',
+  'set_couallow' => '{sitename}提醒您：您的课程({coursename})已通过审核！请登录{sitedomain}查看',
+  'set_counotallow' => '{sitename}提醒您：您的课程({coursename})未通过审核，请修改后再次提交审核！请登录{sitedomain}查看',
+  'set_applycou' => '{sitename}提醒您:{personalfullname}申请了您发布的课程({coursename})，请登录{sitedomain}查看',
+  'set_downapp' => '{sitename}提醒您：{trainname}下载了您的在线课程({coursename})申请，请登录{sitedomain}查看',
+  'set_hunallow' => '{sitename}提醒您：您的猎头顾问资料({huntername})已通过审核！请登录{sitedomain}查看',
+  'set_hunnotallow' => '{sitename}提醒您：您的猎头顾问资料({huntername})未通过审核！请登录{sitedomain}查看',
+  'set_hunjobsallow' => '{sitename}提醒您：您发布的职位({jobsname})已经通过审核！请登录{sitedomain}查看',
+  'set_hunjobsnotallow' => '{sitename}提醒您：您发布的职位({jobsname})未通过审核！请登录{sitedomain}查看',
+);
+?>

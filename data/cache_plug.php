@@ -1,0 +1,49 @@
+<?php
+$data = array (
+  'hunter' => 
+  array (
+    'plug_name' => 'ÁÔÍ·',
+    'p_install' => '1',
+  ),
+  'train' => 
+  array (
+    'plug_name' => 'ÅàÑµ',
+    'p_install' => '2',
+  ),
+  'simple' => 
+  array (
+    'plug_name' => 'Î¢ÉÌÈ¦',
+    'p_install' => '1',
+  ),
+  'jobfair' => 
+  array (
+    'plug_name' => 'ÕÐÆ¸»á',
+    'p_install' => '2',
+  ),
+  'hrtools' => 
+  array (
+    'plug_name' => 'hr¹¤¾ßÏä',
+    'p_install' => '2',
+  ),
+  'yellowpage' => 
+  array (
+    'plug_name' => '»ÆÒ³',
+    'p_install' => '2',
+  ),
+  'subscribe' => 
+  array (
+    'plug_name' => 'Ö°Î»¶©ÔÄ',
+    'p_install' => '2',
+  ),
+  'salaryanalysis' => 
+  array (
+    'plug_name' => 'Ð½³êÍ³¼Æ',
+    'p_install' => '2',
+  ),
+  'shenhe' => 
+  array (
+    'plug_name' => 'ÉóºËÔ±',
+    'p_install' => '2',
+  ),
+);
+?>
