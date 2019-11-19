@@ -1,0 +1,48 @@
+{#include file="banben/admin_header.htm"#}
+<link href="/files/css/user_company.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/jobs.css" rel="stylesheet" type="text/css" />
+<script src="/files/js/jquery.shenhe.selectlayer.js" type='text/javascript' language="javascript"></script>
+
+<script src="js/jquery.user.selectlayer.js" type='text/javascript' language="javascript"></script>
+<script src="{#$QISHI.site_dir#}data/cache_classify.js" type="text/javascript" charset="utf-8"></script>
+
+<div class="admin_main_nr_dbox">
+<div class="pagetit">
+	<div class="ptit"> {#$pageheader#}</div>
+  <div class="clear"></div>
+</div>
+<div class="toptit">发布版本</div>
+<form id="Form1"  name="Form1" method="post" action="admin_banben.php?act=addjobs_save"   enctype="multipart/form-data" >
+
+
+  <table width="100%" border="0" cellpadding="4" cellspacing="0" bgcolor="#FFFFFF"  >
+    <tr>
+          <td width="8%" height="30" align="left"  style=" border-bottom:1px #CCCCCC dashed" ><span style="color:#FF3300; font-weight:bold">*</span>版本号：</td>
+        <td width="92%"  style=" border-bottom:1px #CCCCCC dashed"><input name="v_id" type="text" class="input_text_200"  maxlength="30"  style="width:350px;" value="" /></td>
+      </tr>
+       <tr>
+          <td  height="30" align="left"  style=" border-bottom:1px #CCCCCC dashed" ><span style="color:#FF3300; font-weight:bold">*</span>版本说明：</td>
+          <td  style=" border-bottom:1px #CCCCCC dashed"><textarea name="msg" class="input_text_200_textarea"  style="width:450px; height:150px; margin-bottom:6px;" ></textarea></td>
+      </tr>
+        
+		</table>
+  <table width="100%" border="0" cellpadding="4" cellspacing="0" bgcolor="#FFFFFF">
+    <tr>
+      <td  height="30" align="left"  style=" border-bottom:1px #CCCCCC dashed" ><span style="color:#FF3300; font-weight:bold">*</span>上传：</td>
+      <td  style=" border-bottom:1px #CCCCCC dashed"><input type="file" name="apk_url" id="apk_url" class="input_text_200" /></td>
+    </tr>
+        <tr>
+          <td height="30" colspan="2" align="left" style=" border-bottom:1px #CCCCCC dashed" >&nbsp;</td>
+      </tr>
+         <tr>
+          <td width="100" height="30" align="right" style=" border-bottom:1px #CCCCCC dashed" ></td>
+          <td style=" border-bottom:1px #CCCCCC dashed">	  
+              <input name="submit3" type="submit" class="admin_submit"    value="保存"/></td>
+        </tr>  
+	</table>	
+  </form>
+ </div>
+
+{#include file="banben/admin_footer.htm"#}
+</body>
+</html>
