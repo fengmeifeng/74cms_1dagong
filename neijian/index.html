@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Cache-Control" content="no-transform" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<meta name="keywords" content="打工网,手机招聘网,招工网,壹打工网" />
+	<meta name="description" content="壹打工网是专业提供各大企业招聘招工信息的大型普工类网站。我们致力于为普工提供更好的工作,为企业输送更多的普工." />
+	<title>1+2事业平台 - 1份工作，2份收入 - 壹打工网</title>
+	<!-- head_css-->
+	<link href="/files/style/css/bootstrap.css" type="text/css" rel="stylesheet" /> 
+
+	<link href="/files/style/css/all.css" type="text/css" rel="stylesheet" />
+
+	<script src="/files/style/js/jquery.min.js" language="JavaScript" type="text/javascript" ></script>
+	<script src="/files/style/js/bootstrap.min.js" language="JavaScript" type="text/javascript" ></script>
+    <script src="/files/style/js/a_modal.js" language="JavaScript" type="text/javascript" ></script>
+	<script language="javascript" type="text/javascript" src="/include/login.js"></script>
+	<script language="javascript" type="text/javascript">
+		<!--
+			
+			function CheckLogin(){
+			  var taget_obj = document.getElementById('headlogin');
+			  myajax = new DedeAjax(taget_obj,false,false,'','','');
+			  myajax.SendGet2("/home/headlogin.php");
+			  DedeXHTTP = null;
+			}
+		-->
+		<!--
+			function Checkbaoming(){
+				var checkbaoming= document.getElementById('checkbaoming');
+				var aid= document.getElementById('aid');
+				var mid= document.getElementById('mid');
+				var type= document.getElementById('type');
+				//alert(type.value);
+				myajax = new DedeAjax(checkbaoming,false,false,'','','');
+				myajax.SendGet2("/home/checkbaoming.php?aid="+aid.value+"&mid="+mid.value+"&type="+type.value);
+				DedeXHTTP = null;
+			}
+		-->
+
+	</script>
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media
+		queries -->
+		<!--[if lt IE 9]>
+			<script src="/files/js/html5shiv.min.js">
+			</script>
+			<script src="/files/js/respond.min.js">
+			</script>
+		<![endif]-->
+	<!--head_css end -->
+	<link href="/files/css/ie7.css" rel="stylesheet">
+	 <link href="/files/css/zt/zhengwen.css" rel="stylesheet" />
+	 <link href="/files/css/zt/neijian.css" rel="stylesheet" />  <!--------手机端-------->
+
+</head>
+<body>
+
+<div class=" beijing">
+<div class="container" >
+<div class="top_sh row">
+
+     <div class="col-xs-12 col-md-6 mp">
+        <ul class="login jidns pull-left">
+       	  <li class="pr_10 hotline dropwnd"><a data-trigger="modal" href="http://www.1dagong.com/ajax/number.html" data-title="Modal title">免费咨询</a></li>
+          <li class="phone pr_10"><a data-trigger="modal" href="http://www.1dagong.com/ajax/qrcode.html" data-title="Modal title">手机壹打工</a></li>
+        </ul>
+     </div>
+     
+     <div class="col-xs-12 col-md-6 mp">
+     	<div class="free">
+        全国免费求职热线： 
+        <a href="tel:400-118-5188">400-118-5188</a>
+        </div>
+     </div>
+</div>    
+</div>
+</div>
+
+
+<nav class="navbar navbar-default top">
+
+  <div class="container">
+    
+    <div class="navbar-header col-xs-5 col-md-2">
+      <a href="/" class="logo"><img src="/files/style/image/logo.png" height="90" width="190" class="img-responsive hidden-xs" />
+      <img src="/files/style/image/logo.jpg" class="img-responsive visible-xs sjlogo" /></a>
+    </div>
+    
+    
+    <div  id="headlogin" class="col-md-3 logint pull-right mp">
+     
+        <ul class="login pull-right bcsa">
+          <li class="pr_10 hogin dropwnd"><a href="/home/"  data-target="#denglu">登录</a></li>
+          <li><a href="/home/p_register.php" class="#denglu">注册 </a></li>
+        </ul>
+		<script language="javascript" type="text/javascript">CheckLogin();</script>
+    </div>
+    
+    
+    <div class="navbar-header pull-left" >
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse col-md-7" id="bs-example-navbar-collapse-1">
+<script>$(document).ready(function(){  
+    $('.nav li a').each(function(){  
+        if($($(this))[0].href==String(window.location))  
+            $(this).parent().addClass('active');  
+    });  
+})</script>
+      <ul class="nav navbar-nav ">
+      	<li><a href="/">首页</a></li>
+        <li><a href="/plus/search.php?typeid=41&starttime=-1&areacode=-1&searchtype=-1">找工作</a></li>
+        <li><a href="/gongzuo/">行业名企</a></li>
+      </ul>
+    
+    </div><!-- /.navbar-collapse -->
+    
+
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+<body>
+<body>
+    <div class="slide parent" style="margin-top:-20px;">
+        <img src="/files/zt/neijian_banner4.jpg" class="img-responsive" alt="" />
+    
+    <style>
+	.nei_niu a{
+				background-image: -moz-linear-gradient(top, #e02224, #9e2124);
+				background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e02224), color-stop(1, #9e2124));
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e02224', endColorstr='#9e2124', GradientType='0'); 
+				box-shadow: 0 5px 0 #8a0609;
+	}
+	.nei_003{ border:none;}
+	.nei_004{ height:50px; line-height:50px; background:#ea7802; font-size:22px; border:none;}
+	</style>
+        
+        <div class="container">
+            <div class="row neihs nei_niu">
+                    <a href="/home/neijian.php">立即加入</a>
+            </div>
+        </div>
+    </div>
+        
+<div class="mawi" style=" background:#ebebeb; width:100%;">  
+    <div class="container">
+        <div class="row" style="color:#000000; background:#fff; box-shadow:2px 2px 10px #999; line-height:25px;">
+             <div class="i-top nei_004" align="center"><font color="#000000">激动人心的事业，从壹打工网开始！</font></div>
+			 <style>
+				.neijian p{
+					font-size:20px;
+					padding:0.5em 1em;
+					text-indent:2em;
+					line-height:2em;
+				}
+				.neijian{
+					padding-top:2em;
+					margin:2em;
+					bottom:10px;
+				}
+			 
+			 </style>
+			 <div class="neijian">
+				
+			 
+             <p>壹打工网是致力于企业普工招聘的专业普工网站。网站突破传统招聘网站运营模式，通过构建平台，整合众多优质客户资源带动庞大的人力资源网络，良性循环、按需、有序，保障人力资源稳定供给的商业模式，帮助企业解决“招工难、留人难”的问题，使普通员工在平凡的工作岗位上都有希望实现人生最大价值。最终创造企业与普工共赢的奇迹。</p>
+
+<p>在今天的市场环境下，打工只能养家糊口。壹打工网“1+2”事业平台的创建，颠覆了传统打工模式，它肩负市场需求赋予的使命，让普通劳动者改变自己，改变家庭，改变人生轨迹；使“无创业经验、无原始资金、无市场资源”的普通工人在平凡的工作岗位上也有创造财富增长的希望。</p>
+
+<p>企业通过壹打工网招聘员工，从而省略了学校和中介渠道，并把用于学校和中介的招聘费用节省下来，反奖给普通劳动者，提高普通劳动者的收入。通过“1+2”事业平台，企业和员工形成了更加稳定的劳动关系，员工在企业长期稳定工作，技术上能精益求精，能力上得到全面提升，壹打工网最终成为企业永续经营的战略合作伙伴！</p>
+
+<p>例如壹打工网会员每人都内荐了两个人通过壹打工网到合作企业上班，通过这种转介绍方式延续到第十二梯次，这时内荐奖金将达到176280元。以此类推，如介绍4个、6个、8个，往下积累的人数会更多，就可能有创造百万收入的机会。壹打工网“1+2”事业平台，就是以这样的激励方式，在“我为人人，人人为我”的服务理念指导下，帮助会员实现“一份工作，两份收入”。</p>
+
+                    <div  style="width:60%; margin:0 auto;">
+                    <a href="/files/zt/anli.jpg" target="_blank">
+                    <img src="/files/zt/anli.jpg" class="img-responsive" alt="" />
+                    </a>
+                    <div class="visible-xs visible-sm">点击图片查看大图</div>
+                    </div>
+                
+
+<p>或许有人对层级奖励的模式存在疑惑，怎么和传闻中的传销有些类似？那么，请一定要明白什么是传销，传销人人都可参加，是拉人头、交高额费用，买低廉产品，然后坐享其成，不劳而获，梦想发大财，破坏良好的经济秩序和市场环境。</p>
+
+<p>壹打工网零投资、零风险，通过“1+2”事业平台将企业节省下来的招聘成本效益最大化，利用直销中的倍增原理设置内荐奖金激励方案，直接将利益反馈给广大劳动者，只有符合企业要求的员工才有机会通过转介绍、人脉积累、互帮互助的发展方式获取财富的增长！</p>
+
+<p>80年代，政府鼓励老百姓干个体，很多人看不起，结果个体户都成功富裕起来；</p>
+<p>90年代，政府号召老百姓购买原始股票支持国企股份制改革，很多人不敢买，结果带头购买的人都发了财</p>
+<p>21世纪初，互联网兴起，开网店能赚钱，很多人都不信，结果最早开网店的都成功了，最早涉足互联网的老板都成了大企业家。</p>
+
+<p>2014年，我们告诉你，打工也能赚大钱，通过转介绍、通过人脉积累、通过互帮互助的发展方式，以团队和睦有好的和谐关系发展，提升普通劳动者的收入，壮大企业，强大中国。</p>
+
+<p>目前，我国进城的农民工总数约为2亿，它相当于十二、三个中等国家的人口总和！农民工分布在国民经济的各个行业，是推动我国经济社会发展的重要力量，近年来，党中央、国务院高度重视农民工问题，制定一系列保障农民工权益和改善农民工就业环境的政策措施，各地区各部门做了大量的工作，取得明显成效。但农民工面临的问题仍然突出，尤其是工资偏低，解决好这些问题，直接关系到国家兴旺。壹打工网1+2事业平台的创建，是改变普通劳动者最好的事业平台，这一群体都富裕起来，我们伟大的“中国梦”指日可待。</p>
+
+<p>全新的时代已经到来，传统的思维将被全面打破。</p>
+
+<p>拥有前瞻的视野，紧抓当下的机遇，行动在最前面，你就成功迈向了致富的人生！</p>
+
+</div>
+
+             <div class="i-top nei_004" align="center"><font color="#000000">1份工作，2份收入！</font></div>
+             <ul class="i-bottom nei_003" style="font-size:18px;text-indent:2em;">
+				<li>加入1+2事业平台，您在工厂工作的同时，还可以拿到壹打工网奖励您的推荐奖金。</li>   
+             	<div style="float:right"></div>
+             </ul>  
+
+			 <div class="i-top nei_004" align="center"><font color="#000000">我可以参加么？</font></div>
+             <ul class="i-bottom nei_003" style="font-size:18px;text-indent:2em;">
+                <li>只需要<a href="/home/">您注册成为壹打工网的会员</a>，并且成功入职<b>壹打工网的任意合作企业</b>，您就可以参加！</li>
+             </ul>  
+
+			<div class="i-top nei_004" align="center"><font color="#000000">奖金怎么来的？</font></div>
+             <UL style="TEXT-INDENT: 2em; FONT-SIZE: 18px;" class="i-bottom nei_003">
+				<LI><img src="/files/zt/neijian/jiangjin.jpg" class="img-responsive" alt="内荐奖金怎么来的?" /></LI>
+				<LI>我们把合作企业给我们的委托招聘费用，压缩开支，回馈给了我们的会员！！！</LI>
+				
+			</UL>
+             
+             <div class="i-top nei_004" align="center"><font color="#000000">赶快行动吧！</font></div>
+             <ul style="TEXT-INDENT: 2em; FONT-SIZE: 18px;" class="i-bottom nei_003">
+                <li>机遇，就在眼前！赶快点击下方的链接，立即加入吧！！！</li>
+             </ul>   
+                    
+        </div>
+    </div>
+    
+     <div class="container">
+     	<Div class="row">       
+             <div class="nei_niu">
+             	<a href="/home/neijian.php">立即加入 >></a>
+             </div>   
+         </Div>
+     </div> 
+</div>  
+
+<div class="extra">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 col-sm-3">
+				<h5>
+					用户帮助
+				</h5>
+				<ul class="icons-list">
+					
+					<li>
+						<i class="icon-li fa fa-angle-double-right">
+						</i>
+						<a href="#">
+							帐户状态
+						</a>
+					</li>
+					<li>
+						<i class="icon-li fa fa-angle-double-right">
+						</i>
+						<a href="#">
+							密码找回与修改
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /span3 -->
+			<div class="col-xs-6 col-sm-3">
+				<h5>
+					关注我们
+				</h5>
+				<ul class="icons-list">
+					<li>
+						<i class="icon-li fa fa-angle-double-right">
+						</i>
+						<a href="/home/weixin_x.php">
+							微信
+						</a>
+					</li>
+					<li>
+						<i class="icon-li fa fa-angle-double-right">
+						</i>
+						<a href="http://www.1dagong.com/m/index.html">
+							手机客户端
+						</a>
+					</li>
+					<li>
+						<i class="icon-li fa fa-angle-double-right">
+						</i>
+						<a href="http://www.1dagong.com/">
+							手机网页版
+						</a>
+					</li>
+					<li>
+						<i class="icon-li fa fa-angle-double-right">
+						</i>
+						<a href="#">
+							新浪微博
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /span3 -->
+			<div class="col-xs-12 col-sm-3">
+				<h5>
+					壹打工网相关
+				</h5>
+				<ul class="icons-list">
+					<li>
+						<i class="icon-li fa fa-twitter">
+						</i>
+						<a href="#" target="_blank">
+							友情链接
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /span3 -->
+			<div class="col-xs-12 col-sm-3">
+				<h5>
+					免费报名
+				</h5>
+				<p>
+					仅需留下您的手机或电话，我们专业的求职顾问便会迅速为您量身定制合适的职位。
+				</p>
+				<div id="mc_embed_signup">
+					<form class="form-signin" role="form" method="post" action="/home/baoming.php" id="regUser">
+						<input type="hidden" value="regbase" name="dopost"/>
+						<input type="hidden" value="1" name="step"/>
+						<input type="hidden" value="个人" name="mtype"/>
+
+						<div class="mc-field-group form-group">
+							<input type="text" class="required email form-control" placeholder="手机号码" type="tel" required name="userid" id="userid" maxlength="13">
+							<datalist id="userid">
+    <option value="0551-12345678">
+    <option value="13912345678">
+    <option value="055112345678">
+</datalist>
+
+						</div>
+						
+						<div class="clear">
+							<button class="btn btn-primary btn-block" type="submit">免费报名</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- /row -->
+	</div>
+	<!-- /container -->
+</div>
+
+<div class="footer">
+	<div class="container">
+		<ul class="nav footer-nav pull-left">
+			<li>
+				© 2013-2014 Www.1dagong.Com 本站所有招聘信息及作品，未经书面授权不得转载！<br />
+				<a href="/help/aboutus.html">关于我们</a>
+			</li>
+		</ul>
+		<ul class="nav footer-nav pull-right">
+			<li>
+				最专业的求职招聘网站，致力打造人才网第一品牌！
+				<i class="fa fa-heart text-primary">
+				</i>
+				&amp;
+				<a href="http://www.1dagong.com" target="_blank">
+					壹打工网.
+				</a><br />
+				国家工业和信息化部备案号：<a href="http://www.miibeian.gov.cn/">皖ICP备13015030号-3</a>
+			</li>
+		</ul>
+	</div>
+	<!-- /container -->
+</div>
+
+<div class="none">
+	<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb41da31689d0e576af45aaeafc3be8d8' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>
+
+		<script src="/files/js/jquery.min.js">
+		</script>
+		<script src="/files/js/bootstrap.min.js">
+		</script>
+		<!-- <script src="/files/js/modernizr.custom.81775">
+		</script> -->
+
+</body>
+</html>
