@@ -1,0 +1,7948 @@
+<p><div class="toc">
+<ul>
+<li><a href="#壹打工网接口文档1dagong-api">壹打工网接口文档(1dagong-api)</a><ul>
+<li><a href="#登录注册相关接口">登录注册相关接口</a><ul>
+<li><a href="#获取短信验证码完成-zwl">获取短信验证码(完成 ZWL)</a></li>
+<li><a href="#获取分站信息完成-zwl">获取分站信息(完成 ZWL)</a></li>
+<li><a href="#获取分站信息下属地区信息完成-zwl">获取分站信息——下属地区信息(完成 ZWL)</a></li>
+<li><a href="#获取注册地区信息完成-zwl">获取注册地区信息(完成 ZWL)</a></li>
+<li><a href="#获取注册地区省下的市信息完成-zwl">获取注册地区——省下的市信息(完成 ZWL)</a></li>
+<li><a href="#获取职位分类信息一级分类信息完成-zwl">获取职位分类信息——一级分类信息(完成 ZWL)</a></li>
+<li><a href="#获取职位分类信息二三级分类信息完成-zwl">获取职位分类信息——二、三级分类信息(完成 ZWL)</a></li>
+<li><a href="#用户注册完成-zwl">用户注册（完成 ZWL）</a></li>
+<li><a href="#用户登录完成-zwl">用户登录（完成 ZWL）</a></li>
+</ul>
+</li>
+<li><a href="#个人中心完成zwl">个人中心（完成ZWL）</a><ul>
+<li><a href="#个人中心设置版本更新上传版本信息完成-zwl">个人中心——设置——版本更新——上传版本信息(完成 ZWL)</a></li>
+<li><a href="#个人中心设置版本更新获取版本信息完成-zwl">个人中心——设置——版本更新——获取版本信息(完成 ZWL)</a></li>
+<li><a href="#修改密码完成-fmf">修改密码(完成 FMF)</a></li>
+<li><a href="#个人中心设置意见反馈完成-zwl">个人中心——设置——意见反馈(完成 ZWL)</a></li>
+<li><a href="#设置密码完成-zwl">设置密码(完成 ZWL)</a></li>
+<li><a href="#用户协议完成-fmf">用户协议(完成 FMF)</a></li>
+<li><a href="#关于我们完成-fmf">关于我们(完成 FMF)</a></li>
+<li><a href="#我的收藏完成-fmf">我的收藏(完成 FMF)</a></li>
+<li><a href="#删除收藏完成-fmf">删除收藏(完成 FMF)</a></li>
+<li><a href="#面试邀请列表完成-fmf">面试邀请列表(完成 FMF)</a></li>
+<li><a href="#刷新简历完成-fmf">刷新简历(完成 FMF)</a></li>
+<li><a href="#删除我的简历完成-fmf">删除我的简历(完成 FMF)</a></li>
+<li><a href="#职位投递记录完成-fmf">职位投递记录(完成 FMF)</a></li>
+<li><a href="#删除投递记录完成-fmf">删除投递记录(完成 FMF)</a></li>
+<li><a href="#谁在关注我完成-fmf">谁在关注我(完成 FMF)</a></li>
+<li><a href="#删除谁在关注我完成-fmf">删除谁在关注我(完成 FMF)</a></li>
+<li><a href="#设置委托投递完成-fmf">设置委托投递(完成 FMF)</a></li>
+<li><a href="#取消委托投递完成-fmf">取消委托投递(完成 FMF)</a></li>
+<li><a href="#设置简历是否公开完成-fmf">设置简历是否公开(完成 FMF)</a></li>
+<li><a href="#匹配职位完成-fmf">匹配职位(完成 FMF)</a></li>
+<li><a href="#我的简历-教育列表完成-fmf">我的简历——-教育列表(完成 FMF)</a></li>
+<li><a href="#我的简历-培训列表完成-fmf">我的简历——-培训列表(完成 FMF)</a></li>
+<li><a href="#我的简历-工作列表完成-fmf">我的简历——-工作列表(完成 FMF)</a></li>
+<li><a href="#我的简历完成-zwl">我的简历(完成 ZWL)</a></li>
+<li><a href="#我的简历简历注册1完成-zwl">我的简历——简历注册1(完成 ZWL)</a></li>
+<li><a href="#我的简历简历注册2期望职位多选完成-zwl">我的简历——简历注册2——期望职位多选(完成 ZWL)</a></li>
+<li><a href="#我的简历简历注册2工作性质选择完成-zwl">我的简历——简历注册2——工作性质选择(完成 ZWL)</a></li>
+<li><a href="#我的简历行业信息获取完成-zwl">我的简历——行业信息获取(完成 ZWL)</a></li>
+<li><a href="#我的简历简历完整度查询完成-zwl">我的简历——简历完整度查询(完成 ZWL)</a></li>
+<li><a href="#我的简历信息详情完成-zwl">我的简历——信息详情(完成 ZWL)</a></li>
+<li><a href="#我的简历个人简历基本信息获取完成-zwl">我的简历——个人简历基本信息获取(完成 ZWL)</a></li>
+<li><a href="#我的简历个人简历基本信息修改完成-zwl">我的简历——个人简历基本信息修改(完成 ZWL)</a></li>
+<li><a href="#我的简历编辑简历简历标题完成-zwl">我的简历——编辑简历——简历标题(完成 ZWL)</a></li>
+<li><a href="#我的简历编辑简历个人信息完成-zwl">我的简历——编辑简历——个人信息(完成 ZWL)</a></li>
+<li><a href="#我的简历编辑简历求职意向完成-zwl">我的简历——编辑简历——求职意向(完成 ZWL)</a></li>
+<li><a href="#我的简历编辑简历自我评价完成-zwl">我的简历——编辑简历——自我评价(完成 ZWL)</a></li>
+<li><a href="#我的简历编辑简历教育经历完成-zwl">我的简历——编辑简历——教育经历(完成 ZWL)</a></li>
+<li><a href="#我的简历编辑简历培训经历完成-zwl">我的简历——编辑简历——培训经历(完成 ZWL)</a></li>
+<li><a href="#我的简历编辑简历工作经历完成-zwl">我的简历——编辑简历——工作经历(完成 ZWL)</a></li>
+<li><a href="#我的简历教育经历添加完成-zwl">我的简历——教育经历——添加(完成 ZWL)</a></li>
+<li><a href="#我的简历工作经历添加完成-zwl">我的简历——工作经历——添加(完成 ZWL)</a></li>
+<li><a href="#我的简历培训经历添加完成-zwl">我的简历——培训经历——添加(完成 ZWL)</a></li>
+<li><a href="#我的简历教育经历删除完成-zwl">我的简历——教育经历——删除(完成 ZWL)</a></li>
+<li><a href="#我的简历工作经历删除完成-zwl">我的简历——工作经历——删除(完成 ZWL)</a></li>
+<li><a href="#我的简历培训经历删除完成-zwl">我的简历——培训经历——删除(完成 ZWL)</a></li>
+<li><a href="#返回我的简历期望职位信息完成fmf">返回我的简历——期望职位——信息(完成FMF)</a></li>
+<li><a href="#返回我的简历个人评价信息完成-fmf">返回我的简历——个人评价——信息(完成 FMF)</a></li>
+</ul>
+</li>
+<li><a href="#搜索-完成zwl">搜索 完成（ZWL）</a><ul>
+<li><a href="#搜索公司-完成zwl">搜索——公司 完成（ZWL）</a></li>
+<li><a href="#搜索热门搜索关键词完成-zwl">搜索——热门搜索关键词(完成 ZWL)</a></li>
+</ul>
+</li>
+<li><a href="#招聘会模块">招聘会模块</a><ul>
+<li><a href="#招聘会招聘会预定企业名单完成zwl">招聘会——招聘会预定企业名单（完成ZWL）</a></li>
+<li><a href="#招聘会招聘会列表完成-fmf">招聘会——招聘会列表(完成 FMF)</a></li>
+<li><a href="#招聘会招聘会详情完成-fmf">招聘会——招聘会详情(完成 FMF)</a></li>
+</ul>
+</li>
+<li><a href="#全职工作首页完成-zwl">全职工作——首页(完成 ZWL)</a><ul>
+<li><a href="#全职工作收入下拉选项完成-zwl">全职工作——收入下拉选项(完成 ZWL)</a></li>
+<li><a href="#全职工作职位详情职位信息完成-zwl">全职工作——职位详情——职位信息(完成 ZWL)</a></li>
+<li><a href="#全职工作职位详情公司信息完成-zwl">全职工作——职位详情——公司信息(完成 ZWL)</a></li>
+<li><a href="#全职工作投递简历完成-zwl">全职工作——投递简历(完成 ZWL)</a></li>
+<li><a href="#全职工作收藏职位完成-fmf">全职工作——收藏职位(完成 FMF)</a></li>
+</ul>
+</li>
+<li><a href="#兼职工作首页完成-zwl">兼职工作——首页(完成 ZWL)</a><ul>
+<li><a href="#兼职工作职位详情职位信息完成-zwl">兼职工作——职位详情——职位信息(完成 ZWL)</a></li>
+<li><a href="#兼职工作职位详情公司信息完成-zwl">兼职工作——职位详情——公司信息(完成 ZWL)</a></li>
+<li><a href="#兼职工作投递简历选择简历完成-zwl">兼职工作——投递简历——选择简历(完成 ZWL)</a></li>
+<li><a href="#全职兼职工作投递简历电话完成-zwl">全职/兼职工作——投递简历——电话(完成 ZWL)</a></li>
+<li><a href="#兼职工作投递简历完成-zwl">兼职工作——投递简历(完成 ZWL)</a></li>
+</ul>
+</li>
+<li><a href="#行业名企完成-fmf">行业名企(完成 FMF)</a><ul>
+<li><a href="#行业名企职位列表-完成-fmf">行业名企职位列表 (完成 FMF)</a></li>
+<li><a href="#行业名企职位详情-完成-fmf">行业名企职位详情 (完成 FMF)</a></li>
+<li><a href="#行业名企公司详情-完成-fmf">行业名企公司详情 (完成 FMF)</a></li>
+<li><a href="#申请行业名企完成-fmf">申请行业名企(完成 FMF)</a></li>
+<li><a href="#行业名企-职位类别一级分类完成-fmf">行业名企——-职位类别———一级分类(完成 FMF)</a></li>
+<li><a href="#行业名企-职位类别二级分类完成-fmf">行业名企——-职位类别———二级分类(完成 FMF)</a></li>
+<li><a href="#行业名企-薪资类别完成-fmf">行业名企——-薪资类别(完成 FMF)</a></li>
+</ul>
+</li>
+<li><a href="#职场资讯完成-fmf">职场资讯(完成 FMF)</a><ul>
+<li><a href="#职场资讯-一级分类-完成-fmf">职场资讯————-一级分类 (完成 FMF)</a></li>
+<li><a href="#职场资讯-二级分类-完成-fmf">职场资讯————-二级分类 (完成 FMF)</a></li>
+<li><a href="#职场资讯列表-完成-fmf">职场资讯列表 (完成 FMF)</a></li>
+<li><a href="#职场资讯详情-完成-fmf">职场资讯详情 (完成 FMF)</a></li>
+<li><a href="#职场资讯详情页-返回html页面-完成-fmf">职场资讯详情页————-返回html页面 (完成 FMF)</a></li>
+</ul>
+</li>
+<li><a href="#公司百度地图数据完成-zwl">公司——百度地图数据(完成 ZWL)</a></li>
+<li><a href="#app首页完成-fmf">app首页(完成 FMF)</a><ul>
+<li><a href="#首页banner图片和访谈图片完成fmf">首页—banner图片和访谈图片(完成FMF)</a></li>
+<li><a href="#首页banner图片和访谈图片详情完成fmf">首页—banner图片和访谈图片—–详情(完成FMF)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</p>
+
+
+
+<h1 id="壹打工网接口文档1dagong-api">壹打工网接口文档(1dagong-api)</h1>
+
+<p>返回码说明</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs lasso">{
+    code:<span class="hljs-comment">//返回代号：1成功；其它 失败</span>
+    message:<span class="hljs-comment">//提示信息</span>
+    <span class="hljs-built_in">data</span>:<span class="hljs-comment">//接口需求的具体数据</span>
+}</code></pre>
+
+
+
+<h2 id="登录注册相关接口">登录注册相关接口</h2>
+
+
+
+<h3 id="获取短信验证码完成-zwl">获取短信验证码(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>WEBSITE/interface/captcha_code.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/captcha_code.php">http://www.1dagong.com/interface/captcha_code.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>   </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>userid</td>
+  <td>string</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>接收短信的手机号码</td>
+</tr>
+<tr>
+  <td>ANDROID_KEY</td>
+  <td>string</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>接口验证码</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td>与短信接口通讯异常</td>
+  <td>请填写用户名</td>
+</tr>
+<tr>
+  <td>-2</td>
+  <td>与短信接口通讯异常</td>
+  <td>没有找到该用户</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>发送成功</td>
+  <td></td>
+</tr>
+</tbody></table>
+
+
+<p><strong>响应结果:</strong></p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    <span class="hljs-string">"code"</span>: <span class="hljs-number">1</span>, <span class="hljs-comment">//1 - 接口调用成功，其他值表示失败</span>
+    <span class="hljs-string">"message"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-string">"data"</span>: <span class="hljs-string">"123456"</span> <span class="hljs-comment">//短信验证码</span>
+}</code></pre>
+
+
+
+<h3 id="获取分站信息完成-zwl">获取分站信息(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>WEBSITE/interface/index_subsite.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/index_subsite.php">http://www.1dagong.com/interface/index_subsite.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>   </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>ANDROID_KEY</td>
+  <td>string</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>接口验证码</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td></td>
+  <td>参数错误</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td></td>
+  <td>数据返回成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>响应结果:</strong></p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    <span class="hljs-string">"code"</span>: <span class="hljs-number">1</span>, <span class="hljs-comment">//1 - 接口调用成功，其他值表示失败</span>
+    <span class="hljs-string">"message"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-string">"data['s_id']"</span>: 分站ID
+    <span class="hljs-string">"data['s_districtname']"</span>: 分站名称 
+}</code></pre>
+
+
+
+<h3 id="获取分站信息下属地区信息完成-zwl">获取分站信息——下属地区信息(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>WEBSITE/interface/index_district.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/index_district.php">http://www.1dagong.com/interface/index_district.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>   </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>ANDROID_KEY</td>
+  <td>string</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>district_id</td>
+  <td>int</td>
+  <td></td>
+  <td>地区ID</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td></td>
+  <td>参数错误</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td></td>
+  <td>数据返回成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>响应结果:</strong></p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    <span class="hljs-string">"code"</span>: <span class="hljs-number">1</span>, <span class="hljs-comment">//1 - 接口调用成功，其他值表示失败</span>
+    <span class="hljs-string">"message"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-string">"data['id']"</span>: 下属地区ID
+    <span class="hljs-string">"data['categoryname']"</span>: 下属地区名称 
+}</code></pre>
+
+
+
+<h3 id="获取注册地区信息完成-zwl">获取注册地区信息(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>WEBSITE/interface/reg_diqu_info.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/reg_diqu_info.php">http://www.1dagong.com/interface/reg_diqu_info.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>   </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>ANDROID_KEY</td>
+  <td>string</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>接口验证码</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td></td>
+  <td>参数错误</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td></td>
+  <td>数据返回成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>响应结果:</strong></p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    <span class="hljs-string">"code"</span>: <span class="hljs-number">1</span>, <span class="hljs-comment">//1 - 接口调用成功，其他值表示失败</span>
+    <span class="hljs-string">"message"</span>: <span class="hljs-literal">null</span>,
+    id: 省份ID
+    categoryname: 省份名称 
+}</code></pre>
+
+
+
+<h3 id="获取注册地区省下的市信息完成-zwl">获取注册地区——省下的市信息(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>WEBSITE/interface/index_district.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/index_district.php">http://www.1dagong.com/interface/index_district.php</a>`</p>
+</blockquote>
+
+<p><strong>请求参数</strong>   </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>ANDROID_KEY</td>
+  <td>string</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>district_id</td>
+  <td>int</td>
+  <td></td>
+  <td></td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td></td>
+  <td>参数错误</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td></td>
+  <td>数据返回成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>响应结果:</strong></p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    <span class="hljs-string">"code"</span>: <span class="hljs-number">1</span>, <span class="hljs-comment">//1 - 接口调用成功，其他值表示失败</span>
+    <span class="hljs-string">"message"</span>: <span class="hljs-literal">null</span>,
+    id: 市ID
+    categoryname: 市名称 
+}</code></pre>
+
+
+
+<h3 id="获取职位分类信息一级分类信息完成-zwl">获取职位分类信息——一级分类信息(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>WEBSITE/interface/index_jobs_first_category.php.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/index_jobs_first_category.php.php">http://www.1dagong.com/interface/index_jobs_first_category.php.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>   </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>ANDROID_KEY</td>
+  <td>string</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>接口验证码</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td></td>
+  <td>参数错误</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td></td>
+  <td>数据返回成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>响应结果:</strong></p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    <span class="hljs-string">"code"</span>: <span class="hljs-number">1</span>, <span class="hljs-comment">//1 - 接口调用成功，其他值表示失败</span>
+    <span class="hljs-string">"message"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-string">"data['id']"</span>: 职位分类ID
+    <span class="hljs-string">"data['categoryname']"</span>: 职位名称 
+}</code></pre>
+
+
+
+<h3 id="获取职位分类信息二三级分类信息完成-zwl">获取职位分类信息——二、三级分类信息(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>WEBSITE/interface/index_jobs_second_category.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/index_jobs_second_category.php">http://www.1dagong.com/interface/index_jobs_second_category.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>   </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>ANDROID_KEY</td>
+  <td>string</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>一级分类ID</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td></td>
+  <td>参数错误</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td></td>
+  <td>数据返回成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>响应结果:</strong></p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    <span class="hljs-string">"code"</span>: <span class="hljs-number">1</span>, <span class="hljs-comment">//1 - 接口调用成功，其他值表示失败</span>
+    <span class="hljs-string">"message"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-string">"data['id']"</span>: 职位分类ID
+    <span class="hljs-string">"data['categoryname']"</span>: 职位名称 
+}</code></pre>
+
+
+
+<h3 id="用户注册完成-zwl">用户注册（完成 ZWL）</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>WEBSITE/interface/reg.php</code></p>
+
+<p><strong>请求参数:</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>username</td>
+  <td>String</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>手机号</td>
+</tr>
+<tr>
+  <td>androidkey</td>
+  <td>String</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>member_type</td>
+  <td>String</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>会员类型,固定值2</td>
+</tr>
+<tr>
+  <td>sex</td>
+  <td>int</td>
+  <td>1/0</td>
+  <td>性别,1代表男</td>
+</tr>
+<tr>
+  <td>sex_cn</td>
+  <td>string</td>
+  <td></td>
+  <td>性别</td>
+</tr>
+<tr>
+  <td>realname</td>
+  <td>string</td>
+  <td></td>
+  <td>姓名</td>
+</tr>
+<tr>
+  <td>birthday</td>
+  <td>string</td>
+  <td></td>
+  <td>生日</td>
+</tr>
+<tr>
+  <td>residence_cn</td>
+  <td>string</td>
+  <td></td>
+  <td>居住地</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>-1</td>
+  <td>会员类型错误</td>
+  <td></td>
+</tr>
+<tr>
+  <td>-2</td>
+  <td>用户名已经存在</td>
+  <td></td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数:</strong></p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    $result[<span class="hljs-string">'result'</span>]:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    $result[<span class="hljs-string">'errormsg'</span>]: <span class="hljs-literal">null</span>,
+    $result[<span class="hljs-string">'data'</span>]: 
+}</code></pre>
+
+
+
+<h3 id="用户登录完成-zwl">用户登录（完成 ZWL）</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>WEBSITE/interface/login.php</code></p>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>username</td>
+  <td>String</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>用户名 - 手机号</td>
+</tr>
+<tr>
+  <td>userpwd</td>
+  <td>String</td>
+  <td><i class="fa fa-exclamation">1</i></td>
+  <td>密码</td>
+</tr>
+<tr>
+  <td>androidkey</td>
+  <td>String</td>
+  <td><i class="fa fa-exclamation">2</i></td>
+  <td>接口验证码</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td>登录成功</td>
+  <td></td>
+</tr>
+<tr>
+  <td>0</td>
+  <td>用户名或密码错误</td>
+  <td></td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    $result[<span class="hljs-string">'result'</span>]:<span class="hljs-number">1</span>, <span class="hljs-comment">//0-表示成功 其它表示失败</span>
+    $result[<span class="hljs-string">'errormsg'</span>]: <span class="hljs-literal">null</span>,
+    $result[<span class="hljs-string">'data'</span>][<span class="hljs-string">'uid'</span>]: 用户ID
+    $result[<span class="hljs-string">'data'</span>][<span class="hljs-string">'username'</span>]: 用户名
+    $result[<span class="hljs-string">'data'</span>][<span class="hljs-string">'utype'</span>]: 用户类型
+    $result[<span class="hljs-number">0</span>]: 已申请职位
+    $result[<span class="hljs-number">1</span>]: 面试邀请
+    $result[<span class="hljs-number">2</span>]: 关注
+}</code></pre>
+
+
+
+<h2 id="个人中心完成zwl">个人中心（完成ZWL）</h2>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code> <code>WEISITE/interface/person/personal_index.php</code></p>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>varchar</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>uid</td>
+  <td><a href="#lordjson"><code>lordJson</code></a></td>
+  <td></td>
+  <td>用户ID</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>响应结果</strong></p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    $result[<span class="hljs-string">'result'</span>]: <span class="hljs-number">1</span>, <span class="hljs-comment">//1 - 接口调用成功，其他值表示失败</span>
+    $result[<span class="hljs-string">'errormsg'</span>]: <span class="hljs-literal">null</span>,
+    $result[<span class="hljs-number">0</span>]:已申请职位
+    $result[<span class="hljs-number">1</span>]:面试邀请
+    $result[<span class="hljs-number">2</span>]:关注
+}</code></pre>
+
+
+
+<h3 id="个人中心设置版本更新上传版本信息完成-zwl">个人中心——设置——版本更新——上传版本信息(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/app_edition.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/app_edition.php">http://www.1dagong.com/interface/app_edition.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>operate</td>
+  <td>string</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>操作ID，为input</td>
+</tr>
+<tr>
+  <td>edition_id</td>
+  <td></td>
+  <td>int</td>
+  <td></td>
+</tr>
+<tr>
+  <td>description</td>
+  <td>string</td>
+  <td></td>
+  <td>更新说明</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+<tr>
+  <td>0</td>
+  <td></td>
+  <td>执行成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+        }
+}</code></pre>
+
+
+
+<h3 id="个人中心设置版本更新获取版本信息完成-zwl">个人中心——设置——版本更新——获取版本信息(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/app_edition.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/app_edition.php">http://www.1dagong.com/interface/app_edition.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>operate</td>
+  <td>string</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>操作ID，为output</td>
+</tr>
+<tr>
+  <td>edition_id</td>
+  <td></td>
+  <td>int</td>
+  <td></td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>2</td>
+  <td></td>
+  <td>已是最新版本</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+<tr>
+  <td>0</td>
+  <td></td>
+  <td>无需更新</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+        edition_id: <span class="hljs-string">"最新版本ID"</span>
+        url: <span class="hljs-string">"下载地址"</span>
+        description: <span class="hljs-string">"更新说明"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="修改密码完成-fmf">修改密码(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/modify_pass.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/modify_pass.php">http://www.1dagong.com/interface/modify_pass.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>userid</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>当前登录用户ID</td>
+</tr>
+<tr>
+  <td>oldpass</td>
+  <td>String</td>
+  <td></td>
+  <td>原密码</td>
+</tr>
+<tr>
+  <td>newpass</td>
+  <td>String</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>新密码</td>
+</tr>
+<tr>
+  <td>androidkey</td>
+  <td>String</td>
+  <td>1</td>
+  <td>验证码唯一票据</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>-1</td>
+  <td>旧密码不正确</td>
+  <td>旧密码输入错误，请重新输入</td>
+</tr>
+<tr>
+  <td>0</td>
+  <td>三个参数必填</td>
+  <td>请填写完整信息</td>
+</tr>
+<tr>
+  <td>-2</td>
+  <td>传入的userid不对</td>
+  <td>没有找到该用户</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    message: <span class="hljs-literal">null</span>,
+    data:
+        {
+            userid:<span class="hljs-string">"18283"</span>
+            username:<span class="hljs-string">"15755120196"</span>
+            utype:<span class="hljs-string">"2"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="个人中心设置意见反馈完成-zwl">个人中心——设置——意见反馈(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/propose.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/propose.php">http://www.1dagong.com/interface/propose.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>userid</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>当前登录用户ID</td>
+</tr>
+<tr>
+  <td>contents</td>
+  <td>String</td>
+  <td></td>
+  <td>意见内容</td>
+</tr>
+<tr>
+  <td>androidkey</td>
+  <td>String</td>
+  <td></td>
+  <td>验证码唯一票据</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td></td>
+  <td>服务器错误</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td></td>
+  <td>执行成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    message: <span class="hljs-literal">null</span>,
+    data:
+        {
+
+        }
+}</code></pre>
+
+
+
+<h3 id="设置密码完成-zwl">设置密码(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>WEBSITE/interface/set_pass.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/set_pass.php">http://www.1dagong.com/interface/set_pass.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>userid</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>用户名</td>
+</tr>
+<tr>
+  <td>verify_code</td>
+  <td>String</td>
+  <td></td>
+  <td>手机验证结果状态码</td>
+</tr>
+<tr>
+  <td>pwd01</td>
+  <td>String</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>第一次输入密码</td>
+</tr>
+<tr>
+  <td>pwd01</td>
+  <td>String</td>
+  <td>1</td>
+  <td>第二次输入密码</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>-1</td>
+  <td>两次输入密码不相同</td>
+  <td>两次输入密码不相同</td>
+</tr>
+<tr>
+  <td>-2</td>
+  <td>没有找到该用户</td>
+  <td></td>
+</tr>
+<tr>
+  <td>-3</td>
+  <td>密码修改错误</td>
+  <td></td>
+</tr>
+<tr>
+  <td>0</td>
+  <td>手机验证码错误</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>修改密码成功</td>
+  <td></td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    message: <span class="hljs-literal">null</span>,
+    data:
+        {
+            userid:<span class="hljs-string">"18283"</span>
+            username:<span class="hljs-string">"15755120196"</span>
+            utype:<span class="hljs-string">"2"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="用户协议完成-fmf">用户协议(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/yonghuxy.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/yonghuxy.php">http://www.1dagong.com/interface/yonghuxy.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>String</td>
+  <td></td>
+  <td>验证码唯一票据</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td>执行成功</td>
+  <td>返回html页面</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+     <span class="hljs-number">1.</span>使用条款
+
+本协议阐明了使用壹打工网网站及其服务的使用条款(“使用条款”)。
+
+“求职者”是指完全同意本协议所有条款，使用壹打工网进行有效注册或虽然未经注册但通过使用经壹打工网许可的方式登录壹打工网，以寻求工作机会为目的的自然人。
+
+“招聘企业”或“企业会员”是指有人员招聘需求，通过与壹打工网签订协议或壹打工网特别许可的方式获得会员使用资格，从而有权在<span class="hljs-number">1</span>dagong.com上发布招聘信息、进行求职者简历查看或享受其它服务的企业用户。
+
+求职者和招聘企业合称为用户。 
+......
+}</code></pre>
+
+
+
+<h3 id="关于我们完成-fmf">关于我们(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/about.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/about.php">http://www.1dagong.com/interface/about.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>String</td>
+  <td></td>
+  <td>验证码唯一票据</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td>执行成功</td>
+  <td>返回html页面</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    壹打工网是专业的求职招聘网站，最了解蓝领需求，专为蓝领服务。壹打工网的所有合作企业都是根据求职者的反馈，精挑细选出来的，做到让每个求职者可以放心的工作。壹打工网同时也是众多世界<span class="hljs-number">500</span>强企业指定招聘的合作网站，合作企业均为知名企业单位，让企业省心，让求职者放心
+}</code></pre>
+
+
+
+<h3 id="我的收藏完成-fmf">我的收藏(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/person/personal_favorite.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/person/personal_favorite.php">http://www.1dagong.com/interface/person/personal_favorite.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>userid</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>当前登录用户ID</td>
+</tr>
+<tr>
+  <td>page</td>
+  <td>int</td>
+  <td></td>
+  <td>分页页数(默认是第一页)</td>
+</tr>
+<tr>
+  <td>pagesize</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>每页显示多少条(默认是10条)</td>
+</tr>
+<tr>
+  <td>androidkey</td>
+  <td>String</td>
+  <td>1</td>
+  <td>验证码唯一票据</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td>userid没有值</td>
+  <td>没有找到该用户</td>
+</tr>
+<tr>
+  <td>-1</td>
+  <td>收藏夹没有数据</td>
+  <td>收藏夹为空！</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    message: <span class="hljs-literal">null</span>,
+    data:
+        <span class="hljs-number">0</span>{
+        <span class="hljs-string">"did"</span>: <span class="hljs-string">"153"</span>,
+        <span class="hljs-string">"personal_uid"</span>: <span class="hljs-string">"18283"</span>,
+        <span class="hljs-string">"jobs_id"</span>: <span class="hljs-string">"4545"</span>,
+        <span class="hljs-string">"jobs_name"</span>: <span class="hljs-string">"客户经理"</span>,
+        <span class="hljs-string">"addtime"</span>: <span class="hljs-string">"1438567876"</span>,
+        <span class="hljs-string">"companyname"</span>: <span class="hljs-string">"安徽金樽投资管理有限公司"</span>,
+        <span class="hljs-string">"district_cn"</span>: <span class="hljs-string">"安徽省/合肥市"</span>
+    }
+    <span class="hljs-number">1</span>
+    {
+        <span class="hljs-string">"did"</span>: <span class="hljs-string">"152"</span>,
+        <span class="hljs-string">"personal_uid"</span>: <span class="hljs-string">"18283"</span>,
+        <span class="hljs-string">"jobs_id"</span>: <span class="hljs-string">"4546"</span>,
+        <span class="hljs-string">"jobs_name"</span>: <span class="hljs-string">"业务主管"</span>,
+        <span class="hljs-string">"addtime"</span>: <span class="hljs-string">"1438567871"</span>,
+        <span class="hljs-string">"companyname"</span>: <span class="hljs-string">"安徽金樽投资管理有限公司"</span>,
+        <span class="hljs-string">"district_cn"</span>: <span class="hljs-string">"安徽省/合肥市"</span>
+    }
+    ...
+}</code></pre>
+
+
+
+<h3 id="删除收藏完成-fmf">删除收藏(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/person/personal_favorite_del.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/person/personal_favorite_del.php">http://www.1dagong.com/interface/person/personal_favorite_del.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>userid</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>当前登录用户ID</td>
+</tr>
+<tr>
+  <td>did</td>
+  <td>int</td>
+  <td></td>
+  <td>当前要删除的多个id(以,号隔开)</td>
+</tr>
+<tr>
+  <td>androidkey</td>
+  <td>String</td>
+  <td>1</td>
+  <td>验证码唯一票据</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td>did没有值</td>
+  <td>没有找到该记录</td>
+</tr>
+<tr>
+  <td>-1</td>
+  <td>删除失败</td>
+  <td>删除失败</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    message: <span class="hljs-literal">null</span>,
+    data:
+        {
+            userid:<span class="hljs-string">"18283"</span>
+            did:<span class="hljs-string">"145"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="面试邀请列表完成-fmf">面试邀请列表(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/person/personal_interview.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/person/personal_interview.php">http://www.1dagong.com/interface/person/personal_interview.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>userid</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>当前登录用户ID(测试uid:71410)</td>
+</tr>
+<tr>
+  <td>page</td>
+  <td>int</td>
+  <td></td>
+  <td>分页页数(默认是第一页)</td>
+</tr>
+<tr>
+  <td>pagesize</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>每页显示多少条(默认是10条)</td>
+</tr>
+<tr>
+  <td>androidkey</td>
+  <td>String</td>
+  <td>1</td>
+  <td>验证码唯一票据</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td>userid没有值</td>
+  <td>没有找到该用户</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    message: <span class="hljs-literal">null</span>,
+    data:
+        {
+            {
+            <span class="hljs-string">"did"</span>: <span class="hljs-string">"377"</span>,
+            <span class="hljs-string">"resume_id"</span>: <span class="hljs-string">"3051"</span>,
+            <span class="hljs-string">"resume_name"</span>: <span class="hljs-string">"张**"</span>,
+            <span class="hljs-string">"interview_addtime"</span>: <span class="hljs-string">"2天前"</span>,
+            <span class="hljs-string">"jobs_id"</span>: <span class="hljs-string">"4295"</span>,
+            <span class="hljs-string">"company_id"</span>: <span class="hljs-string">"23985"</span>,
+            <span class="hljs-string">"subsite_id"</span>: <span class="hljs-string">"5"</span>,
+            <span class="hljs-string">"jobs_name"</span>: <span class="hljs-string">"测试职位名称"</span>,
+            <span class="hljs-string">"companyname"</span>: <span class="hljs-string">"测试企业名称1122"</span>,
+            <span class="hljs-string">"district_cn"</span>: <span class="hljs-string">"安徽省/合肥市"</span>,
+            <span class="hljs-string">"wage_cn"</span>: <span class="hljs-string">"3000~5000元/月"</span>,
+            <span class="hljs-string">"deadline"</span>: <span class="hljs-string">"2016-09-17"</span>,
+            <span class="hljs-string">"click"</span>: <span class="hljs-string">"20"</span>,
+            <span class="hljs-string">"title"</span>: <span class="hljs-string">"测试"</span>,
+            <span class="hljs-string">"total"</span>: <span class="hljs-string">"1"</span>
+        }
+        }
+}</code></pre>
+
+
+
+<h3 id="刷新简历完成-fmf">刷新简历(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/person/personal_resume_refresh.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/person/personal_resume_refresh.php">http://www.1dagong.com/interface/person/personal_resume_refresh.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>userid</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>当前登录用户ID</td>
+</tr>
+<tr>
+  <td>resumeID</td>
+  <td>int</td>
+  <td></td>
+  <td>当前要刷新的简历id</td>
+</tr>
+<tr>
+  <td>androidkey</td>
+  <td>String</td>
+  <td>1</td>
+  <td>验证码唯一票据</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td>resumeID没有值</td>
+  <td>没有找到该记录</td>
+</tr>
+<tr>
+  <td>-1</td>
+  <td>刷新失败</td>
+  <td>刷新失败</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    message: <span class="hljs-literal">null</span>,
+    data:
+        {
+            userid:<span class="hljs-string">"18283"</span>
+            resumeID:<span class="hljs-string">"1452"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="删除我的简历完成-fmf">删除我的简历(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/person/personal_resume_del.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/person/personal_resume_del.php">http://www.1dagong.com/interface/person/personal_resume_del.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>userid</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>当前登录用户ID</td>
+</tr>
+<tr>
+  <td>resumeID</td>
+  <td>int</td>
+  <td></td>
+  <td>当前要删除的多个简历id(以逗号隔开)</td>
+</tr>
+<tr>
+  <td>androidkey</td>
+  <td>String</td>
+  <td>1</td>
+  <td>验证码唯一票据</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td>resumeID没有值</td>
+  <td>没有找到该记录</td>
+</tr>
+<tr>
+  <td>-1</td>
+  <td>删除失败</td>
+  <td>删除失败</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    message: <span class="hljs-literal">null</span>,
+    data:
+        {
+            userid:<span class="hljs-string">"18283"</span>
+            resumeID:<span class="hljs-string">"1482"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="职位投递记录完成-fmf">职位投递记录(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/person/personal_apply_jobs.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/person/personal_apply_jobs.php">http://www.1dagong.com/interface/person/personal_apply_jobs.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>userid</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>当前登录用户ID</td>
+</tr>
+<tr>
+  <td>page</td>
+  <td>int</td>
+  <td></td>
+  <td>分页页数(默认是第一页)</td>
+</tr>
+<tr>
+  <td>pagesize</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>每页显示多少条(默认是10条)</td>
+</tr>
+<tr>
+  <td>androidkey</td>
+  <td>String</td>
+  <td>1</td>
+  <td>验证码唯一票据</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td>userid没有值</td>
+  <td>没有找到该用户</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    message: <span class="hljs-literal">null</span>,
+    data:
+        {
+            <span class="hljs-number">0</span>{
+            <span class="hljs-string">"did"</span>: <span class="hljs-string">"1406"</span>,
+            <span class="hljs-string">"resume_id"</span>: <span class="hljs-string">"1542"</span>,
+            <span class="hljs-string">"resume_name"</span>: <span class="hljs-string">"王超"</span>,
+            <span class="hljs-string">"personal_uid"</span>: <span class="hljs-string">"18283"</span>,
+            <span class="hljs-string">"jobs_id"</span>: <span class="hljs-string">"4542"</span>,
+            <span class="hljs-string">"jobs_name"</span>: <span class="hljs-string">"网络销售"</span>,
+            <span class="hljs-string">"company_id"</span>: <span class="hljs-string">"53398"</span>,
+            <span class="hljs-string">"company_name"</span>: <span class="hljs-string">"郑州悦服电子商务有限公司"</span>,
+            <span class="hljs-string">"company_uid"</span>: <span class="hljs-string">"64863"</span>,
+            <span class="hljs-string">"apply_addtime"</span>: <span class="hljs-string">"2分钟前"</span>,
+            <span class="hljs-string">"personal_look"</span>: <span class="hljs-string">"1"</span>,
+            <span class="hljs-string">"notes"</span>: <span class="hljs-string">""</span>,
+            <span class="hljs-string">"subsite_id"</span>: <span class="hljs-string">"11"</span>,
+            <span class="hljs-string">"addtime"</span>: <span class="hljs-string">"1435981279"</span>,
+            <span class="hljs-string">"companyname"</span>: <span class="hljs-string">"郑州悦服电子商务有限公司"</span>,
+            <span class="hljs-string">"company_addtime"</span>: <span class="hljs-string">"0"</span>,
+            <span class="hljs-string">"wage_cn"</span>: <span class="hljs-string">"3000~5000元/月"</span>,
+            <span class="hljs-string">"district_cn"</span>: <span class="hljs-string">"河南省"</span>,
+            <span class="hljs-string">"deadline"</span>: <span class="hljs-string">"1441165279"</span>,
+            <span class="hljs-string">"refreshtime"</span>: <span class="hljs-string">"2015-07-04"</span>,
+            <span class="hljs-string">"click"</span>: <span class="hljs-string">"13"</span>
+        }
+        }
+}</code></pre>
+
+
+
+<h3 id="删除投递记录完成-fmf">删除投递记录(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/person/personal_apply_jobs_del.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/person/personal_apply_jobs_del.php">http://www.1dagong.com/interface/person/personal_apply_jobs_del.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>userid</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>当前登录用户ID</td>
+</tr>
+<tr>
+  <td>did</td>
+  <td>int</td>
+  <td></td>
+  <td>当前要删除的多个id(以逗号隔开)</td>
+</tr>
+<tr>
+  <td>androidkey</td>
+  <td>String</td>
+  <td>1</td>
+  <td>验证码唯一票据</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td>did没有值</td>
+  <td>没有找到该记录</td>
+</tr>
+<tr>
+  <td>-1</td>
+  <td>删除失败</td>
+  <td>删除失败</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    message: <span class="hljs-literal">null</span>,
+    data:
+        {
+            userid:<span class="hljs-string">"18283"</span>
+            did:<span class="hljs-string">"1482"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="谁在关注我完成-fmf">谁在关注我(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/person/personal_attention_me.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/person/personal_attention_me.php">http://www.1dagong.com/interface/person/personal_attention_me.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>userid</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>当前登录用户ID</td>
+</tr>
+<tr>
+  <td>page</td>
+  <td>int</td>
+  <td></td>
+  <td>分页页数(默认是第一页)</td>
+</tr>
+<tr>
+  <td>pagesize</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>每页显示多少条(默认是10条)</td>
+</tr>
+<tr>
+  <td>androidkey</td>
+  <td>String</td>
+  <td>1</td>
+  <td>验证码唯一票据</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td>userid没有值</td>
+  <td>没有找到该用户</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    message: <span class="hljs-literal">null</span>,
+    data:
+        {
+            <span class="hljs-literal">null</span>
+        }
+        }
+}</code></pre>
+
+
+
+<h3 id="删除谁在关注我完成-fmf">删除谁在关注我(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/person/personal_attention_me_del.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/person/personal_attention_me_del.php">http://www.1dagong.com/interface/person/personal_attention_me_del.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>userid</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>当前登录用户ID</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td></td>
+  <td>当前要删除的多个id(以逗号隔开)</td>
+</tr>
+<tr>
+  <td>androidkey</td>
+  <td>String</td>
+  <td>1</td>
+  <td>验证码唯一票据</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td>id没有值</td>
+  <td>没有找到记录</td>
+</tr>
+<tr>
+  <td>-1</td>
+  <td>删除失败</td>
+  <td>删除失败</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    message: <span class="hljs-literal">null</span>,
+    data:
+        {
+            id:<span class="hljs-string">"1482"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="设置委托投递完成-fmf">设置委托投递(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/person/personal_set_entrust.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/person/personal_set_entrust.php">http://www.1dagong.com/interface/person/personal_set_entrust.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>userid</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>当前登录用户ID</td>
+</tr>
+<tr>
+  <td>resumeID</td>
+  <td>int</td>
+  <td></td>
+  <td>要设置的简历id</td>
+</tr>
+<tr>
+  <td>androidkey</td>
+  <td>String</td>
+  <td>1</td>
+  <td>验证码唯一票据</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td>resumeID没有值</td>
+  <td>没有找到该记录</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    message: <span class="hljs-literal">null</span>,
+    data:
+        {
+            <span class="hljs-string">"userid"</span>: <span class="hljs-string">"18283"</span>,
+            <span class="hljs-string">"resumeID"</span>: <span class="hljs-string">"1542"</span>
+        }
+        }
+}</code></pre>
+
+
+
+<h3 id="取消委托投递完成-fmf">取消委托投递(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/person/personal_entrust_del.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/person/personal_entrust_del.php">http://www.1dagong.com/interface/person/personal_entrust_del.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>userid</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>当前登录用户ID</td>
+</tr>
+<tr>
+  <td>resumeID</td>
+  <td>int</td>
+  <td></td>
+  <td>要设置的简历id</td>
+</tr>
+<tr>
+  <td>androidkey</td>
+  <td>String</td>
+  <td>1</td>
+  <td>验证码唯一票据</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td>resumeID没有值</td>
+  <td>没有找到该记录</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    message: <span class="hljs-literal">null</span>,
+    data:
+        {
+            <span class="hljs-string">"userid"</span>: <span class="hljs-string">"18283"</span>,
+            <span class="hljs-string">"resumeID"</span>: <span class="hljs-string">"1542"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="设置简历是否公开完成-fmf">设置简历是否公开(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/person/personal_set_display.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/person/personal_set_display.php">http://www.1dagong.com/interface/person/personal_set_display.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>userid</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>当前登录用户ID</td>
+</tr>
+<tr>
+  <td>resumeID</td>
+  <td>int</td>
+  <td></td>
+  <td>要设置的简历id</td>
+</tr>
+<tr>
+  <td>display</td>
+  <td>int</td>
+  <td></td>
+  <td>要设置的公开的字段(1代表公开2代表保密(不显示))</td>
+</tr>
+<tr>
+  <td>androidkey</td>
+  <td>String</td>
+  <td>1</td>
+  <td>验证码唯一票据</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td>resumeID没有值</td>
+  <td>没有找到简历</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    message: <span class="hljs-literal">null</span>,
+    data:
+        {
+            <span class="hljs-string">"userid"</span>: <span class="hljs-string">"18283"</span>,
+            <span class="hljs-string">"resumeID"</span>: <span class="hljs-string">"1542"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="匹配职位完成-fmf">匹配职位(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/person/personal_interestjobs.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/person/personal_interestjobs.php">http://www.1dagong.com/interface/person/personal_interestjobs.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>jobcategory</td>
+  <td>string</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>该简历对应期望职位的分类id(已销售为例：1077.1078.0)获取在jobcategory的值myresume-persent-query.php接口中</td>
+</tr>
+<tr>
+  <td>androidkey</td>
+  <td>String</td>
+  <td>1</td>
+  <td>验证码唯一票据</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td>返回成功</td>
+  <td>返回职位成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    message: <span class="hljs-literal">null</span>,
+    data:
+        {
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"4542"</span>,
+            <span class="hljs-string">"uid"</span>: <span class="hljs-string">"64863"</span>,
+            <span class="hljs-string">"jobs_name"</span>: <span class="hljs-string">"网络销售"</span>,
+            <span class="hljs-string">"companyname"</span>: <span class="hljs-string">"郑州悦服电子商务有限公司"</span>,
+            <span class="hljs-string">"wage_cn"</span>: <span class="hljs-string">"3000~5000"</span>,
+            <span class="hljs-string">"refreshtime"</span>: <span class="hljs-string">"2015-07-04"</span>,
+            <span class="hljs-string">"district_cn"</span>: <span class="hljs-string">"河南省"</span>,
+            <span class="hljs-string">"category_cn"</span>: <span class="hljs-string">"网络销售"</span>
+        },
+        {
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"3252"</span>,
+            <span class="hljs-string">"uid"</span>: <span class="hljs-string">"40070"</span>,
+            <span class="hljs-string">"jobs_name"</span>: <span class="hljs-string">"网络销售"</span>,
+            <span class="hljs-string">"companyname"</span>: <span class="hljs-string">"合肥励融康商贸有限公司"</span>,
+            <span class="hljs-string">"wage_cn"</span>: <span class="hljs-string">"3000-5000"</span>,
+            <span class="hljs-string">"refreshtime"</span>: <span class="hljs-string">"2015-07-03"</span>,
+            <span class="hljs-string">"district_cn"</span>: <span class="hljs-string">"合肥市"</span>,
+            <span class="hljs-string">"category_cn"</span>: <span class="hljs-string">"销售"</span>
+        },
+        .......
+}</code></pre>
+
+
+
+<h3 id="我的简历-教育列表完成-fmf">我的简历——-教育列表(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/person/personal_education_list.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/person/personal_education_list.php">http://www.1dagong.com/interface/person/personal_education_list.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>userid</td>
+  <td>int</td>
+  <td></td>
+  <td>当前用户id</td>
+</tr>
+<tr>
+  <td>resume_id</td>
+  <td>int</td>
+  <td></td>
+  <td>当前简历id</td>
+</tr>
+<tr>
+  <td>androidkey</td>
+  <td>String</td>
+  <td>1</td>
+  <td>验证码唯一票据</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td>返回成功</td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    message: <span class="hljs-literal">null</span>,
+    data:
+        {
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"10201"</span>,
+            <span class="hljs-string">"pid"</span>: <span class="hljs-string">"3051"</span>,
+            <span class="hljs-string">"uid"</span>: <span class="hljs-string">"71410"</span>,
+            <span class="hljs-string">"startyear"</span>: <span class="hljs-string">"2003"</span>,
+            <span class="hljs-string">"startmonth"</span>: <span class="hljs-string">"3"</span>,
+            <span class="hljs-string">"endyear"</span>: <span class="hljs-string">"2006"</span>,
+            <span class="hljs-string">"endmonth"</span>: <span class="hljs-string">"3"</span>,
+            <span class="hljs-string">"school"</span>: <span class="hljs-string">"人工湖"</span>,
+            <span class="hljs-string">"speciality"</span>: <span class="hljs-string">"防护"</span>,
+            <span class="hljs-string">"education"</span>: <span class="hljs-string">"0"</span>,
+            <span class="hljs-string">"education_cn"</span>: <span class="hljs-string">"中专"</span>
+        }，
+        .......
+}</code></pre>
+
+
+
+<h3 id="我的简历-培训列表完成-fmf">我的简历——-培训列表(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/person/personal_train_list.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/person/personal_train_list.php">http://www.1dagong.com/interface/person/personal_train_list.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>userid</td>
+  <td>int</td>
+  <td></td>
+  <td>当前用户id</td>
+</tr>
+<tr>
+  <td>resume_id</td>
+  <td>int</td>
+  <td></td>
+  <td>当前简历id</td>
+</tr>
+<tr>
+  <td>androidkey</td>
+  <td>String</td>
+  <td>1</td>
+  <td>验证码唯一票据</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td>返回成功</td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    message: <span class="hljs-literal">null</span>,
+    data:
+         {
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"670"</span>,
+            <span class="hljs-string">"pid"</span>: <span class="hljs-string">"3051"</span>,
+            <span class="hljs-string">"uid"</span>: <span class="hljs-string">"71410"</span>,
+            <span class="hljs-string">"startyear"</span>: <span class="hljs-string">"2008"</span>,
+            <span class="hljs-string">"startmonth"</span>: <span class="hljs-string">"1"</span>,
+            <span class="hljs-string">"endyear"</span>: <span class="hljs-string">"2013"</span>,
+            <span class="hljs-string">"endmonth"</span>: <span class="hljs-string">"3"</span>,
+            <span class="hljs-string">"agency"</span>: <span class="hljs-string">"培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训"</span>,
+            <span class="hljs-string">"course"</span>: <span class="hljs-string">"培刚刚给训课程"</span>,
+            <span class="hljs-string">"description"</span>: <span class="hljs-string">"培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容"</span>
+        },
+        .......
+}</code></pre>
+
+
+
+<h3 id="我的简历-工作列表完成-fmf">我的简历——-工作列表(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/person/personal_work_list.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/person/personal_work_list.php">http://www.1dagong.com/interface/person/personal_work_list.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>userid</td>
+  <td>int</td>
+  <td></td>
+  <td>当前用户id</td>
+</tr>
+<tr>
+  <td>resume_id</td>
+  <td>int</td>
+  <td></td>
+  <td>当前简历id</td>
+</tr>
+<tr>
+  <td>androidkey</td>
+  <td>String</td>
+  <td>1</td>
+  <td>验证码唯一票据</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td>返回成功</td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    message: <span class="hljs-literal">null</span>,
+    data:
+         {
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"1904"</span>,
+            <span class="hljs-string">"pid"</span>: <span class="hljs-string">"3051"</span>,
+            <span class="hljs-string">"uid"</span>: <span class="hljs-string">"71410"</span>,
+            <span class="hljs-string">"startyear"</span>: <span class="hljs-string">"2014"</span>,
+            <span class="hljs-string">"startmonth"</span>: <span class="hljs-string">"5"</span>,
+            <span class="hljs-string">"endyear"</span>: <span class="hljs-string">"2015"</span>,
+            <span class="hljs-string">"endmonth"</span>: <span class="hljs-string">"1"</span>,
+            <span class="hljs-string">"companyname"</span>: <span class="hljs-string">"放贷高峰时段"</span>,
+            <span class="hljs-string">"jobs"</span>: <span class="hljs-string">"好刚刚给"</span>,
+            <span class="hljs-string">"achievements"</span>: <span class="hljs-string">"事发当时的方法"</span>
+        },
+        .......
+}</code></pre>
+
+
+
+<h3 id="我的简历完成-zwl">我的简历(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/myresume-list.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/myresume-list.php">http://www.1dagong.com/interface/myresume-list.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>uid</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>当前登录用户ID</td>
+</tr>
+<tr>
+  <td>page</td>
+  <td>int</td>
+  <td></td>
+  <td>请求的页码，默认为1，自然数序列，从1开始</td>
+</tr>
+<tr>
+  <td>page_size</td>
+  <td>int</td>
+  <td></td>
+  <td>每页显示的条数,默认为10</td>
+</tr>
+<tr>
+  <td>operate_code</td>
+  <td>string</td>
+  <td></td>
+  <td>操作码，为”resume”</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+            id: <span class="hljs-string">"简历id"</span>
+            intention_jobs: <span class="hljs-string">"职位名"</span>
+            wage_cn: <span class="hljs-string">"期望工资"</span>
+            click: <span class="hljs-string">"浏览次数"</span>
+            display: <span class="hljs-string">"是否公开"</span>
+            entrust: <span class="hljs-string">"是否委托投递，1为投递"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="我的简历简历注册1完成-zwl">我的简历——简历注册1(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/person_resume_reg_step1.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/person_resume_reg_step1.php">http://www.1dagong.com/interface/person_resume_reg_step1.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>uid</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>当前登录用户ID</td>
+</tr>
+<tr>
+  <td>fullname</td>
+  <td>string</td>
+  <td></td>
+  <td>姓名</td>
+</tr>
+<tr>
+  <td>sex</td>
+  <td>1、0</td>
+  <td></td>
+  <td>性别</td>
+</tr>
+<tr>
+  <td>sex_cn</td>
+  <td>string</td>
+  <td>男/女</td>
+  <td>性别</td>
+</tr>
+<tr>
+  <td>birthdate</td>
+  <td>string</td>
+  <td>1991</td>
+  <td>生日</td>
+</tr>
+<tr>
+  <td>residence_cn</td>
+  <td>string</td>
+  <td></td>
+  <td>居住地</td>
+</tr>
+<tr>
+  <td>education_cn</td>
+  <td>string</td>
+  <td></td>
+  <td>学历</td>
+</tr>
+<tr>
+  <td>experience_cn</td>
+  <td>string</td>
+  <td></td>
+  <td>工作经验</td>
+</tr>
+<tr>
+  <td>telephone</td>
+  <td>string</td>
+  <td></td>
+  <td>手机号</td>
+</tr>
+<tr>
+  <td>email</td>
+  <td>string</td>
+  <td></td>
+  <td>邮箱</td>
+</tr>
+<tr>
+  <td>img</td>
+  <td>binary stream</td>
+  <td></td>
+  <td>图片二进制流</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+<tr>
+  <td>0</td>
+  <td></td>
+  <td>服务器错误</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:<span class="hljs-comment">//简历ID</span>
+        {
+        }
+}</code></pre>
+
+
+
+<h3 id="我的简历简历注册2期望职位多选完成-zwl">我的简历——简历注册2——期望职位多选(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/person_resume_reg_step2.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/person_resume_reg_step2.php">http://www.1dagong.com/interface/person_resume_reg_step2.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>简历ID</td>
+</tr>
+<tr>
+  <td>intention_jobs</td>
+  <td>string</td>
+  <td></td>
+  <td>期望职位</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+<tr>
+  <td>0</td>
+  <td></td>
+  <td>服务器错误</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+        }
+}</code></pre>
+
+
+
+<h3 id="我的简历简历注册2工作性质选择完成-zwl">我的简历——简历注册2——工作性质选择(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/person_resume_reg_step2_nature_cn.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/person_resume_reg_step2_nature_cn.php">http://www.1dagong.com/interface/person_resume_reg_step2_nature_cn.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>简历ID</td>
+</tr>
+<tr>
+  <td>nature</td>
+  <td>62、62、64</td>
+  <td>全职、兼职、实习</td>
+  <td>工作性质</td>
+</tr>
+<tr>
+  <td>nature_cn</td>
+  <td>string</td>
+  <td>全职/兼职/实习</td>
+  <td>工作性质</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+<tr>
+  <td>0</td>
+  <td></td>
+  <td>服务器错误</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+        }
+}</code></pre>
+
+
+
+<h3 id="我的简历行业信息获取完成-zwl">我的简历——行业信息获取(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/category-trade.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/category-trade.php">http://www.1dagong.com/interface/category-trade.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td></td>
+  <td>无法获取行业分类信息</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+        c_id : <span class="hljs-string">"行业信息id"</span>
+        c_name : <span class="hljs-string">"行业名称"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="我的简历简历完整度查询完成-zwl">我的简历——简历完整度查询(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/myresume-persent-query.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/myresume-persent-query.php">http://www.1dagong.com/interface/myresume-persent-query.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>简历id</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td></td>
+  <td>id错误</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+        complete_percent: <span class="hljs-string">"简历完整度"</span>
+        jobs_sta: <span class="hljs-string">"工作意向"</span> <span class="hljs-number">1</span>为已完善
+        spe_sta: <span class="hljs-string">"个人评价"</span> <span class="hljs-number">1</span>为已完善
+        edu_sta: <span class="hljs-string">"教育经历"</span> <span class="hljs-number">1</span>为已完善
+        tra_sta: <span class="hljs-string">"培训经历"</span> <span class="hljs-number">1</span>为已完善
+        wor_sta: <span class="hljs-string">"工作经历"</span> <span class="hljs-number">1</span>为已完善
+        }
+}</code></pre>
+
+
+
+<h3 id="我的简历信息详情完成-zwl">我的简历——信息详情(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/myresume-show.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/myresume-show.php">http://www.1dagong.com/interface/myresume-show.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>uid</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>当前登录用户ID</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td></td>
+  <td>简历的id</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+        data[<span class="hljs-string">'0'</span>]:{
+            photo_img: <span class="hljs-string">"图片地址"</span>
+            id: <span class="hljs-string">"简历id"</span>
+            uid: <span class="hljs-string">"用户id"</span>
+            sex_cn: <span class="hljs-string">"性别"</span>
+            birthdate: <span class="hljs-string">"生日"</span>
+            telephone: <span class="hljs-string">"手机"</span>
+            residence_cn: <span class="hljs-string">"当前住址"</span>
+            wage_cn: <span class="hljs-string">"期望薪资"</span>
+            sta: <span class="hljs-string">"求职状态"</span>默认值<span class="hljs-number">1</span>，求职中
+            intention_jobs: <span class="hljs-string">"职位名"</span>
+            district_cn: <span class="hljs-string">"工作地点"</span>
+            nature_cn: <span class="hljs-string">"工作性质"</span>
+            }
+        data[<span class="hljs-string">'1'</span>]:{ 
+            教育经历:
+            id: 教育经历的唯一表示
+            startyear: <span class="hljs-string">"开始年份"</span>
+            startmonth: <span class="hljs-string">"开始月份"</span>
+            endyear: <span class="hljs-string">"结束年份"</span>
+            endmonth: <span class="hljs-string">"结束月份"</span>
+            school: <span class="hljs-string">"学校名称"</span>
+            speciality: <span class="hljs-string">"专业"</span>
+            education_cn: <span class="hljs-string">"学历"</span>
+            }
+        data[<span class="hljs-string">'2'</span>]:{ 
+            工作经历:
+            id:唯一表示
+            startyear: <span class="hljs-string">"开始年份"</span>
+            startmonth: <span class="hljs-string">"开始月份"</span>
+            endyear: <span class="hljs-string">"结束年份"</span>
+            endmonth: <span class="hljs-string">"结束月份"</span>        
+            jobs: <span class="hljs-string">"所从事的职位名字"</span>
+            achievements: <span class="hljs-string">"工作描述"</span>
+            companyname: <span class="hljs-string">"公司名字"</span>
+            }
+        data[<span class="hljs-string">'3'</span>]:{
+            培训经历:
+            id:唯一表示
+            startyear: <span class="hljs-string">"开始年份"</span>
+            startmonth: <span class="hljs-string">"开始月份"</span>
+            endyear: <span class="hljs-string">"结束年份"</span>
+            endmonth: <span class="hljs-string">"结束月份"</span>        
+            agency: <span class="hljs-string">"培训机构名字"</span>
+            course: <span class="hljs-string">"培训课程"</span>
+            description: <span class="hljs-string">"描述"</span>
+            }
+        }
+}</code></pre>
+
+
+
+<h3 id="我的简历个人简历基本信息获取完成-zwl">我的简历——个人简历基本信息获取(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/resume_base_info.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/resume_base_info.php">http://www.1dagong.com/interface/resume_base_info.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td></td>
+  <td>简历的id</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+                data[<span class="hljs-string">'0'</span>]:{
+                    photo_img: <span class="hljs-string">"图片地址"</span>
+                    fullname： <span class="hljs-string">"姓名"</span>
+                    uid: <span class="hljs-string">"用户id"</span>
+                    sex_cn: <span class="hljs-string">"性别"</span>
+                    birthdate: <span class="hljs-string">"生日"</span>
+                    telephone: <span class="hljs-string">"手机"</span>
+                    residence_cn: <span class="hljs-string">"当前住址"</span>
+                    intention_jobs: <span class="hljs-string">"职位名"</span>
+                    district_cn: <span class="hljs-string">"工作地点"</span>
+                    nature_cn: <span class="hljs-string">"工作性质"</span>
+                    title: <span class="hljs-string">"简历名称"</span>
+                    }
+        ｝   </code></pre>
+
+
+
+<h3 id="我的简历个人简历基本信息修改完成-zwl">我的简历——个人简历基本信息修改(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/resume_baseinfo_mod.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/resume_baseinfo_mod.php">http://www.1dagong.com/interface/resume_baseinfo_mod.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td></td>
+  <td>简历的id</td>
+</tr>
+<tr>
+  <td>photo_img</td>
+  <td>string</td>
+  <td></td>
+  <td>图片的名称，基本信息获取接口中返回的值，没有则为空</td>
+</tr>
+<tr>
+  <td>fullname</td>
+  <td>string</td>
+  <td></td>
+  <td>姓名</td>
+</tr>
+<tr>
+  <td>title</td>
+  <td>string</td>
+  <td></td>
+  <td>简历名称</td>
+</tr>
+<tr>
+  <td>sex</td>
+  <td>int</td>
+  <td>0/1</td>
+  <td>性别</td>
+</tr>
+<tr>
+  <td>sex_cn</td>
+  <td>string</td>
+  <td></td>
+  <td>性别</td>
+</tr>
+<tr>
+  <td>birthdate</td>
+  <td>string</td>
+  <td></td>
+  <td>生日</td>
+</tr>
+<tr>
+  <td>residence_cn</td>
+  <td>string</td>
+  <td></td>
+  <td>当前住址</td>
+</tr>
+<tr>
+  <td>education_cn</td>
+  <td>string</td>
+  <td></td>
+  <td>学历</td>
+</tr>
+<tr>
+  <td>experience_cn</td>
+  <td>string</td>
+  <td></td>
+  <td>工作经验</td>
+</tr>
+<tr>
+  <td>telephone</td>
+  <td>string</td>
+  <td></td>
+  <td>电话</td>
+</tr>
+<tr>
+  <td>email</td>
+  <td>string</td>
+  <td></td>
+  <td>邮箱</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+                data[<span class="hljs-string">'0'</span>]:{
+                    photo_img: <span class="hljs-string">"图片地址"</span>
+                    fullname： <span class="hljs-string">"姓名"</span>
+                    uid: <span class="hljs-string">"用户id"</span>
+                    sex_cn: <span class="hljs-string">"性别"</span>
+                    birthdate: <span class="hljs-string">"生日"</span>
+                    telephone: <span class="hljs-string">"手机"</span>
+                    residence_cn: <span class="hljs-string">"当前住址"</span>
+                    intention_jobs: <span class="hljs-string">"职位名"</span>
+                    district_cn: <span class="hljs-string">"工作地点"</span>
+                    nature_cn: <span class="hljs-string">"工作性质"</span>
+                    title: <span class="hljs-string">"简历名称"</span>
+                    }
+        ｝   </code></pre>
+
+
+
+<h3 id="我的简历编辑简历简历标题完成-zwl">我的简历——编辑简历——简历标题(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/myresume-edit.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/myresume-edit.php">http://www.1dagong.com/interface/myresume-edit.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>简历id</td>
+</tr>
+<tr>
+  <td>operate_code</td>
+  <td>string</td>
+  <td></td>
+  <td>操作码，为”title”</td>
+</tr>
+<tr>
+  <td>title</td>
+  <td>string</td>
+  <td></td>
+  <td>标题内容</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+        operate_code: <span class="hljs-string">"操作码"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="我的简历编辑简历个人信息完成-zwl">我的简历——编辑简历——个人信息(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/myresume-edit.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/myresume-edit.php">http://www.1dagong.com/interface/myresume-edit.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>简历id</td>
+</tr>
+<tr>
+  <td>operate_code</td>
+  <td>string</td>
+  <td></td>
+  <td>操作码，为”person_info”</td>
+</tr>
+<tr>
+  <td>sex</td>
+  <td>int</td>
+  <td>0/1</td>
+  <td>性别</td>
+</tr>
+<tr>
+  <td>sex_cn</td>
+  <td>string</td>
+  <td>男/女</td>
+  <td>性别</td>
+</tr>
+<tr>
+  <td>birthdate</td>
+  <td>int</td>
+  <td>1990</td>
+  <td>生日</td>
+</tr>
+<tr>
+  <td>telephone</td>
+  <td>string</td>
+  <td></td>
+  <td>手机号码</td>
+</tr>
+<tr>
+  <td>residence</td>
+  <td>int</td>
+  <td>地区编码</td>
+  <td>目前居住地</td>
+</tr>
+<tr>
+  <td>residence_cn</td>
+  <td>string</td>
+  <td>汉字</td>
+  <td>目前居住地</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+        operate_code: <span class="hljs-string">"操作码"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="我的简历编辑简历求职意向完成-zwl">我的简历——编辑简历——求职意向(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/myresume-edit.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/myresume-edit.php">http://www.1dagong.com/interface/myresume-edit.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>简历id</td>
+</tr>
+<tr>
+  <td>operate_code</td>
+  <td>string</td>
+  <td></td>
+  <td>操作码，为”work_intention”</td>
+</tr>
+<tr>
+  <td>intention_jobs</td>
+  <td>string</td>
+  <td></td>
+  <td>期望职位</td>
+</tr>
+<tr>
+  <td>sexwage_cncn</td>
+  <td>string</td>
+  <td></td>
+  <td>期望薪资</td>
+</tr>
+<tr>
+  <td>district_cn</td>
+  <td>string</td>
+  <td></td>
+  <td>工作地点</td>
+</tr>
+<tr>
+  <td>nature_cn</td>
+  <td>string</td>
+  <td></td>
+  <td>工作性质</td>
+</tr>
+<tr>
+  <td>c_id</td>
+  <td>string</td>
+  <td></td>
+  <td>行业ID，以 , 分割</td>
+</tr>
+<tr>
+  <td>c_name</td>
+  <td>string</td>
+  <td></td>
+  <td>行业名称，以 , 分割</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+        operate_code: <span class="hljs-string">"操作码"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="我的简历编辑简历自我评价完成-zwl">我的简历——编辑简历——自我评价(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/myresume-edit.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/myresume-edit.php">http://www.1dagong.com/interface/myresume-edit.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>简历id</td>
+</tr>
+<tr>
+  <td>operate_code</td>
+  <td>string</td>
+  <td></td>
+  <td>操作码，为”pingjia”</td>
+</tr>
+<tr>
+  <td>specialty</td>
+  <td>string</td>
+  <td></td>
+  <td>自我评价</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+        operate_code: <span class="hljs-string">"操作码"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="我的简历编辑简历教育经历完成-zwl">我的简历——编辑简历——教育经历(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/myresume-edit.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/myresume-edit.php">http://www.1dagong.com/interface/myresume-edit.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>简历id</td>
+</tr>
+<tr>
+  <td>operate_code</td>
+  <td>string</td>
+  <td></td>
+  <td>操作码，为”education”</td>
+</tr>
+<tr>
+  <td>startyear</td>
+  <td>int</td>
+  <td></td>
+  <td>开始年份</td>
+</tr>
+<tr>
+  <td>startmonth</td>
+  <td>int</td>
+  <td></td>
+  <td>开始月份</td>
+</tr>
+<tr>
+  <td>endyear</td>
+  <td>int</td>
+  <td></td>
+  <td>毕业年份</td>
+</tr>
+<tr>
+  <td>endmonth</td>
+  <td>int</td>
+  <td></td>
+  <td>毕业月份</td>
+</tr>
+<tr>
+  <td>school</td>
+  <td>string</td>
+  <td></td>
+  <td>毕业学校</td>
+</tr>
+<tr>
+  <td>speciality</td>
+  <td>string</td>
+  <td></td>
+  <td>专业名称</td>
+</tr>
+<tr>
+  <td>education_cn</td>
+  <td>string</td>
+  <td></td>
+  <td>学历</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+        operate_code: <span class="hljs-string">"操作码"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="我的简历编辑简历培训经历完成-zwl">我的简历——编辑简历——培训经历(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/myresume-edit.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/myresume-edit.php">http://www.1dagong.com/interface/myresume-edit.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>简历id</td>
+</tr>
+<tr>
+  <td>operate_code</td>
+  <td>string</td>
+  <td></td>
+  <td>操作码，为”training”</td>
+</tr>
+<tr>
+  <td>startyear</td>
+  <td>int</td>
+  <td></td>
+  <td>开始年份</td>
+</tr>
+<tr>
+  <td>startmonth</td>
+  <td>int</td>
+  <td></td>
+  <td>开始月份</td>
+</tr>
+<tr>
+  <td>endyear</td>
+  <td>int</td>
+  <td></td>
+  <td>毕业年份</td>
+</tr>
+<tr>
+  <td>endmonth</td>
+  <td>int</td>
+  <td></td>
+  <td>毕业月份</td>
+</tr>
+<tr>
+  <td>agency</td>
+  <td>string</td>
+  <td></td>
+  <td>机构名称</td>
+</tr>
+<tr>
+  <td>course</td>
+  <td>string</td>
+  <td></td>
+  <td>培训课程</td>
+</tr>
+<tr>
+  <td>description</td>
+  <td>string</td>
+  <td></td>
+  <td>培训内容描述</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+        operate_code: <span class="hljs-string">"操作码"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="我的简历编辑简历工作经历完成-zwl">我的简历——编辑简历——工作经历(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/myresume-edit.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/myresume-edit.php">http://www.1dagong.com/interface/myresume-edit.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>简历id</td>
+</tr>
+<tr>
+  <td>operate_code</td>
+  <td>string</td>
+  <td></td>
+  <td>操作码，为”work”</td>
+</tr>
+<tr>
+  <td>startyear</td>
+  <td>int</td>
+  <td></td>
+  <td>开始年份</td>
+</tr>
+<tr>
+  <td>startmonth</td>
+  <td>int</td>
+  <td></td>
+  <td>开始月份</td>
+</tr>
+<tr>
+  <td>endyear</td>
+  <td>int</td>
+  <td></td>
+  <td>工作结束年份</td>
+</tr>
+<tr>
+  <td>endmonth</td>
+  <td>int</td>
+  <td></td>
+  <td>工作结束月份</td>
+</tr>
+<tr>
+  <td>companyname</td>
+  <td>string</td>
+  <td></td>
+  <td>公司名称</td>
+</tr>
+<tr>
+  <td>jobs</td>
+  <td>string</td>
+  <td></td>
+  <td>职位名称</td>
+</tr>
+<tr>
+  <td>achievements</td>
+  <td>string</td>
+  <td></td>
+  <td>职责描述</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+        operate_code: <span class="hljs-string">"操作码"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="我的简历教育经历添加完成-zwl">我的简历——教育经历——添加(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/resume_education_add.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/resume_education_add.php">http://www.1dagong.com/interface/resume_education_add.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>pid</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>简历id 3051</td>
+</tr>
+<tr>
+  <td>uid</td>
+  <td>int</td>
+  <td></td>
+  <td>会员ID 71410</td>
+</tr>
+<tr>
+  <td>startyear</td>
+  <td>int</td>
+  <td></td>
+  <td>开始年份</td>
+</tr>
+<tr>
+  <td>startmonth</td>
+  <td>int</td>
+  <td></td>
+  <td>开始月份</td>
+</tr>
+<tr>
+  <td>endyear</td>
+  <td>int</td>
+  <td></td>
+  <td>毕业年份</td>
+</tr>
+<tr>
+  <td>endmonth</td>
+  <td>int</td>
+  <td></td>
+  <td>毕业月份</td>
+</tr>
+<tr>
+  <td>school</td>
+  <td>string</td>
+  <td></td>
+  <td>毕业学校</td>
+</tr>
+<tr>
+  <td>speciality</td>
+  <td>string</td>
+  <td></td>
+  <td>专业名称</td>
+</tr>
+<tr>
+  <td>education_cn</td>
+  <td>string</td>
+  <td></td>
+  <td>学历</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+        operate_code: <span class="hljs-string">"操作码"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="我的简历工作经历添加完成-zwl">我的简历——工作经历——添加(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/resume_work_add.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/resume_work_add.php">http://www.1dagong.com/interface/resume_work_add.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>pid</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>简历id 3051</td>
+</tr>
+<tr>
+  <td>uid</td>
+  <td>int</td>
+  <td></td>
+  <td>会员ID 71410</td>
+</tr>
+<tr>
+  <td>startyear</td>
+  <td>int</td>
+  <td></td>
+  <td>开始年份</td>
+</tr>
+<tr>
+  <td>startmonth</td>
+  <td>int</td>
+  <td></td>
+  <td>开始月份</td>
+</tr>
+<tr>
+  <td>endyear</td>
+  <td>int</td>
+  <td></td>
+  <td>毕业年份</td>
+</tr>
+<tr>
+  <td>endmonth</td>
+  <td>int</td>
+  <td></td>
+  <td>毕业月份</td>
+</tr>
+<tr>
+  <td>companyname</td>
+  <td>string</td>
+  <td></td>
+  <td>公司名称</td>
+</tr>
+<tr>
+  <td>jobs</td>
+  <td>string</td>
+  <td></td>
+  <td>职位名称</td>
+</tr>
+<tr>
+  <td>achievements</td>
+  <td>string</td>
+  <td></td>
+  <td>工作职责</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+        operate_code: <span class="hljs-string">"操作码"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="我的简历培训经历添加完成-zwl">我的简历——培训经历——添加(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/resume_training_add.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/resume_training_add.php">http://www.1dagong.com/interface/resume_training_add.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>pid</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>简历id 3051</td>
+</tr>
+<tr>
+  <td>uid</td>
+  <td>int</td>
+  <td></td>
+  <td>会员ID 71410</td>
+</tr>
+<tr>
+  <td>startyear</td>
+  <td>int</td>
+  <td></td>
+  <td>开始年份</td>
+</tr>
+<tr>
+  <td>startmonth</td>
+  <td>int</td>
+  <td></td>
+  <td>开始月份</td>
+</tr>
+<tr>
+  <td>endyear</td>
+  <td>int</td>
+  <td></td>
+  <td>毕业年份</td>
+</tr>
+<tr>
+  <td>endmonth</td>
+  <td>int</td>
+  <td></td>
+  <td>毕业月份</td>
+</tr>
+<tr>
+  <td>agency</td>
+  <td>string</td>
+  <td></td>
+  <td>培训机构名称</td>
+</tr>
+<tr>
+  <td>course</td>
+  <td>string</td>
+  <td></td>
+  <td>培训内容</td>
+</tr>
+<tr>
+  <td>description</td>
+  <td>string</td>
+  <td></td>
+  <td>描述</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+        operate_code: <span class="hljs-string">"操作码"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="我的简历教育经历删除完成-zwl">我的简历——教育经历——删除(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/resume_edu_del.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/resume_edu_del.php">http://www.1dagong.com/interface/resume_edu_del.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>string</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>待删除的教育经历id 以逗号分隔</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+
+        }
+}</code></pre>
+
+
+
+<h3 id="我的简历工作经历删除完成-zwl">我的简历——工作经历——删除(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/resume_work_del.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/resume_work_del.php">http://www.1dagong.com/interface/resume_work_del.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>string</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>待删除的工作经历id 以逗号分隔</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+
+        }
+}</code></pre>
+
+
+
+<h3 id="我的简历培训经历删除完成-zwl">我的简历——培训经历——删除(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/resume_training_del.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/resume_training_del.php">http://www.1dagong.com/interface/resume_training_del.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>string</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>待删除的培训经历id 以逗号分隔</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+
+        }
+}</code></pre>
+
+
+
+<h3 id="返回我的简历期望职位信息完成fmf">返回我的简历——期望职位——信息(完成FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/person/personal_intension_info.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/person/personal_intension_info.php">http://www.1dagong.com/interface/person/personal_intension_info.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>userid</td>
+  <td>int</td>
+  <td></td>
+  <td>当前用户id（71410）</td>
+</tr>
+<tr>
+  <td>resumeid</td>
+  <td>int</td>
+  <td></td>
+  <td>简历id（3574）</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+        <span class="hljs-string">"wage"</span>: <span class="hljs-string">"58"</span>,
+        <span class="hljs-string">"wage_cn"</span>: <span class="hljs-string">"2000~3000元/月"</span>,
+        <span class="hljs-string">"nature"</span>: <span class="hljs-string">"63"</span>,
+        <span class="hljs-string">"nature_cn"</span>: <span class="hljs-string">"兼职"</span>,
+        <span class="hljs-string">"district"</span>: <span class="hljs-string">"5"</span>,
+        <span class="hljs-string">"district_cn"</span>: <span class="hljs-string">"河北省/石家庄市"</span>,
+        <span class="hljs-string">"trade"</span>: <span class="hljs-string">"1"</span>,
+        <span class="hljs-string">"trade_cn"</span>: <span class="hljs-string">"计算机软件/硬件"</span>,
+        <span class="hljs-string">"intention_jobs"</span>: <span class="hljs-string">"普工/技工"</span>,
+        <span class="hljs-string">"specialty"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-string">"jobcategory"</span>: <span class="hljs-string">"1065.1067.0"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="返回我的简历个人评价信息完成-fmf">返回我的简历——个人评价——信息(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/person/personal_pingjia_info.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/person/personal_pingjia_info.php">http://www.1dagong.com/interface/person/personal_pingjia_info.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>userid</td>
+  <td>int</td>
+  <td></td>
+  <td>当前用户id（71410）</td>
+</tr>
+<tr>
+  <td>resumeid</td>
+  <td>int</td>
+  <td></td>
+  <td>简历id（3574）</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+        返回自我评价信息
+        }
+}</code></pre>
+
+
+
+<h2 id="搜索-完成zwl">搜索 完成（ZWL）</h2>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code> <code>WEISITE/interface/search.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/search.php">http://www.1dagong.com/interface/search.php</a> <br>
+  <strong>请求参数</strong>  </p>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>varchar</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>operate_code</td>
+  <td></td>
+  <td></td>
+  <td>操作ID，1代表公司，2代表职位</td>
+</tr>
+<tr>
+  <td>key</td>
+  <td>string</td>
+  <td></td>
+  <td>搜索关键字</td>
+</tr>
+<tr>
+  <td>subsite_id</td>
+  <td>id</td>
+  <td></td>
+  <td>分站ID</td>
+</tr>
+<tr>
+  <td>page</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>当前页码，默认为1</td>
+</tr>
+<tr>
+  <td>page_size</td>
+  <td>int</td>
+  <td></td>
+  <td>页面显示的条数，默认为10</td>
+</tr>
+<tr>
+  <td>district_cn</td>
+  <td>string</td>
+  <td></td>
+  <td>地区条件，默认为无（合肥市）</td>
+</tr>
+<tr>
+  <td>wage</td>
+  <td>int</td>
+  <td></td>
+  <td>工资条件，默认为无（55）</td>
+</tr>
+<tr>
+  <td>subclass</td>
+  <td>int</td>
+  <td></td>
+  <td>职位条件参数，为职位分类中给的ID</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+<tr>
+  <td>0</td>
+  <td></td>
+  <td>搜索的职位或公司不存在</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>响应结果</strong></p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+            id: <span class="hljs-string">"简历id"</span>
+            uid: <span class="hljs-string">"公司ID"</span>
+            jobs_name: <span class="hljs-string">"职位名称"</span>
+            companyname: <span class="hljs-string">"公司名称"</span>
+            wage_cn: <span class="hljs-string">"薪资"</span>
+            refreshtime: <span class="hljs-string">"职位刷新时间"</span>
+            district_cn: <span class="hljs-string">"工作地点"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="搜索公司-完成zwl">搜索——公司 完成（ZWL）</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code> <code>WEISITE/interface/search_company.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/search_company.php">http://www.1dagong.com/interface/search_company.php</a> <br>
+  <strong>请求参数</strong>  </p>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>varchar</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>key</td>
+  <td>string</td>
+  <td></td>
+  <td>搜索关键字</td>
+</tr>
+<tr>
+  <td>page</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>当前页码，默认为1</td>
+</tr>
+<tr>
+  <td>page_size</td>
+  <td>int</td>
+  <td></td>
+  <td>页面显示的条数，默认为10</td>
+</tr>
+<tr>
+  <td>district_cn</td>
+  <td>string</td>
+  <td></td>
+  <td>地区条件，默认为无（合肥市）</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+<tr>
+  <td>0</td>
+  <td></td>
+  <td>搜索的职位或公司不存在</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>响应结果</strong></p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+            id: <span class="hljs-string">"id"</span>
+            uid: <span class="hljs-string">"公司ID"</span>
+            companyname: <span class="hljs-string">"公司名称"</span>
+            scale_cn: <span class="hljs-string">"公司规模"</span>
+            trade_cn: <span class="hljs-string">"行业"</span>
+            district_cn: <span class="hljs-string">"工作地点"</span>
+            refreshtime: <span class="hljs-string">"公司刷新时间"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="搜索热门搜索关键词完成-zwl">搜索——热门搜索关键词(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/search_hotword.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/search_hotword.php">http://www.1dagong.com/interface/search_hotword.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>num</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>显示关键词的个数</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+<tr>
+  <td>0</td>
+  <td></td>
+  <td>参数错误或关键词不存在</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+        : <span class="hljs-string">"热门关键词"</span>
+        }
+}</code></pre>
+
+
+
+<h2 id="招聘会模块">招聘会模块</h2>
+
+
+
+<h3 id="招聘会招聘会预定企业名单完成zwl">招聘会——招聘会预定企业名单（完成ZWL）</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code> <code>WEISITE/interface/company_jobfair_list.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/company_jobfair_list.php">http://www.1dagong.com/interface/company_jobfair_list.php</a> <br>
+  <strong>请求参数</strong>  </p>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>varchar</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td><a href="#lordjson"><code>lordJson</code></a></td>
+  <td></td>
+  <td>招聘会ID</td>
+</tr>
+<tr>
+  <td>page</td>
+  <td>int</td>
+  <td></td>
+  <td>当前页码，从1开始</td>
+</tr>
+<tr>
+  <td>page_size</td>
+  <td>int</td>
+  <td></td>
+  <td>每页显示条数，默认为10</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>响应结果</strong></p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+        zid: <span class="hljs-string">"招聘会ID"</span>
+        title: <span class="hljs-string">"企业名称"</span>
+        number: <span class="hljs-string">"展位号码"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="招聘会招聘会列表完成-fmf">招聘会——招聘会列表(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/jobfair_list.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/jobfair_list.php">http://www.1dagong.com/interface/jobfair_list.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>areaId</td>
+  <td>int</td>
+  <td></td>
+  <td>地区条件（1）</td>
+</tr>
+<tr>
+  <td>subsite_id</td>
+  <td>int</td>
+  <td></td>
+  <td>分站id（1）</td>
+</tr>
+<tr>
+  <td>status</td>
+  <td>int</td>
+  <td></td>
+  <td>活动结束状态（1,表示活动结束）</td>
+</tr>
+<tr>
+  <td>page</td>
+  <td>int</td>
+  <td></td>
+  <td>当前页数（默认是1）</td>
+</tr>
+<tr>
+  <td>pagesize</td>
+  <td>int</td>
+  <td></td>
+  <td>一页显示几条（默认是10）</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td>成功</td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+         {
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"1123"</span>,
+            <span class="hljs-string">"title"</span>: <span class="hljs-string">"2015年8月15日（星期六）大型综合招聘会"</span>,
+            <span class="hljs-string">"address"</span>: <span class="hljs-string">"合肥市明珠广场寅特尼人才市场"</span>,
+            <span class="hljs-string">"phone"</span>: <span class="hljs-string">"0551-62521321"</span>,
+            <span class="hljs-string">"holddates"</span>: <span class="hljs-string">"2015-08-15"</span>,
+            <span class="hljs-string">"predetermined_status"</span>: <span class="hljs-string">"1"</span>,
+            <span class="hljs-string">"predetermined_web"</span>: <span class="hljs-string">"1"</span>,
+            <span class="hljs-string">"predetermined_start"</span>: <span class="hljs-string">"2015-07-21"</span>,
+            <span class="hljs-string">"predetermined_tel"</span>: <span class="hljs-string">"1"</span>,
+            <span class="hljs-string">"predetermined_end"</span>: <span class="hljs-string">"2015-08-14"</span>,
+            <span class="hljs-string">"hour"</span>: <span class="hljs-string">"15"</span>,
+            <span class="hljs-string">"subsite_id"</span>: <span class="hljs-string">"1"</span>,
+            <span class="hljs-string">"yiyuding"</span>: <span class="hljs-string">"80"</span>,
+            <span class="hljs-string">"weiyuding"</span>: <span class="hljs-string">"5"</span>,
+            <span class="hljs-string">"holddates_week"</span>: <span class="hljs-string">"星期六"</span>,
+            <span class="hljs-string">"predetermined_ok"</span>: <span class="hljs-number">0</span>
+        }.....
+}</code></pre>
+
+
+
+<h3 id="招聘会招聘会详情完成-fmf">招聘会——招聘会详情(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/jobfair_show.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/jobfair_show.php">http://www.1dagong.com/interface/jobfair_show.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td></td>
+  <td>招聘会id（1）</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td>id没有值</td>
+  <td>没有找到该记录</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>成功</td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+         {
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"1123"</span>,
+            <span class="hljs-string">"subsite_id"</span>: <span class="hljs-string">"1"</span>,
+            <span class="hljs-string">"display"</span>: <span class="hljs-string">"1"</span>,
+            <span class="hljs-string">"predetermined_status"</span>: <span class="hljs-string">"1"</span>,
+            <span class="hljs-string">"predetermined_web"</span>: <span class="hljs-string">"1"</span>,
+            <span class="hljs-string">"predetermined_tel"</span>: <span class="hljs-string">"1"</span>,
+            <span class="hljs-string">"predetermined_point"</span>: <span class="hljs-string">"200"</span>,
+            <span class="hljs-string">"title"</span>: <span class="hljs-string">"2015年8月15日（星期六）大型综合招聘会"</span>,
+            <span class="hljs-string">"color"</span>: <span class="hljs-string">"#f00"</span>,
+            <span class="hljs-string">"weight"</span>: <span class="hljs-string">"1"</span>,
+            <span class="hljs-string">"industry"</span>: <span class="hljs-string">"综合"</span>,
+            <span class="hljs-string">"introduction"</span>: <span class="hljs-string">""</span>,
+            <span class="hljs-string">"address"</span>: <span class="hljs-string">"合肥市明珠广场寅特尼人才市场"</span>,
+            <span class="hljs-string">"contact"</span>: <span class="hljs-string">"梁丽"</span>,
+            <span class="hljs-string">"phone"</span>: <span class="hljs-string">"0551-62521321"</span>,
+            <span class="hljs-string">"bus"</span>: <span class="hljs-string">"30，33，901，126，148，226等到明珠广场站下车"</span>,
+            <span class="hljs-string">"holddates"</span>: <span class="hljs-string">"2015-08-15"</span>,
+            <span class="hljs-string">"predetermined_start"</span>: <span class="hljs-string">"2015-07-21"</span>,
+            <span class="hljs-string">"predetermined_end"</span>: <span class="hljs-string">"2015-08-14"</span>,
+            <span class="hljs-string">"hour"</span>: <span class="hljs-string">"15"</span>,
+            <span class="hljs-string">"number"</span>: <span class="hljs-string">"一层62个，二层22个"</span>,
+            <span class="hljs-string">"addtime"</span>: <span class="hljs-string">"23小时前"</span>,
+            <span class="hljs-string">"order"</span>: <span class="hljs-string">"48"</span>,
+            <span class="hljs-string">"click"</span>: <span class="hljs-string">"1"</span>,
+            <span class="hljs-string">"display_time"</span>: <span class="hljs-string">"2015-07-21"</span>,
+            <span class="hljs-string">"num_personyuyue"</span>: <span class="hljs-string">"0"</span>,
+            <span class="hljs-string">"yiyuding"</span>: <span class="hljs-string">"80"</span>,
+            <span class="hljs-string">"weiyuding"</span>: <span class="hljs-string">"5"</span>
+        }
+}</code></pre>
+
+
+
+<h2 id="全职工作首页完成-zwl">全职工作——首页(完成 ZWL)</h2>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/jobs_index.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/jobs_index.php">http://www.1dagong.com/interface/jobs_index.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>page</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>当前页码，默认为1</td>
+</tr>
+<tr>
+  <td>page_size</td>
+  <td>int</td>
+  <td></td>
+  <td>页面显示的条数，默认为10</td>
+</tr>
+<tr>
+  <td>district_cn</td>
+  <td>string</td>
+  <td></td>
+  <td>地区条件，默认为无（合肥市）</td>
+</tr>
+<tr>
+  <td>wage</td>
+  <td>int</td>
+  <td></td>
+  <td>工资条件，默认为无（55）</td>
+</tr>
+<tr>
+  <td>subclass</td>
+  <td>int</td>
+  <td></td>
+  <td>职位条件参数，为职位分类接口中返回的ID</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功，返回的数据按职位刷新时间降序排序</td>
+</tr>
+<tr>
+  <td>0</td>
+  <td></td>
+  <td>参数错误</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+            id: <span class="hljs-string">"职位id"</span>
+            uid: <span class="hljs-string">"公司ID"</span>
+            jobs_name: <span class="hljs-string">"职位名称"</span>
+            companyname: <span class="hljs-string">"公司名称"</span>
+            wage_cn: <span class="hljs-string">"薪资"</span>
+            refreshtime: <span class="hljs-string">"职位刷新时间"</span>
+            district_cn: <span class="hljs-string">"工作地点"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="全职工作收入下拉选项完成-zwl">全职工作——收入下拉选项(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/jobs_wage.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/jobs_wage.php">http://www.1dagong.com/interface/jobs_wage.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功，返回的数据按职位刷新时间降序排序</td>
+</tr>
+<tr>
+  <td>0</td>
+  <td></td>
+  <td>参数错误</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+            c_id: <span class="hljs-string">"收入ID"</span>
+            c_name: <span class="hljs-string">"收入的值"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="全职工作职位详情职位信息完成-zwl">全职工作——职位详情——职位信息(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/quanzhi_detail.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/quanzhi_detail.php">http://www.1dagong.com/interface/quanzhi_detail.php</a>`</p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td></td>
+  <td>职位ID</td>
+</tr>
+<tr>
+  <td>uid</td>
+  <td>int</td>
+  <td></td>
+  <td>会员ID</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功，返回的数据按职位刷新时间降序排序</td>
+</tr>
+<tr>
+  <td>0</td>
+  <td></td>
+  <td>参数错误</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+            id: <span class="hljs-string">"职位ID"</span>
+            uid: <span class="hljs-string">"公司ID"</span>
+            companyname: <span class="hljs-string">"公司名称"</span>
+            category_cn: <span class="hljs-string">"职位类别"</span>
+            district_cn: <span class="hljs-string">"工作地区"</span>
+            jobs_name: <span class="hljs-string">"职位名称"</span>
+            wage_cn: <span class="hljs-string">"工资"</span>
+            click: <span class="hljs-string">"浏览次数"</span>
+            amount: <span class="hljs-string">"招聘人数"</span>
+            education_cn: <span class="hljs-string">"学历要求"</span>
+            age: <span class="hljs-string">"年龄要求"</span>
+            experience_cn: <span class="hljs-string">"工作经验要求"</span>
+            contents: <span class="hljs-string">"职位描述"</span>
+            refreshtime: <span class="hljs-string">"刷新时间"</span>
+            shoucang_status: <span class="hljs-string">"是否已收藏,1为已收藏"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="全职工作职位详情公司信息完成-zwl">全职工作——职位详情——公司信息(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/quanzhi_detail_company.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/quanzhi_detail_company.php">http://www.1dagong.com/interface/quanzhi_detail_company.php</a>`</p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td></td>
+  <td>公司ID</td>
+</tr>
+<tr>
+  <td>page</td>
+  <td>int</td>
+  <td></td>
+  <td>当前页码</td>
+</tr>
+<tr>
+  <td>page_size</td>
+  <td>int</td>
+  <td></td>
+  <td>当前页面显示条数</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功，返回的数据按职位刷新时间降序排序</td>
+</tr>
+<tr>
+  <td>0</td>
+  <td></td>
+  <td>参数错误</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+            id: <span class="hljs-string">"职位ID"</span>
+            jobs_name: <span class="hljs-string">"职位名称"</span>
+            wage_cn: <span class="hljs-string">"工资"</span>
+            uid: <span class="hljs-string">"公司"</span>
+            companyname: <span class="hljs-string">"公司名称"</span>
+            scale_cn: <span class="hljs-string">"公司规模"</span>
+            nature_cn: <span class="hljs-string">"公司性质"</span>
+            trade_cn: <span class="hljs-string">"领域"</span>
+            district_cn: <span class="hljs-string">"地址"</span>
+            contents: <span class="hljs-string">"公司描述"</span>
+
+        }
+    data2:职位列表
+        {
+            id: <span class="hljs-string">"职位ID"</span>
+            jobs_name: <span class="hljs-string">"职位名称"</span>
+            wage_cn: <span class="hljs-string">"工资"</span>
+            uid: <span class="hljs-string">"公司"</span>
+
+        }
+}</code></pre>
+
+
+
+<h3 id="全职工作投递简历完成-zwl">全职工作——投递简历(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/quanzhi_jobs_apply.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/quanzhi_jobs_apply.php">http://www.1dagong.com/interface/quanzhi_jobs_apply.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>jobs_id</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>职位ID</td>
+</tr>
+<tr>
+  <td>resumeid</td>
+  <td>int</td>
+  <td></td>
+  <td>简历ID</td>
+</tr>
+<tr>
+  <td>person_uid</td>
+  <td>int</td>
+  <td></td>
+  <td>会员ID</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>string</td>
+  <td></td>
+  <td>zhiwei ID</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>2</td>
+  <td></td>
+  <td>职位重复申请</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td></td>
+  <td>申请成功</td>
+</tr>
+<tr>
+  <td>0</td>
+  <td></td>
+  <td>参数错误</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+
+        }
+}</code></pre>
+
+
+
+<h3 id="全职工作收藏职位完成-fmf">全职工作——收藏职位(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/person/personal_apply_favorite.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/person/personal_apply_favorite.php">http://www.1dagong.com/interface/person/personal_apply_favorite.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>userid</td>
+  <td>int</td>
+  <td></td>
+  <td>当前用户ID</td>
+</tr>
+<tr>
+  <td>jobsid</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>职位ID</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td>userid没有值</td>
+  <td>没有找到该用户</td>
+</tr>
+<tr>
+  <td>-1</td>
+  <td>已经收藏</td>
+  <td>收藏失败，收藏夹中已经存在此职位</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+            did:<span class="hljs-number">167</span>
+        }
+}</code></pre>
+
+
+
+<h2 id="兼职工作首页完成-zwl">兼职工作——首页(完成 ZWL)</h2>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/jianzhi_index.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/jianzhi_index.php">http://www.1dagong.com/interface/jianzhi_index.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>district_cn</td>
+  <td>string</td>
+  <td></td>
+  <td>地区条件（合肥市）</td>
+</tr>
+<tr>
+  <td>wage</td>
+  <td>int</td>
+  <td></td>
+  <td>工资条件（55）</td>
+</tr>
+<tr>
+  <td>subclass</td>
+  <td>int</td>
+  <td></td>
+  <td>职位条件参数，为职位分类接口中返回的ID</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功，返回的数据按职位刷新时间降序排序</td>
+</tr>
+<tr>
+  <td>0</td>
+  <td></td>
+  <td>参数错误</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+            id: <span class="hljs-string">"职位ID"</span>
+            uid: <span class="hljs-string">"公司ID"</span>
+            jobs_name: <span class="hljs-string">"职位名称"</span>
+            wage_cn: <span class="hljs-string">"工资"</span>
+            district_cn: <span class="hljs-string">"工作地点"</span>
+            refreshtime: <span class="hljs-string">"刷新时间"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="兼职工作职位详情职位信息完成-zwl">兼职工作——职位详情——职位信息(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/jianzhi_detail.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/jianzhi_detail.php">http://www.1dagong.com/interface/jianzhi_detail.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td></td>
+  <td>职位ID</td>
+</tr>
+<tr>
+  <td>uid</td>
+  <td>int</td>
+  <td></td>
+  <td>会员ID</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功，返回的数据按职位刷新时间降序排序</td>
+</tr>
+<tr>
+  <td>0</td>
+  <td></td>
+  <td>参数错误</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+            id: <span class="hljs-string">"职位ID"</span>
+            uid: <span class="hljs-string">"公司ID"</span>
+            jobs_name: <span class="hljs-string">"职位名称"</span>
+            wage_cn: <span class="hljs-string">"工资"</span>
+            click: <span class="hljs-string">"浏览次数"</span>
+            amount: <span class="hljs-string">"招聘人数"</span>
+            district_cn: <span class="hljs-string">"工作地区"</span>
+            category_cn: <span class="hljs-string">"职位分类名称"</span>
+            education_cn: <span class="hljs-string">"学历要求"</span>
+            age: <span class="hljs-string">"年龄要求"</span>
+            experience_cn: <span class="hljs-string">"工作经验要求"</span>
+            contents: <span class="hljs-string">"职位描述"</span>
+            refreshtime: <span class="hljs-string">"刷新时间"</span>
+            shoucang_status: <span class="hljs-string">"是否已收藏,1为已收藏"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="兼职工作职位详情公司信息完成-zwl">兼职工作——职位详情——公司信息(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/jianzhi_detail_company.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/jianzhi_detail_company.php">http://www.1dagong.com/interface/jianzhi_detail_company.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td></td>
+  <td>公司ID</td>
+</tr>
+<tr>
+  <td>page</td>
+  <td>int</td>
+  <td></td>
+  <td>当前页码</td>
+</tr>
+<tr>
+  <td>page_size</td>
+  <td>int</td>
+  <td></td>
+  <td>当前页面显示条数</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功，返回的数据按职位刷新时间降序排序</td>
+</tr>
+<tr>
+  <td>0</td>
+  <td></td>
+  <td>参数错误</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+            id: <span class="hljs-string">"职位ID"</span>
+            jobs_name: <span class="hljs-string">"职位名称"</span>
+            wage_cn: <span class="hljs-string">"工资"</span>
+            uid: <span class="hljs-string">"公司"</span>
+            companyname: <span class="hljs-string">"公司名称"</span>
+            scale_cn: <span class="hljs-string">"公司规模"</span>
+            nature_cn: <span class="hljs-string">"公司性质"</span>
+            trade_cn: <span class="hljs-string">"领域"</span>
+            district_cn: <span class="hljs-string">"地址"</span>
+            contents: <span class="hljs-string">"公司描述"</span>
+
+        }
+    data2:职位列表
+        {
+            id: <span class="hljs-string">"职位ID"</span>
+            jobs_name: <span class="hljs-string">"职位名称"</span>
+            wage_cn: <span class="hljs-string">"工资"</span>
+            uid: <span class="hljs-string">"公司"</span>
+
+        }
+}</code></pre>
+
+
+
+<h3 id="兼职工作投递简历选择简历完成-zwl">兼职工作——投递简历——选择简历(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/myresume-list.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/myresume-list.php">http://www.1dagong.com/interface/myresume-list.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>uid</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>当前登录用户ID</td>
+</tr>
+<tr>
+  <td>page_size</td>
+  <td>int</td>
+  <td></td>
+  <td>每页显示的条数,默认为10</td>
+</tr>
+<tr>
+  <td>operate_code</td>
+  <td>string</td>
+  <td></td>
+  <td>操作码，为”resume”</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+            id: <span class="hljs-string">"简历id"</span>
+            title: <span class="hljs-string">"简历标题"</span>
+            uid: <span class="hljs-string">"会员ID"</span>
+            intention_jobs: <span class="hljs-string">"职位名"</span>
+            wage_cn: <span class="hljs-string">"期望工资"</span>
+            click: <span class="hljs-string">"浏览次数"</span>
+            display: <span class="hljs-string">"是否公开"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="全职兼职工作投递简历电话完成-zwl">全职/兼职工作——投递简历——电话(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/jianzhi_getphone.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/jianzhi_getphone.php">http://www.1dagong.com/interface/jianzhi_getphone.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>uid</td>
+  <td>int</td>
+  <td><i class="fa fa-check"></i></td>
+  <td>公司ID</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+<tr>
+  <td>0</td>
+  <td></td>
+  <td>参数错误或者公司不公开电话</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+            uid: <span class="hljs-string">"公司id"</span>
+            telephone: <span class="hljs-string">"公司电话"</span>
+        }
+}</code></pre>
+
+
+
+<h3 id="兼职工作投递简历完成-zwl">兼职工作——投递简历(完成 ZWL)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/jianzhi_jobs_apply.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/jianzhi_jobs_apply.php">http://www.1dagong.com/interface/jianzhi_jobs_apply.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>resumeid</td>
+  <td>int</td>
+  <td></td>
+  <td>简历ID</td>
+</tr>
+<tr>
+  <td>person_uid</td>
+  <td>int</td>
+  <td></td>
+  <td>会员ID</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>string</td>
+  <td></td>
+  <td>职位 ID，以，隔开</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>申请成功</td>
+</tr>
+<tr>
+  <td>0</td>
+  <td></td>
+  <td>参数错误</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+
+        }
+}</code></pre>
+
+
+
+<h2 id="行业名企完成-fmf">行业名企(完成 FMF)</h2>
+
+
+
+<h3 id="行业名企职位列表-完成-fmf">行业名企职位列表 (完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/hymq_jobs_list.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/hymq_jobs_list.php">http://www.1dagong.com/interface/hymq_jobs_list.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>district_cn</td>
+  <td>string</td>
+  <td></td>
+  <td>地区条件（合肥市）</td>
+</tr>
+<tr>
+  <td>wage</td>
+  <td>int</td>
+  <td></td>
+  <td>工资条件（1936）</td>
+</tr>
+<tr>
+  <td>category_cn</td>
+  <td>string</td>
+  <td></td>
+  <td>职位类别（通信/电子/电器/半导体）</td>
+</tr>
+<tr>
+  <td>category</td>
+  <td>int</td>
+  <td></td>
+  <td>职位类别数字（247）</td>
+</tr>
+<tr>
+  <td>subclass</td>
+  <td>int</td>
+  <td></td>
+  <td>职位分类id（0）</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td>成功</td>
+  <td>返回数据成功，返回的数据按职位刷新时间降序排序</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+            id: <span class="hljs-string">"职位ID"</span>
+            companyname: <span class="hljs-string">"公司名称"</span>
+            wage_cn: <span class="hljs-string">"工资"</span>
+            logo: <span class="hljs-string">"logo图片链接地址"</span>
+            bmrenshu: <span class="hljs-string">"报名人数"</span>
+            addtime: <span class="hljs-string">"发布时间"</span>
+            district_cn: <span class="hljs-string">"工作地点"</span>
+            refreshtime: <span class="hljs-string">"刷新时间"</span>
+            category_cn: <span class="hljs-string">"职位类别"</span>
+            tag:{
+                    <span class="hljs-number">0</span>
+                    <span class="hljs-string">"147"</span>
+                    专车接送
+                    <span class="hljs-number">1</span>
+                    <span class="hljs-string">"144"</span>
+                    有提成
+                }
+        }
+}</code></pre>
+
+
+
+<h3 id="行业名企职位详情-完成-fmf">行业名企职位详情 (完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/hymq_jobs_show.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/hymq_jobs_show.php">http://www.1dagong.com/interface/hymq_jobs_show.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td></td>
+  <td>职位的id</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td>返回数据成功</td>
+  <td>返回数据成功</td>
+</tr>
+<tr>
+  <td>0</td>
+  <td>id没有值</td>
+  <td>没有找到该记录</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+        <span class="hljs-string">"id"</span>: <span class="hljs-string">"23"</span>,
+        <span class="hljs-string">"companyname"</span>: <span class="hljs-string">"华宝通讯(南京)有限公司"</span>,
+        <span class="hljs-string">"tag"</span>: [
+            [
+                <span class="hljs-string">"142"</span>,
+                <span class="hljs-string">"包食宿"</span>
+            ],
+            [
+                <span class="hljs-string">"138"</span>,
+                <span class="hljs-string">"加班费"</span>
+            ],
+            [
+                <span class="hljs-string">"134"</span>,
+                <span class="hljs-string">"环境好"</span>
+            ],
+            [
+                <span class="hljs-string">"152"</span>,
+                <span class="hljs-string">"压力小"</span>
+            ]
+        ],
+        <span class="hljs-string">"category_cn"</span>: <span class="hljs-string">"其他"</span>,
+        <span class="hljs-string">"wage_cn"</span>: <span class="hljs-string">"2000-3000元"</span>,
+        <span class="hljs-string">"zprenshu"</span>: <span class="hljs-string">"127"</span>,
+        <span class="hljs-string">"age_cn"</span>: <span class="hljs-string">"18-25岁"</span>,
+        <span class="hljs-string">"sex_cn"</span>: <span class="hljs-string">"不限"</span>,
+        <span class="hljs-string">"education_cn"</span>: <span class="hljs-string">"初中"</span>,
+        <span class="hljs-string">"experience_cn"</span>: <span class="hljs-string">"1年以下"</span>,
+        <span class="hljs-string">"logo"</span>: <span class="hljs-string">"http://www.1dagong.com/data/hymq_img/2015/06/01/1433144177993.jpg"</span>,
+        <span class="hljs-string">"addtime"</span>: <span class="hljs-string">"2015-06-01"</span>,
+        <span class="hljs-string">"refreshtime"</span>: <span class="hljs-string">"2015-06-01"</span>,
+        <span class="hljs-string">"bmrenshu"</span>: <span class="hljs-string">"100"</span>,
+        <span class="hljs-string">"contents"</span>: <span class="hljs-string">"要求1.年龄:须年满16周岁以上，裸眼视力0.8以上;2.身高:男1.65m以上,女1.50m以上；3.学历:初中/中专/职高/技校毕业及以上学历;4.具备条件:身体健康、无法律规定之不适合工作的传染性疾病、能吃苦耐劳、作风正派、手指灵巧、反应灵敏、抗压力强报道资料：1.有效二代身份证原件及身份证复印件4份(必备资料);2.近期免冠1寸照片4张，水笔、笔记本，第一个月个人零用金&amp;入职体检费;3.本地户籍人员需带《就业证》；外地户籍女性，需携带《外来人口婚育证明》;(注:以上证件原件由本人携带,经招募人员验证后当场返还给本人)收入底薪1630元/月,每月餐补200元.工龄奖入职满三个月50元/月,满六个月100元/月,满九个月150元/月,满一年200元/月封顶.技能评鉴津贴平均约125元/月.月综合工作3000元/月左右。夜班津贴：员工上夜班时加发津贴5元/天加班工资：平时13.3元/小时；周六、日17.8元/小时.国定假日26.7元/小时工作情况工作时间:两班倒，一个月一倒班；8:00--19:40&amp;20:00--07:40（工作2小时休息10分钟，吃饭时间1小时）工作环境:80%为坐立作业；20%站立作业。恒温空调车间.待遇情况完善的教育体系，定期开展各类免费培训课程，并与西安交通大学合作，开设有大专、本科等学历班次，供员工在职进修。公司免费提供7人间集体宿舍，并设有洗浴室、洗衣间，热水供应；公共区配置电话、餐厅、超市、网吧、活动室；宿舍内配置挂式空调、橱柜等设施，为丰富员工的业余生活及身心照顾提供了良好的保障。定期举办春游活动，运动会、文艺晚会等大型文娱活动。年终举办忘年会，提供奖金及高价礼品等摸彩奖品,并补助活动费用。每年年底依公司营运绩效发放年终奖金。吃住情况加班餐费：公司为员工免费提供5元/餐的加班餐，超出部份由员工承担，同时也提供其他餐标的餐饮供员工自由选择住宿条件：有公共卫浴设施、空调、免费热水供应，水电费超标部分当月薪资扣除；"</span>,
+        <span class="hljs-string">"qq1"</span>: <span class="hljs-string">"2967555605"</span>,
+        <span class="hljs-string">"qq2"</span>: <span class="hljs-string">"1905131809"</span>
+    }
+}</code></pre>
+
+
+
+<h3 id="行业名企公司详情-完成-fmf">行业名企公司详情 (完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/hymq_show.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/hymq_show.php">http://www.1dagong.com/interface/hymq_show.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td></td>
+  <td>职位的id</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td>返回数据成功</td>
+  <td>返回数据成功</td>
+</tr>
+<tr>
+  <td>0</td>
+  <td>id没有值</td>
+  <td>没有找到该记录</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+            id: <span class="hljs-string">"职位ID"</span>
+            companyname: <span class="hljs-string">"公司名称"</span>
+            nature_cn: <span class="hljs-string">"企业性质"</span>
+            trade_cn: <span class="hljs-string">"领域"</span>
+            scale_cn: <span class="hljs-string">"规模"</span>
+            company_desc: <span class="hljs-string">"公司简介"</span>
+            address:<span class="hljs-string">"公司地址"</span>
+        }
+        ....
+}</code></pre>
+
+
+
+<h3 id="申请行业名企完成-fmf">申请行业名企(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/person/personal_apply_hymq.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/person/personal_apply_hymq.php">http://www.1dagong.com/interface/person/personal_apply_hymq.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>userid</td>
+  <td>int</td>
+  <td></td>
+  <td>当前用户id</td>
+</tr>
+<tr>
+  <td>resumeID</td>
+  <td>int</td>
+  <td></td>
+  <td>简历的ID</td>
+</tr>
+<tr>
+  <td>jobsid</td>
+  <td>int</td>
+  <td></td>
+  <td>职位的id</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td>返回数据成功</td>
+  <td>返回数据成功</td>
+</tr>
+<tr>
+  <td>0</td>
+  <td>userid没有值</td>
+  <td>没有找到用户</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>职位的jobsid不对</td>
+  <td>职位丢失</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>resumeID不对</td>
+  <td>简历丢失</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+            userid: <span class="hljs-string">"用户id"</span>
+            resumeID: <span class="hljs-string">"简历id"</span>
+            jobsid: <span class="hljs-string">"职位id"</span>
+        }
+        ....
+}</code></pre>
+
+
+
+<h3 id="行业名企-职位类别一级分类完成-fmf">行业名企——-职位类别———一级分类(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/hymq_first_category.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/hymq_first_category.php">http://www.1dagong.com/interface/hymq_first_category.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td>返回数据成功</td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        <span class="hljs-number">0</span>{
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"30"</span>,
+            <span class="hljs-string">"categoryname"</span>: <span class="hljs-string">"销售"</span>
+        },
+        <span class="hljs-number">1</span>{
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"42"</span>,
+            <span class="hljs-string">"categoryname"</span>: <span class="hljs-string">"经营管理"</span>
+        },
+        ....
+}</code></pre>
+
+
+
+<h3 id="行业名企-职位类别二级分类完成-fmf">行业名企——-职位类别———二级分类(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/hymq_second_category.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/hymq_second_category.php">http://www.1dagong.com/interface/hymq_second_category.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>parentid</td>
+  <td>int</td>
+  <td></td>
+  <td>分类顶级id</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td>返回数据成功</td>
+  <td>返回数据成功，以(parentid=30为例)</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"41"</span>,
+            <span class="hljs-string">"categoryname"</span>: <span class="hljs-string">"其他销售"</span>
+        },
+        {
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"40"</span>,
+            <span class="hljs-string">"categoryname"</span>: <span class="hljs-string">"业务拓展(BD)经理"</span>
+        },
+        {
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"39"</span>,
+            <span class="hljs-string">"categoryname"</span>: <span class="hljs-string">"商务经理/商务主管"</span>
+        },
+        {
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"38"</span>,
+            <span class="hljs-string">"categoryname"</span>: <span class="hljs-string">"售前支持工程师"</span>
+        },
+        ....
+}</code></pre>
+
+
+
+<h3 id="行业名企-薪资类别完成-fmf">行业名企——-薪资类别(完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/hymq_wage.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/hymq_wage.php">http://www.1dagong.com/interface/hymq_wage.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td>返回数据成功</td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+         <span class="hljs-number">0</span>{
+            <span class="hljs-string">"wage"</span>: <span class="hljs-string">"1933"</span>,
+            <span class="hljs-string">"wage_cn"</span>: <span class="hljs-string">"1000元以下"</span>
+        },
+        <span class="hljs-number">1</span>{
+            <span class="hljs-string">"wage"</span>: <span class="hljs-string">"1934"</span>,
+            <span class="hljs-string">"wage_cn"</span>: <span class="hljs-string">"1000-3000元"</span>
+        },
+        ....
+}</code></pre>
+
+
+
+<h2 id="职场资讯完成-fmf">职场资讯(完成 FMF)</h2>
+
+
+
+<h3 id="职场资讯-一级分类-完成-fmf">职场资讯————-一级分类 (完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/news_category.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/news_category.php">http://www.1dagong.com/interface/news_category.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td>成功</td>
+  <td>返回数据成功，返回的数据按职位刷新时间降序排序</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+         {
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"90"</span>,
+            <span class="hljs-string">"reid"</span>: <span class="hljs-string">"0"</span>,
+            <span class="hljs-string">"topid"</span>: <span class="hljs-string">"0"</span>,
+            <span class="hljs-string">"typename"</span>: <span class="hljs-string">"职业测评"</span>,
+            <span class="hljs-string">"type_id"</span>: <span class="hljs-string">"90"</span>
+        },
+        {
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"89"</span>,
+            <span class="hljs-string">"reid"</span>: <span class="hljs-string">"0"</span>,
+            <span class="hljs-string">"topid"</span>: <span class="hljs-string">"0"</span>,
+            <span class="hljs-string">"typename"</span>: <span class="hljs-string">"工作总结"</span>,
+            <span class="hljs-string">"type_id"</span>: <span class="hljs-string">"89"</span>
+        }.......
+}</code></pre>
+
+
+
+<h3 id="职场资讯-二级分类-完成-fmf">职场资讯————-二级分类 (完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/news_category_second.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/news_category_second.php">http://www.1dagong.com/interface/news_category_second.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>typeid</td>
+  <td>int</td>
+  <td></td>
+  <td>分类顶级id</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td>成功</td>
+  <td>返回数据成功，返回的数据按职位刷新时间降序排序,没有二级分类就返回一级分类下的新闻列表</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+         {
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"83"</span>,
+            <span class="hljs-string">"reid"</span>: <span class="hljs-string">"2"</span>,
+            <span class="hljs-string">"topid"</span>: <span class="hljs-string">"0"</span>,
+            <span class="hljs-string">"typename"</span>: <span class="hljs-string">"简历范文"</span>
+        },
+        {
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"73"</span>,
+            <span class="hljs-string">"reid"</span>: <span class="hljs-string">"2"</span>,
+            <span class="hljs-string">"topid"</span>: <span class="hljs-string">"0"</span>,
+            <span class="hljs-string">"typename"</span>: <span class="hljs-string">"英文简历"</span>
+        }.....
+}</code></pre>
+
+
+
+<h3 id="职场资讯列表-完成-fmf">职场资讯列表 (完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/news_list.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/news_list.php">http://www.1dagong.com/interface/news_list.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>typeid</td>
+  <td>int</td>
+  <td></td>
+  <td>职位分类id（6）</td>
+</tr>
+<tr>
+  <td>page</td>
+  <td>int</td>
+  <td></td>
+  <td>当前页数（默认是1）</td>
+</tr>
+<tr>
+  <td>pagesize</td>
+  <td>int</td>
+  <td></td>
+  <td>一页显示几条（默认是10）</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td>成功</td>
+  <td>返回数据成功，返回的数据按职位刷新时间降序排序</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+         {
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"79030"</span>,
+            <span class="hljs-string">"typeid"</span>: <span class="hljs-string">"6"</span>,
+            <span class="hljs-string">"title"</span>: <span class="hljs-string">"什么福利最受员工欢迎？"</span>,
+            <span class="hljs-string">"description"</span>: <span class="hljs-string">"员工福利是企业体系的重要组成部分，它直接影响到员工的生活质量和对企业雇主的满意度。 近日，北京外企人力"</span>,
+            <span class="hljs-string">"pubdate"</span>: <span class="hljs-string">"2015-08-04"</span>,
+            <span class="hljs-string">"senddate"</span>: <span class="hljs-string">"2015-07-27"</span>,
+            <span class="hljs-string">"click"</span>: <span class="hljs-string">"0"</span>,
+            <span class="hljs-string">"litpic"</span>: <span class="hljs-string">""</span>
+        }....
+}</code></pre>
+
+
+
+<h3 id="职场资讯详情-完成-fmf">职场资讯详情 (完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/news_show.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/news_show.php">http://www.1dagong.com/interface/news_show.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td></td>
+  <td>职场资讯id（6）</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td>id没有值</td>
+  <td>信息不存在</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>成功</td>
+  <td>返回数据成功，返回的数据按新闻发布时间降序排序</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+        <span class="hljs-string">"title"</span>: <span class="hljs-string">"职场新手：修炼八大竞争力"</span>,
+        <span class="hljs-string">"description"</span>: <span class="hljs-string">"每个人都面临严酷的职场竞争力大考验，企业在员工淘汰上不再留情，新人的阵亡率不断攀高，作为一个职场新人你该怎么做? 简单来说，一个人没有专长很难成功，但除了专业技能之外，成功还需要很多配合条件，这些条件就是你的竞争力。 不同的生涯阶段，需要不同"</span>,
+        <span class="hljs-string">"typeid"</span>: <span class="hljs-string">"13"</span>,
+        <span class="hljs-string">"pubdate"</span>: <span class="hljs-string">"2013-10-25"</span>,
+        <span class="hljs-string">"senddate"</span>: <span class="hljs-string">"2013-07-04"</span>,
+        <span class="hljs-string">"writer"</span>: <span class="hljs-string">"admin"</span>,
+        <span class="hljs-string">"typename"</span>: <span class="hljs-string">"求职技巧"</span>
+    }
+}</code></pre>
+
+
+
+<h3 id="职场资讯详情页-返回html页面-完成-fmf">职场资讯详情页————-返回html页面 (完成 FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/news_display.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/news_display.php">http://www.1dagong.com/interface/news_display.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td></td>
+  <td>职场资讯id（6）</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td>id没有值</td>
+  <td>信息不存在！</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>成功</td>
+  <td>返回html页面成功，返回的数据按照新闻发布时间降序排序</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+        <span class="hljs-string">"title"</span>: <span class="hljs-string">"职场新手：修炼八大竞争力"</span>,
+        <span class="hljs-string">"description"</span>: <span class="hljs-string">"每个人都面临严酷的职场竞争力大考验，企业在员工淘汰上不再留情，新人的阵亡率不断攀高，作为一个职场新人你该怎么做? 简单来说，一个人没有专长很难成功，但除了专业技能之外，成功还需要很多配合条件，这些条件就是你的竞争力。 不同的生涯阶段，需要不同"</span>,
+        <span class="hljs-string">"typeid"</span>: <span class="hljs-string">"13"</span>,
+        <span class="hljs-string">"pubdate"</span>: <span class="hljs-string">"2013-10-25"</span>,
+        <span class="hljs-string">"senddate"</span>: <span class="hljs-string">"2013-07-04"</span>,
+        <span class="hljs-string">"writer"</span>: <span class="hljs-string">"admin"</span>,
+        <span class="hljs-string">"typename"</span>: <span class="hljs-string">"求职技巧"</span>
+    }
+}</code></pre>
+
+
+
+<h2 id="公司百度地图数据完成-zwl">公司——百度地图数据(完成 ZWL)</h2>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/baidu_map_company_location.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/baidu_map_company_location.php">http://www.1dagong.com/interface/baidu_map_company_location.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+<tr>
+  <td>0</td>
+  <td></td>
+  <td>参数错误</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    data:
+        {
+            id: 
+            uid: <span class="hljs-string">"公司UID"</span>
+            companyname: <span class="hljs-string">"公司名称"</span>
+            nature_cn: <span class="hljs-string">"公司性质"</span>
+            district_cn: <span class="hljs-string">"工作地点"</span>
+            refreshtime: <span class="hljs-string">"刷新时间"</span>
+            trade_cn: <span class="hljs-string">"所属行业"</span>
+            district_cn: <span class="hljs-string">"公司地址"</span>
+            scale_cn: <span class="hljs-string">"公司规模"</span>
+            map_open: <span class="hljs-string">"是否开通百度地图标识,1为开通，0为没有"</span>
+            map_x: <span class="hljs-string">""</span>
+            map_y: <span class="hljs-string">""</span>
+            map_zoom: <span class="hljs-string">"缩放"</span>
+            contact: <span class="hljs-string">"联系人"</span>
+            telephone: <span class="hljs-string">"联系电话"</span>
+        }
+}</code></pre>
+
+
+
+<h2 id="app首页完成-fmf">app首页(完成 FMF)</h2>
+
+
+
+<h3 id="首页banner图片和访谈图片完成fmf">首页—banner图片和访谈图片(完成FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/index_banner.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/index_banner.php">http://www.1dagong.com/interface/index_banner.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    code:<span class="hljs-number">1</span>, <span class="hljs-comment">//1-表示成功 其它表示失败</span>
+    errormsg: <span class="hljs-literal">null</span>,
+    banner:
+        {
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"448"</span>,
+            <span class="hljs-string">"note"</span>: <span class="hljs-string">""</span>,
+            <span class="hljs-string">"title"</span>: <span class="hljs-string">""</span>,
+            <span class="hljs-string">"img_path"</span>: <span class="hljs-string">"http://www.1dagong.com/data/comads/2015/09/02/1441162448427.png"</span>,
+            <span class="hljs-string">"addtime"</span>: <span class="hljs-string">"6小时前"</span>,
+            <span class="hljs-string">"show_order"</span>: <span class="hljs-string">"4"</span>
+        }....
+    interview:
+    {
+         <span class="hljs-string">"id"</span>: <span class="hljs-string">"452"</span>,
+        <span class="hljs-string">"note"</span>: <span class="hljs-string">"专访佳通轮胎总经理助理宋敬先生"</span>,
+        <span class="hljs-string">"img_path"</span>: <span class="hljs-string">"http://www.1dagong.com/data/comads/2015/09/01/1441089150680.png"</span>,
+        <span class="hljs-string">"addtime"</span>: <span class="hljs-string">"6小时前"</span>,
+        <span class="hljs-string">"show_order"</span>: <span class="hljs-string">"50"</span>,
+        <span class="hljs-string">"title"</span>: <span class="hljs-string">"专访佳通轮胎总经理助理宋敬先生"</span>
+    }
+}</code></pre>
+
+
+
+<h3 id="首页banner图片和访谈图片详情完成fmf">首页—banner图片和访谈图片—–详情(完成FMF)</h3>
+
+<p><strong>接口地址</strong>  <br>
+<code>GET</code>   <code>/interface/index_banner_display.php</code></p>
+
+<blockquote>
+  <p>eg.     <a href="http://www.1dagong.com/interface/index_banner_display.php">http://www.1dagong.com/interface/index_banner_display.php</a></p>
+</blockquote>
+
+<p><strong>请求参数</strong>  </p>
+
+<table>
+<thead>
+<tr>
+  <th>参数</th>
+  <th>数据类型</th>
+  <th>必填</th>
+  <th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>androidkey</td>
+  <td>string</td>
+  <td></td>
+  <td>接口验证码</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>int</td>
+  <td></td>
+  <td>点击图片id(452)</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>运行时异常</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>code</th>
+  <th>错误原因</th>
+  <th>返回消息</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td></td>
+  <td>返回数据成功</td>
+</tr>
+</tbody></table>
+
+
+<p><strong>返回参数</strong>  </p>
+
+
+
+<pre class="prettyprint"><code class="language-javascript hljs ">{
+    返回html页面内容
+}</code></pre>

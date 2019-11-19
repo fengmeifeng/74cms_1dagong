@@ -1,0 +1,3010 @@
+[toc]
+
+# 壹打工网接口文档(1dagong-api)
+
+返回码说明
+```
+{
+	code://返回代号：1成功；其它 失败
+	message://提示信息
+	data://接口需求的具体数据
+}
+```
+
+## 登录注册相关接口
+
+### 获取短信验证码(完成 ZWL)
+
+**接口地址** 
+`GET`   `WEBSITE/interface/captcha_code.php`
+> eg.     http://www.1dagong.com/interface/captcha_code.php
+
+**请求参数**   
+参数|数据类型|必填|参数说明
+---|-------|----|-----
+userid	|string	|<i class="fa fa-check"></i>|接收短信的手机号码
+ANDROID_KEY|string	|<i class="fa fa-check"></i>|接口验证码
+
+### 崩溃日志上传(完成 ZWL)
+
+**接口地址** 
+`GET`   `WEBSITE/interface/crash_log_upload.php`
+> eg.     http://www.1dagong.com/interface/crash_log_upload.php
+
+**请求参数**   
+参数|数据类型|必填|参数说明
+---|-------|----|-----
+ANDROID_KEY|string	|<i class="fa fa-check"></i>|接口验证码
+crashLog_contents|string||崩溃日志内容
+
+
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0||上传失败
+1||发送成功
+
+**响应结果:**
+```javascript
+{
+	"code": 1, //1 - 接口调用成功，其他值表示失败
+	"message": null,
+}
+```
+### 获取分站信息(完成 ZWL)
+
+**接口地址** 
+`GET`   `WEBSITE/interface/index_subsite.php`
+> eg.     http://www.1dagong.com/interface/index_subsite.php
+
+**请求参数**   
+参数|数据类型|必填|参数说明
+---|-------|----|-----
+ANDROID_KEY|string	|<i class="fa fa-check"></i>|接口验证码
+
+
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0||参数错误
+1||数据返回成功
+
+**响应结果:**
+```javascript
+{
+	"code": 1, //1 - 接口调用成功，其他值表示失败
+	"message": null,
+	"data['s_id']": 分站ID
+	"data['s_districtname']": 分站名称 
+}
+```
+### 获取分站信息——下属地区信息(完成 ZWL)
+
+**接口地址** 
+`GET`   `WEBSITE/interface/index_district.php`
+> eg.     http://www.1dagong.com/interface/index_district.php
+
+**请求参数**   
+参数|数据类型|必填|参数说明
+---|-------|----|-----
+ANDROID_KEY|string	|<i class="fa fa-check"></i>|接口验证码
+|district_id|int||地区ID
+
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0||参数错误
+1||数据返回成功
+
+**响应结果:**
+```javascript
+{
+	"code": 1, //1 - 接口调用成功，其他值表示失败
+	"message": null,
+	"data['id']": 下属地区ID
+	"data['categoryname']": 下属地区名称 
+}
+```
+### 获取注册地区信息(完成 ZWL)
+
+**接口地址** 
+`GET`   `WEBSITE/interface/reg_diqu_info.php`
+> eg.     http://www.1dagong.com/interface/reg_diqu_info.php
+
+**请求参数**   
+参数|数据类型|必填|参数说明
+---|-------|----|-----
+ANDROID_KEY|string	|<i class="fa fa-check"></i>|接口验证码
+
+
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0||参数错误
+1||数据返回成功
+
+**响应结果:**
+```javascript
+{
+	"code": 1, //1 - 接口调用成功，其他值表示失败
+	"message": null,
+	id: 省份ID
+	categoryname: 省份名称 
+}
+```
+### 获取注册地区——省下的市信息(完成 ZWL)
+
+**接口地址** 
+`GET`   `WEBSITE/interface/index_district.php`
+> eg.     http://www.1dagong.com/interface/index_district.php`
+
+**请求参数**   
+参数|数据类型|必填|参数说明
+---|-------|----|-----
+ANDROID_KEY|string	|<i class="fa fa-check"></i>|接口验证码
+district_id|int|||省份ID
+
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0||参数错误
+1||数据返回成功
+
+**响应结果:**
+```javascript
+{
+	"code": 1, //1 - 接口调用成功，其他值表示失败
+	"message": null,
+	id: 市ID
+	categoryname: 市名称 
+}
+```
+### 获取职位分类信息——一级分类信息(完成 ZWL)
+
+**接口地址** 
+`GET`   `WEBSITE/interface/index_jobs_first_category.php.php`
+> eg.     http://www.1dagong.com/interface/index_jobs_first_category.php.php
+
+**请求参数**   
+参数|数据类型|必填|参数说明
+---|-------|----|-----
+ANDROID_KEY|string	|<i class="fa fa-check"></i>|接口验证码
+
+
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0||参数错误
+1||数据返回成功
+
+**响应结果:**
+```javascript
+{
+	"code": 1, //1 - 接口调用成功，其他值表示失败
+	"message": null,
+	"data['id']": 职位分类ID
+	"data['categoryname']": 职位名称 
+}
+```
+### 获取职位分类信息——二、三级分类信息(完成 ZWL)
+
+**接口地址** 
+`GET`   `WEBSITE/interface/index_jobs_second_category.php`
+> eg.     http://www.1dagong.com/interface/index_jobs_second_category.php
+
+**请求参数**   
+参数|数据类型|必填|参数说明
+---|-------|----|-----
+ANDROID_KEY|string	|<i class="fa fa-check"></i>|接口验证码
+id|int	|<i class="fa fa-check"></i>|一级分类ID
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0||参数错误
+1||数据返回成功
+
+**响应结果:**
+```javascript
+{
+	"code": 1, //1 - 接口调用成功，其他值表示失败
+	"message": null,
+	"data['id']": 职位分类ID
+	"data['categoryname']": 职位名称 
+}
+```
+
+### 用户注册（完成 ZWL）
+
+**接口地址** 
+`GET`   `WEBSITE/interface/reg.php`
+
+**请求参数:**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|username|String|<i class="fa fa-check"></i>|手机号|
+|androidkey|String|<i class="fa fa-check"></i>|接口验证码|
+|member_type|String|<i class="fa fa-check"></i>|会员类型,固定值2|
+|sex|int|1/0|性别,1代表男
+|sex_cn|string||性别
+|realname|string||姓名
+|birthday|string||生日
+|residence_cn|string||居住地
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+-1|会员类型错误
+-2|用户名已经存在 
+
+**返回参数:**
+```javascript
+{
+	$result['result']:1, //1-表示成功 其它表示失败
+	$result['errormsg']: null,
+	$result['data']: 
+}
+```
+
+
+
+###用户登录（完成 ZWL）
+
+**接口地址** 
+`GET`   `WEBSITE/interface/login.php`
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|username|String|<i class="fa fa-check"></i>|用户名 - 手机号|
+|userpwd|String|<i class="fa fa-exclamation">1</i>|密码|
+|androidkey|String|<i class="fa fa-exclamation">2</i>|接口验证码|
+
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1|登录成功
+0|用户名或密码错误
+
+**返回参数**  
+```javascript
+{
+	$result['result']:1, //0-表示成功 其它表示失败
+	$result['errormsg']: null,
+	$result['data']['uid']: 用户ID
+	$result['data']['username']: 用户名
+	$result['data']['utype']: 用户类型
+	$result[0]: 已申请职位
+	$result[1]: 面试邀请
+	$result[2]: 关注
+}
+```
+
+
+
+
+
+## 个人中心（完成ZWL）
+**接口地址** 
+`GET` `WEISITE/interface/person/personal_index.php`
+
+**请求参数**  
+参数|数据类型|必填|参数说明
+---|-------|----|-----
+|androidkey|varchar||接口验证码|
+|uid|[`lordJson`](#lordjson)||用户ID|
+**响应结果**
+```javascript
+{
+	$result['result']: 1, //1 - 接口调用成功，其他值表示失败
+	$result['errormsg']: null,
+	$result[0]:已申请职位
+	$result[1]:面试邀请
+	$result[2]:关注
+}
+```
+### 个人中心——设置——版本更新——上传版本信息(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/app_edition.php`
+> eg.     http://www.1dagong.com/interface/app_edition.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|operate|string|<i class="fa fa-check"></i>|操作ID，为input|
+|edition_id||int||版本ID，为自然数
+|description|string||更新说明
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+0||执行成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+		}
+}
+```
+### 个人中心——设置——版本更新——获取版本信息(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/app_edition.php`
+> eg.     http://www.1dagong.com/interface/app_edition.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|operate|string|<i class="fa fa-check"></i>|操作ID，为output|
+|edition_id||int||本机版本ID，为自然数
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+2||已是最新版本
+1||返回数据成功
+0||无需更新
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+		edition_id: "最新版本ID"
+		url: "下载地址"
+		description: "更新说明"
+		}
+}
+```
+### 修改密码(完成 FMF)
+**接口地址** 
+`GET`   `/interface/modify_pass.php`
+> eg.     http://www.1dagong.com/interface/modify_pass.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|userid|int|<i class="fa fa-check"></i>|当前登录用户ID|
+|oldpass|String||原密码|
+|newpass|String|<i class="fa fa-check"></i>|新密码|
+|androidkey|String|1|验证码唯一票据|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+-1|旧密码不正确|旧密码输入错误，请重新输入
+0|三个参数必填|请填写完整信息
+-2|传入的userid不对|没有找到该用户
+
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	message: null,
+	data:
+		{
+			userid:"18283"
+			username:"15755120196"
+			utype:"2"
+		}
+}
+```
+### 个人中心——设置——意见反馈(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/propose.php`
+> eg.     http://www.1dagong.com/interface/propose.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|userid|int|<i class="fa fa-check"></i>|当前登录用户ID|
+|contents|String||意见内容|
+|androidkey|String||验证码唯一票据|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0||服务器错误
+|1||执行成功|
+
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	message: null,
+	data:
+		{
+			
+		}
+}
+```
+### 设置密码(完成 ZWL)
+**接口地址** 
+`GET`   `WEBSITE/interface/set_pass.php`
+> eg.     http://www.1dagong.com/interface/set_pass.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|userid|int|<i class="fa fa-check"></i>|用户名|
+|verify_code|String||手机验证结果状态码|
+|pwd01|String|<i class="fa fa-check"></i>|第一次输入密码|
+|pwd01|String|1|第二次输入密码|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+-1|两次输入密码不相同|两次输入密码不相同
+-2|没有找到该用户
+-3|密码修改错误
+0|手机验证码错误
+1|修改密码成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	message: null,
+	data:
+		{
+			userid:"18283"
+			username:"15755120196"
+			utype:"2"
+		}
+}
+```
+### 用户协议(完成 FMF)
+**接口地址** 
+`GET`   `/interface/yonghuxy.php`
+> eg.     http://www.1dagong.com/interface/yonghuxy.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|String||验证码唯一票据|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+|1|执行成功|返回html页面
+
+**返回参数**  
+```javascript
+{
+	 1.使用条款
+
+本协议阐明了使用壹打工网网站及其服务的使用条款(“使用条款”)。
+
+“求职者”是指完全同意本协议所有条款，使用壹打工网进行有效注册或虽然未经注册但通过使用经壹打工网许可的方式登录壹打工网，以寻求工作机会为目的的自然人。
+
+“招聘企业”或“企业会员”是指有人员招聘需求，通过与壹打工网签订协议或壹打工网特别许可的方式获得会员使用资格，从而有权在1dagong.com上发布招聘信息、进行求职者简历查看或享受其它服务的企业用户。
+
+求职者和招聘企业合称为用户。 
+......
+}
+```
+### 关于我们(完成 FMF)
+**接口地址** 
+`GET`   `/interface/about.php`
+> eg.     http://www.1dagong.com/interface/about.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|String||验证码唯一票据|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+|1|执行成功|返回html页面
+
+**返回参数**  
+```javascript
+{
+	壹打工网是专业的求职招聘网站，最了解蓝领需求，专为蓝领服务。壹打工网的所有合作企业都是根据求职者的反馈，精挑细选出来的，做到让每个求职者可以放心的工作。壹打工网同时也是众多世界500强企业指定招聘的合作网站，合作企业均为知名企业单位，让企业省心，让求职者放心
+}
+```
+### 我的收藏(完成 FMF)
+**接口地址** 
+`GET`   `/interface/person/personal_favorite.php`
+> eg.     http://www.1dagong.com/interface/person/personal_favorite.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|userid|int|<i class="fa fa-check"></i>|当前登录用户ID|
+|page|int||分页页数(默认是第一页)|
+|pagesize|int|<i class="fa fa-check"></i>|每页显示多少条(默认是10条)|
+|androidkey|String|1|验证码唯一票据|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0|userid没有值|没有找到该用户
+-1|收藏夹没有数据|收藏夹为空！
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	message: null,
+	data:
+		0{
+        "did": "153",
+        "personal_uid": "18283",
+        "jobs_id": "4545",
+        "jobs_name": "客户经理",
+        "addtime": "1438567876",
+        "companyname": "安徽金樽投资管理有限公司",
+        "district_cn": "安徽省/合肥市"
+    }
+    1
+    {
+        "did": "152",
+        "personal_uid": "18283",
+        "jobs_id": "4546",
+        "jobs_name": "业务主管",
+        "addtime": "1438567871",
+        "companyname": "安徽金樽投资管理有限公司",
+        "district_cn": "安徽省/合肥市"
+    }
+	...
+}
+```
+### 删除收藏(完成 FMF)
+**接口地址** 
+`GET`   `/interface/person/personal_favorite_del.php`
+> eg.     http://www.1dagong.com/interface/person/personal_favorite_del.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|userid|int|<i class="fa fa-check"></i>|当前登录用户ID|
+|did|int||当前要删除的多个id(以,号隔开)|
+|androidkey|String|1|验证码唯一票据|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0|did没有值|没有找到该记录
+-1|删除失败|删除失败
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	message: null,
+	data:
+		{
+			userid:"18283"
+			did:"145"
+		}
+}
+```
+### 面试邀请列表(完成 FMF)
+**接口地址** 
+`GET`   `/interface/person/personal_interview.php`
+> eg.     http://www.1dagong.com/interface/person/personal_interview.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|userid|int|<i class="fa fa-check"></i>|当前登录用户ID(测试uid:71410)|
+|page|int||分页页数(默认是第一页)|
+|pagesize|int|<i class="fa fa-check"></i>|每页显示多少条(默认是10条)|
+|androidkey|String|1|验证码唯一票据|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0|userid没有值|没有找到该用户
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	message: null,
+	data:
+		{
+			{
+            "did": "377",
+            "resume_id": "3051",
+            "resume_name": "张**",
+            "interview_addtime": "2天前",
+            "jobs_id": "4295",
+            "company_id": "23985",
+            "subsite_id": "5",
+            "jobs_name": "测试职位名称",
+            "companyname": "测试企业名称1122",
+            "district_cn": "安徽省/合肥市",
+            "wage_cn": "3000~5000元/月",
+            "deadline": "2016-09-17",
+            "click": "20",
+            "title": "测试",
+            "total": "1"
+        }
+		}
+}
+```
+### 刷新简历(完成 FMF)
+**接口地址** 
+`GET`   `/interface/person/personal_resume_refresh.php`
+> eg.     http://www.1dagong.com/interface/person/personal_resume_refresh.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|userid|int|<i class="fa fa-check"></i>|当前登录用户ID|
+|resumeID|int||当前要刷新的简历id|
+|androidkey|String|1|验证码唯一票据|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0|resumeID没有值|没有找到该记录
+-1|刷新失败|刷新失败
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	message: null,
+	data:
+		{
+			userid:"18283"
+			resumeID:"1452"
+		}
+}
+```
+### 删除我的简历(完成 FMF)
+**接口地址** 
+`GET`   `/interface/person/personal_resume_del.php`
+> eg.     http://www.1dagong.com/interface/person/personal_resume_del.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|userid|int|<i class="fa fa-check"></i>|当前登录用户ID|
+|resumeID|int||当前要删除的多个简历id(以逗号隔开)|
+|androidkey|String|1|验证码唯一票据|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0|resumeID没有值|没有找到该记录
+-1|删除失败|删除失败
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	message: null,
+	data:
+		{
+			userid:"18283"
+			resumeID:"1482"
+		}
+}
+```
+### 职位投递记录(完成 FMF)
+**接口地址** 
+`GET`   `/interface/person/personal_apply_jobs.php`
+> eg.     http://www.1dagong.com/interface/person/personal_apply_jobs.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|userid|int|<i class="fa fa-check"></i>|当前登录用户ID|
+|page|int||分页页数(默认是第一页)|
+|pagesize|int|<i class="fa fa-check"></i>|每页显示多少条(默认是10条)|
+|androidkey|String|1|验证码唯一票据|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0|userid没有值|没有找到该用户
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	message: null,
+	data:
+		{
+			0{
+            "did": "1406",
+            "resume_id": "1542",
+            "resume_name": "王超",
+            "personal_uid": "18283",
+            "jobs_id": "4542",
+            "jobs_name": "网络销售",
+            "company_id": "53398",
+            "company_name": "郑州悦服电子商务有限公司",
+            "company_uid": "64863",
+            "apply_addtime": "2分钟前",
+            "personal_look": "1",
+            "notes": "",
+            "subsite_id": "11",
+            "addtime": "1435981279",
+            "companyname": "郑州悦服电子商务有限公司",
+            "company_addtime": "0",
+            "wage_cn": "3000~5000元/月",
+            "district_cn": "河南省",
+            "deadline": "1441165279",
+            "refreshtime": "2015-07-04",
+            "click": "13"
+        }
+		}
+}
+```
+### 删除投递记录(完成 FMF)
+**接口地址** 
+`GET`   `/interface/person/personal_apply_jobs_del.php`
+> eg.     http://www.1dagong.com/interface/person/personal_apply_jobs_del.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|userid|int|<i class="fa fa-check"></i>|当前登录用户ID|
+|did|int||当前要删除的多个id(以逗号隔开)|
+|androidkey|String|1|验证码唯一票据|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0|did没有值|没有找到该记录
+-1|删除失败|删除失败
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	message: null,
+	data:
+		{
+			userid:"18283"
+			did:"1482"
+		}
+}
+```
+### 谁在关注我(完成 FMF)
+**接口地址** 
+`GET`   `/interface/person/personal_attention_me.php`
+> eg.     http://www.1dagong.com/interface/person/personal_attention_me.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|userid|int|<i class="fa fa-check"></i>|当前登录用户ID|
+|page|int||分页页数(默认是第一页)|
+|pagesize|int|<i class="fa fa-check"></i>|每页显示多少条(默认是10条)|
+|androidkey|String|1|验证码唯一票据|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0|userid没有值|没有找到该用户
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	message: null,
+	data:
+		{
+			null
+        }
+		}
+}
+```
+### 删除谁在关注我(完成 FMF)
+**接口地址** 
+`GET`   `/interface/person/personal_attention_me_del.php`
+> eg.     http://www.1dagong.com/interface/person/personal_attention_me_del.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|userid|int|<i class="fa fa-check"></i>|当前登录用户ID|
+|id|int||当前要删除的多个id(以逗号隔开)|
+|androidkey|String|1|验证码唯一票据|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0|id没有值|没有找到记录
+-1|删除失败|删除失败
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	message: null,
+	data:
+		{
+			id:"1482"
+		}
+}
+```
+### 设置委托投递(完成 FMF)
+**接口地址** 
+`GET`   `/interface/person/personal_set_entrust.php`
+> eg.     http://www.1dagong.com/interface/person/personal_set_entrust.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|userid|int|<i class="fa fa-check"></i>|当前登录用户ID|
+|resumeID|int||要设置的简历id|
+|androidkey|String|1|验证码唯一票据|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0|resumeID没有值|没有找到该记录
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	message: null,
+	data:
+		{
+			"userid": "18283",
+	        "resumeID": "1542"
+        }
+		}
+}
+```
+### 取消委托投递(完成 FMF)
+**接口地址** 
+`GET`   `/interface/person/personal_entrust_del.php`
+> eg.     http://www.1dagong.com/interface/person/personal_entrust_del.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|userid|int|<i class="fa fa-check"></i>|当前登录用户ID|
+|resumeID|int||要设置的简历id|
+|androidkey|String|1|验证码唯一票据|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0|resumeID没有值|没有找到该记录
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	message: null,
+	data:
+		{
+			"userid": "18283",
+	        "resumeID": "1542"
+        }
+}
+```
+### 设置简历是否公开(完成 FMF)
+**接口地址** 
+`GET`   `/interface/person/personal_set_display.php`
+> eg.     http://www.1dagong.com/interface/person/personal_set_display.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|userid|int|<i class="fa fa-check"></i>|当前登录用户ID|
+|resumeID|int||要设置的简历id|
+|display|int||要设置的公开的字段(1代表公开2代表保密(不显示))|
+|androidkey|String|1|验证码唯一票据|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0|resumeID没有值|没有找到简历
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	message: null,
+	data:
+		{
+			"userid": "18283",
+	        "resumeID": "1542"
+        }
+}
+```
+### 匹配职位(完成 FMF)
+**接口地址** 
+`GET`   `/interface/person/personal_interestjobs.php`
+> eg.     http://www.1dagong.com/interface/person/personal_interestjobs.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|jobcategory|string|<i class="fa fa-check"></i>|该简历对应期望职位的分类id(已销售为例：1077.1078.0)获取在jobcategory的值myresume-persent-query.php接口中|
+|androidkey|String|1|验证码唯一票据|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1|返回成功|返回职位成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	message: null,
+	data:
+		{
+            "id": "4542",
+            "uid": "64863",
+            "jobs_name": "网络销售",
+            "companyname": "郑州悦服电子商务有限公司",
+            "wage_cn": "3000~5000",
+            "refreshtime": "2015-07-04",
+            "district_cn": "河南省",
+            "category_cn": "网络销售"
+        },
+        {
+            "id": "3252",
+            "uid": "40070",
+            "jobs_name": "网络销售",
+            "companyname": "合肥励融康商贸有限公司",
+            "wage_cn": "3000-5000",
+            "refreshtime": "2015-07-03",
+            "district_cn": "合肥市",
+            "category_cn": "销售"
+        },
+        .......
+}
+```
+### 我的简历-------教育列表(完成 FMF)
+**接口地址** 
+`GET`   `/interface/person/personal_education_list.php`
+> eg.     http://www.1dagong.com/interface/person/personal_education_list.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|userid|int||当前用户id|
+|resume_id|int||当前简历id|
+|androidkey|String|1|验证码唯一票据|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1|返回成功|返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	message: null,
+	data:
+		{
+            "id": "10201",
+            "pid": "3051",
+            "uid": "71410",
+            "startyear": "2003",
+            "startmonth": "3",
+            "endyear": "2006",
+            "endmonth": "3",
+            "school": "人工湖",
+            "speciality": "防护",
+            "education": "0",
+            "education_cn": "中专"
+        }，
+        .......
+}
+```
+### 我的简历-------培训列表(完成 FMF)
+**接口地址** 
+`GET`   `/interface/person/personal_train_list.php`
+> eg.     http://www.1dagong.com/interface/person/personal_train_list.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|userid|int||当前用户id|
+|resume_id|int||当前简历id|
+|androidkey|String|1|验证码唯一票据|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1|返回成功|返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	message: null,
+	data:
+		 {
+            "id": "670",
+            "pid": "3051",
+            "uid": "71410",
+            "startyear": "2008",
+            "startmonth": "1",
+            "endyear": "2013",
+            "endmonth": "3",
+            "agency": "培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训",
+            "course": "培刚刚给训课程",
+            "description": "培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容培训内容"
+        },
+        .......
+}
+```
+### 我的简历-------工作列表(完成 FMF)
+**接口地址** 
+`GET`   `/interface/person/personal_work_list.php`
+> eg.     http://www.1dagong.com/interface/person/personal_work_list.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|userid|int||当前用户id|
+|resume_id|int||当前简历id|
+|androidkey|String|1|验证码唯一票据|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1|返回成功|返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	message: null,
+	data:
+		 {
+            "id": "1904",
+            "pid": "3051",
+            "uid": "71410",
+            "startyear": "2014",
+            "startmonth": "5",
+            "endyear": "2015",
+            "endmonth": "1",
+            "companyname": "放贷高峰时段",
+            "jobs": "好刚刚给",
+            "achievements": "事发当时的方法"
+        },
+        .......
+}
+```
+### 我的简历(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/myresume-list.php`
+> eg.     http://www.1dagong.com/interface/myresume-list.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|uid|int|<i class="fa fa-check"></i>|当前登录用户ID|
+|page|int||请求的页码，默认为1，自然数序列，从1开始
+|page_size|int||每页显示的条数,默认为10|
+|operate_code|string||操作码，为"resume"
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+			id: "简历id"
+			intention_jobs: "职位名"
+			wage_cn: "期望工资"
+			click: "浏览次数"
+			display: "是否公开"
+			entrust: "是否委托投递，1为投递"
+		}
+}
+```
+### 我的简历——简历注册1(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/person_resume_reg_step1.php`
+> eg.     http://www.1dagong.com/interface/person_resume_reg_step1.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|uid|int|<i class="fa fa-check"></i>|当前登录用户ID|
+|fullname|string||姓名
+|sex|1、0||性别
+|sex_cn|string|男/女|性别
+|birthdate|string|1991|生日
+|residence_cn|string||居住地
+|education_cn|string||学历
+|experience_cn|string||工作经验
+|telephone|string||手机号
+|email|string||邮箱
+|img|binary stream||图片二进制流
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+0||服务器错误
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data://简历ID
+		{
+		}
+}
+```
+### 我的简历——简历注册2——期望职位多选(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/person_resume_reg_step2.php`
+> eg.     http://www.1dagong.com/interface/person_resume_reg_step2.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|int|<i class="fa fa-check"></i>|简历ID|
+|intention_jobs|string||期望职位
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+0||服务器错误
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+		}
+}
+```
+### 我的简历——简历注册2——工作性质选择(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/person_resume_reg_step2_nature_cn.php`
+> eg.     http://www.1dagong.com/interface/person_resume_reg_step2_nature_cn.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|int|<i class="fa fa-check"></i>|简历ID|
+|nature|62、62、64|全职、兼职、实习|工作性质
+|nature_cn|string|全职/兼职/实习|工作性质
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+0||服务器错误
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+		}
+}
+```
+### 我的简历——行业信息获取(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/category-trade.php`
+> eg.     http://www.1dagong.com/interface/category-trade.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0||无法获取行业分类信息
+1||返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+		c_id : "行业信息id"
+		c_name : "行业名称"
+		}
+}
+```
+### 我的简历——简历完整度查询(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/myresume-persent-query.php`
+> eg.     http://www.1dagong.com/interface/myresume-persent-query.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|int|<i class="fa fa-check"></i>|简历id|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0||id错误
+1||返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+		complete_percent: "简历完整度"
+		jobs_sta: "工作意向" 1为已完善
+		spe_sta: "个人评价" 1为已完善
+		edu_sta: "教育经历" 1为已完善
+		tra_sta: "培训经历" 1为已完善
+		wor_sta: "工作经历" 1为已完善
+		}
+}
+```
+### 我的简历——信息详情(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/myresume-show.php`
+> eg.     http://www.1dagong.com/interface/myresume-show.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|uid|int|<i class="fa fa-check"></i>|当前登录用户ID|
+|id|int||简历的id
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+		data['0']:{
+			photo_img: "图片地址"
+			id: "简历id"
+			uid: "用户id"
+			sex_cn: "性别"
+			birthdate: "生日"
+			telephone: "手机"
+			residence_cn: "当前住址"
+			wage_cn: "期望薪资"
+			sta: "求职状态"默认值1，求职中
+			intention_jobs: "职位名"
+			district_cn: "工作地点"
+			nature_cn: "工作性质"
+			}
+		data['1']:{	
+			教育经历:
+			id: 教育经历的唯一表示
+			startyear: "开始年份"
+			startmonth: "开始月份"
+			endyear: "结束年份"
+			endmonth: "结束月份"
+			school: "学校名称"
+			speciality: "专业"
+			education_cn: "学历"
+			}
+		data['2']:{	
+			工作经历:
+			id:唯一表示
+			startyear: "开始年份"
+			startmonth: "开始月份"
+			endyear: "结束年份"
+			endmonth: "结束月份"		
+			jobs: "所从事的职位名字"
+			achievements: "工作描述"
+			companyname: "公司名字"
+			}
+		data['3']:{
+			培训经历:
+			id:唯一表示
+			startyear: "开始年份"
+			startmonth: "开始月份"
+			endyear: "结束年份"
+			endmonth: "结束月份"		
+			agency: "培训机构名字"
+			course: "培训课程"
+			description: "描述"
+			}
+		}
+}
+```
+### 我的简历——个人简历基本信息获取(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/resume_base_info.php`
+> eg.     http://www.1dagong.com/interface/resume_base_info.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|int||简历的id
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+				data['0']:{
+					photo_img: "图片地址"
+					fullname： "姓名"
+					uid: "用户id"
+					sex_cn: "性别"
+					birthdate: "生日"
+					telephone: "手机"
+					residence_cn: "当前住址"
+					intention_jobs: "职位名"
+					district_cn: "工作地点"
+					nature_cn: "工作性质"
+					title: "简历名称"
+					}
+		｝	
+``` 		
+### 我的简历——个人简历基本信息修改(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/resume_baseinfo_mod.php`
+> eg.     http://www.1dagong.com/interface/resume_baseinfo_mod.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|int||简历的id
+|photo_img|string||图片的名称，基本信息获取接口中返回的值，没有则为空
+|fullname|string||姓名
+|title|string||简历名称
+|sex|int|0/1|性别
+|sex_cn|string||性别
+|birthdate|string||生日
+|residence_cn|string||当前住址
+|education_cn|string||学历
+|experience_cn|string||工作经验
+|telephone|string||电话
+|email|string||邮箱
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+				data['0']:{
+					photo_img: "图片地址"
+					fullname： "姓名"
+					uid: "用户id"
+					sex_cn: "性别"
+					birthdate: "生日"
+					telephone: "手机"
+					residence_cn: "当前住址"
+					intention_jobs: "职位名"
+					district_cn: "工作地点"
+					nature_cn: "工作性质"
+					title: "简历名称"
+					}
+		｝	
+``` 		
+### 我的简历——编辑简历——简历标题(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/myresume-edit.php`
+> eg.     http://www.1dagong.com/interface/myresume-edit.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|int|<i class="fa fa-check"></i>|简历id|
+|operate_code|string||操作码，为"title"
+|title|string||标题内容
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+		operate_code: "操作码"
+		}
+}
+```
+### 我的简历——编辑简历——个人信息(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/myresume-edit.php`
+> eg.     http://www.1dagong.com/interface/myresume-edit.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|int|<i class="fa fa-check"></i>|简历id|
+|operate_code|string||操作码，为"person_info"
+|sex|int|0/1|性别
+|sex_cn|string|男/女|性别
+|birthdate|int|1990|生日
+|telephone|string||手机号码
+|residence|int|地区编码|目前居住地
+|residence_cn|string|汉字|目前居住地
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+		operate_code: "操作码"
+		}
+}
+```
+### 我的简历——编辑简历——求职意向(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/myresume-edit.php`
+> eg.     http://www.1dagong.com/interface/myresume-edit.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|int|<i class="fa fa-check"></i>|简历id|
+|operate_code|string||操作码，为"work_intention"
+|intention_jobs|string||期望职位
+|sexwage_cncn|string||期望薪资
+|district_cn|string||工作地点
+|nature_cn|string||工作性质
+|c_id|string||行业ID，以 , 分割
+|c_name|string||行业名称，以 , 分割
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+		operate_code: "操作码"
+		}
+}
+```
+### 我的简历——编辑简历——自我评价(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/myresume-edit.php`
+> eg.     http://www.1dagong.com/interface/myresume-edit.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|int|<i class="fa fa-check"></i>|简历id|
+|operate_code|string||操作码，为"pingjia"
+|specialty|string||自我评价
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+		operate_code: "操作码"
+		}
+}
+```
+### 我的简历——编辑简历——教育经历(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/myresume-edit.php`
+> eg.     http://www.1dagong.com/interface/myresume-edit.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|int|<i class="fa fa-check"></i>|简历id|
+|operate_code|string||操作码，为"education"
+|startyear|int||开始年份
+|startmonth|int||开始月份
+|endyear|int||毕业年份
+|endmonth|int||毕业月份
+|school|string||毕业学校
+|speciality|string||专业名称
+|education_cn|string||学历
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+		operate_code: "操作码"
+		}
+}
+```
+### 我的简历——编辑简历——培训经历(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/myresume-edit.php`
+> eg.     http://www.1dagong.com/interface/myresume-edit.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|int|<i class="fa fa-check"></i>|简历id|
+|operate_code|string||操作码，为"training"
+|startyear|int||开始年份
+|startmonth|int||开始月份
+|endyear|int||毕业年份
+|endmonth|int||毕业月份
+|agency|string||机构名称
+|course|string||培训课程
+|description|string||培训内容描述
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+		operate_code: "操作码"
+		}
+}
+```
+### 我的简历——编辑简历——工作经历(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/myresume-edit.php`
+> eg.     http://www.1dagong.com/interface/myresume-edit.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|int|<i class="fa fa-check"></i>|简历id|
+|operate_code|string||操作码，为"work"
+|startyear|int||开始年份
+|startmonth|int||开始月份
+|endyear|int||工作结束年份
+|endmonth|int||工作结束月份
+|companyname|string||公司名称
+|jobs|string||职位名称
+|achievements|string||职责描述
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+		operate_code: "操作码"
+		}
+}
+```
+### 我的简历——教育经历——添加(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/resume_education_add.php`
+> eg.     http://www.1dagong.com/interface/resume_education_add.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|pid|int|<i class="fa fa-check"></i>|简历id 3051|
+|uid|int||会员ID 71410
+|startyear|int||开始年份
+|startmonth|int||开始月份
+|endyear|int||毕业年份
+|endmonth|int||毕业月份
+|school|string||毕业学校
+|speciality|string||专业名称
+|education_cn|string||学历
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+		operate_code: "操作码"
+		}
+}
+```
+### 我的简历——工作经历——添加(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/resume_work_add.php`
+> eg.     http://www.1dagong.com/interface/resume_work_add.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|pid|int|<i class="fa fa-check"></i>|简历id 3051|
+|uid|int||会员ID 71410
+|startyear|int||开始年份
+|startmonth|int||开始月份
+|endyear|int||毕业年份
+|endmonth|int||毕业月份
+|companyname|string||公司名称
+|jobs|string||职位名称
+|achievements|string||工作职责
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+		operate_code: "操作码"
+		}
+}
+```
+### 我的简历——培训经历——添加(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/resume_training_add.php`
+> eg.     http://www.1dagong.com/interface/resume_training_add.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|pid|int|<i class="fa fa-check"></i>|简历id 3051|
+|uid|int||会员ID 71410
+|startyear|int||开始年份
+|startmonth|int||开始月份
+|endyear|int||毕业年份
+|endmonth|int||毕业月份
+|agency|string||培训机构名称
+|course|string||培训内容
+|description|string||描述
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+		operate_code: "操作码"
+		}
+}
+```
+### 我的简历——教育经历——删除(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/resume_edu_del.php`
+> eg.     http://www.1dagong.com/interface/resume_edu_del.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|string|<i class="fa fa-check"></i>|待删除的教育经历id 以逗号分隔|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+		
+		}
+}
+```
+### 我的简历——工作经历——删除(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/resume_work_del.php`
+> eg.     http://www.1dagong.com/interface/resume_work_del.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|string|<i class="fa fa-check"></i>|待删除的工作经历id 以逗号分隔|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+		
+		}
+}
+```
+### 我的简历——培训经历——删除(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/resume_training_del.php`
+> eg.     http://www.1dagong.com/interface/resume_training_del.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|string|<i class="fa fa-check"></i>|待删除的培训经历id 以逗号分隔|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+		
+		}
+}
+```
+### 返回我的简历——期望职位——信息(完成FMF)
+**接口地址** 
+`GET`   `/interface/person/personal_intension_info.php`
+> eg.     http://www.1dagong.com/interface/person/personal_intension_info.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|userid|int||当前用户id（71410）
+|resumeid|int||简历id（3574）
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+		"wage": "58",
+        "wage_cn": "2000~3000元/月",
+        "nature": "63",
+        "nature_cn": "兼职",
+        "district": "5",
+        "district_cn": "河北省/石家庄市",
+        "trade": "1",
+        "trade_cn": "计算机软件/硬件",
+        "intention_jobs": "普工/技工",
+        "specialty": "",
+        "jobcategory": "1065.1067.0"
+		}
+}
+```
+### 返回我的简历——个人评价——信息(完成 FMF)
+**接口地址** 
+`GET`   `/interface/person/personal_pingjia_info.php`
+> eg.     http://www.1dagong.com/interface/person/personal_pingjia_info.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|userid|int||当前用户id（71410）
+|resumeid|int||简历id（3574）
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+		返回自我评价信息
+		}
+}
+```
+## 搜索 完成（ZWL）
+**接口地址** 
+`GET` `WEISITE/interface/search.php`
+> eg.     http://www.1dagong.com/interface/search.php
+**请求参数**  
+参数|数据类型|必填|参数说明
+---|-------|----|-----
+|androidkey|varchar||接口验证码|
+|operate_code|||操作ID，1代表公司，2代表职位|
+|key|string||搜索关键字
+|subsite_id|id||分站ID
+|page|int|<i class="fa fa-check"></i>|当前页码，默认为1|
+|page_size|int||页面显示的条数，默认为10
+|district_cn|string||地区条件，默认为无（合肥市）
+|wage|int||工资条件，默认为无（55）
+|subclass|int||职位条件参数，为职位分类中给的ID
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+0||搜索的职位或公司不存在
+
+**响应结果**
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+			id: "简历id"
+			uid: "公司ID"
+			jobs_name: "职位名称"
+			companyname: "公司名称"
+			wage_cn: "薪资"
+			refreshtime: "职位刷新时间"
+			district_cn: "工作地点"
+		}
+}
+```
+### 搜索——公司 完成（ZWL）
+**接口地址** 
+`GET` `WEISITE/interface/search_company.php`
+> eg.     http://www.1dagong.com/interface/search_company.php
+**请求参数**  
+参数|数据类型|必填|参数说明
+---|-------|----|-----
+|androidkey|varchar||接口验证码|
+|key|string||搜索关键字
+|page|int|<i class="fa fa-check"></i>|当前页码，默认为1|
+|page_size|int||页面显示的条数，默认为10
+|district_cn|string||地区条件，默认为无（合肥市）
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+0||搜索的职位或公司不存在
+
+**响应结果**
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+			id: "id"
+			uid: "公司ID"
+			companyname: "公司名称"
+			scale_cn: "公司规模"
+			trade_cn: "行业"
+			district_cn: "工作地点"
+			refreshtime: "公司刷新时间"
+		}
+}
+```
+### 搜索——热门搜索关键词(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/search_hotword.php`
+> eg.     http://www.1dagong.com/interface/search_hotword.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|num|int|<i class="fa fa-check"></i>|显示关键词的个数|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+0||参数错误或关键词不存在
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+		: "热门关键词"
+		}
+}
+```
+## 招聘会模块
+###招聘会——招聘会预定企业名单（完成ZWL）
+**接口地址** 
+`GET` `WEISITE/interface/company_jobfair_list.php`
+> eg.     http://www.1dagong.com/interface/company_jobfair_list.php
+**请求参数**  
+参数|数据类型|必填|参数说明
+---|-------|----|-----
+|androidkey|varchar||接口验证码|
+|id|[`lordJson`](#lordjson)||招聘会ID|
+|page|int||当前页码，从1开始
+|page_size|int||每页显示条数，默认为10
+**响应结果**
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+		zid: "招聘会ID"
+		title: "企业名称"
+		number: "展位号码"
+		}
+}
+```
+### 招聘会------招聘会列表(完成 FMF)
+**接口地址** 
+`GET`   `/interface/jobfair_list.php`
+> eg.     http://www.1dagong.com/interface/jobfair_list.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|areaId|int||地区条件（1）
+|subsite_id|int||分站id（1）
+|status|int||活动结束状态（1,表示活动结束）
+|page|int||当前页数（默认是1）
+|pagesize|int||一页显示几条（默认是10）
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1|成功|返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		 {
+            "id": "1123",
+            "title": "2015年8月15日（星期六）大型综合招聘会",
+            "address": "合肥市明珠广场寅特尼人才市场",
+            "phone": "0551-62521321",
+            "holddates": "2015-08-15",
+            "predetermined_status": "1",
+            "predetermined_web": "1",
+            "predetermined_start": "2015-07-21",
+            "predetermined_tel": "1",
+            "predetermined_end": "2015-08-14",
+            "hour": "15",
+            "subsite_id": "1",
+            "yiyuding": "80",
+            "weiyuding": "5",
+            "holddates_week": "星期六",
+            "predetermined_ok": 0
+        }.....
+}
+```
+### 招聘会------招聘会详情(完成 FMF)
+**接口地址** 
+`GET`   `/interface/jobfair_show.php`
+> eg.     http://www.1dagong.com/interface/jobfair_show.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|int||招聘会id（1）
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0|id没有值|没有找到该记录
+1|成功|返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		 {
+	        "id": "1123",
+	        "subsite_id": "1",
+	        "display": "1",
+	        "predetermined_status": "1",
+	        "predetermined_web": "1",
+	        "predetermined_tel": "1",
+	        "predetermined_point": "200",
+	        "title": "2015年8月15日（星期六）大型综合招聘会",
+	        "color": "#f00",
+	        "weight": "1",
+	        "industry": "综合",
+	        "introduction": "",
+	        "address": "合肥市明珠广场寅特尼人才市场",
+	        "contact": "梁丽",
+	        "phone": "0551-62521321",
+	        "bus": "30，33，901，126，148，226等到明珠广场站下车",
+	        "holddates": "2015-08-15",
+	        "predetermined_start": "2015-07-21",
+	        "predetermined_end": "2015-08-14",
+	        "hour": "15",
+	        "number": "一层62个，二层22个",
+	        "addtime": "23小时前",
+	        "order": "48",
+	        "click": "1",
+	        "display_time": "2015-07-21",
+	        "num_personyuyue": "0",
+	        "yiyuding": "80",
+	        "weiyuding": "5"
+        }
+}
+```
+## 全职工作——首页(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/jobs_index.php`
+> eg.     http://www.1dagong.com/interface/jobs_index.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|page|int|<i class="fa fa-check"></i>|当前页码，默认为1|
+|page_size|int||页面显示的条数，默认为10
+|district_cn|string||地区条件，默认为无（合肥市）
+|wage|int||工资条件，默认为无（55）
+|subclass|int||职位条件参数，为职位分类接口中返回的ID
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功，返回的数据按职位刷新时间降序排序
+0||参数错误
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+			id: "职位id"
+			uid: "公司ID"
+			jobs_name: "职位名称"
+			companyname: "公司名称"
+			wage_cn: "薪资"
+			refreshtime: "职位刷新时间"
+			district_cn: "工作地点"
+		}
+}
+```
+### 全职工作——收入下拉选项(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/jobs_wage.php`
+> eg.     http://www.1dagong.com/interface/jobs_wage.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功，返回的数据按职位刷新时间降序排序
+0||参数错误
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+			c_id: "收入ID"
+			c_name: "收入的值"
+		}
+}
+```
+### 全职工作——职位详情——职位信息(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/quanzhi_detail.php`
+> eg.     http://www.1dagong.com/interface/quanzhi_detail.php`
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|int||职位ID
+|uid|int||会员ID
+
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功，返回的数据按职位刷新时间降序排序
+0||参数错误
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+			id: "职位ID"
+			uid: "公司ID"
+			companyname: "公司名称"
+			category_cn: "职位类别"
+			district_cn: "工作地区"
+			jobs_name: "职位名称"
+			wage_cn: "工资"
+			click: "浏览次数"
+			amount: "招聘人数"
+			education_cn: "学历要求"
+			age: "年龄要求"
+			experience_cn: "工作经验要求"
+			contents: "职位描述"
+			refreshtime: "刷新时间"
+			shoucang_status: "是否已收藏,1为已收藏"
+		}
+}
+```
+### 全职工作——职位详情——公司信息(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/quanzhi_detail_company.php`
+> eg.     http://www.1dagong.com/interface/quanzhi_detail_company.php`
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|int||公司ID
+|page|int||当前页码
+|page_size|int||当前页面显示条数
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功，返回的数据按职位刷新时间降序排序
+0||参数错误
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+			id: "职位ID"
+			jobs_name: "职位名称"
+			wage_cn: "工资"
+			uid: "公司"
+			companyname: "公司名称"
+			scale_cn: "公司规模"
+			nature_cn: "公司性质"
+			trade_cn: "领域"
+			district_cn: "地址"
+			contents: "公司描述"
+
+		}
+	data2:职位列表
+		{
+			id: "职位ID"
+			jobs_name: "职位名称"
+			wage_cn: "工资"
+			uid: "公司"
+
+		}
+}
+```
+### 全职工作——投递简历(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/quanzhi_jobs_apply.php`
+> eg.     http://www.1dagong.com/interface/quanzhi_jobs_apply.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|jobs_id|int|<i class="fa fa-check"></i>|职位ID|
+|resumeid|int||简历ID
+|person_uid|int||会员ID
+|id|string||zhiwei ID
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+2||职位重复申请
+1||申请成功
+0||参数错误
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+			
+		}
+}
+```
+### 全职工作——收藏职位(完成 FMF)
+**接口地址** 
+`GET`   `/interface/person/personal_apply_favorite.php`
+> eg.     http://www.1dagong.com/interface/person/personal_apply_favorite.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|userid|int||当前用户ID
+|jobsid|int|<i class="fa fa-check"></i>|职位ID|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0|userid没有值|没有找到该用户
+-1|已经收藏|收藏失败，收藏夹中已经存在此职位
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+			did:167
+		}
+}
+```
+## 兼职工作——首页(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/jianzhi_index.php`
+> eg.     http://www.1dagong.com/interface/jianzhi_index.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|district_cn|string||地区条件（合肥市）
+|wage|int||工资条件（55）
+|subclass|int||职位条件参数，为职位分类接口中返回的ID
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功，返回的数据按职位刷新时间降序排序
+0||参数错误
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+			id: "职位ID"
+			uid: "公司ID"
+			jobs_name: "职位名称"
+			wage_cn: "工资"
+			district_cn: "工作地点"
+			refreshtime: "刷新时间"
+		}
+}
+```
+### 兼职工作——职位详情——职位信息(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/jianzhi_detail.php`
+> eg.     http://www.1dagong.com/interface/jianzhi_detail.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|int||职位ID
+|uid|int||会员ID
+
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功，返回的数据按职位刷新时间降序排序
+0||参数错误
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+			id: "职位ID"
+			uid: "公司ID"
+			jobs_name: "职位名称"
+			wage_cn: "工资"
+			click: "浏览次数"
+			amount: "招聘人数"
+			district_cn: "工作地区"
+			category_cn: "职位分类名称"
+			education_cn: "学历要求"
+			age: "年龄要求"
+			experience_cn: "工作经验要求"
+			contents: "职位描述"
+			refreshtime: "刷新时间"
+			shoucang_status: "是否已收藏,1为已收藏"
+		}
+}
+```
+### 兼职工作——职位详情——公司信息(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/jianzhi_detail_company.php`
+> eg.     http://www.1dagong.com/interface/jianzhi_detail_company.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|int||公司ID
+|page|int||当前页码
+|page_size|int||当前页面显示条数
+
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功，返回的数据按职位刷新时间降序排序
+0||参数错误
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+			id: "职位ID"
+			jobs_name: "职位名称"
+			wage_cn: "工资"
+			uid: "公司"
+			companyname: "公司名称"
+			scale_cn: "公司规模"
+			nature_cn: "公司性质"
+			trade_cn: "领域"
+			district_cn: "地址"
+			contents: "公司描述"
+
+		}
+	data2:职位列表
+		{
+			id: "职位ID"
+			jobs_name: "职位名称"
+			wage_cn: "工资"
+			uid: "公司"
+
+		}
+}
+```
+### 兼职工作——投递简历——选择简历(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/myresume-list.php`
+> eg.     http://www.1dagong.com/interface/myresume-list.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|uid|int|<i class="fa fa-check"></i>|当前登录用户ID|
+|page_size|int||每页显示的条数,默认为10|
+|operate_code|string||操作码，为"resume"
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+			id: "简历id"
+			title: "简历标题"
+			uid: "会员ID"
+			intention_jobs: "职位名"
+			wage_cn: "期望工资"
+			click: "浏览次数"
+			display: "是否公开"
+		}
+}
+```
+### 全职/兼职工作——投递简历——电话(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/jianzhi_getphone.php`
+> eg.     http://www.1dagong.com/interface/jianzhi_getphone.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|uid|int|<i class="fa fa-check"></i>|公司ID|
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+0||参数错误或者公司不公开电话
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+			uid: "公司id"
+			telephone: "公司电话"
+		}
+}
+```
+### 兼职工作——投递简历(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/jianzhi_jobs_apply.php`
+> eg.     http://www.1dagong.com/interface/jianzhi_jobs_apply.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|resumeid|int||简历ID
+|person_uid|int||会员ID
+|id|string||职位 ID，以，隔开
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||申请成功
+0||参数错误
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+			
+		}
+}
+```
+## 行业名企(完成 FMF)
+###行业名企职位列表 (完成 FMF)
+**接口地址** 
+`GET`   `/interface/hymq_jobs_list.php`
+> eg.     http://www.1dagong.com/interface/hymq_jobs_list.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|district_cn|string||地区条件（合肥市）
+|wage|int||工资条件（1936）
+|category_cn|string||职位类别（通信/电子/电器/半导体）
+|category|int||职位类别数字（247）
+|subclass|int||职位分类id（0）
+
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1|成功|返回数据成功，返回的数据按职位刷新时间降序排序
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+			id: "职位ID"
+			companyname: "公司名称"
+			wage_cn: "工资"
+			logo: "logo图片链接地址"
+			bmrenshu: "报名人数"
+			addtime: "发布时间"
+			district_cn: "工作地点"
+			refreshtime: "刷新时间"
+			category_cn: "职位类别"
+			tag:{
+					0
+					"147"
+					专车接送
+					1
+					"144"
+					有提成
+				}
+		}
+}
+```
+###行业名企职位详情 (完成 FMF)
+**接口地址** 
+`GET`   `/interface/hymq_jobs_show.php`
+> eg.     http://www.1dagong.com/interface/hymq_jobs_show.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|int||职位的id
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1|返回数据成功|返回数据成功
+0|id没有值|没有找到该记录
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+        "id": "23",
+        "companyname": "华宝通讯(南京)有限公司",
+        "tag": [
+            [
+                "142",
+                "包食宿"
+            ],
+            [
+                "138",
+                "加班费"
+            ],
+            [
+                "134",
+                "环境好"
+            ],
+            [
+                "152",
+                "压力小"
+            ]
+        ],
+        "category_cn": "其他",
+        "wage_cn": "2000-3000元",
+        "zprenshu": "127",
+        "age_cn": "18-25岁",
+        "sex_cn": "不限",
+        "education_cn": "初中",
+        "experience_cn": "1年以下",
+        "logo": "http://www.1dagong.com/data/hymq_img/2015/06/01/1433144177993.jpg",
+        "addtime": "2015-06-01",
+        "refreshtime": "2015-06-01",
+        "bmrenshu": "100",
+        "contents": "要求1.年龄:须年满16周岁以上，裸眼视力0.8以上;2.身高:男1.65m以上,女1.50m以上；3.学历:初中/中专/职高/技校毕业及以上学历;4.具备条件:身体健康、无法律规定之不适合工作的传染性疾病、能吃苦耐劳、作风正派、手指灵巧、反应灵敏、抗压力强报道资料：1.有效二代身份证原件及身份证复印件4份(必备资料);2.近期免冠1寸照片4张，水笔、笔记本，第一个月个人零用金&入职体检费;3.本地户籍人员需带《就业证》；外地户籍女性，需携带《外来人口婚育证明》;(注:以上证件原件由本人携带,经招募人员验证后当场返还给本人)收入底薪1630元/月,每月餐补200元.工龄奖入职满三个月50元/月,满六个月100元/月,满九个月150元/月,满一年200元/月封顶.技能评鉴津贴平均约125元/月.月综合工作3000元/月左右。夜班津贴：员工上夜班时加发津贴5元/天加班工资：平时13.3元/小时；周六、日17.8元/小时.国定假日26.7元/小时工作情况工作时间:两班倒，一个月一倒班；8:00--19:40&20:00--07:40（工作2小时休息10分钟，吃饭时间1小时）工作环境:80%为坐立作业；20%站立作业。恒温空调车间.待遇情况完善的教育体系，定期开展各类免费培训课程，并与西安交通大学合作，开设有大专、本科等学历班次，供员工在职进修。公司免费提供7人间集体宿舍，并设有洗浴室、洗衣间，热水供应；公共区配置电话、餐厅、超市、网吧、活动室；宿舍内配置挂式空调、橱柜等设施，为丰富员工的业余生活及身心照顾提供了良好的保障。定期举办春游活动，运动会、文艺晚会等大型文娱活动。年终举办忘年会，提供奖金及高价礼品等摸彩奖品,并补助活动费用。每年年底依公司营运绩效发放年终奖金。吃住情况加班餐费：公司为员工免费提供5元/餐的加班餐，超出部份由员工承担，同时也提供其他餐标的餐饮供员工自由选择住宿条件：有公共卫浴设施、空调、免费热水供应，水电费超标部分当月薪资扣除；",
+        "qq1": "2967555605",
+        "qq2": "1905131809"
+    }
+}
+```
+###行业名企公司详情 (完成 FMF)
+**接口地址** 
+`GET`   `/interface/hymq_show.php`
+> eg.     http://www.1dagong.com/interface/hymq_show.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|int||职位的id
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1|返回数据成功|返回数据成功
+0|id没有值|没有找到该记录
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+			id: "职位ID"
+			companyname: "公司名称"
+			nature_cn: "企业性质"
+			trade_cn: "领域"
+			scale_cn: "规模"
+			company_desc: "公司简介"
+			address:"公司地址"
+		}
+		....
+}
+```
+###申请行业名企(完成 FMF)
+**接口地址** 
+`GET`   `/interface/person/personal_apply_hymq.php`
+> eg.     http://www.1dagong.com/interface/person/personal_apply_hymq.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|userid|int||当前用户id
+|resumeID|int||简历的ID
+|jobsid|int||职位的id
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1|返回数据成功|返回数据成功
+0|userid没有值|没有找到用户
+2|职位的jobsid不对|职位丢失
+3|resumeID不对|简历丢失
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+			userid: "用户id"
+			resumeID: "简历id"
+			jobsid: "职位id"
+		}
+		....
+}
+```
+###行业名企-------职位类别---------一级分类(完成 FMF)
+**接口地址** 
+`GET`   `/interface/hymq_first_category.php`
+> eg.     http://www.1dagong.com/interface/hymq_first_category.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1|返回数据成功|返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		0{
+            "id": "30",
+            "categoryname": "销售"
+        },
+        1{
+            "id": "42",
+            "categoryname": "经营管理"
+        },
+		....
+}
+```
+###行业名企-------职位类别---------二级分类(完成 FMF)
+**接口地址** 
+`GET`   `/interface/hymq_second_category.php`
+> eg.     http://www.1dagong.com/interface/hymq_second_category.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|parentid|int||分类顶级id
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1|返回数据成功|返回数据成功，以(parentid=30为例)
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+            "id": "41",
+            "categoryname": "其他销售"
+        },
+        {
+            "id": "40",
+            "categoryname": "业务拓展(BD)经理"
+        },
+        {
+            "id": "39",
+            "categoryname": "商务经理/商务主管"
+        },
+        {
+            "id": "38",
+            "categoryname": "售前支持工程师"
+        },
+		....
+}
+```
+###行业名企-------薪资类别(完成 FMF)
+**接口地址** 
+`GET`   `/interface/hymq_wage.php`
+> eg.     http://www.1dagong.com/interface/hymq_wage.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1|返回数据成功|返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		 0{
+            "wage": "1933",
+            "wage_cn": "1000元以下"
+        },
+        1{
+            "wage": "1934",
+            "wage_cn": "1000-3000元"
+        },
+		....
+}
+```
+## 职场资讯(完成 FMF)
+###职场资讯-------------一级分类 (完成 FMF)
+**接口地址** 
+`GET`   `/interface/news_category.php`
+> eg.     http://www.1dagong.com/interface/news_category.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1|成功|返回数据成功，返回的数据按职位刷新时间降序排序
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		 {
+            "id": "90",
+            "reid": "0",
+            "topid": "0",
+            "typename": "职业测评",
+            "type_id": "90"
+        },
+        {
+            "id": "89",
+            "reid": "0",
+            "topid": "0",
+            "typename": "工作总结",
+            "type_id": "89"
+        }.......
+}
+```
+###职场资讯-------------二级分类 (完成 FMF)
+**接口地址** 
+`GET`   `/interface/news_category_second.php`
+> eg.     http://www.1dagong.com/interface/news_category_second.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|typeid|int||分类顶级id
+
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1|成功|返回数据成功，返回的数据按职位刷新时间降序排序,没有二级分类就返回一级分类下的新闻列表
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		 {
+            "id": "83",
+            "reid": "2",
+            "topid": "0",
+            "typename": "简历范文"
+        },
+        {
+            "id": "73",
+            "reid": "2",
+            "topid": "0",
+            "typename": "英文简历"
+        }.....
+}
+```
+###职场资讯列表 (完成 FMF)
+**接口地址** 
+`GET`   `/interface/news_list.php`
+> eg.     http://www.1dagong.com/interface/news_list.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|typeid|int||职位分类id（6）
+|page|int||当前页数（默认是1）
+|pagesize|int||一页显示几条（默认是10）
+
+
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1|成功|返回数据成功，返回的数据按职位刷新时间降序排序
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		 {
+            "id": "79030",
+            "typeid": "6",
+            "title": "什么福利最受员工欢迎？",
+            "description": "员工福利是企业体系的重要组成部分，它直接影响到员工的生活质量和对企业雇主的满意度。 近日，北京外企人力",
+            "pubdate": "2015-08-04",
+            "senddate": "2015-07-27",
+            "click": "0",
+            "litpic": ""
+        }....
+}
+```
+###职场资讯详情 (完成 FMF)
+**接口地址** 
+`GET`   `/interface/news_show.php`
+> eg.     http://www.1dagong.com/interface/news_show.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|int||职场资讯id（6）
+
+
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0|id没有值|信息不存在
+1|成功|返回数据成功，返回的数据按新闻发布时间降序排序
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+        "title": "职场新手：修炼八大竞争力",
+        "description": "每个人都面临严酷的职场竞争力大考验，企业在员工淘汰上不再留情，新人的阵亡率不断攀高，作为一个职场新人你该怎么做? 简单来说，一个人没有专长很难成功，但除了专业技能之外，成功还需要很多配合条件，这些条件就是你的竞争力。 不同的生涯阶段，需要不同",
+        "typeid": "13",
+        "pubdate": "2013-10-25",
+        "senddate": "2013-07-04",
+        "writer": "admin",
+        "typename": "求职技巧"
+    }
+}
+```
+###职场资讯详情页-------------返回html页面 (完成 FMF)
+**接口地址** 
+`GET`   `/interface/news_display.php`
+> eg.     http://www.1dagong.com/interface/news_display.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|int||职场资讯id（6）
+
+
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+0|id没有值|信息不存在！
+1|成功|返回html页面成功，返回的数据按照新闻发布时间降序排序
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+        "title": "职场新手：修炼八大竞争力",
+        "description": "每个人都面临严酷的职场竞争力大考验，企业在员工淘汰上不再留情，新人的阵亡率不断攀高，作为一个职场新人你该怎么做? 简单来说，一个人没有专长很难成功，但除了专业技能之外，成功还需要很多配合条件，这些条件就是你的竞争力。 不同的生涯阶段，需要不同",
+        "typeid": "13",
+        "pubdate": "2013-10-25",
+        "senddate": "2013-07-04",
+        "writer": "admin",
+        "typename": "求职技巧"
+    }
+}
+```
+## 公司——百度地图数据(完成 ZWL)
+**接口地址** 
+`GET`   `/interface/baidu_map_company_location.php`
+> eg.     http://www.1dagong.com/interface/baidu_map_company_location.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+0||参数错误
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	data:
+		{
+			id: 
+			uid: "公司UID"
+			companyname: "公司名称"
+			nature_cn: "公司性质"
+			district_cn: "工作地点"
+			refreshtime: "刷新时间"
+			trade_cn: "所属行业"
+			district_cn: "公司地址"
+			scale_cn: "公司规模"
+			map_open: "是否开通百度地图标识,1为开通，0为没有"
+			map_x: ""
+			map_y: ""
+			map_zoom: "缩放"
+			contact: "联系人"
+			telephone: "联系电话"
+		}
+}
+```
+## app首页(完成 FMF)
+###首页---banner图片和访谈图片(完成FMF)
+**接口地址** 
+`GET`   `/interface/index_banner.php`
+> eg.     http://www.1dagong.com/interface/index_banner.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+**返回参数**  
+```javascript
+{
+	code:1, //1-表示成功 其它表示失败
+	errormsg: null,
+	banner:
+		{
+	        "id": "448",
+	        "note": "",
+	        "title": "",
+	        "img_path": "http://www.1dagong.com/data/comads/2015/09/02/1441162448427.png",
+	        "addtime": "6小时前",
+	        "show_order": "4"
+		}....
+	interview:
+	{
+		 "id": "452",
+        "note": "专访佳通轮胎总经理助理宋敬先生",
+        "img_path": "http://www.1dagong.com/data/comads/2015/09/01/1441089150680.png",
+        "addtime": "6小时前",
+        "show_order": "50",
+        "title": "专访佳通轮胎总经理助理宋敬先生"
+	}
+}
+```
+###首页---banner图片和访谈图片-----详情(完成FMF)
+**接口地址** 
+`GET`   `/interface/index_banner_display.php`
+> eg.     http://www.1dagong.com/interface/index_banner_display.php
+
+**请求参数**  
+|参数|数据类型|必填|参数说明|   
+|-|-|-|-|
+|androidkey|string||接口验证码
+|id|int||点击图片id(452)
+**运行时异常**
+code| 错误原因  |返回消息
+-----|---------|----
+1||返回数据成功
+**返回参数**  
+```javascript
+{
+	返回html页面内容
+}
+```
