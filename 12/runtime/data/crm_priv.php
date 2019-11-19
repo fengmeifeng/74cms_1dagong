@@ -1,0 +1,1 @@
+<?php {"pri":"priv","0":"priv_name"}yes

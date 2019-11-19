@@ -1,0 +1,226 @@
+{#include file="sys/admin_header.htm"#}
+
+<script src="{#$QISHI.site_dir#}data/cache_classify.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+ showmenulayer("#district_cn","#menu2","#district","#sdistrict","",QS_city);
+
+$("#FormData").validate({
+ //debug: true,
+// onsubmit:false,
+//onfocusout :true,
+   rules:{
+   uname:{
+    required: true,
+  minlength:2,
+    maxlength:30
+   },
+   detailed:{
+    required: true,
+	minlength:10,
+    maxlength:300
+   },
+   age: {
+    required: true,
+  range:[15,80]
+   },
+   category: "required",
+   experience: "required",
+   tel:{
+   required: true,
+   digits:true, 
+	minlength:7
+   },
+
+   pwd:{
+   minlength:6
+   }
+   
+	},
+    messages: {
+    uname: {
+    required: "请输入姓名",
+    minlength: jQuery.format("姓名不能小于{0}个字符"),
+  maxlength: jQuery.format("姓名不能大于{0}个字符")
+   },
+   detailed: {
+    required: "请输入个人简介",
+    minlength: jQuery.format("个人简介不能小于{0}个字符"),
+	maxlength: jQuery.format("个人简介不能大于{0}个字符")
+   },
+   age: {
+     required: "请输入年龄",
+    range: jQuery.format("请输入一个介于 {0} 和 {1} 之间的值")
+   },
+  
+category: {
+    required: "请输入工种"
+   },
+   experience: {
+    required: "请选择工作经验"
+   },
+   tel: {
+    required: "请输入联系电话",
+	digits: "联系电话必须是数字",
+    minlength: jQuery.format("电话不能<{0}位数")
+   },
+   
+    pwd: {
+	minlength: jQuery.format("密码不能小于{0}个字符")
+   }
+   
+  },
+  errorPlacement: function(error, element) {
+    if ( element.is(":radio") )
+        error.appendTo( element.parent().next().next() );
+    else if ( element.is(":checkbox") )
+        error.appendTo ( element.next());
+	else if ( element.is("textarea") )
+        error.appendTo ( $("#textareaerr"));
+    else
+        error.appendTo(element.parent());
+	}
+    });
+	
+});
+</script>
+<div class="admin_main_nr_dbox">
+<div class="pagetit">
+	<div class="ptit"> {#$pageheader#}</div>
+  {#include file="simple_resume/admin_simple_nav.htm"#}
+  <div class="clear"></div>
+</div>
+<form action="?act=simple_edit_save" method="post"   name="FormData" id="FormData" >
+<div class="toptit">修改微简历</div>
+
+  {#$inputtoken#}
+<table width="100%" border="0" cellspacing="8" cellpadding="0">
+  <tr>
+    <td width="100" align="right"><strong  style="color:#FF0000">*</strong>姓名：</td>
+    <td><input name="uname" type="text" class="input_text_200" id="uname" maxlength="20"  value="{#$show.uname#}"></td>
+  </tr>
+  <tr>
+    <td align="right"><strong  style="color:#FF0000">*</strong>年龄：</td>
+    <td><input name="age" type="text" id="age" class="input_text_200" style="width:60px;" value="{#$show.age#}" maxlength="3"> 岁</td>
+  </tr>
+  <tr>
+        <td height="23" align="right"><strong  style="color:#FF0000">*</strong>性别：</td>
+        <td>
+  <label>
+          <input name="sex" type="radio" value="1" {#if $show.sex=='1' ||  $show.sex==""#} checked="checked"{#/if#} title="男"/>
+          男</label>&nbsp;&nbsp;&nbsp;&nbsp;
+         <label> <input type="radio" name="sex" value="2" {#if $show.sex=='2' ||  $show.sex==""#} checked="checked"{#/if#} title="女"/>
+          女</label>
+  <input name="sex_cn" id="sex_cn" type="hidden" value="{#$show.sex_cn#}" />
+  </td>
+      </tr>
+  <tr>
+              <td height="23" align="right"><strong  style="color:#FF0000">*</strong>地区：</td>
+              <td>
+			  <div>
+		<input type="text" value="{#$show.district_cn#}"  readonly="readonly" name="district_cn" id="district_cn" class="input_text_200 input_text_selsect"/>
+		<input name="district" id="district" type="hidden" value="{#$show.district#}" />
+		<input name="sdistrict" id="sdistrict" type="hidden" value="{#$show.sdistrict#}" />
+		<div id="menu2" class="dmenu shadow">
+			<ul>
+			{#qishi_get_classify set="列表名:c_province,类型:QS_district,id:0"#}
+			{#foreach from=$c_province item=list#}
+			<li id="{#$list.id#}" title="{#$list.categoryname#}">{#$list.categoryname#}</li>
+			{#/foreach#}
+			</ul>
+		</div>
+		<div id="menu2_s" class="dmenu shadow" style="display:none"></div>
+		  </div>
+      </td>
+            </tr>
+          <tr>
+              <td height="23" align="right"><strong  style="color:#FF0000">*</strong>工种：</td>
+              <td><input name="category" type="text" id="category" class="input_text_200" style="width:120px;" value="{#$show.category#}">
+      </td>
+            </tr>
+<tr>
+              <td height="23" align="right"><strong  style="color:#FF0000">*</strong>工作经验：</td>
+              <td>
+        <div>
+    <select id="experience" name="experience">
+	{#qishi_get_classify set="类型:QS_experience,列表名:c_experience"#}{#foreach from=$c_experience item=list#}
+		<option value="{#$list.id#}" {#if $show.experience==$list.id#}selected{#/if#}>{#$list.categoryname#}</option>
+		 {#/foreach#}
+	</select>
+      </div>
+      </td>
+            </tr>
+
+            
+  <tr>
+    <td align="right"><strong  style="color:#FF0000">*</strong>联系电话：</td>
+    <td><input name="tel" type="text" class="input_text_200" id="tel" maxlength="25" value="{#$show.tel#}"></td>
+  </tr>
+  
+  <tr>
+    <td align="right"><strong  style="color:#FF0000">*</strong>个人简介：</td>
+    <td><textarea name="detailed" id="detailed" class="input_text_400" style="height:60px;">{#$show.detailed#}</textarea></td>
+  </tr>
+    <tr>
+    <td align="right"> </td>
+    <td>不能大于300字符
+	<span id="textareaerr"></span>
+	</td>
+  </tr>
+   <tr>
+    <td align="right">有效期截至：</td>
+    <td>
+	{#if $show.deadline=="0"#}
+	长期有效
+	{#else#}
+	{#$show.deadline|date_format:"%Y-%m-%d"#}	
+	<span class="admin_note">到期后系统将自动删除</span>
+	{#/if#}
+	</td>
+  </tr>
+  {#if $show.deadline!="0"#}
+  <tr>
+    <td align="right">延长有效期：</td>
+    <td>
+	<input name="days" type="text" class="input_text_200" id="days" style="width:100px;" maxlength="3" value="0">
+	天
+	<span class="admin_note">0为不延长</span>
+	<input name="olddeadline" type="hidden" value="{#$show.deadline#}" />
+	</td>
+  </tr>
+  {#/if#}
+   
+    {#if $QISHI.subsite=="1"#}
+	  <tr>
+        <td height="30" align="right" >添加到：</td>
+        <td colspan="3" >
+		 <label ><input name="subsite_id" type="radio" value="0" {#if $show.subsite_id=="0"#}checked="checked"{#/if#}/>全站</label>
+		&nbsp;&nbsp;&nbsp;
+		{#foreach from=$subsite item=li#}
+		<label ><input name="subsite_id" type="radio" value="{#$li.s_id#}" {#if $show.subsite_id==$li.s_id#}checked="checked"{#/if#}/>{#$li.s_districtname#}</label>
+		&nbsp;&nbsp;&nbsp;
+		{#/foreach#}
+		</td>
+      </tr>
+	  {#/if#}
+  <tr>
+    <td align="right">管理密码：</td>
+    <td><input name="pwd" type="text" class="input_text_200" id="pwd" style="width:100px;" maxlength="25">
+	<span class="admin_note">留空为不修改管理密码</span>	</td>
+  </tr>
+  <tr>
+    <td align="right">&nbsp;</td>
+    <td height="60"  >
+	<input name="id" type="hidden" value="{#$show.id#}" />
+	 <input type="submit" name="Submit3" value="提交" class="admin_submit"   />
+ <input name="submit22" type="button" class="admin_submit"    value="返回" onclick="Javascript:window.history.go(-1)"/>
+	</td>
+  </tr>
+</table>
+</form>
+
+</div>
+{#include file="sys/admin_footer.htm"#}
+</body>
+</html>

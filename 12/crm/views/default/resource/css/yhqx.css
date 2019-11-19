@@ -1,0 +1,12 @@
+.t1{
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	background: url(img/plus_root.gif);
+}
+.t2{
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	background: url(img/tree_transp.gif);
+}

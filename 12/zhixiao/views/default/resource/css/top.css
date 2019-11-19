@@ -1,0 +1,56 @@
+*{ margin: 0px; padding: 0px; }
+#topWrap {
+	height: 51px;
+	background: url(img/top-bg.jpg) repeat-x;
+}
+
+#topWrap h1 {
+	width: 500px;
+	color: #0470B5;
+	font-weight: bold;
+	font-size: 16px;
+	height: 25px;
+	line-height: 25px;
+	letter-spacing: 0.1em;
+	margin: 18px 0 0 12px;
+	float: left;
+}
+
+#topInner {
+	height: 51px;
+	float: right;
+	width: 430px;
+	background: url(img/top-side.jpg) right top no-repeat;
+}
+
+.topButton {
+	float: right;
+	background: url(img/topButton-out.gif) no-repeat;
+	margin: 10px 5px 0 0;
+	display: inline;
+}
+
+.topButton-inner {
+	float: left;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: bold;
+	color: #0A72AE;
+	padding: 0 8px;
+	line-height: 36px;
+	height: 36px;
+	background: url(img/topButton-inn.gif) top right no-repeat;
+}
+
+.topButton-inner span.logout {
+	background: url(img/logout.gif) no-repeat;
+	padding-left: 18px;
+}
+.topButton-inner span.relogin {
+	background: url(img/relogin.gif) no-repeat;
+	padding-left: 18px;
+}
+.topButton-inner span.desktop {
+	background: url(img/deskico.gif) no-repeat;
+	padding-left: 18px;
+}

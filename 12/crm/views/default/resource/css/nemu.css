@@ -1,0 +1,169 @@
+*{margin: 0px; padding: 0px;}
+
+.leftm{
+	width: 7px;
+	height: 100%;
+	background: url(img/leftbar-bg.gif);
+}
+.leftmt{
+	height: 83px;
+	width: 7px;
+	background-image: url(img/leftbar-top.gif);
+}
+.leftmd{
+	width: 7px;
+	height: 8px;
+	background: url(img/leftbar-bottom.gif);
+}
+/*---------------------*/
+.rightt{
+	height: 100px;
+	width: 6px;
+	background: url(img/rightbar-top.gif);
+}
+.rightm{
+	width: 5px;
+	height: 100%;
+	background: url(img/rightbar-bg.gif);
+}
+.rightd{
+	width: 5px;
+	height: 8px;
+	background: url(img/rightbar-bottom.gif);
+}
+/*---------------*/
+.nenu_t{
+	width: 190px;
+	height: 47px;
+	background: url(img/pannel-top.gif);
+}
+.nenu_d{
+	width: 100%;
+	height: 8px;
+	background: url(img/side-bottom-bg.gif);
+}
+
+.tb1{
+	position: absolute;
+	left: -1px;
+	top: 0px;
+}
+.tb2{
+	position: absolute;
+	left:63px;
+	top: 0px;
+}
+.tb3{
+	position: absolute;
+	left: 128px;
+	top: 0px;
+}
+
+/*---------------------------*/
+.yh_bj{
+	width: 189px;
+	height: 100%;
+}
+.obutton{
+	width: 61px;
+	height: 27px;
+	line-height: 27px;
+	color: #003B48;
+	font-size: 12px;
+	text-align: center;
+	margin: 10px 1px 0 1px;
+	float: left;
+	cursor: pointer;
+	background: url(img/obutton3.gif) no-repeat;
+}
+
+
+/**/
+.qiehuan{
+	cursor:pointer;
+	width: 10px;
+	height: 100%;
+	background: #fff;
+	position: relative;
+	top: 0px;
+	left: 0px;
+}
+.zt4{
+	width: 9px;
+	height: 100%;
+	background: url(img/table-bg.jpg) repeat-x;
+	position: absolute;
+	top: 0px;
+	left: 1px;
+}
+.zt5{
+	width: 9px;
+	height: 100%;
+	background:url(img/control-bg.gif) repeat-y;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+.anniu{
+	width: 9px;
+	height: 47px;
+	background: url(img/control-button.gif);
+	position: absolute;
+	top:45%;
+	left: 0px;
+}
+.t1{
+	width: 19px;
+	height: 20px;
+	display: inline-block;
+	background: url(img/tree_plus.gif);
+}
+.t2{
+	width: 19px;
+	height: 20px;
+	display: inline-block;
+	background: url(img/tree_minus.gif);
+}
+.t3{
+	width: 19px;
+	height: 20px;
+	display: inline-block;
+	background: url(img/tree_line.gif);
+}
+.t4{
+	width: 19px;
+	height: 20px;
+	display: inline-block;
+	background: url(img/tree_blank.gif);
+}
+.t5{
+	width: 19px;
+	height: 20px;
+	display: inline-block;
+	background: url(img/tree_minus.gif);
+}
+.t6{
+	width: 19px;
+	height: 20px;
+	display: inline-block;
+	background: url(img/tree_blankl.gif);
+}
+.t7{
+	width: 19px;
+	height: 20px;
+	display: inline-block;
+	background: url(img/tree_transp.gif);
+}
+.t8{
+	width: 19px;
+	height: 20px;
+	display: inline-block;
+	background: url(img/tree_minusl.gif);
+}
+.t9{
+	width: 19px;
+	height: 20px;
+	display: inline-block;
+	background: url(img/tree_plusl.gif);
+}
+

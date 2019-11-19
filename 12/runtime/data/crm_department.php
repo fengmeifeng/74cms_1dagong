@@ -1,0 +1,1 @@
+<?php {"pri":"dept_id","0":"dept_name","1":"partment_id","2":"tel_no","3":"dept_parent_id","4":"manager","5":"dept_func","6":"path"}yes

@@ -1,0 +1,1 @@
+<?php {"pri":"id","0":"hyhumber","1":"hyname","2":"money","3":"leftmoney","4":"caozuo","5":"newbianhao","6":"newname","7":"beizhuxinming","8":"beizhu","9":"pid","10":"path","11":"addtime"}yes

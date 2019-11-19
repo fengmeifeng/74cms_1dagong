@@ -1,0 +1,9 @@
+
+.commentbdiv {overflow-x: auto;width: 100%;word-wrap: break-word;padding-bottom: 30px;}
+.commentb {background: #ddd;line-height: 30px;margin-top: 10px;color: #444;font-size: 12px;font-family: Verdana,宋体; border: 1px solid #C0BBB4;}
+.commentb tr {background: #fff;}
+.commentb tr.tbhd {background: url(img/hd.gif) 0 -7px repeat-x;font-weight: bold;}
+.commentb tr td {white-space: nowrap;padding-left: 6px;padding-right: 6px;border: 1px solid #C0BBB4;}
+.commentb tr th {white-space: nowrap;padding-left: 6px;padding-right: 6px;}
+
+

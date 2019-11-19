@@ -1,0 +1,102 @@
+ #duihuakuangbox {
+ 	position: absolute;
+ 	top: 50px; 
+ 	left: 150px;
+ 	width: 650px;
+	height: 440px;
+ 	border:1px solid #ccc;
+ }
+
+.duihuakuang{
+	position:relative;
+}
+.tit{
+	width: 100%;
+	background: #eee;
+	border-bottom: 1px solid #ccc;
+	float: left;
+}
+.title{
+	font-family: 微软雅黑;
+	width: 611px;
+	height: 30px;
+	margin-left:8px; 
+	line-height: 30px;
+	cursor: move;
+	float: left;
+}
+.close{
+	cursor:hand;
+	width: 30px;
+	height: 30px;
+	background: url(img/9.png);
+	float: left;
+}
+.com{
+	float: left;
+}
+.user{
+	width: 200px;
+	height: 100%;
+	float: left;
+	background: #fff;
+}
+.kehuhu{
+	float: left;
+	width: 448px;
+	height: 390px;
+	overflow-y: scroll;
+	border:1px solid #ccc;
+	background: #fff;
+}
+.fy{
+	float: left;
+	width: 448px;
+	height: 17px;
+	background: #fff;
+	font-size:12px;
+	text-align: center;
+}
+
+.inputss{
+	float: left;
+	width: 200px;
+	height: 30px;
+	line-height: 30px;
+	border:1px solid #ccc;
+}
+.inputss img{
+	margin-top:2px; 
+}
+.kehu_ss{
+	width: 170px;
+}
+.dhuser{
+	float: left;
+	width: 200px;
+	height: 376px;
+	border:1px solid #ccc;
+	overflow-y: scroll; 
+}
+/*-----------*/
+.dhuser ul{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+.dhuser li{
+	display: list-item;
+	background: #EFF7FF;
+	text-align: -webkit-match-parent;
+	text-align: center;
+	height: 28px;
+	line-height: 28px;
+	border-bottom: 1px #CFDDEA solid;
+	cursor: pointer;
+}
+
+.bumeng{
+	width: 180px;
+	background:#eee;
+	
+}
