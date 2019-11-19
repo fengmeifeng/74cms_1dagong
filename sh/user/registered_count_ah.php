@@ -1,0 +1,5 @@
+<?php
+/*74cms·ÖÕ¾ÎÄ¼þ*/
+$_GET['subsite_id']=5;
+require dirname(__FILE__).'/../../user/'.basename(__FILE__);
+?>
