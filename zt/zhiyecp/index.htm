@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>职业测评</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<meta name="description" content="{#$page.description#}">
+<meta name="keywords" content="{#$page.keywords#}">
+<link href="/files/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/font-awesome.min.css" rel="stylesheet" >
+<link href="/files/css/reg.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/cep/peixun.css" rel="stylesheet" type="text/css" />
+
+<!---->
+<link href="/files/css/header.css" rel="stylesheet" type="text/css" />
+<!---->
+
+
+</head>
+<body>
+<!--头部开始-->
+<div class="header">
+    <div class="kuang">
+        <div class="logo fl">
+            <a class="fl" href="/"><img src="/files/img/logo.png" alt="" title="壹打工网" ></a>
+
+            <!--骑士上的地区切换开始zzzzzz-->
+
+
+            <!--骑士上的地区切换结束-->
+
+        </div>
+        <!--<div class="didian fl">
+            <p>合肥</p>
+            <a href="#">切换城市</a>
+        </div>-->
+
+
+
+        <div class="nav fl">
+            <ul>
+                <!--导航菜单切换的样式定位开始 By Z-->
+
+                <li><a class="yes" href="/">首页</a></li>
+                <li><a href="/zhaopin/index.html">找工作</a></li>
+                <li><a href="/jianli.html">找人才</a></li>
+                <li><a href="/hymq/">行业名企</a></li>
+                <li><a href="/jobfair/jobfair-list.php">招聘会</a></li>
+                <li><a href="/xiaoyuan/">校园招聘</a></li>
+
+
+                <!--导航菜单切换的样式定位结束 By Z-->
+            </ul>
+        </div>
+
+        <div class="top_nav">
+            <div class="login fr">
+                <ul>
+                    <li><a href="/user/login.php">登录</a></li>
+                    <li><a href="/user/user_reg.php">注册</a></li>
+                    <li class="mobile"><a href="#"><i class="fa fa-mobile"></i>手机壹打工</a>
+                        <div class="app">
+                            <i class="fa fa-sort-asc"></i>
+                            <img src="/files/img/app.jpg" alt="" title="壹打工网客户端" />
+                        </div>
+                    </li></ul></div>
+
+        </div>
+
+    </div>
+</div>
+<!--头部结束-->
+
+<!--头部结束-->
+<div class="peixun">
+    	<div class="peixun01"><img src="../../../files/img/peixun/peixun01.jpg" alt="" width="1010" height="566" /></div>
+        <div class="peixun02"><img src="../../../files/img/peixun/peixun02.jpg" alt="" width="1010" height="510" /></div>
+        <div class="peixun03">
+        	<div class="click">
+            	<div class="click_free"><a href="/user/personal/personal_service.php?act=gifts" title="" target="_blank"><!--http://www.lgser.net/index.do-->点击免费测评</a></div>
+                <div class="click_help"><a href="/zt/index.php?act=jobs_guide" title="" target="_blank">查看帮助</a></div>
+            </div>
+            <div class="get_chance">
+            	<div class="go_register"><a href="/user/user_reg.php" title="注册帐号"></a></div>
+                <div class="go_clickIn"><a href="/user/personal/personal_service.php?act=gifts" title="进入测评页面"></a></div>
+                <div class="go_help"><a href="/zt/index.php?act=jobs_guide" target="_blank" title="查看帮助"></a></div>
+            </div>
+        </div>
+</div>
+
+<!--footer开始-->
+
+<div class="footer over">
+    <div class="footer-con kuang">
+        <div class="fl">
+            <a href="#"><img src="/files/img/footer_logo.jpg" title="壹打工网" /></a>
+        </div>
+        <div class="fr appewm"><img src="/files/img/app.jpg" height="100" width="100" alt="" title="壹打工网客户端" /></div>
+        <div class="fr copy">
+            <div class="footer-nav">
+                <a href="#">友情链接</a>
+                <a href="#">用户帮助</a>
+                <a href="#">手机客户端</a>
+                <a href="#">关于我们</a>
+            </div>
+            <div class="over"></div>
+            <div class="icp">
+                &copy;2013-2015 Www.1dagong.Com &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp; 国家工业和信息化部备案号：皖ICP备13015030号-3
+            </div>
+            <div class="over"></div>
+            <div class="zuic">
+                最专业的求职招聘网站，致力打造人才网第一品牌！
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- 回到顶部组件 -->
+<!--<div class="back_to_top" id="back_to_top">
+	<div class="back" style="display:none;">
+		<div>回到顶部</div>
+	</div>
+	<div class="steer">
+		<div onclick="javascript:location.href='{#$QISHI.main_domain#}suggest'">我要建议</div>
+	</div>
+	<div class="sub">
+		<div onclick="javascript:location.href='{#$QISHI.main_domain#}subscribe'">我要订阅</div>
+	</div>
+</div>-->
+<script>
+    $(function(){
+        //回到顶部组件出现设置
+        $(window).scroll(function(){
+            if($(window).scrollTop()>200){
+                $(".back").fadeIn(400);
+            }else{
+                $(".back").fadeOut(400);
+            }
+        })
+
+        //回到顶部hover效果
+        $(".back_to_top .back, .steer, .sub").hover(function(){
+            $(this).find("div").css("display","block");
+        },function(){
+            $(this).find("div").css("display","none");
+        })
+
+        //设置滚回顶部方法
+        $(".back").click(function(){
+            $("body,html").animate({scrollTop:0}, 500);
+            return false;
+        })
+    });
+    $(function(){
+        $(".foot_list ul:odd li").css("width", 62);
+        $(".weixin_img:last").css("margin-right", 0);
+    })
+</script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?aa1b6622cda40ea74c1ac85e4b432e3a";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<!--footer结束-->
+
+</body>
+</html>

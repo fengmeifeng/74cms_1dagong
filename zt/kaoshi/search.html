@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>考试报名</title>
+<link href="/files/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/all.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/files/APP/sjqqapi.css" />
+<script type="text/javascript">
+function FileChange(Value){flag=false;document.all.uploadimage.width=10;document.all.uploadimage.height=10;document.all.uploadimage.alt="";document.all.uploadimage.src=Value;};
+</script>
+</head>
+
+<body>
+
+<!--nav end-->
+<!--S banner-->
+<div> <!---->
+
+<style>
+	.bannerbox{ width:100%; height:750px; background:url(/data/images/youcai.jpg) no-repeat center top;}
+	
+	.cel{ clear:both; overflow:hidden; float:none; padding:0px; margin:0px;}
+	.formnei{ width:990px; margin:40px auto 50px auto;}
+	.formnei h1{ font-size:30px; color:#000; font-weight:bold; letter-spacing:2px; margin:20px 0; overflow:hidden; background:#ffe400; padding:6px; border-radius:5px;}
+	.formnei h2{ color:#f00; background:#fff; padding:10px 5px; margin-bottom:10px; border-radius:5px; font-weight:bold;}
+	.baom{ margin-left:0px; font-size:16px; float:right; margin-top:15px; letter-spacing:1px; padding-right:10px;}
+	.formnei table{ width:990px;}
+	.formnei tr{ width:100%; margin-top:18px; display:block;}
+	.formnei td{ color:#000;}
+	.formnei input{ width:80%; height:32px; padding:0 4px; float:left; margin-left:20px;}
+	.formnei textarea{ width:97%; padding:4px; float:left; margin-left:20px; display:block;}
+	
+	.no1{ width:6em; text-align:right;}
+	.no2{ width:20em;}
+	.no3{ width:10em; text-align:left;}
+	.hr{min-height:5px;border-bottom:1px dotted #006699}
+	.no4{ width:50em; text-align:left;}
+	
+	.no4 .tijiao{  width:155px; height:20px; border:none;} 
+</style>
+
+
+<div class="formnei">
+	
+    <form  method="post" name="upform" action="search.php">
+    <table cellpadding="0" cellspacing="0">
+    	<tr>
+        	<td class="no1">姓 名 ：</td>
+            <td><input alt="" name="name" maxlength=4 onkeyup="value=value.replace(/[^\u4E00-\u9FA5]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\u4E00-\u9FA5]/g,''))"/></td>
+    	<tr>
+            <td class="no1" >联系电话 ：</td>
+            <td class=""><input alt="" style="width:18em" name="phone1" maxlength=11 onkeyup="value=value.replace(/[^\d]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/></td></tr>
+        
+    	<tr>
+        	<td class="no1">身份证号 ：</td>
+            <td colspan=""><input alt="" style="width:18em" name="identity_id" maxlength=18 /></td>
+        </tr>
+       
+    	<tr>
+        	<td class="no3"></td>
+            <td colspan="7" class="no4"><button class="tijiao" type="submit" value="查询" name="submit">查询</button></td>
+        </tr>
+    </table>
+    </form>
+</div>
+
+</div>
+<!--S figures-->
+
+
+<!-- foot start -->
+
+
+<!-- foot end -->
+
+
+</body>
+</html>

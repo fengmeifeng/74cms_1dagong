@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="GB2312">
+	<title>考试查询系统</title>
+	<link href="/files/bs/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="/zt/hefeizhaomu/rczm.css" rel="stylesheet" type="text/css" />
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		var hm = document.createElement("script");
+		hm.src = "//hm.baidu.com/hm.js?aa1b6622cda40ea74c1ac85e4b432e3a";
+		var s = document.getElementsByTagName("script")[0]; 
+		s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+</head>
+<body>
+	
+<!--头部文件 开始-->
+<div class="container-fluid">
+	<div class="row">
+		<div class="header col-md-12 text-center">
+			<img src="http://www.1dagong.com/zt/hefeizhaomu/images/logo.png" alt="">
+		</div>
+	</div>
+</div>
+<!--头部文件 结束-->
+	
+<!--  考试成绩显示  开始  -->
+<div class="container-fluid container-entry">
+	<div class="row-fluid">
+		<div class="col-md-3 ml38">
+			<div class="panel panel-default">
+				<div class="panel-heading"><h3 class="panel-title"><strong>考试成绩查询系统</strong></h3></div>
+				<div class="panel-body">
+					<ul class="chegnji">
+						<li>
+							<div class="col-md-6">考生姓名：</div>
+							<div class="col-md-5"><b><?php echo $res['name'];?></b></div>
+						</li>
+						<li>
+							<div class="col-md-6">职业分数：</div>
+							<div class="col-md-5"><b><?php echo $res['km1'];?></b>分</div>
+						</li>
+						<li>
+							<div class="col-md-6">综合分数：</div>
+							<div class="col-md-5"><b><?php echo $res['km2'];?></b>分</div>
+						</li>
+                        <li>
+							<div class="col-md-6">面试分数：</div>
+							<div class="col-md-5"><?php if(!empty($res['mscj'])){?><b><?php echo $res['mscj'];?></b>分<?php }else{?>暂无<?php }?></div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--  考试成绩显示   结束  -->
+	
+</body>
+</html>

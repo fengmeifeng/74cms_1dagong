@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="gb2312">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="title" content="">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<title>报名信息未通过审核</title>
+<link href="/files/bs/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="/zt/hefeizhaomu/zhaomu.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <!--头部文件 开始-->
+  <div class="container-fluid">
+  	<div class="row">
+  		<div class="header col-md-12 text-center">
+  			<img src="http://www.1dagong.com/zt/hefeizhaomu/images/logo.png" alt="">
+  		</div>
+  	</div>
+  </div>
+  <!--头部文件 结束-->
+
+<!--招募公告开始-->
+<?php if($res['status'] == 2){?>
+<div class="container-fluid container-entry">
+	<div class="row-fluid">
+        <div class="col-md-4 col-md-offset-4">
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+				<h3 class="panel-title">报名信息未通过审核</h3>
+			  </div>
+			  <div class="panel-body text-center">
+			  	<h3 style="color:#ff0000;">您的报名信息未通过审核！</h3>
+			  	<hr>
+			  	<div class="col-md-8 col-md-offset-2 text-left">
+			  		<p>审核未通过原因：</p>
+			  		
+			  		<p><?php echo $res['yuanyin'];?></p>
+			  	</div>
+			  	<div class="col-md-12">
+			  		<a href="?act=gaixinxi&id=<?php echo $res['id'];?>"><button type="button" class="btn btn-primary dayin">点击修改报名信息</button></a>
+			  		<p style="color:#999;">咨询电话：0551-62980763  62980767</p>
+			  	</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+<?php }else if($res['status'] == 0){?>
+<div class="container-fluid container-entry">
+	<div class="row-fluid">
+        <div class="col-md-4 col-md-offset-4">
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+				<h3 class="panel-title">审核状态</h3>
+			  </div>
+			  <div class="panel-body text-center">
+			  	<h3>您的报名信息还未审核！</h3>
+			  	<hr>
+			  	<div class="col-md-8 col-md-offset-2 text-left">
+			  		<p>如果想修改资料请点击下方链接：</p>
+			  		
+			  	</div>
+			  	<div class="col-md-12">
+			  		<a href="?act=gaixinxi&id=<?php echo $res['id'];?>"><button type="button" class="btn btn-primary dayin">点击修改报名信息</button></a>
+			  		<p style="color:#999;">咨询电话：0551-62980763  62980767</p>
+			  	</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+<?php }?>
+<!--招募公告结束-->
+</body>
+</html>

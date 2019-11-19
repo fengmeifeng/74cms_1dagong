@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>相约广达 浪漫七夕</title>
+<link href="/files/css/font-awesome.min.css" rel="stylesheet" >
+<link href="/files/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/all.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/header-footer.css" rel="stylesheet" type="text/css" />
+<link href="/files/css/langmanqx.css" rel="stylesheet" type="text/css" />
+<script src="/files/js/jquery.js" type='text/javascript' language="javascript"></script>
+<script language="javascript" type="text/javascript" src="http://www.qwbm.com/yw/js/2011noteswall.js"></script>
+</head>
+
+<body>
+<!--头部开始-->
+<script>
+	$(function(){
+		// 点击事件
+		$(".local_station").live("click",function(){
+			if($(".sub_station").attr('data') == "hide") {
+				$(this).blur();
+				$(this).parent().parent().before("<div class=\"menu_bg_layer\"></div>");
+				$(".menu_bg_layer").height($(document).height());
+				$(".menu_bg_layer").css({ width: $(document).width(), position: "absolute",left:"0", top:"0","z-index":"77","background-color":"#000000"});
+				$(".menu_bg_layer").css("opacity",0);
+				$(".sub_station").show();
+				$(".sub_station").attr('data',"show");
+				$(".menu_bg_layer, .station_close").click(function() {
+					$(".sub_station").hide();
+					$(".sub_station").attr('data',"hide");
+					$(".menu_bg_layer").remove();
+				});
+			} else {
+				$(".sub_station").hide();
+				$(".sub_station").attr('data',"hide");
+			}
+		});
+		//单数行变色
+		$(".local_station>p").hover(function(){
+			$(this).addClass("hover");
+		},function(){
+			$(this).removeClass("hover");
+		});
+		$(".sub_st_content li:last").css({
+			"border-bottom":"0"
+		}).find("div").css({"padding-bottom":"0"});
+	});
+//顶部部登录
+$.get("/plus/ajax_user.php", {"act":"top_loginform"},
+function (data,textStatus)
+{			
+$(".top_nav").html(data);
+}
+);
+</script>
+<!--顶部-->
+<!--<div class="user_top_nav" >
+	<div class="main">
+	    <div class="ltit"><span id="top_loginform"></span></div>	
+	    <div class="rlink link_lan">
+	    	{#include file="top-nav.htm"#}
+	    </div>	
+	    <div class="clear"></div>
+    </div>
+</div>-->
+<!--头部开始-->
+	<div class="header">
+    	<div class="kuang">
+            <div class="logo fl">
+            <a class="fl" href="/"><img src="/files/img/logo.png" alt="" title="壹打工网" ></a>
+            
+            <!--骑士上的地区切换开始zzzzzz-->
+		
+		
+				<!--骑士上的地区切换结束-->
+            
+            </div>
+            	<!--<div class="didian fl">
+                	<p>合肥</p>
+                	<a href="#">切换城市</a>
+                </div>-->
+                
+				
+
+            <div class="nav fl">
+            	<ul>
+				<!--导航菜单切换的样式定位开始 By Z-->
+				
+					<li><a class="yes" href="/">首页</a></li>
+                    <li><a href="/jobs/jobs-list2.php">找工作</a></li>
+                    <li><a href="/resume/resume-list.php">找人才</a></li>
+                    <li><a href="/hymq/">行业名企</a></li>
+                    <li><a href="/jobfair/jobfair-list.php">招聘会</a></li>
+                    <li><a href="/xiaoyuan/">校园招聘</a></li>
+				
+				
+				<!--导航菜单切换的样式定位结束 By Z-->
+                </ul>
+            </div>
+            
+            <div class="top_nav">
+            <div class="login fr">
+            <ul>
+                <li><a href="/user/login.php">登录</a></li>
+                    <li><a href="/user/user_reg.php">注册</a></li>
+                    <li class="mobile"><a href="#"><i class="fa fa-mobile"></i>手机壹打工</a>
+                    	<div class="app">
+                        	<i class="fa fa-sort-asc"></i>
+                        	<img src="/files/img/app.jpg" alt="" title="壹打工网客户端" />
+                        </div>
+                    </li></ul></div>
+
+            </div>
+            
+        </div>
+    </div>
+    <!--头部结束-->
+
+<!--头部结束-->
+
+<!--单页开始-->
+<div class="qixi_demo">
+	<div class="qx_demo01"></div>
+    <div class="qx_demo02"></div>
+    <div class="qx_demo03">
+    	<div class="heart_infor">
+        	<div class="heart_right">
+            	<p>接过红线<br />即刻<a href="javascript:void();" title="">报名活动</a>，不再孤单过七夕！</p>
+                <p>爱情宣言<br />晒出你的<a href="#loveM" title="">爱情宣言</a>，还可参与<br />幸运大抽奖！</p>
+            </div>
+            <div class="ali_btn">
+            	<a href="javascript:;" class="baoming_btn"></a>
+                <a href="javascript:;" class="baoming_btn02"></a>
+            </div>
+        </div>
+    </div>
+    <div class="qx_demo04"></div>
+    <div class="qx_demo05"  id="loveM"></div>
+    <div class="qx_demo06">
+   		<div class="container">
+        	<div id="contmain"> 
+			<div id="mask" style="display:none;" onClick="Hide();"></div>
+            <div id="layer1297" name="note" class="note" style="left:0;top:0;z-index:1297;" onDblClick="Show(1297)">
+            	<div class="nt">
+                	<ul class="ntl">
+                    	<li>字条编号:1297</li>
+                    </ul>
+                    <ul class="ntr">
+                        <li class="o1" onClick="closeDiv(this)" title="关闭字条">关闭</li>
+                    </ul>
+                </div>
+				<div class="nc">
+                	
+                    <div class="ncr"><strong>梁嘉人</strong><p>八年前从你的名字字条我们就结婚吧结婚吧&#128151;</p></div></div>
+				<div class="nb">
+                    <div class="nbr">你媳妇</div>
+                </div>
+		</div>
+         <div id="layer1297" name="note" class="note" style="left:0;top:0;z-index:1297;" onDblClick="Show(1297)">
+            	<div class="nt">
+                	<ul class="ntl">
+                    	<li>字条编号:1297</li>
+                    </ul>
+                    <ul class="ntr">
+                        <li class="o1" onClick="closeDiv(this)" title="关闭字条">关闭</li>
+                    </ul>
+                </div>
+				<div class="nc">
+                	
+                    <div class="ncr"><strong>梁嘉人</strong><p>八年前从你的名字字条我们就结婚吧结婚吧&#128151;</p></div></div>
+				<div class="nb">
+                    <div class="nbr">你媳妇</div>
+                </div>
+		</div>
+        
+	</div>
+        </div> 
+    </div>
+    <script language="javascript" type="text/javascript">
+	function showstyle(stylesid){location='http://www.qwbm.com/yw/index.asp?page=&ls='+stylesid;}
+	noteDrag.init(566,442);
+	</script>
+    <div class="qx_demo07">
+    	<div class="qx_demo07_infor">
+        	<p>现在晒出爱情宣言，即可参与8月19日姻缘树幸运大抽奖活动。</p>
+            <p>获奖名单将于8月19日12:00  公布在姻缘树页面。</p>
+            <p>我们将电话通知获奖者，获奖后请于8月20日，七夕联谊会活动现场领取幸运奖。</p>
+        </div>
+    </div>
+</div>
+<!--单页结束-->
+
+<!--footer开始-->
+
+<div class="footer over">
+    	<div class="footer-con kuang">
+        	<div class="fl">
+            	<a href="#"><img src="/files/img/footer_logo.jpg" title="壹打工网" /></a>
+            </div>
+            <div class="fr appewm"><img src="/files/img/app.jpg" height="100" width="100" alt="" title="壹打工网客户端" /></div> 
+            <div class="fr copy">
+            	<div class="footer-nav">
+                    <a href="#">友情链接</a>
+                	<a href="#">用户帮助</a>
+                    <a href="#">手机客户端</a>
+                    <a href="#">关于我们</a>
+                </div>
+                <div class="over"></div>
+                <div class="icp">
+                	 &copy;2013-2015 Www.1dagong.Com &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp; 国家工业和信息化部备案号：皖ICP备13015030号-3
+                </div>
+                <div class="over"></div>
+                <div class="zuic">
+                	最专业的求职招聘网站，致力打造人才网第一品牌！
+                </div>
+            </div>
+            
+        </div>    
+    </div>
+<!-- 回到顶部组件 -->
+<!--<div class="back_to_top" id="back_to_top">
+	<div class="back" style="display:none;">
+		<div>回到顶部</div>
+	</div>
+	<div class="steer">
+		<div onclick="javascript:location.href='{#$QISHI.main_domain#}suggest'">我要建议</div>
+	</div>
+	<div class="sub">
+		<div onclick="javascript:location.href='{#$QISHI.main_domain#}subscribe'">我要订阅</div>
+	</div>
+</div>-->
+<script>
+	$(function(){
+		//回到顶部组件出现设置
+		$(window).scroll(function(){
+			if($(window).scrollTop()>200){
+				$(".back").fadeIn(400);
+			}else{
+				$(".back").fadeOut(400);
+			}
+		})
+
+		//回到顶部hover效果
+		$(".back_to_top .back, .steer, .sub").hover(function(){
+			$(this).find("div").css("display","block");
+		},function(){
+			$(this).find("div").css("display","none");
+		})
+
+		//设置滚回顶部方法
+		$(".back").click(function(){
+			$("body,html").animate({scrollTop:0}, 500);
+			return false;
+		})
+	});
+	$(function(){
+		$(".foot_list ul:odd li").css("width", 62);
+		$(".weixin_img:last").css("margin-right", 0);
+	})
+</script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?aa1b6622cda40ea74c1ac85e4b432e3a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!--footer结束-->
+
+<!-- message aqxuanyan  -->
+<div class="alert01 winpop" id="alert01">
+	<div class="aq_xuanyan">
+    	<ul>
+        	<li>我的爱情宣言是：</li>
+            <li><textarea></textarea></li>
+            <li>姓名：<input type="text" class="text_name" name="name" />
+            工号：<input type="text" class="text_name" name="name" />
+            手机号码：<input type="text" class="text_number" name="name" /></li>
+            <li class="pink">*用于现场领奖的身份核对，请填写真实资料。</li>
+            <li class="submit_center"><input type="button" value="确认提交" class="submit_xinxi" /></li>
+        </ul>
+        <div class="close">
+    	<a href="javascript:void();" id="close" title="" onclick="hide('pop')" class="close_btn"></a>
+    </div>
+    </div>    
+</div>
+
+<!--personal  infor -->
+<div class="personal winpop" id="personal">
+	<div class="personal_infor">
+    	<div class="write_pinfor">
+        	<ul>
+                <li><span>姓名：</span><input type="text" class="text_infor"  /><span>性别：</span><input type="radio" name="sex" />男&nbsp;<input type="radio" name="sex" />女</li>
+                <li><span>身高：</span><input type="text"  class="text_infor"/><span>体重：</span><input type="text" class="text_infor" />&nbsp;kg</li>
+                <li><span>工号部门：</span><input type="text" class="text_infor" /><span>联系方式：</span><input type="text" class="text_infor" /></li>
+                <li><span>出生年月：</span><input type="text" class="text_infor" /><span>籍贯：</span><input type="text" class="text_infor" /></li>
+                <li><span>兴趣爱好：</span><textarea></textarea></li>
+                <li><span>择偶标准：</span><textarea></textarea></li>
+                <li class="submit_center Fright"><input type="button" value="确认提交" class="submit_xinxi" /></li>
+                <li><p>*为了活动的顺利进行，请填写真实的个人资料。一旦通过活动组审核，我们将与您联系。</p></li>
+        </ul>
+        </div>
+        <div class="submit_success">
+        	<h2>很棒的爱情宣言，已为您挂在姻缘树上！</h2>
+            <p>感谢您的参与，您已获得姻缘树幸运抽奖活动抽奖机会</p>
+            <p>获奖名单将于8月19日12:00  公布在姻缘树页面。</p>
+        </div>
+        <div class="close personal_close">
+    	<a href="javascript:void();" id="close" title="" onclick="hide('pop')" class="close_btn"></a>        
+    </div>
+    </div>
+</div>
+<script>
+jQuery(function($){
+	$(".baoming_btn").click(function(){
+		if($("#alert01").is(":visible")){
+			$("#alert01").hide();
+		}
+		var obj = $("#personal");
+		obj.fadeIn();
+
+	});
+	$(".baoming_btn02").click(function(){
+		if($("#personal").is(":visible")){
+			$("#personal").hide();
+		}
+		var obj = $("#alert01");
+		obj.fadeIn();
+	});
+	$(".close_btn").click(function(){
+		$(this).parents(".winpop").fadeOut();	
+	})
+})
+</script>
+
+</body>
+</html>

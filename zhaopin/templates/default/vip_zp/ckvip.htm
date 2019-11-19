@@ -1,0 +1,73 @@
+{#include file="zp/admin_header.htm"#}
+
+<div class="admin_main_nr_dbox">
+
+ <div class="pagetit">
+	<div class="ptit"> 查看用户 </div>
+  <div class="clear"></div>
+</div>
+
+<div class="toptip">
+<h2>查看：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/../vipgn/index.php/excel/user">生成Excel</a>
+{#if $dq!=""#}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地址：&nbsp;
+{#foreach from=$dq item=l#} 
+<a href="admin_vip.php?act=ckvip&qdid={#$l.s_id#}">{#$l.s_districtname#}</a>&nbsp;&nbsp;
+{#/foreach#}
+{#/if#}
+</h2>
+</div>
+<br />
+<form action="admin_vip.php" method="get">
+<input type="hidden" name="act" value="ckvip" />
+企业公司名:<input type="text" name="name" />
+<input type="submit" value="查找企业">	&nbsp;&nbsp;<a href="admin_vip.php?act=ckvip">查看全部</a>	&nbsp;&nbsp;<a href="admin_vip.php?act=ckvip&bl=1">已办理</a>	&nbsp;&nbsp;<a href="admin_vip.php?act=ckvip&bl=2">未办理</a>
+</form>
+<hr />
+<br />
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" id="list" class="link_bk" >
+  <tr>
+  	 <th scope="col" class="admin_list_tit" width="55" align="left" style="padding-left:5px;"><input type="checkbox" />id</th>
+    <th scope="col" class="admin_list_tit" width="90" align="left">企业用户名</th>
+    <th scope="col" class="admin_list_tit" width="220" align="left">企业公司名</th>
+	<th scope="col" class="admin_list_tit" width="50" align="left">销售代表</th>
+	<th scope="col" class="admin_list_tit" width="40" align="center">地区</th>
+    <th scope="col" class="admin_list_tit" width="80" align="center">企业电话</th>
+    <th scope="col" class="admin_list_tit" width="120" align="center">企业邮箱</th>
+	<th scope="col" class="admin_list_tit" width="80" align="center">会员类型</th>
+	<th scope="col" class="admin_list_tit" width="100" align="center">添加时间</th>
+	<th scope="col" class="admin_list_tit" width="65" align="center">是否办理业务</th>
+	<th scope="col" class="admin_list_tit" width="120" align="center">操作</th>
+  </tr>
+{#foreach from=$data item=list#}  
+  <tr>
+    <td class="admin_list" align="left" style="padding-left:5px;"><input type="checkbox" name="id[]" value='{#$list.id#}'>{#$list.id#}</td>
+    <td class="admin_list">{#$list.username#}</td>
+    <td class="admin_list">{#$list.title#}</td>
+	<td class="admin_list">{#$list.xs_user#}</td>
+	<td class="admin_list" align="center">{#$list.dq#}</td>
+    <td class="admin_list" align="center">{#$list.phone#}</td>
+    <td class="admin_list" align="center">{#$list.email#}</td>
+	<td class="admin_list" align="center">{#$list.huiyuan|replace:"0":"正式会员"|replace:"2":"免费体验"|replace:"3":"橱窗赠送"#}</td>
+    <td class="admin_list" align="center">{#$list.addtime|date_format:"%Y-%m-%d %H:%M:%S"#}</td>
+	<td class="admin_list" align="center">{#$list.bl|replace:"1":"已办理"|replace:"0":"未办理"#}</td>
+	<td class="admin_list" align="center">&nbsp;<a href="/../vipgn/index.php/index/upvip/id/{#$list.id#}">修改</a>&nbsp;&nbsp;<a href="/../vipgn/index.php/index/udel/id/{#$list.id#}" onclick="return confirm('你确定要删除吗？')">删除</a>&nbsp;&nbsp;<a href="/../vipgn/index.php/index/blvip/id/{#$list.id#}">办理</a></td>
+  </tr>
+{#/foreach#}
+<tr>
+		<td colspan="10" class="admin_list">{#$fpage#}</td>
+	<tr>
+
+</table>
+</div>
+<!--底栏-->
+<div class="footer link_lan">
+管理中心
+</div>
+<div class="admin_frameset" >
+  <div class="open_frame" title="全屏" id="open_frame"></div>
+  <div class="close_frame" title="还原窗口" id="close_frame"></div>
+</div>
+</body>
+</html>

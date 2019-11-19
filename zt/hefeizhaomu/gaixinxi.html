@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="gb2312">
+  <title>信息修改系统</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <script src="/files/bs/js/jquery.min.js"></script>
+  <script src="/files/bs/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/files/bs/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/files/bs/css/normalize.css">
+  <link rel="stylesheet" href="/zt/hefeizhaomu/rczm.css">
+</head>
+<body>
+  <!--头部文件 开始-->
+  <div class="container-fluid">
+  	<div class="row">
+  		<div class="header col-md-12 text-center">
+  			<img src="http://www.1dagong.com/zt/hefeizhaomu/images/logo.png" alt="">
+  		</div>
+  	</div>
+  </div>
+  <!--头部文件 结束-->
+  
+  <!--正文 开始-->
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        
+        <ol class="breadcrumb page-header">
+          <span>您现在的位置：</span>
+          <li><a href="http://www.1dagong.com/zt/hefeizhaomu/">首页</a></li>
+          <li class="active">合肥市社会服务岗位</li>
+        </ol>
+        
+        <div class="clear"></div>     
+        
+        <div class="baom_info panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+                信息修改：
+            </h3>
+          </div>
+          	<div class="container pull-center col-md-offset-3">
+			  <form class="col-md-6 col-xs-12 registerform" action="update.php" method="post" enctype="multipart/form-data">
+              <input type="hidden" name="id" value="<?php echo $res['id'];?>" />
+			  	<div class="baom">
+			  		<label class="col-xs-4 col-md-3"><i>*</i>姓名：</label>
+					<div class="col-md-5 col-xs-8">
+						<input type="text" value="<?php echo $res['name'];?>" name="name" class="form-control" datatype="z2-8" nullmsg="请输入正确的名称" errormsg="请输入正确的名称" placeholder="姓名" />
+					</div>
+					<div class="Validform_checktip col-md-offset-3"></div>
+			  	</div>
+			  	
+			  	<div class="baom">
+			  		<label class="col-xs-4 col-md-3"><i>*</i>身份证号：</label>
+					<div class="col-md-5 col-xs-8">
+						<input type="text" value="<?php echo $res['identity_id'];?>" name="identity_id" class="form-control inputxt" datatype="idcard" nullmsg="请填写身份证号码！" errormsg="您填写的身份证号码不对！"placeholder="身份证号" />
+					</div>
+					<div class="Validform_checktip col-md-offset-3"></div>
+			  	</div>
+				
+			  	<div class="baom">
+                	<div class="alert alert-danger" role="alert">年龄限制：仅限35周岁以下（1980年10月10日后，含当日）</div>
+                </div>
+				
+			  	<div class="baom">
+			  		<label class="col-xs-4 col-md-3"><i>*</i>出生日期：</label>
+					<div class="col-md-5 col-xs-8">
+						<input type="text"  name="birthday" value="<?php echo $res['birthday'];?>" class="form-control" datatype="s6-8" errormsg="请输入正确的时间！" placeholder="示例 19890130" />
+					</div>
+					<div class="Validform_checktip col-md-offset-3"></div>
+			  	</div>
+			  	
+			  	<div class="baom xingbie">
+			  		<label class="col-xs-4 col-md-3"><i>*</i>性别：</label>
+					<div class="col-md-5 col-xs-8">
+						<input type="radio" value="男" name="sex" id="male" class="pr1" datatype="*" errormsg="请选择性别！" <?php if ($res['sex'] == '男') { echo "checked";}?> />
+						<label for="male" style="float:none;">男</label>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" value="女" name="sex" id="female" class="pr1" <?php if ($res['sex'] == '女') { echo "checked";}?> />
+						<label for="female" style="float:none;">女</label>
+					</div>
+					<div class="Validform_checktip col-md-offset-3"></div>
+			  	</div>
+			  	
+			  	<div class="baom">
+			  		<label class="col-xs-4 col-md-3"><i>*</i>政治面貌：</label>
+					<div class="col-md-5 col-xs-8">
+						<select class="form-control" name="politics" onchange="getCitiesByProvCode();" datatype="city">
+						   <option value="团员" <?php if ($res['politics'] == '团员') { echo "selected";}?>>团员</option>
+						   <option value="党员" <?php if ($res['politics'] == '党员') { echo "selected";}?>>党员</option>
+						   <option value="群众" <?php if ($res['politics'] == '群众') { echo "selected";}?>>群众</option>
+						</select>
+					</div>
+					<div class="Validform_checktip col-md-offset-3"></div>
+			  	</div>
+			  	
+				<div class="baom">
+			  		<label class="col-xs-4 col-md-3">加入时间：</label>
+					<div class="col-md-5 col-xs-8">
+						<input type="text" id="meeting" name="join_time" class="form-control" value="<?php echo $res['join_time'];?>"  datatype="s6-8" errormsg="请输入正确的时间！" placeholder="示例 19890130"/>
+					</div>
+					<div class="Validform_checktip col-md-offset-3"></div>
+			  	</div>
+			  	
+				<div class="baom">
+					<label class="col-xs-4 col-md-3"><i>*</i>户籍地：</label>
+					<div class="col-md-5 col-xs-8">
+						<input type="text" value="<?php echo $res['address'];?>" name="address" class="form-control" datatype="s1-10000" errormsg="请输入正确的户籍地" placeholder="请填写户籍所在地"/>
+					</div>
+					<div class="Validform_checktip col-md-offset-3"></div>
+				</div>
+				
+				<div class="baom">
+					<label class="col-md-3 col-xs-4"><i>*</i>档案地：</label>
+					<div class="col-md-5 col-xs-8">
+						<input type="text" value="<?php echo $res['profile_add'];?>" name="profile_add" class="form-control" datatype="s1-10000" errormsg="请输入正确的档案地" placeholder="档案所在地"/>
+					</div>
+					<div class="Validform_checktip col-md-offset-3"></div>
+				</div>
+				
+				<div class="baom">
+					<label class="col-md-3 col-xs-4"><i>*</i>学历：</label>
+					<div class="col-md-5 col-xs-8">
+						<select class="form-control" name="education" datatype="*" nullmsg="请选择学历！" errormsg="请选择学历！">
+						   <option value="大专" <?php if ($res['education'] == '大专') { echo "selected";}?>>大专</option>
+						   <option value="本科" <?php if ($res['education'] == '本科') { echo "selected";}?>>本科</option>
+						   <option value="硕士" <?php if ($res['education'] == '硕士') { echo "selected";}?>>硕士</option>
+						</select>
+					</div>
+					<div class="Validform_checktip col-md-offset-3"></div>
+				</div>
+				
+				<div class="baom">
+					<label class="col-md-3 col-xs-4"><i>*</i>学历性质：</label>
+					<div class="col-md-5 col-xs-8">
+						<input type="radio" value="全日制" name="edu_sta" id="males" class="pr1" datatype="*" errormsg="请选择学历性质！"  <?php if ($res['edu_sta'] == '全日制') { echo "checked";}?>/>
+						<label for="males" style="float:none;">全日制</label>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" value="非全日制" name="edu_sta" id="females" class="pr1" <?php if ($res['edu_sta'] == '非全日制') { echo "checked";}?> />
+						<label for="females" style="float:none;">非全日制</label>
+					</div>
+					<div class="Validform_checktip col-md-offset-3"></div>
+				</div>
+				
+				<div class="baom">
+					<label class="col-md-3 col-xs-4"><i>*</i>毕业院校：</label>
+					<div class="col-md-5 col-xs-8">
+						<input type="text" value="<?php echo $res['graduate_school']; ?>" name="graduate_school" class="form-control" datatype="s4-40" errormsg="请输入正确的院校名称" placeholder="请填写毕业院校"/>
+					</div>
+					<div class="Validform_checktip col-md-offset-3"></div>
+				</div>
+				
+				<div class="baom">
+					<label class="col-md-3 col-xs-4"><i>*</i>所学专业：</label>
+					<div class="col-md-5 col-xs-8">
+						<input type="text" value="<?php echo $res['specialty']; ?>" name="specialty" class="form-control" datatype="s2-18" errormsg="请输入正确的所学专业" placeholder="请填写所学专业"/>
+					</div>
+					<div class="Validform_checktip col-md-offset-3"></div>
+				</div>
+				
+				<div class="baom">
+					<label class="col-md-3 col-xs-4"><i>*</i>毕业时间：</label>
+					<div class="col-md-5 col-xs-8">
+						<!--<input type="text" id="meeting" name="graduate_time" class="form-control" value="<?php echo $res['graduate_time']; ?>" datatype="s6-8" errormsg="请输入正确的时间！" placeholder="示例 19890130" />-->
+						<select class="form-control" name="graduate_time" datatype="*" nullmsg="请选择毕业时间！" errormsg="请选择毕业时间！">
+						   <option value="2013年" <?php if ($res['graduate_time'] == '2013年') { echo "selected";}?>>2013年</option>
+						   <option value="2014年" <?php if ($res['graduate_time'] == '2014年') { echo "selected";}?>>2014年</option>
+						   <option value="2015年" <?php if ($res['graduate_time'] == '2015年') { echo "selected";}?>>2015年</option>
+                           <option value="在校学生" <?php if ($res['graduate_time'] == '在校学生') { echo "selected";}?>>在校学生(仅限报考高校见习岗位)</option>
+						</select>
+					</div>
+					<div class="Validform_checktip col-md-offset-3"></div>
+				</div>
+				
+				<div class="baom">
+					<label class="col-md-3 col-xs-4"><i>*</i>手机号码：</label>
+					<div class="col-md-5 col-xs-8">
+						<input type="text" value="<?php echo $res['phone1']; ?>" name="phone1" class="form-control" datatype="s11-11" errormsg="请输入正确的手机号！" placeholder="请填写手机号码"/>
+					</div>
+					<div class="Validform_checktip col-md-offset-3"></div>
+				</div>
+				
+				<div class="baom">
+					<label class="col-md-3 col-xs-4"><i>*</i>紧急电话：</label>
+					<div class="col-md-5 col-xs-8">
+						<input type="text" value="<?php echo $res['phone2']; ?>" name="phone2" class="form-control" datatype="s8-15" errormsg="请输入正确的紧急联络电话" placeholder="请填写紧急联络电话"/>
+					</div>
+					<div class="Validform_checktip col-md-offset-3"></div>
+				</div>
+				
+				<div class="baom">
+                	<div class="alert alert-danger" role="alert">岗位编码重要提示：请谨慎选择报名岗位，每人仅限报名一个岗位并仅限报名一次！</div>
+                </div>
+				
+				<div class="baom">
+					<label class="col-xs-4 col-md-3"><i>*</i>岗位编码：</label>
+					<div class="col-md-5 col-xs-8">
+						<input type="text" value="<?php echo $res['baokao_job']; ?>" name="baokao_job" class="form-control" placeholder="请输入岗位编码"/>
+					</div>
+                    <span class="col-md-9 col-xs-8 col-md-offset-3 col-xs-offset-4" style="color:#999;">
+						<a href="fuwu.png" title="" target="_Blank">社会服务岗位编码查询</a>
+						<br>
+						<a href="gaoxiao.png" title="" target="_Blank">高校见习生岗位编码查询</a>
+					</span>
+					<div class="Validform_checktip col-md-offset-3"></div>
+				</div>
+                
+				<div class="baom">
+					<label for="exampleInputFile" class=" col-xs-4 col-md-3"><i>*</i>身份证照：</label>
+					<div class="col-xs-8 col-md-5">
+						<input type="file" name="upfile[0]" id="exampleInputFile" accept="image/*">
+						<p class="help-block">请上传身份证 <b>正面</b> 照片</p>
+                        <input type="hidden" name="identity_up" value="<?php echo $res['identity_up'];?>" />
+						<p><a href="/zt/hefeizhaomu/<?php echo $res['identity_up'];?>" target="_blank"><img src="/zt/hefeizhaomu/<?php echo $res['identity_up'];?>" width="150" height="100"></a></p>
+					</div>
+					<div class="col-xs-8 col-md-5 col-md-offset-3 col-xs-offset-4">
+						<input type="file" name="upfile[1]" id="exampleInputFile"accept="image/*" />
+						<p class="help-block">请上传身份证 <b>背面</b> 照片</p>
+                        <input type="hidden" name="identity_down" value="<?php echo $res['identity_down'];?>" />
+						<p><a href="/zt/hefeizhaomu/<?php echo $res['identity_down'];?>" target="_blank"><img src="/zt/hefeizhaomu/<?php echo $res['identity_down'];?>" width="150" height="100"></a></p>
+					</div>
+				</div>
+                <div class="baom">
+                	<br>
+					<label class="col-xs-4 col-md-3"><i>*</i>证件照：</label>
+					<div class="col-xs-8 col-md-5">
+						<input type="file" name="upfile[2]" id="exampleInputFile" accept="image/*" />
+					</div>
+					<div class="col-xs-8 col-md-6" style="color: #737373;">
+						<p>请上传免冠证件照片（蓝底或红底）</p>
+                         <input type="hidden" name="photo" value="<?php echo $res['photo'];?>" />
+						<p><a href="/zt/hefeizhaomu/<?php echo $res['photo'];?>" target="_blank"><img src="/zt/hefeizhaomu/<?php echo $res['photo'];?>" width="100" height="100"></a></p>
+					</div>
+					
+				</div>
+				
+			  
+        </div>
+        <br>
+        <div class="container text-center xiayibu">
+			<button type="submit" class="btn btn-primary" style="margin-bottom:20px;">确定提交</button>
+		</div>
+      </div>
+    </div>
+  </div>
+  </form>
+  <!--正文 结束-->
+  
+  <!--底部文件 开始-->
+  <!--底部文件 结束-->
+  
+<script type="text/javascript" src="Validform_v5.3.2_min.js"></script>
+
+<script type="text/javascript">
+$(function(){
+	//$(".registerform").Validform();  //就这一行代码！;
+		
+	/**********************
+	传入自定义datatype类型【方式一】;
+	$.extend($.Datatype,{
+		"z2-4" : /^[\u4E00-\u9FA5\uf900-\ufa2d]{2,4}$/
+	});
+	**********************/
+	
+	$(".registerform").Validform({
+		tiptype:2,
+		datatype:{//传入自定义datatype类型【方式二】;
+			"z2-4" : /^[\u4E00-\u9FA5\uf900-\ufa2d]{2,4}$/
+		}
+	});
+})
+
+//身份证
+$(function(){
+	$(".registerform").Validform({
+		tiptype:2,
+		datatype:{//传入自定义datatype类型【方式二】;
+			"idcard":function(gets,obj,curform,datatype){
+				//该方法由佚名网友提供;
+			
+				var Wi = [ 7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2, 1 ];// 加权因子;
+				var ValideCode = [ 1, 0, 10, 9, 8, 7, 6, 5, 4, 3, 2 ];// 身份证验证位值，10代表X;
+			
+				if (gets.length == 15) {   
+					return isValidityBrithBy15IdCard(gets);   
+				}else if (gets.length == 18){   
+					var a_idCard = gets.split("");// 得到身份证数组   
+					if (isValidityBrithBy18IdCard(gets)&&isTrueValidateCodeBy18IdCard(a_idCard)) {   
+						return true;   
+					}   
+					return false;
+				}
+				return false;
+				
+				function isTrueValidateCodeBy18IdCard(a_idCard) {   
+					var sum = 0; // 声明加权求和变量   
+					if (a_idCard[17].toLowerCase() == 'x') {   
+						a_idCard[17] = 10;// 将最后位为x的验证码替换为10方便后续操作   
+					}   
+					for ( var i = 0; i < 17; i++) {   
+						sum += Wi[i] * a_idCard[i];// 加权求和   
+					}   
+					valCodePosition = sum % 11;// 得到验证码所位置   
+					if (a_idCard[17] == ValideCode[valCodePosition]) {   
+						return true;   
+					}
+					return false;   
+				}
+				
+				function isValidityBrithBy18IdCard(idCard18){   
+					var year = idCard18.substring(6,10);   
+					var month = idCard18.substring(10,12);   
+					var day = idCard18.substring(12,14);   
+					var temp_date = new Date(year,parseFloat(month)-1,parseFloat(day));   
+					// 这里用getFullYear()获取年份，避免千年虫问题   
+					if(temp_date.getFullYear()!=parseFloat(year) || temp_date.getMonth()!=parseFloat(month)-1 || temp_date.getDate()!=parseFloat(day)){   
+						return false;   
+					}
+					return true;   
+				}
+				
+				function isValidityBrithBy15IdCard(idCard15){   
+					var year =  idCard15.substring(6,8);   
+					var month = idCard15.substring(8,10);   
+					var day = idCard15.substring(10,12);
+					var temp_date = new Date(year,parseFloat(month)-1,parseFloat(day));   
+					// 对于老身份证中的你年龄则不需考虑千年虫问题而使用getYear()方法   
+					if(temp_date.getYear()!=parseFloat(year) || temp_date.getMonth()!=parseFloat(month)-1 || temp_date.getDate()!=parseFloat(day)){   
+						return false;   
+					}
+					return true;
+				}
+				
+			}
+			
+		}
+	});
+})
+
+$(function() {  
+    $(".registerfrm").Validform({  
+        tiptype:function(msg,o,cssctl){  
+            if(!o.obj.is("form")){//验证表单元素时o.obj为该表单元素，全部验证通过提交表单时o.obj为该表单对象;  
+                var objtip=o.obj.siblings(".Validform_checktip");//指定错误提示控件  
+                cssctl(objtip,o.type);  
+                objtip.text(msg);  
+            }  
+        },  
+        showAllError:true,//一次性提示所有错误  
+        datatype:{//传入自定义datatype类型  
+            "u2-4" : /^[0-9a-zA-Z]{1}\w{2,4}$/,//数字和字母开头，后面可以有下划线u2-4和后面的{2,4}数字保持一致  
+            "c":/^(\d{3,4}-)?\d{7,8}$/,//传真或电话  
+            "t2-4" : /^([\u4E00-\u9FA5\uf900-\ufa2d]|\w){2,4}$/,//中文,字母，下划线和数字  
+            "city":function(gets,obj,curform,regxp){  
+                var prov=$("#prov option:selected").val();  
+                if(prov==-1){  
+                    return "请选择省份！";  
+                }else{  
+                    var c=$("#city").find("option");  
+                    if(c.length>1){  
+                        var city=$("#city option:selected").val();  
+                        if(city==-1){  
+                            return "请选择市！";  
+                        }else{  
+                            var a=$("#area").find("option");  
+                            if(a.length>1){  
+                                var area=$("#area option:selected").val();  
+                                if(area==-1){  
+                                    return "请选择县！";  
+                                }  
+                            }  
+                        }  
+                    }  
+                }  
+                return true;  
+            }  
+        }  
+    });  
+})  
+</script>
+</body>
+</html>

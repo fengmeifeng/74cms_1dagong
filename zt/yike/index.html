@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>壹客联盟召集令</title>
+<meta name="keywords" content="壹打工网问卷调查,校园实习" />
+<meta name="description" content="壹客联盟召集令是壹打工网面向全国校园推出的问卷调查活动，参加活动可获得丰厚的奖学金，专业技能培训机会，及丰富的实习和工作机会。" />
+<link href="/files/css/font-awesome.min.css" rel="stylesheet" >
+    <link href="/files/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="/files/css/all.css" rel="stylesheet" type="text/css" />
+    <link href="/files/css/header-footer.css" rel="stylesheet" type="text/css" />
+	<link href="/files/css/header.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="/files/js/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/files/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script language="javascript" type="text/javascript" src="/files/js/lrtk.js"></script>
+    <script language="javascript" type="text/javascript" src="/files/js/divselect.js"></script>
+		<script src="/files/js/jquery.jobs-search-shouye.js" type='text/javascript'></script>
+    
+    <!--<script src="/files/js/jquery.js" type="text/javascript" language="javascript"></script>-->
+    <script src="/files/js/jquery.lazyload.js" type="text/javascript"></script>
+    <script src="/data/cache_classify.js" type='text/javascript' charset="utf-8"></script>
+    <script src="/files/js/jquery.KinSlideshow.min.js" type="text/javascript"></script>
+    <!--中部菜单显示-->
+    <script src="/files/js/jquery.comtip-min.js" type="text/javascript"></script>
+    
+    <script src="/files/js/jquery.index.js" type='text/javascript' ></script>
+    <link  href="/files/css/new.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="css/style.css" media="all" />
+<script src="js/jquery-2.1.4.min.js"></script>  
+<script type="text/javascript">  
+		
+			$(function(){
+				//获取要定位元素距离浏览器顶部的距离  
+				var navH = $(".hb").offset().top;
+				//滚动条事件  
+				$(window).scroll(function(){
+					//获取滚动条的滑动距离  
+					var scroH = $(this).scrollTop();
+					//滚动条的滑动距离大于等于定位元素距离浏览器顶部的距离，就固定，反之就不固定  
+					if(scroH>=navH){
+						$(".hb").css({"position":"fixed","top":20});
+					}else if(scroH<navH){
+						$(".hb").css({"position":"static"});
+					}
+				})
+			})
+			
+		</script>
+		
+</head>
+
+<body>
+<!--头部开始-->
+<link href="/files/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<script>
+	$(function(){
+		// 点击事件
+		$(".local_station").live("click",function(){
+			if($(".sub_station").attr('data') == "hide") {
+				$(this).blur();
+				$(this).parent().parent().before("<div class=\"menu_bg_layer\"></div>");
+				$(".menu_bg_layer").height($(document).height());
+				$(".menu_bg_layer").css({ width: $(document).width(), position: "absolute",left:"0", top:"0","z-index":"77","background-color":"#000000"});
+				$(".menu_bg_layer").css("opacity",0);
+				$(".sub_station").show();
+				$(".sub_station").attr('data',"show");
+				$(".menu_bg_layer, .station_close").click(function() {
+					$(".sub_station").hide();
+					$(".sub_station").attr('data',"hide");
+					$(".menu_bg_layer").remove();
+				});
+			} else {
+				$(".sub_station").hide();
+				$(".sub_station").attr('data',"hide");
+			}
+		});
+		//单数行变色
+		$(".local_station>p").hover(function(){
+			$(this).addClass("hover");
+		},function(){
+			$(this).removeClass("hover");
+		});
+		$(".sub_st_content li:last").css({
+			"border-bottom":"0"
+		}).find("div").css({"padding-bottom":"0"});
+	});
+	
+//顶部部登录
+$.get("/plus/ajax_user.php", {"act":"top_loginform"},
+function (data,textStatus)
+{			
+$(".top_nav").html(data);
+}
+);
+</script>
+
+
+<!--头部开始-->
+	<div class="header">
+    	<div class="kuang">
+            <div class="logo fl" style="width:150px;"><a class="fl" href="/"><img src="/files/img/logo2.jpg" alt="" title="壹打工网" ></a>
+            </div>
+
+            <div class="nav fl">
+            	<ul>
+                
+                								<li><a href="http://shanghai.1dagong.com/index.html" target="_self" >首  页</a></li>
+								<li><a href="http://shanghai.1dagong.com/zhaopin/index.html" target="_self" >找工作</a></li>
+								<li><a href="http://shanghai.1dagong.com/jianli.html" target="_self" >找人才</a></li>
+								<li><a href="http://shanghai.1dagong.com/hymq/index.php" target="_self" >行业名企</a></li>
+								<li><a href="http://shanghai.1dagong.com/jobfair/jobfair-list.php" target="_self" >人才市场</a></li>
+								<li><a href="http://shanghai.1dagong.com/xiaoyuan/" target="_self" >校园招聘</a></li>
+								<li><a href="http://shanghai.1dagong.com/train/" target="_self" >技能培训</a></li>
+				                </ul>
+            </div>
+            
+     
+   
+
+           
+              	<div class="top_nav">
+            	</div>
+        </div>
+    </div>
+    <!--头部结束-->
+		<div class="top">
+			<a href="#" title="壹客联盟召集令"><img src="img/top_img.png" alt="壹客联盟召集令" /></a>
+		</div>
+		<div class="main">
+			<div class="cons">
+				<div class="left hb">
+					<img src="img/fudong_left.png" alt="壹客联盟召集令" />
+				</div>
+				<div class="right">
+					<dl>
+						<dt style="background: url(img/neirong_tit.png) no-repeat;padding-top: 16px;">变身条件</dt>
+						<dd>
+							<p>各大中专学校在校生，专业无限制，有人脉优先。</p>
+							<p>有创意不甘于平庸、有梦想不止于幻想、有能力渴望实现自我。</p>
+							<p>承诺参与本项目至少一个学期，每周保证有一定的上网时间。</p>
+						</dd>
+						<dt style="background: url(img/neirong_tit.png) no-repeat 0 -175px;padding-top: 14px;">奖 励</dt>
+						<dd>
+							<h1>团队管理经验：</h1>
+							<p>将在每个学校	挑选一名优秀壹客，作为该校壹客会的会长，会长需带领团队完成工作。在项目中你可以积累丰富的团队管理经验。</p>
+							<h1>奖学金：</h1>
+							<p>每个季度将以城市为单位，在学校间评选出成绩最优异的壹客会，奉上丰厚奖学金。</p>
+							<h1>活动筹办经验：</h1>
+							<p>参与校区内每场活动的宣传和筹办，可在项目中积累丰富的活动筹办经验。</p>
+							<h1>壹客联盟风云榜：</h1>
+							<p>网站“缤纷校园”页面首页广告宣传，“壹客联盟”栏目中对各校会长及团队进行展示。</p>
+							<h1>无朋友 ，不壹客：</h1>
+							<p>以城市为单位，定期举行壹客联盟沙龙，沙龙将以聚会、郊游、拓展、聚餐等多种形式开展，为各校壹客提供交流、交友的机会。</p>
+							<h1>培训：</h1>
+							<p>接受国内知名企业资深HR经理人求职指导的机会。让你在求职道路上先人一步。不定期为壹客举办专业知识培训或技能培训。</p>
+							<h1>实习：</h1>
+							<p>丰富的实习机会，优先推荐工作机会。</p>
+						</dd>
+						<dt style="background: url(img/neirong_tit.png) no-repeat 0 -353px;">使 命</dt>
+						<dd>
+							<h1>活动推广：</h1>
+							<p>为壹打工网校园活动进行校内推广，提升人气。</p>
+							<h1>品牌推广：</h1>
+							<p>结合壹打工网服务功能和产品理念自主发起线上或线下活动，在校内对壹打工网APP及新产品进行宣传，让更多同学了解壹打工网、接受壹打工网、喜爱壹打工网。</p>
+							<h1>问卷调查：</h1>
+							<p>在校内定期开展壹打工网的问卷调查，及时反馈学生用户对网站的意见建议。</p>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			&copy; 2013-2015 Www.1dagong.Com&nbsp;&nbsp;/&nbsp;&nbsp;国家工业和信息化部备案号：皖ICP备13015030号-4
+		</div>
+	</body>
+</html>
